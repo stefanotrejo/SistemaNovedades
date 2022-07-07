@@ -1,0 +1,93 @@
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb

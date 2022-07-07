@@ -1,0 +1,183 @@
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+D:\SilverSolutions\Productos\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano Trejo\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\Historial de Versiones\LiquidacionSueldos 26.01.18 - Import\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 22.05.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 08.06.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 16.07.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\stefano\Google Drive\Cursos y Capacitaciones\Curso .NET 2017\LiquidacionSueldosNuevo\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+D:\Sistema de Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+D:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.xml
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+F:\Sueldos - D.G.I\Consulta de Agentes\Proyecto C#\LiquidacionSueldos 29.10.18\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\EntityFramework.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\EntityFramework.xml
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+F:\Sueldos - D.G.I\Consulta Personal Uert\ConsultaPerlUertyPagosE\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\EntityFramework.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\EntityFramework.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb

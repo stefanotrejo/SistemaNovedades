@@ -1,0 +1,180 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Principal.master.cs" Inherits="PaginasBasicas_Principal" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Liquidación de Sueldos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="../css/plugins/iCheck/custom.css" rel="stylesheet" />
+    <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"
+        rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="../js/plugins/gritter/jquery.gritter.css" rel="stylesheet" />
+    <link href="../css/animate.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../Imagenes/logo3.png" />
+    <style type="text/css">
+        .nuevoEstilo1 {
+            color: #FFFFFF;
+        }
+
+        .nuevoEstilo2 {
+            color: #FFFFFF;
+        }
+
+        .style1 {
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div id="wrapper">
+            <nav class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav metismenu" id="side-menu">
+                        <li class="nav-header">
+                            <div class="dropdown profile-element">                            
+                                <a href="../Inicio.aspx"><img alt="image" class="img-circle" src="../Imagenes/logo3.png" width="100" height="100" /></a>
+                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                    <li><a href="CerrarSesion.aspx"><i class="fa fa-sign-out"></i>Cerrar Sesion</a></li>
+                                    <li><a href="UsuarioCambiarClave.aspx"><i class="fa fa-key"></i> Cambiar Clave</a></li>
+                                </ul>
+                            </div>
+                            <div class="logo-element">
+                                <asp:Label ID="lblClienteNombre" runat="server" Text=""></asp:Label>
+                            </div>
+                        </li>                    
+                        <asp:Repeater ID="repMenu" runat="server"><ItemTemplate><%#Eval("Cadena") %></ItemTemplate></asp:Repeater>
+                    </ul>
+                </div>
+            </nav>
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+                <div class="row border-bottom">
+                    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                            <asp:Label ID="lblBotonBarraMenu" runat="server" Text=""></asp:Label>
+                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="../Inicio.aspx"><i class="fa fa-home"></i></a>        
+                        </div>
+
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li>
+                                <span class="m-r-sm text-muted welcome-message"><a href="#" class="style1"><asp:Label ID="lblClienteNombre1" runat="server" Text=""></asp:Label></a></span>
+                            </li>               
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i> <asp:Label ID="lblPerfil" runat="server" Text=""></asp:Label>:&nbsp;<asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label></a>
+                            </li>                
+                            <li>
+<%--                                <a href="CerrarSesion.aspx"><i class="fa fa-sign-out"></i> Cerrar Sesion</a>--%>
+                                <a href="../PaginasBasicas/CerrarSesion.aspx"><i class="fa fa-sign-out"></i> Cerrar Sesion</a>
+                            </li>
+                            <li>
+                                <a href="../PaginasBasicas/UsuarioCambiarClave.aspx"><i class="fa fa-key"></i> Cambiar Clave</a>
+                            </li>
+                            <%--<li>
+                                <a data-toggle="modal" href="#ModalAyuda"><i class="fa fa-question"></i></a>
+                            </li>--%>
+                            <%--<asp:Label ID="lblEditarAyuda" runat="server" Text="" Visible="false"></asp:Label>--%>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="wrapper wrapper-content">
+                            <div class="row wrapper border-bottom white-bg page-heading">
+                                <div class="col-lg-10">
+                                    <h2>
+                                        <asp:Label ID="lblTituloDelFormulario" runat="server" Text=""></asp:Label>
+                                    </h2>
+                                </div>                                
+                            </div>
+                            <br />
+                            <asp:ContentPlaceHolder ID="cph" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal inmodal fade" id="ModalAyuda" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">
+                            <asp:Label ID="lblAyudaTitulo" runat="server" Text=""></asp:Label>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="EditorPanel">
+                            <div style="text-align: justify">
+                                <asp:Label ID="lblayuDescripcion" runat="server" Text="" Visible="true"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Cerrar</button>
+                        <asp:Label ID="lblayuId" runat="server" Text="0" Visible="false"></asp:Label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mainly scripts -->
+        <!-- Custom and plugin javascript -->
+        <!-- iCheck -->
+        <script type="text/javascript" src="../js/plugins/iCheck/icheck.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
+        <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script type="text/javascript" src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- Flot -->
+        <script type="text/javascript" src="../js/plugins/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/flot/jquery.flot.spline.js"></script>
+        <script type="text/javascript" src="../js/plugins/flot/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="../js/plugins/flot/jquery.flot.pie.js"></script>
+        <!-- Peity -->
+        <script type="text/javascript" src="../js/plugins/peity/jquery.peity.min.js"></script>
+        <script type="text/javascript" src="../js/demo/peity-demo.js"></script>
+        <!-- Custom and plugin javascript -->
+        <script type="text/javascript" src="../js/inspinia.js"></script>
+        <script type="text/javascript" src="../js/plugins/pace/pace.min.js"></script>
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- GITTER -->
+        <script type="text/javascript" src="../js/plugins/gritter/jquery.gritter.min.js"></script>
+        <!-- Sparkline -->
+        <script type="text/javascript" src="../js/plugins/sparkline/jquery.sparkline.min.js"></script>
+        <!-- Sparkline demo data  -->
+        <script type="text/javascript" src="../js/demo/sparkline-demo.js"></script>
+        <!-- ChartJS-->
+        <script type="text/javascript" src="../js/plugins/chartJs/Chart.min.js"></script>
+        <!-- Toastr -->
+        <script type="text/javascript" src="../js/plugins/toastr/toastr.min.js"></script>
+
+        <!-- Mainly scripts -->
+        <script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script type="text/javascript" src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- Custom and plugin javascript -->
+        <script type="text/javascript" src="../js/inspinia.js"></script>
+        <script type="text/javascript" src="../js/plugins/pace/pace.min.js"></script>
+    </form>
+</body>
+</html>

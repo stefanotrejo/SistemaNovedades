@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LiquidacionSueldosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="menId" />
+    </Key>
+    <Property Name="menId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menNombre" Type="varchar" MaxLength="250" />
+    <Property Name="menIdPadre" Type="int" />
+    <Property Name="menOrden" Type="int" />
+    <Property Name="menUrl" Type="varchar" MaxLength="500" />
+    <Property Name="menIcono" Type="varchar" MaxLength="500" />
+    <Property Name="menEsMenu" Type="tinyint" />
+    <Property Name="menActivo" Type="tinyint" />
+    <Property Name="usuIdCreacion" Type="int" />
+    <Property Name="usuIdUltimaModificacion" Type="int" />
+    <Property Name="menFechaHoraCreacion" Type="datetime" />
+    <Property Name="menFechaHoraUltimaModificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NovedadInasistencia">
+    <Key>
+      <PropertyRef Name="ninId" />
+    </Key>
+    <Property Name="ninId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="itiId" Type="int" />
+    <Property Name="acaId" Type="int" />
+    <Property Name="liqId" Type="int" />
+    <Property Name="ninFechaInicio" Type="datetime" />
+    <Property Name="ninCantidad" Type="int" />
+    <Property Name="ninFechaFin" Type="datetime" />
+    <Property Name="ninActivo" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="NuevoAge">
+    <Key>
+      <PropertyRef Name="NuevoAgeId" />
+    </Key>
+    <Property Name="PlantaTipo" Type="varchar" MaxLength="1" />
+    <Property Name="NroCOntrol" Type="varchar" MaxLength="8" />
+    <Property Name="LugarPago" Type="varchar" MaxLength="5" />
+    <Property Name="Escuela" Type="varchar" MaxLength="5" />
+    <Property Name="Escalafon" Type="varchar" MaxLength="1" />
+    <Property Name="Agru" Type="varchar" MaxLength="2" />
+    <Property Name="tramo" Type="varchar" MaxLength="1" />
+    <Property Name="Apertura" Type="varchar" MaxLength="3" />
+    <Property Name="Categoria" Type="varchar" MaxLength="2" />
+    <Property Name="HsCat" Type="varchar" MaxLength="2" />
+    <Property Name="Juris" Type="varchar" MaxLength="2" />
+    <Property Name="Prog" Type="varchar" MaxLength="2" />
+    <Property Name="SubP" Type="varchar" MaxLength="2" />
+    <Property Name="Actividad" Type="varchar" MaxLength="2" />
+    <Property Name="Nombre" Type="varchar" MaxLength="25" />
+    <Property Name="Cuil" Type="varchar" MaxLength="11" />
+    <Property Name="TipoDOc" Type="varchar" MaxLength="1" />
+    <Property Name="FechaNac" Type="varchar" MaxLength="50" />
+    <Property Name="Sexo" Type="varchar" MaxLength="1" />
+    <Property Name="EstadoCivil" Type="varchar" MaxLength="1" />
+    <Property Name="FechaIngreso" Type="varchar" MaxLength="6" />
+    <Property Name="Anios" Type="varchar" MaxLength="2" />
+    <Property Name="Meses" Type="varchar" MaxLength="1" />
+    <Property Name="DiasMultaAntig" Type="varchar" MaxLength="3" />
+    <Property Name="AniosAntig" Type="varchar" MaxLength="2" />
+    <Property Name="Ad.Prof/Perm.cgo" Type="varchar" MaxLength="2" />
+    <Property Name="NumeroCarnet" Type="varchar" MaxLength="7" />
+    <Property Name="AporteIOSEP" Type="varchar" MaxLength="1" />
+    <Property Name="AporteOsocNac" Type="varchar" MaxLength="1" />
+    <Property Name="Jubilado" Type="varchar" MaxLength="1" />
+    <Property Name="AportePrevisional" Type="varchar" MaxLength="1" />
+    <Property Name="SituRev" Type="varchar" MaxLength="1" />
+    <Property Name="Interinato" Type="varchar" MaxLength="1" />
+    <Property Name="SituRevDoc" Type="varchar" MaxLength="1" />
+    <Property Name="Nopres/RiesgoVida" Type="varchar" MaxLength="1" />
+    <Property Name="FechaBaja" Type="varchar" MaxLength="6" />
+    <Property Name="MesAnioLiq" Type="varchar" MaxLength="4" />
+    <Property Name="DiasTrabajados" Type="varchar" MaxLength="3" />
+    <Property Name="ImponibleANSES" Type="varchar" MaxLength="7" />
+    <Property Name="Imponible" Type="varchar" MaxLength="7" />
+    <Property Name="HaberS/aporte" Type="varchar" MaxLength="9" />
+    <Property Name="HaberC/aporte" Type="varchar" MaxLength="9" />
+    <Property Name="TotalHaberes" Type="varchar" MaxLength="9" />
+    <Property Name="TotalDescuentos" Type="varchar" MaxLength="9" />
+    <Property Name="Liquido" Type="varchar" MaxLength="9" />
+    <Property Name="CantItemsOcupados" Type="varchar" MaxLength="2" />
+    <Property Name="Item" Type="varchar" MaxLength="600" />
+    <Property Name="Columna 47" Type="varchar" MaxLength="50" />
+    <Property Name="NuevoAgeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LiquidacionSueldosModelStoreContainer">
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NovedadInasistencia" EntityType="Self.NovedadInasistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NuevoAge" EntityType="Self.NuevoAge" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

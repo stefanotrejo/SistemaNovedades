@@ -1,0 +1,9 @@
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.vbprojResolveAssemblyReference.cache
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.vbproj.GenerateResource.Cache
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
+D:\SilverSolutions\Productos\LiquidacionSueldos\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb

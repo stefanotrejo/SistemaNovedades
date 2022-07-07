@@ -1,0 +1,9 @@
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\x86\Debug\LiquidacionSueldos.Datos.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\x86\Debug\LiquidacionSueldos.Datos.pdb
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\bin\x86\Debug\LiquidacionSueldos.Datos.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\Datos.vbprojResolveAssemblyReference.cache
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\Resources.resources
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\Datos.vbproj.GenerateResource.Cache
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\LiquidacionSueldos.Datos.dll
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\LiquidacionSueldos.Datos.xml
+F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\x86\Debug\LiquidacionSueldos.Datos.pdb

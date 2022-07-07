@@ -1,0 +1,25 @@
+27/12/2018
+Version actualizada con datos de conexion para la nueva B.D.
+Actualizados los informes de crystal report para conectar con sp
+de la nueva B.D
+
+09/01/2019
+- Corregido error al mostrar los conceptos con id equivocado en el formulario
+"AgenteConceptos".
+- Se agregó texto informando al usuario de los conceptos que estan incluidos
+en el listado.
+-
+
+
+07.03.19 - 12 HS
+
+- Se generaliza los parametros de Crystal Report para que saque
+la configuración del web.config.
+
+12.03.19 - 13 HS
+- Modifico Informe Agente para que muestre el Periodo seleccionado
+
+28.11.19 -
+-Modifico importador para adaptar al nuevo formato que incluye puntos junta consejo (5 caracteres)
+
+

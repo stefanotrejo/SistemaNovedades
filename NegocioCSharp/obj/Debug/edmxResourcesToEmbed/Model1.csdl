@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LiquidacionSueldosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LiquidacionSueldosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Menu" EntityType="LiquidacionSueldosModel.Menu" />
+    <EntitySet Name="NovedadInasistencia" EntityType="LiquidacionSueldosModel.NovedadInasistencia" />
+    <EntitySet Name="NuevoAge" EntityType="LiquidacionSueldosModel.NuevoAge" />
+  </EntityContainer>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="menId" />
+    </Key>
+    <Property Name="menId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menNombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="menIdPadre" Type="Int32" />
+    <Property Name="menOrden" Type="Int32" />
+    <Property Name="menUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="menIcono" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="menEsMenu" Type="Byte" />
+    <Property Name="menActivo" Type="Byte" />
+    <Property Name="usuIdCreacion" Type="Int32" />
+    <Property Name="usuIdUltimaModificacion" Type="Int32" />
+    <Property Name="menFechaHoraCreacion" Type="DateTime" Precision="3" />
+    <Property Name="menFechaHoraUltimaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="NovedadInasistencia">
+    <Key>
+      <PropertyRef Name="ninId" />
+    </Key>
+    <Property Name="ninId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itiId" Type="Int32" />
+    <Property Name="acaId" Type="Int32" />
+    <Property Name="liqId" Type="Int32" />
+    <Property Name="ninFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="ninCantidad" Type="Int32" />
+    <Property Name="ninFechaFin" Type="DateTime" Precision="3" />
+    <Property Name="ninActivo" Type="Byte" />
+  </EntityType>
+  <EntityType Name="NuevoAge">
+    <Key>
+      <PropertyRef Name="NuevoAgeId" />
+    </Key>
+    <Property Name="PlantaTipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="NroCOntrol" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="LugarPago" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Escuela" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Escalafon" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Agru" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="tramo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Apertura" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="HsCat" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Juris" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Prog" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SubP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Actividad" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Cuil" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDOc" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FechaIngreso" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Anios" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Meses" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DiasMultaAntig" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AniosAntig" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Ad_Prof_Perm_cgo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroCarnet" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="AporteIOSEP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="AporteOsocNac" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Jubilado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="AportePrevisional" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SituRev" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Interinato" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SituRevDoc" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Nopres_RiesgoVida" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FechaBaja" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MesAnioLiq" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DiasTrabajados" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ImponibleANSES" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="Imponible" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="HaberS_aporte" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="HaberC_aporte" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="TotalHaberes" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="TotalDescuentos" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="Liquido" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CantItemsOcupados" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="Columna_47" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NuevoAgeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+</Schema>

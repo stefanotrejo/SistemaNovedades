@@ -1,0 +1,21 @@
+20/11/2020     LISTADO TESTIGO PERSONAL SIN PRESENTISMO      P g.
+
+
+          Nro Control    Planta        Mes        Anio
+          28681982          D          10          20
+          28859983          D          10          20
+
+
+
+
+
+
+         TOTAL DE REGISTROS:         2
+
+
+          Planta Contratada:         0
+
+
+          Planta Permanente:         2
+
+

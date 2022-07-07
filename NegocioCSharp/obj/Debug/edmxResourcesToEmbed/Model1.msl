@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LiquidacionSueldosModelStoreContainer" CdmEntityContainer="LiquidacionSueldosEntities">
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="LiquidacionSueldosModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="menFechaHoraUltimaModificacion" ColumnName="menFechaHoraUltimaModificacion" />
+          <ScalarProperty Name="menFechaHoraCreacion" ColumnName="menFechaHoraCreacion" />
+          <ScalarProperty Name="usuIdUltimaModificacion" ColumnName="usuIdUltimaModificacion" />
+          <ScalarProperty Name="usuIdCreacion" ColumnName="usuIdCreacion" />
+          <ScalarProperty Name="menActivo" ColumnName="menActivo" />
+          <ScalarProperty Name="menEsMenu" ColumnName="menEsMenu" />
+          <ScalarProperty Name="menIcono" ColumnName="menIcono" />
+          <ScalarProperty Name="menUrl" ColumnName="menUrl" />
+          <ScalarProperty Name="menOrden" ColumnName="menOrden" />
+          <ScalarProperty Name="menIdPadre" ColumnName="menIdPadre" />
+          <ScalarProperty Name="menNombre" ColumnName="menNombre" />
+          <ScalarProperty Name="menId" ColumnName="menId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NovedadInasistencia">
+      <EntityTypeMapping TypeName="LiquidacionSueldosModel.NovedadInasistencia">
+        <MappingFragment StoreEntitySet="NovedadInasistencia">
+          <ScalarProperty Name="ninActivo" ColumnName="ninActivo" />
+          <ScalarProperty Name="ninFechaFin" ColumnName="ninFechaFin" />
+          <ScalarProperty Name="ninCantidad" ColumnName="ninCantidad" />
+          <ScalarProperty Name="ninFechaInicio" ColumnName="ninFechaInicio" />
+          <ScalarProperty Name="liqId" ColumnName="liqId" />
+          <ScalarProperty Name="acaId" ColumnName="acaId" />
+          <ScalarProperty Name="itiId" ColumnName="itiId" />
+          <ScalarProperty Name="ninId" ColumnName="ninId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NuevoAge">
+      <EntityTypeMapping TypeName="LiquidacionSueldosModel.NuevoAge">
+        <MappingFragment StoreEntitySet="NuevoAge">
+          <ScalarProperty Name="NuevoAgeId" ColumnName="NuevoAgeId" />
+          <ScalarProperty Name="Columna_47" ColumnName="Columna 47" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="CantItemsOcupados" ColumnName="CantItemsOcupados" />
+          <ScalarProperty Name="Liquido" ColumnName="Liquido" />
+          <ScalarProperty Name="TotalDescuentos" ColumnName="TotalDescuentos" />
+          <ScalarProperty Name="TotalHaberes" ColumnName="TotalHaberes" />
+          <ScalarProperty Name="HaberC_aporte" ColumnName="HaberC/aporte" />
+          <ScalarProperty Name="HaberS_aporte" ColumnName="HaberS/aporte" />
+          <ScalarProperty Name="Imponible" ColumnName="Imponible" />
+          <ScalarProperty Name="ImponibleANSES" ColumnName="ImponibleANSES" />
+          <ScalarProperty Name="DiasTrabajados" ColumnName="DiasTrabajados" />
+          <ScalarProperty Name="MesAnioLiq" ColumnName="MesAnioLiq" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="Nopres_RiesgoVida" ColumnName="Nopres/RiesgoVida" />
+          <ScalarProperty Name="SituRevDoc" ColumnName="SituRevDoc" />
+          <ScalarProperty Name="Interinato" ColumnName="Interinato" />
+          <ScalarProperty Name="SituRev" ColumnName="SituRev" />
+          <ScalarProperty Name="AportePrevisional" ColumnName="AportePrevisional" />
+          <ScalarProperty Name="Jubilado" ColumnName="Jubilado" />
+          <ScalarProperty Name="AporteOsocNac" ColumnName="AporteOsocNac" />
+          <ScalarProperty Name="AporteIOSEP" ColumnName="AporteIOSEP" />
+          <ScalarProperty Name="NumeroCarnet" ColumnName="NumeroCarnet" />
+          <ScalarProperty Name="Ad_Prof_Perm_cgo" ColumnName="Ad.Prof/Perm.cgo" />
+          <ScalarProperty Name="AniosAntig" ColumnName="AniosAntig" />
+          <ScalarProperty Name="DiasMultaAntig" ColumnName="DiasMultaAntig" />
+          <ScalarProperty Name="Meses" ColumnName="Meses" />
+          <ScalarProperty Name="Anios" ColumnName="Anios" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="TipoDOc" ColumnName="TipoDOc" />
+          <ScalarProperty Name="Cuil" ColumnName="Cuil" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Actividad" ColumnName="Actividad" />
+          <ScalarProperty Name="SubP" ColumnName="SubP" />
+          <ScalarProperty Name="Prog" ColumnName="Prog" />
+          <ScalarProperty Name="Juris" ColumnName="Juris" />
+          <ScalarProperty Name="HsCat" ColumnName="HsCat" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Apertura" ColumnName="Apertura" />
+          <ScalarProperty Name="tramo" ColumnName="tramo" />
+          <ScalarProperty Name="Agru" ColumnName="Agru" />
+          <ScalarProperty Name="Escalafon" ColumnName="Escalafon" />
+          <ScalarProperty Name="Escuela" ColumnName="Escuela" />
+          <ScalarProperty Name="LugarPago" ColumnName="LugarPago" />
+          <ScalarProperty Name="NroCOntrol" ColumnName="NroCOntrol" />
+          <ScalarProperty Name="PlantaTipo" ColumnName="PlantaTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+20/11/2020     LISTADO TESTIGO PERSONAL SIN PRESENTISMO      P g.
+
+
+          Nro Control    Planta        Mes        Anio
+          55003752          P          10          20
+          55005623          C          10          20
+          55003702          P          10          20
+
+
+
+
+
+
+         TOTAL DE REGISTROS:         3
+
+
+          Planta Contratada:         1
+
+
+          Planta Permanente:         2
+
+
