@@ -71,6 +71,22 @@
                                 </div>
                                 <%-- SEGUNDO GRUPO --%>
                             </div>
+                            
+                            <div class="form-group">
+                                <%--3-A--%>
+                                <label class="control-label col-md-1">
+                                    Sit. Revista
+                                </label>
+                                <div class="col-md-2">
+                                    <asp:TextBox ID="txtAgeSituRev" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>                            
+                                 <%--3-C--%>
+                                <asp:Label runat="server" ID="Label2" Font-Bold="true" class="control-label col-md-2">Bloqueo</asp:Label>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtAgeBloqueo" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>
+                                <%-- TERCER GRUPO --%>
+                            </div>
                     </div>
                     <!-- <br />
                     <div class="form-group">
@@ -188,23 +204,8 @@
                                                     <asp:HyperLink ForeColor="Black" ID="usuActualiza" runat="server"
                                                         Text='<%# Eval("usuActualiza") %>' />
                                                 </ItemTemplate>
-                                            </asp:TemplateField>
-
-                                            <asp:TemplateField HeaderText="Modificar">
-                                                <ItemTemplate>
-                                                    <asp:HyperLink
-                                                        ForeColor="White" Font-Size="Small" ID="Activo" runat="server"
-                                                        ToolTip="Modificar o Eliminar el registro seleccionado"
-                                                        class="btn btn-w-m btn-danger"
-                                                        NavigateUrl='<%# "NovedadesModificar.aspx?Id=" + 
-                                                            DataBinder.Eval(Container.DataItem,"ninId").ToString()
-                                                              +"&agru=" + Session["agrupamiento"] 
-                                                              + "&fechaLiquidacion=" + Session["fechaLiquidacion"] %>'>                                                        
-                                                         <i class="fa fa-pencil"></i>                                                        
-                                                        Modificar
-                                                    </asp:HyperLink>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
+                                            </asp:TemplateField>                                                                                       
+                                            <asp:ButtonField CommandName="Modificar" HeaderText="" Text="Modificar" />
                                         </Columns>
                                         <FooterStyle HorizontalAlign="Left" />
                                         <HeaderStyle HorizontalAlign="Left" />

@@ -20,28 +20,28 @@
                     <hr class="hr-line-dashed" />
 
                     <div class="form-group">
-                        <label class="control-label col-md-2">Mes</label><div class="col-md-6">
+                        <label class="control-label col-md-2">Mes de Archivo de Entrada</label><div class="col-md-6">
                             <asp:DropDownList ID="comboMesLiquidacion" runat="server" class="form-control" data-placeholder="[Nuevo...]"
-                                Enabled="true" AutoPostBack="false" Width="140px">
-                                <asp:ListItem Value="1">Enero</asp:ListItem>
-                                <asp:ListItem Value="2">Febrero</asp:ListItem>
-                                <asp:ListItem Value="3">Marzo</asp:ListItem>
-                                <asp:ListItem Value="4">Abril</asp:ListItem>
-                                <asp:ListItem Value="5">Mayo</asp:ListItem>
-                                <asp:ListItem Value="6">Junio</asp:ListItem>
-                                <asp:ListItem Value="7">Julio</asp:ListItem>
-                                <asp:ListItem Value="8">Agosto</asp:ListItem>
-                                <asp:ListItem Value="9">Septiembre</asp:ListItem>
-                                <asp:ListItem Value="10">Octubre</asp:ListItem>
-                                <asp:ListItem Value="11">Noviembre</asp:ListItem>
-                                <asp:ListItem Value="12">Diciembre</asp:ListItem>
+                                Enabled="true" AutoPostBack="true" Width="140px" OnSelectedIndexChanged="comboMesLiquidacion_SelectedIndexChanged">
+                                <asp:ListItem Value="Febrero">Enero</asp:ListItem>
+                                <asp:ListItem Value="Marzo">Febrero</asp:ListItem>
+                                <asp:ListItem Value="Abril">Marzo</asp:ListItem>
+                                <asp:ListItem Value="Mayo">Abril</asp:ListItem>
+                                <asp:ListItem Value="Junio">Mayo</asp:ListItem>
+                                <asp:ListItem Value="Julio">Junio</asp:ListItem>
+                                <asp:ListItem Value="Agosto">Julio</asp:ListItem>
+                                <asp:ListItem Value="Septiembre">Agosto</asp:ListItem>
+                                <asp:ListItem Value="Octubre">Septiembre</asp:ListItem>
+                                <asp:ListItem Value="Noviembre">Octubre</asp:ListItem>
+                                <asp:ListItem Value="Diciembre">Noviembre</asp:ListItem>
+                                <asp:ListItem Value="Enero">Diciembre</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-2">Año</label><div class="col-md-6">
-                            <asp:TextBox ID="txtAnio" type="text" class="form-control" runat="server" Width="70px" required></asp:TextBox>
+                        <label class="control-label col-md-2">Año de Archivo de Entrada</label><div class="col-md-6">
+                            <asp:TextBox ID="txtAnio" AutoPostBack="true" type="text" class="form-control" runat="server" Width="70px" required OnTextChanged="txtAnio_TextChanged"></asp:TextBox>
                         </div>
                     </div>
 
@@ -50,13 +50,18 @@
                         <div class="col-md-6">
                             <%--<asp:TextBox ID="txtEtapa" type="text" class="form-control" runat="server"></asp:TextBox>--%>
                             <asp:DropDownList ID="comboEtapa" runat="server" class="form-control" data-placeholder="[Nuevo...]"
-                                Enabled="true" AutoPostBack="false" Width="80px">
+                                Enabled="true" AutoPostBack="true" Width="80px" OnSelectedIndexChanged="comboEtapa_SelectedIndexChanged">
                                 <asp:ListItem Value="1">1</asp:ListItem>
-                                <asp:ListItem Value="2">2</asp:ListItem>
-                                <asp:ListItem Value="3">3</asp:ListItem>
+                                <asp:ListItem Value="2">2</asp:ListItem>                                
                             </asp:DropDownList>
                         </div>
                     </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-2">Estado</label><div class="col-md-6">
+                            <asp:TextBox ID="txtEstado" type="text" class="form-control" runat="server" Width="70px" required></asp:TextBox>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="control-label col-md-2">Descripcion</label>
                         <div class="col-md-6">
@@ -69,6 +74,14 @@
                         <div class="col-md-6">
                             <asp:TextBox ID="txtFechaInicio" type="date" class="form-control m-b" runat="server"
                                 AutoPostBack="false" placeholder="fecha"></asp:TextBox>
+                        </div>
+                    </div>
+
+                        <div class="form-group">
+                        <label class="control-label col-md-2">Fecha Cierre:</label>
+                        <div class="col-md-6">
+                            <asp:TextBox ID="txtFechaCierre" type="date" class="form-control m-b" runat="server"
+                                AutoPostBack="false" placeholder="Fecha de Cierre"></asp:TextBox>
                         </div>
                     </div>
                     <hr class="hr-line-dashed" />

@@ -875,7 +875,10 @@ namespace LiquidacionSueldos.Negocio
                     {
                         oAgente.Fonid = Convert.ToDecimal(Fila.Rows[0]["Fonid"]);
                     }
-
+                    if (this.Fila.Rows[0]["Bloqueo"].ToString().Trim().Length > 0)
+                    {
+                        oAgente.Bloqueo = Convert.ToString(this.Fila.Rows[0]["Bloqueo"]);
+                    }
 
                 }
                 return oAgente;

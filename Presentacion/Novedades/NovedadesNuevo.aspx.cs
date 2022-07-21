@@ -18,7 +18,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     LiquidacionSueldos.Negocio.NovedadInasistencia objetoNovedad = new LiquidacionSueldos.Negocio.NovedadInasistencia();
     LiquidacionSueldos.Negocio.Liquidacion objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
     DataTable dt = new DataTable();
-    string txtAgeSituRev, txtAgeBloqueo;
+    //string txtAgeSituRev, txtAgeBloqueo;
 
     //  Variables Globales 
 
@@ -233,75 +233,48 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     {
         try
         {
-            lblMensajeError.Text = "";
-            string resultadoOperacion = Request.QueryString["operacion"];
-
-            if (Request.QueryString["operacion"] != null)
+            this.lblMensajeError.Text = "";
+            string item = base.Request.QueryString["operacion"];
+            if (!this.Page.IsPostBack)
             {
-                switch (resultadoOperacion)
-                {
-                    // Novedad Agregada
-                    case "1":
-                        lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se registró correctamente");
-                        break;
-
-                    // Novedad Actualizada
-                    case "2":
-                        lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se actualizó correctamente");
-                        break;
-
-                    // Novedad Eliminada
-                    case "3":
-                        lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se eliminó correctamente");
-                        break;
-                }
-            }
-
-            // Primera carga de Pagina - NO ES POSTBACK
-            if (!Page.IsPostBack)
-            {
-                txtDiasMin.Text = "";
-                //this.Master.TituloDelFormulario = Globales.TituloDelFormulario;
+                this.mostrarMensaje();
+                this.txtDiasMin.Text = "";
                 this.Master.TituloDelFormulario = "Carga de Novedades";
-                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
-
-                if ((Request.QueryString["Id"] != null) && (Request.QueryString["Id"] != ""))
+                if (this.Session["_Autenticado"] == null)
                 {
-                    Session["idGlobal"] = Convert.ToInt32(Request.QueryString["Id"]);
-                    Session["periodo"] = Request.QueryString["periodo"];
-                    Session["fechaLiquidacion"] = Convert.ToDateTime("30" + "/" + Session["periodo"].ToString().ToString().Substring(0, 2) + "/" + "20" + Session["periodo"].ToString().Substring(3, 2));
-                    Session["textBox"] = Request.QueryString["textBox"];
-                    Session["pageIndex"] = Convert.ToInt32(Request.QueryString["pageIndex"]);
-                    Session["agrupamiento"] = Convert.ToString(Request.QueryString["agrupamiento"]);
-                    Session["usuId"] = int.Parse(Session["_usuId"].ToString());
-                    objetoLiquidacion = objetoLiquidacion.ObtenerLiquidacionAbierta();
-                    Session["liqId"] = objetoLiquidacion.liqId;
-                    Session["Resultado"] = 0;
-
-                    if (Convert.ToInt32(Session["idGlobal"]) != 0)
-                    {
-                        CargarDatosAgente(Convert.ToInt32(Session["idGlobal"]), Convert.ToInt32(Session["liqId"].ToString()));
-                        Cargar_ComboConceptos();
-                        CargarGrillaNovedades(Grilla.PageIndex);
-                        txtFecha.Text = DateTime.Today.ToString("yyyy-MM-dd");
-                    }
+                    base.Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+                }
+                if (base.Request.QueryString["Id"] == null || !(base.Request.QueryString["Id"] != ""))
+                {
+                    this.Session["Resultado"] = "";
+                    base.Response.Redirect("NovedadesConsulta.aspx", true);
                 }
                 else
                 {
-                    Session["Resultado"] = "";
-                    Response.Redirect("NovedadesConsulta.aspx", true);
+                    this.Session["idGlobal"] = Convert.ToInt32(base.Request.QueryString["Id"]);
+                    this.Session["periodo"] = base.Request.QueryString["periodo"];
+                    this.Session["fechaLiquidacion"] = Convert.ToDateTime(string.Concat("28/", this.Session["periodo"].ToString().Substring(0, 2), "/20", this.Session["periodo"].ToString().Substring(3, 2)));
+                    this.Session["textBox"] = base.Request.QueryString["textBox"];
+                    this.Session["pageIndex"] = Convert.ToInt32(base.Request.QueryString["pageIndex"]);
+                    this.Session["agrupamiento"] = Convert.ToString(base.Request.QueryString["agrupamiento"]);
+                    this.Session["usuId"] = int.Parse(this.Session["_usuId"].ToString());
+                    this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
+                    this.Session["liqId"] = this.objetoLiquidacion.liqId;
+                    this.Session["Resultado"] = 0;
+                    this.Session["radioSeleccionado"] = base.Request.QueryString["radioSeleccionado"];
+                    if (Convert.ToInt32(this.Session["idGlobal"]) != 0)
+                    {
+                        this.CargarDatosAgente(Convert.ToInt32(this.Session["idGlobal"]), Convert.ToInt32(this.Session["liqId"].ToString()));
+                        this.Cargar_ComboConceptos();
+                        this.CargarGrillaNovedades(this.Grilla.PageIndex);
+                        this.txtFecha.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                    }
                 }
             }
-            // CUANDO ES POSTBACK
-            else
-            {
-
-            }
-
         }
-        catch (Exception oError)
+        catch (Exception exception)
         {
-            Session["Resultado"] = "";
+            this.Session["Resultado"] = "";
         }
     }
 
@@ -357,10 +330,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         bool flag = false;
         int num = 1;
         this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
-        if ((this.txtAgeSituRev == "R" || this.txtAgeSituRev == "Cargo retenido") && Convert.ToInt32(this.ComboConceptos.SelectedValue) != 16)
+        if ((this.txtAgeSituRev.Text == "R" || this.txtAgeSituRev.Text == "Cargo retenido") && Convert.ToInt32(this.ComboConceptos.SelectedValue) != 16)
         {
             NovedadInasistencia novedadInasistencium = new NovedadInasistencia();
-          //  num = novedadInasistencium.ValidarBajaCargoRetenido(Convert.ToInt32(this.Session["idGlobal"]), this.objetoLiquidacion.liqId);
+            num = novedadInasistencium.ValidarBajaCargoRetenido(Convert.ToInt32(this.Session["idGlobal"]), this.objetoLiquidacion.liqId);
         }
         if (num != 1)
         {
@@ -561,175 +534,34 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void CargarDatosAgente(int Id, int liqId)
     {
-        ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
-        ocnAgente = ocnAgente.ObtenerAgentePorId(Id);
 
-        this.txtAgeApellidoNombre.Text = ocnAgente.Nombre;
-        this.txtAgeCuit.Text = ocnAgente.Cuil;
-        String FechaNac = "";
-        FechaNac = ocnAgente.FechaNac.Substring(0, 2) + "/" + ocnAgente.FechaNac.Substring(2, 2) + "/" + ocnAgente.FechaNac.Substring(4, 2);
-        this.txtAgeLugarPago.Text = ocnAgente.LugarPago;
-        this.txtAgeEscuela.Text = ocnAgente.Escuela;
-        this.txtAgePlanta.Text = ocnAgente.PlantaTipo;
-        this.txtAgeNroControl.Text = ocnAgente.NroCOntrol;
-        this.txtAgeSituRev = this.ocnAgente.SituRev;
-        this.txtAgeBloqueo = this.ocnAgente.Bloqueo;
-
-
-        //SI ES DOCENTE
-        if ((ocnAgente.Agru == "06") && (ocnAgente.tramo == "0"))
+        this.ocnAgente = new NuevoAge1();
+        this.ocnAgente = this.ocnAgente.ObtenerAgentePorId(Id);
+        this.txtAgeApellidoNombre.Text = this.ocnAgente.Nombre;
+        this.txtAgeCuit.Text = this.ocnAgente.Cuil;
+        string[] strArrays = new string[] { this.ocnAgente.FechaNac.Substring(0, 2), "/", this.ocnAgente.FechaNac.Substring(2, 2), "/", this.ocnAgente.FechaNac.Substring(4, 2) };
+        string.Concat(strArrays);
+        this.txtAgeLugarPago.Text = this.ocnAgente.LugarPago;
+        this.txtAgeEscuela.Text = this.ocnAgente.Escuela;
+        this.txtAgePlanta.Text = this.ocnAgente.PlantaTipo;
+        this.txtAgeNroControl.Text = this.ocnAgente.NroCOntrol;
+        this.txtAgeSituRev.Text = this.ocnAgente.SituRev;
+        this.txtAgeBloqueo.Text = this.ocnAgente.Bloqueo;
+        if (this.ocnAgente.Agru == "06" && this.ocnAgente.tramo == "0" && !(this.ocnAgente.Apertura == "132") && !(this.ocnAgente.Apertura == "133") && !(this.ocnAgente.Apertura == "660"))
         {
-            if ((ocnAgente.Apertura == "132") || (ocnAgente.Apertura == "133") || (ocnAgente.Apertura == "660") || (ocnAgente.Apertura == "661"))
-            {   
-                //this.txtAgeCargo.Text = ocnAgente.Cargo + " - " + ocnAgente.HsCat;
-            }
-            else
-            {
-                //this.txtAgeCargo.Text = ocnAgente.Cargo;
-            }
         }
-        else
+        if (this.ocnAgente.Anios != "")
         {
-            //this.txtAgeCargo.Text = ocnAgente.Cargo;
         }
-
-        if (ocnAgente.Anios != "")
+        string[] strArrays1 = new string[] { this.ocnAgente.FechaIngreso.Substring(0, 2), "/", this.ocnAgente.FechaIngreso.Substring(2, 2), "/", this.ocnAgente.FechaIngreso.Substring(4, 2) };
+        string.Concat(strArrays1);
+        switch (Convert.ToInt32(this.Session["_esAdministrador"]))
         {
-            if (ocnAgente.Anios == "*N")
-            {
-                //txtAntiguedadReconocida.Text = ocnAgente.Anios + ocnAgente.Meses;
-            }
-            else
-            {
-                //this.txtAntiguedadReconocida.Text = ocnAgente.Anios + " Años" + " - " + ocnAgente.Meses + " Meses";
-            }
+            default:
+                {
+                    return;
+                }
         }
-        else
-        {
-            //txtAntiguedadReconocida.Text = ocnAgente.Anios;
-        }
-
-        String FechaDeIngreso = "";
-        FechaDeIngreso = ocnAgente.FechaIngreso.Substring(0, 2) + "/" + ocnAgente.FechaIngreso.Substring(2, 2) + "/" + ocnAgente.FechaIngreso.Substring(4, 2);
-        //this.txtAgeFechaIngreso.Text = FechaDeIngreso;
-        if (ocnAgente.AniosAntig == "*N")
-        {
-            //txtAgeAntiguedad.Text = ocnAgente.AniosAntig;
-        }
-        else
-        {
-            //this.txtAgeAntiguedad.Text = ocnAgente.AniosAntig + " años";
-        }
-
-        //this.txtAgePeriodo.Text = ocnAgente.MesAnioLiq.Substring(0, 2) + " del " + "20" + ocnAgente.MesAnioLiq.Substring(3, 2);
-        //this.txtAgeDiasTrabajados.Text = ocnAgente.DiasTrabajados;
-        //this.txtAgeSituacionRevista.Text = ocnAgente.SituRev;       
-
-        #region DESACTIVO TODOS LOS CAMPOS 
-        ////CAMPOS DIRECTOR
-        //this.txtAgeHaber.Visible = false;
-        //this.lblHaber.Visible = false;
-        //this.txtAgeSalarioFamiliar.Visible = false;
-        //this.lblSalarioFamiliar.Visible = false;
-        //this.txtAgeLiquido.Visible = false;
-        //this.lblLiquido.Visible = false;
-
-        ////CAMPOS D.G. PERSONAL
-        //this.txtAsistenciaPerfecta.Visible = false;
-        //this.lblAsistenciaPerfecta.Visible = false;
-        //this.txtRiesgoVida.Visible = false;
-        //this.lblRiesgoVida.Visible = false;
-        //this.txtJubRetActivo.Visible = false;
-        //this.lblJurRetActivo.Visible = false;
-        //this.txtDiasNoTrabajados.Visible = false;
-        //this.lblDiasNoTrabajados.Visible = false;
-
-        ////CAMPOS UERT
-        //this.txtAgeDescuentos.Visible = false;
-        //this.lblDescuentos.Visible = false;
-        //this.txtTotalSinCargo.Visible = false;
-        //this.lblTotalSinCargosAlHaber.Visible = false;
-        //this.txtRemuneracionOIT.Visible = false;
-        //this.lblRemuneracionOit.Visible = false;
-
-        //CAMPOS PERSONAL EXTENDIDO        
-        //this.btnConceptos.Visible = false;
-        #endregion 
-
-        #region ACTIVO CAMPOS SEGUN PERFIL
-
-        int perfil = Convert.ToInt32(Session["_esAdministrador"]);
-        switch (perfil)
-        {
-            case 1: //ADMINISTRADOR
-                //btnConceptos.Visible = true;
-                break;
-
-            case 2: //D.G. PERSONAL - GRUPO 7
-                //this.txtAsistenciaPerfecta.Visible = true;
-                //this.lblAsistenciaPerfecta.Visible = true;
-                //this.txtRiesgoVida.Visible = true;
-                //this.lblRiesgoVida.Visible = true;
-                //this.txtJubRetActivo.Visible = true;
-                //this.lblJurRetActivo.Visible = true;
-                //if (Convert.ToInt32(ocnAgente.AsistenciaPerfecta) == 1)
-                //    this.txtAsistenciaPerfecta.Text = "Si";
-                //else
-                //    this.txtAsistenciaPerfecta.Text = "No";
-
-                //if (Convert.ToInt32(ocnAgente.RiesgoDeVida) == 1)
-                //    this.txtRiesgoVida.Text = "Si";
-                //else
-                //    this.txtRiesgoVida.Text = "No";
-
-                //if (Convert.ToInt32(ocnAgente.JubRetActivo) == 1)
-                //    this.txtJubRetActivo.Text = "Si";
-                //else
-                //    this.txtJubRetActivo.Text = "No";
-                //habilitarCamposPersonal();
-                break;
-
-            case 3: //UERT
-                //this.txtAgeDescuentos.Visible = true;
-                //this.lblDescuentos.Visible = true;
-                //this.txtTotalSinCargo.Visible = true;
-                //this.lblTotalSinCargosAlHaber.Visible = true;
-                //this.txtRemuneracionOIT.Visible = true;
-                //this.lblRemuneracionOit.Visible = true;
-                //this.txtDiasNoTrabajados.Visible = true;
-                //this.lblDiasNoTrabajados.Visible = true;
-
-                //this.txtAgeDescuentos.Text = "$" + ocnAgente.TotalDescuentos;
-                //this.txtTotalSinCargo.Text = "$" + ocnAgente.TotalSinCargosAlHaber;
-                //this.txtRemuneracionOIT.Text = "$" + ocnAgente.RemuneracionOit;
-                //if (ocnAgente.DiasNoTrabajados != null)
-                //    this.txtDiasNoTrabajados.Text = ocnAgente.DiasNoTrabajados;
-                //else this.txtDiasNoTrabajados.Text = "0";
-                break;
-
-            case 4: //DIRECTOR
-                //this.txtAgeHaber.Visible = true;
-                //this.lblHaber.Visible = true;
-                //this.txtAgeSalarioFamiliar.Visible = true;
-                //this.lblSalarioFamiliar.Visible = true;
-                //this.txtAgeLiquido.Visible = true;
-                //this.lblLiquido.Visible = true;
-                //this.txtDiasNoTrabajados.Visible = true;
-                //this.lblDiasNoTrabajados.Visible = true;
-                //this.txtAgeHaber.Text = "$" + ocnAgente.TotalHaberes;
-                //this.txtAgeSalarioFamiliar.Text = "$" + ocnAgente.HaberC_aporte;
-                //this.txtAgeLiquido.Text = "$" + ocnAgente.Liquido;
-                //this.txtDiasNoTrabajados.Text = ocnAgente.DiasNoTrabajados;
-                break;
-
-            case 5: //PERSONAL EXTENDIDO
-                //CASO 2 MAS BOTON CONCEPTOS
-                //habilitarCamposPersonal();
-                //btnConceptos.Visible = true;
-                //btnListar.Visible = false;
-                break;
-        }
-        #endregion
     }
 
     private void CargarGrillaNovedades(int PageIndex)
@@ -914,5 +746,32 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             resultado = true;
         }
         return resultado;
+    }
+
+    protected void mostrarMensaje()
+    {
+        if (base.Request.QueryString["operacion"] != null)
+        {
+            string item = base.Request.QueryString["operacion"];
+            string str = item;
+            if (item != null)
+            {
+                if (str == "1")
+                {
+                    this.lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se registró correctamente");
+                    return;
+                }
+                if (str == "2")
+                {
+                    this.lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se actualizó correctamente");
+                    return;
+                }
+                if (str != "3")
+                {
+                    return;
+                }
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeExito("La Novedad se eliminó correctamente");
+            }
+        }
     }
 }

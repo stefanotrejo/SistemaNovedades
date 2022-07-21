@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using LiquidacionSueldos.Datos;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -547,7 +548,26 @@ namespace LiquidacionSueldos
                     throw ex;
                 }
             }
-           
+
+            public int ValidarBajaCargoRetenido(int NuevoAgeId1, int liqId)
+            {
+                int num;
+                try
+                {
+                    Gestor gestor = this.ocdGestor;
+                    object[,] nuevoAgeId1 = new object[2, 2];
+                    nuevoAgeId1[0, 0] = "@NuevoAgeId1";
+                    nuevoAgeId1[0, 1] = NuevoAgeId1;
+                    nuevoAgeId1[1, 0] = "@liqId";
+                    nuevoAgeId1[1, 1] = liqId;
+                    num = gestor.EjecutarNonQueryRetornaId("[NovedadInasistencia.ValidarBajaCargoRetenido]", nuevoAgeId1);
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+                return num;
+            }
 
             #endregion
 

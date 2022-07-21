@@ -358,7 +358,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
     protected void btnImportar_Click_2(object sender, EventArgs e)
     {
         int num;
-        NuevoAge1 nuevoAge1 = new NuevoAge1();
+        NuevoAge1 nuevoAge1     = new NuevoAge1();
         this.lblFechaHoraInicio.Visible = true;
         this.lblFechaHoraInicio.Text = DateTime.Now.ToString();
         StreamReader streamReader = new StreamReader("c:\\test.txt", Encoding.Default, true);
@@ -688,7 +688,6 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             }
         }
     }
-
 
     protected void btnCasoDos_Click(object sender, EventArgs e)
     {
@@ -1286,4 +1285,6 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
     {
 
     }
+
+
 }

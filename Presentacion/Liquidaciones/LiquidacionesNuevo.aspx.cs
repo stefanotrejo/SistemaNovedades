@@ -6,6 +6,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Text;
+using LiquidacionSueldos.Negocio;
 
 // ABM DE LIQUIDACIONES
 
@@ -15,7 +16,8 @@ public partial class PerfilRegistracion : System.Web.UI.Page
     DataTable dt, dt2 = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     //LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-    LiquidacionSueldos.Negocio.Liquidacion objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+    LiquidacionSueldos.Negocio.LiquidacionNovedades objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionNovedades();
+    LiquidacionNovedades objetoLiquidacionAbierta = new LiquidacionNovedades();
 
     #region Variables Globales
     public class GlobalesAgenteConsulta
@@ -189,42 +191,45 @@ public partial class PerfilRegistracion : System.Web.UI.Page
     {
         try
         {
-            //Primera vez que se carga
-            if (!Page.IsPostBack)
+            if (!this.Page.IsPostBack)
             {
                 this.Master.TituloDelFormulario = "Nueva liquidacion";
-                txtAnio.Text = DateTime.Now.Year.ToString();
-                txtFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
-                int Id = 0;
-                if (Request.QueryString["Id"] != null)
+                this.txtAnio.Text = DateTime.Now.Year.ToString();
+                this.generarDescripcion();
+                this.txtFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                int num = 0;
+                if (base.Request.QueryString["Id"] != null)
                 {
-                    Id = Convert.ToInt32(Request.QueryString["Id"]);
-                    if (Id != 0)
+                    num = Convert.ToInt32(base.Request.QueryString["Id"]);
+                    if (num == 0)
+                    {
+                        this.txtEstado.Enabled = false;
+                        this.txtEstado.Text = "A";
+                    }
+                    else
                     {
                         this.Master.TituloDelFormulario = "Modificar liquidacion";
-                        //Cargo datos de la Liquidacion 
-                        objetoLiquidacion = objetoLiquidacion.ObtenerUno(Id);
-                        comboMesLiquidacion.SelectedIndex = Convert.ToInt32(objetoLiquidacion.liqMes) - 1;
-                        txtAnio.Text = objetoLiquidacion.liqAnio;
-                        comboEtapa.SelectedIndex = objetoLiquidacion.liqEtapa - 1;
-                        txtDescripcion.Text = objetoLiquidacion.liqDescripcion;
-
-                        //Bloqueo campos que no se deben modificar
-                        comboMesLiquidacion.Enabled = false;
-                        txtAnio.Enabled = false;
-                        comboEtapa.Enabled = false;
+                        this.objetoLiquidacion = this.objetoLiquidacion.ObtenerUno(num);
+                        this.comboMesLiquidacion.SelectedIndex = Convert.ToInt32(this.objetoLiquidacion.liqMes) - 1;
+                        this.txtAnio.Text = this.objetoLiquidacion.liqAnio;
+                        this.txtEstado.Text = this.objetoLiquidacion.liqEstado;
+                        this.comboEtapa.SelectedIndex = this.objetoLiquidacion.liqEtapa - 1;
+                        this.txtDescripcion.Text = this.objetoLiquidacion.liqDescripcion;
+                        this.comboMesLiquidacion.Enabled = false;
+                        this.txtAnio.Enabled = false;
+                        this.comboEtapa.Enabled = false;
                     }
                 }
+                this.objetoLiquidacionAbierta = new LiquidacionNovedades();
+                this.objetoLiquidacionAbierta = this.objetoLiquidacionAbierta.ObtenerLiquidacionAbierta();
             }
         }
-        catch (Exception oError)
+        catch (Exception exception1)
         {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-Se ha producido el siguiente error:<br/>
-MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-"</div>";
+            Exception exception = exception1;
+            Label label = this.lblMensajeError;
+            object[] message = new object[] { "<div class=\"alert alert-danger alert-dismissable\">\r\n<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n<a class=\"alert-link\" href=\"#\">Error de Sistema</a><br/>\r\nSe ha producido el siguiente error:<br/>\r\nMESSAGE:<br>", exception.Message, "<br><br>EXCEPTION:<br>", exception.InnerException, "<br><br>TRACE:<br>", exception.StackTrace, "<br><br>TARGET:<br>", exception.TargetSite, "</div>" };
+            label.Text = string.Concat(message);
         }
     }
 
@@ -232,53 +237,64 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            if (Request.QueryString["Id"] != null)
+            if (base.Request.QueryString["Id"] != null)
             {
-                if (txtDescripcion.Text != "")
+                this.generarDescripcion();
+                this.objetoLiquidacion.liqId = Convert.ToInt32(base.Request.QueryString["Id"]);
+                this.objetoLiquidacion.liqMes = this.convertirMesAnumeroMenosUno(this.comboMesLiquidacion.SelectedValue);
+                if (this.txtAnio.Text.Length != 4)
                 {
-                    objetoLiquidacion.liqId = Convert.ToInt32(Request.QueryString["Id"]);
-                    objetoLiquidacion.liqMes = comboMesLiquidacion.SelectedValue;
-                    objetoLiquidacion.liqAnio = txtAnio.Text.Substring(2);
-                    objetoLiquidacion.liqEtapa = Convert.ToInt32(comboEtapa.SelectedValue);
-                    objetoLiquidacion.liqDescripcion = txtDescripcion.Text;
-                    objetoLiquidacion.liqFechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
-                    objetoLiquidacion.liqFechaCierre = null;
-                    objetoLiquidacion.liqEstado = "";
-                    objetoLiquidacion.liqActivo = 1;
-
-                    //Si es un registro
-                    if (objetoLiquidacion.liqId == 0)
-                    {
-                        if (objetoLiquidacion.ValidarRepetido(objetoLiquidacion.liqMes, objetoLiquidacion.liqAnio, objetoLiquidacion.liqEtapa) == 0)
-                        {
-                            objetoLiquidacion.Insertar();
-                            lblMensajeError.Text = @"<div class=""alert alert-success alert-dismissable"">
-                        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-                        <a class=""alert-link"" href=""#"">Confirmacion</a><br/>
-                        Los cambios se guardaron correctamente<br>" + "</div>";
-                        }
-                        else
-                            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-                        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>                        
-                        La etapa seleccionada ya existe en esta Liquidacion <br>" + "</div>";
-                    }
+                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text;
                 }
                 else
                 {
-                    lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-                        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>                        
-                        Debe completar todos los campos<br>" + "</div>";
+                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text.Substring(2, 2);
+                }
+                this.objetoLiquidacion.liqEtapa = Convert.ToInt32(this.comboEtapa.SelectedValue);
+                this.objetoLiquidacion.liqDescripcion = this.txtDescripcion.Text;
+                if (this.txtFechaInicio.Text == "")
+                {
+                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
+                }
+                else
+                {
+                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime(this.txtFechaInicio.Text);
+                }
+                if (this.txtFechaCierre.Text == "")
+                {
+                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
+                }
+                else
+                {
+                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.txtFechaCierre.Text));
+                }
+                this.objetoLiquidacion.liqEstado = this.txtEstado.Text;
+                this.objetoLiquidacion.liqActivo = 1;
+                if (this.objetoLiquidacion.liqId != 0)
+                {
+                    this.objetoLiquidacion.Actualizar(this.objetoLiquidacion.liqId, this.objetoLiquidacion.liqDescripcion, this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa, this.objetoLiquidacion.liqEstado, this.objetoLiquidacion.liqFechaInicio, this.objetoLiquidacion.liqFechaCierre, this.objetoLiquidacion.liqActivo);
+                }
+                else if (this.objetoLiquidacion.ValidarRepetido(this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa) != 0)
+                {
+                    this.lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
+                }
+                else
+                {
+                    int num = this.objetoLiquidacion.Insertar();
+                    if (this.objetoLiquidacion.liqEtapa > 1)
+                    {
+                        this.objetoLiquidacion.AbrirEtapa(num);
+                    }
+                    this.lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
                 }
             }
         }
-        catch (Exception oError)
+        catch (Exception exception1)
         {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-Se ha producido el siguiente error:<br/>
-MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-"</div>";
+            Exception exception = exception1;
+            Label label = this.lblMensajeError;
+            object[] message = new object[] { "<div class=\"alert alert-danger alert-dismissable\">\r\n<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n<a class=\"alert-link\" href=\"#\">Error de Sistema</a><br/>\r\nSe ha producido el siguiente error:<br/>\r\nMESSAGE:<br>", exception.Message, "<br><br>EXCEPTION:<br>", exception.InnerException, "<br><br>TRACE:<br>", exception.StackTrace, "<br><br>TARGET:<br>", exception.TargetSite, "</div>" };
+            label.Text = string.Concat(message);
         }
     }
 
@@ -299,4 +315,104 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         }
     }
 
+    protected void comboMesLiquidacion_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        this.generarDescripcion();
+    }
+
+    protected void generarDescripcion()
+    {
+        string str = "";
+        string text = this.comboEtapa.Text;
+        string str1 = text;
+        if (text != null)
+        {
+            if (str1 == "1")
+            {
+                str = "Primera";
+            }
+            else if (str1 == "2")
+            {
+                str = "Segunda";
+            }
+            else if (str1 == "3")
+            {
+                str = "Tercera";
+            }
+        }
+        TextBox textBox = this.txtDescripcion;
+        string[] strArrays = new string[] { str, " Etapa del mes de ", this.comboMesLiquidacion.Text, " del ", this.txtAnio.Text };
+        textBox.Text = string.Concat(strArrays);
+    }
+
+    protected void txtAnio_TextChanged(object sender, EventArgs e)
+    {
+        this.generarDescripcion();
+    }
+
+    protected void comboEtapa_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        this.generarDescripcion();
+    }
+
+    protected string convertirMesAnumeroMenosUno(string mes)
+    {
+        string str = mes;
+        string str1 = str;
+        if (str != null)
+        {
+            switch (str1)
+            {
+                case "Enero":
+                    {
+                        return "12";
+                    }
+                case "Febrero":
+                    {
+                        return "01";
+                    }
+                case "Marzo":
+                    {
+                        return "02";
+                    }
+                case "Abril":
+                    {
+                        return "03";
+                    }
+                case "Mayo":
+                    {
+                        return "04";
+                    }
+                case "Junio":
+                    {
+                        return "05";
+                    }
+                case "Julio":
+                    {
+                        return "06";
+                    }
+                case "Agosto":
+                    {
+                        return "07";
+                    }
+                case "Septiembre":
+                    {
+                        return "08";
+                    }
+                case "Octubre":
+                    {
+                        return "09";
+                    }
+                case "Noviembre":
+                    {
+                        return "10";
+                    }
+                case "Diciembre":
+                    {
+                        return "11";
+                    }
+            }
+        }
+        return "00";
+    }
 }
