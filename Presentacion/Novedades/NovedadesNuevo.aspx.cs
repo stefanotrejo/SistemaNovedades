@@ -535,7 +535,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     protected void CargarDatosAgente(int Id, int liqId)
     {
 
-        this.ocnAgente = new NuevoAge1();
+        //this.ocnAgente = new NuevoAge1();
         this.ocnAgente = this.ocnAgente.ObtenerAgentePorId(Id);
         this.txtAgeApellidoNombre.Text = this.ocnAgente.Nombre;
         this.txtAgeCuit.Text = this.ocnAgente.Cuil;
