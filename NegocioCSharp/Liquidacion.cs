@@ -9,7 +9,7 @@ namespace LiquidacionSueldos
 {
     namespace Negocio
     {
-        public partial class Liquidacion
+        public class Liquidacion
         {
             #region Propiedades
 
