@@ -358,7 +358,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
     protected void btnImportar_Click_2(object sender, EventArgs e)
     {
         int num;
-        NuevoAge1 nuevoAge1     = new NuevoAge1();
+        NuevoAge1 nuevoAge1 = new NuevoAge1();
         this.lblFechaHoraInicio.Visible = true;
         this.lblFechaHoraInicio.Text = DateTime.Now.ToString();
         StreamReader streamReader = new StreamReader("c:\\test.txt", Encoding.Default, true);
@@ -818,13 +818,11 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         }
         archivo2.Close();
 
-
         Label1.Visible = true;
         Label1.ForeColor = System.Drawing.Color.Green;
         Label1.Text = "Importacion realizada correctamente";
         lblFechaHoraFin.Visible = true;
         lblFechaHoraFin.Text = DateTime.Now.ToString();
-
     }
 
     protected void btnExportarAExcel_Click(object sender, EventArgs e)
@@ -962,7 +960,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             if ((extension == ".txt"))
             {
                 // proceder con la importacion
-                string Ruta = '"'+Server.MapPath(FileUpload1.FileName)+'"';
+                string Ruta = '"' + Server.MapPath(FileUpload1.FileName) + '"';
                 LiquidacionSueldos.Negocio.NuevoAge1 ocpAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
                 lblFechaHoraInicio.Visible = true;
                 lblFechaHoraInicio.Text = DateTime.Now.ToString();
@@ -1286,5 +1284,10 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
     }
 
+    protected void btn_generar_arch_educacion_Click(object sender, EventArgs e)
+    {
+        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion arch_extdoc = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
+        arch_extdoc.ObtenerAgentesExtDoc();
+    }
 
 }

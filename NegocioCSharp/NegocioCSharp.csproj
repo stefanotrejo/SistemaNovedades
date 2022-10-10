@@ -60,6 +60,7 @@
     <Compile Include="NovedadConcepto.cs" />
     <Compile Include="Jurisdiccion.cs" />
     <Compile Include="NovedadInasistencia.cs" />
+    <Compile Include="archivo_extdoc_educacion.cs" />
     <Compile Include="PrestacionDineraria.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Error.cs" />

@@ -90,7 +90,11 @@
         <br />
         <asp:Button ID="btnExportarDbf" runat="server" Text="Exportar DBF" OnClick="btnExportarDbf_Click"/>
         <br />
+        <br />
+        <asp:Button ID="btn_generar_arch_educacion" runat="server" Text="txt Educacion" OnClick="btn_generar_arch_educacion_Click"/>
+
        <br />
+        <br />
         <label>Version 02/09/20 - Se agrega Legajo</label>
 
     </form>

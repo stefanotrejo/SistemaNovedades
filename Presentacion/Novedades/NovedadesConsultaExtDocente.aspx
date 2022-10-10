@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="NovedadesConsultaDocente.aspx.cs" Inherits="UsuarioRegistracion" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="NovedadesConsultaExtDocente.aspx.cs" Inherits="UsuarioRegistracion" %>
 
 <%@ Register Src="../Controles/Particulares/cuFecha.ascx" TagName="cuFecha" TagPrefix="tpDatePicker" %>
 <%@ MasterType TypeName="PaginasBasicas_Principal" %>

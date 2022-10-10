@@ -1800,6 +1800,7 @@ namespace LiquidacionSueldos.Negocio
         }
 
         // FIN - CONSULTA DE NOVEDADES
+  
 
         #region Metodos viejos sin usar
 
