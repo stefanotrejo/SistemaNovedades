@@ -65,7 +65,7 @@ namespace LiquidacionSueldos.Negocio
                 Fila = new DataTable();
                 Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Educacion]", new object[,] {
                 });
-                CrearArchivo(Fila);
+                Crear_Archivo_Educacion(Fila);
 
                 Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ganancias]", new object[,] {
                 }); 
@@ -235,7 +235,7 @@ namespace LiquidacionSueldos.Negocio
             }
         }
 
-        protected void CrearArchivo(DataTable dt)
+        protected void Crear_Archivo_Educacion(DataTable dt)
         {
             try
             {
@@ -372,7 +372,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C01"].ToString().Trim()
-                                                + row["I01"].ToString().Trim();
+                                                + row["I01"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C02"].ToString().Trim().Length > 0
@@ -381,7 +382,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C02"].ToString().Trim()
-                                                + row["I02"].ToString().Trim();
+                                                + row["I02"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim(); 
+
                         }
 
                         if (row["C03"].ToString().Trim().Length > 0
@@ -390,7 +393,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C03"].ToString().Trim()
-                                                + row["I03"].ToString().Trim();
+                                                + row["I03"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C04"].ToString().Trim().Length > 0
@@ -399,7 +403,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C04"].ToString().Trim()
-                                                + row["I04"].ToString().Trim();
+                                                + row["I04"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C05"].ToString().Trim().Length > 0
@@ -408,7 +413,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C05"].ToString().Trim()
-                                                + row["I05"].ToString().Trim();
+                                                + row["I05"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C06"].ToString().Trim().Length > 0
@@ -417,7 +423,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C06"].ToString().Trim()
-                                                + row["I06"].ToString().Trim();
+                                                + row["I06"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C07"].ToString().Trim().Length > 0
@@ -426,7 +433,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C07"].ToString().Trim()
-                                                + row["I07"].ToString().Trim();
+                                                + row["I07"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         if (row["C08"].ToString().Trim().Length > 0
@@ -435,7 +443,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             cantidad_items++;
                             conceptos_importes = conceptos_importes
                                                 + row["C08"].ToString().Trim()
-                                                + row["I08"].ToString().Trim();
+                                                + row["I08"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 
                         string cantidad_items_string = cantidad_items.ToString();
