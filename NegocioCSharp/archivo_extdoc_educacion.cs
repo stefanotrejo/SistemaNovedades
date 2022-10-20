@@ -240,7 +240,7 @@ namespace LiquidacionSueldos.Negocio
             try
             {
                 String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-                string Ruta = "C:/Users/stefano/Desktop/extdoc_cge";
+                string Ruta = "C:/temp/extdoc_cge";
                 if (System.IO.File.Exists(Ruta + fecha + ".txt"))
                 {
                     File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
@@ -352,7 +352,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             try
             {
                 String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-                string Ruta = "C:/Users/stefano/Desktop/ganancias_extdoc";
+                string Ruta = "C:/temp/ganancias_extdoc";
                 if (System.IO.File.Exists(Ruta + fecha + ".txt"))
                 {
                     File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
