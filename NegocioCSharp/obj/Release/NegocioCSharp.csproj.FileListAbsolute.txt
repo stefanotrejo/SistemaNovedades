@@ -102,3 +102,16 @@ F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\bin\Release\EntityF
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Release\NegocioCSharp.csprojResolveAssemblyReference.cache
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Release\LiquidacionSueldos.Negocio.dll
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\NegocioCSharp\obj\Release\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Negocio.dll.config
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Negocio.pdb
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\EntityFramework.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\EntityFramework.xml
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Release\NegocioCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Release\LiquidacionSueldos.Negocio.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Release\LiquidacionSueldos.Negocio.pdb

@@ -7,7 +7,7 @@ select * from DetallePagoEventual
 aguantame
 
 declare @dni decimal(11)
-set @dni='38365672'
+set @dni='29486809'
 
 SELECT 
 	* 

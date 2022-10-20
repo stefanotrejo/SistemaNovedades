@@ -69,3 +69,12 @@ F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Rele
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.dll
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.xml
 F:\GitHub\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Release\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Release\LiquidacionSueldos.Datos.pdb
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Release\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\Datos.vbprojResolveAssemblyReference.cache
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\Resources.resources
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\Datos.vbproj.GenerateResource.Cache
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.dll
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.xml
+C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Release\LiquidacionSueldos.Datos.pdb

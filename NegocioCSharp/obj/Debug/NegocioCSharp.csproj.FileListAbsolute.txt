@@ -181,16 +181,3 @@ C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSha
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll.config
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Negocio.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\EntityFramework.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\LiquidacionSueldos.Datos.xml
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\EntityFramework.xml
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Debug\NegocioCSharp.csprojResolveAssemblyReference.cache
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\NegocioCSharp\obj\Debug\LiquidacionSueldos.Negocio.pdb

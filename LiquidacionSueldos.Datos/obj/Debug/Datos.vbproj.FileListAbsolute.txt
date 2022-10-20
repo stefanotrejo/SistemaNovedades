@@ -91,12 +91,3 @@ C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPer
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
 C:\Users\Stefano\Desktop\ConsultaPersonalUertyPagosEventuales_5.1.21\ConsultaPersonalUertyPagosEventuales\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
