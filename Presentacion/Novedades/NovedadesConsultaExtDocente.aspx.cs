@@ -14,7 +14,7 @@ public static class Globals
     public const Int32 BUFFER_SIZE = 10; // Unmodifiable
     public static String FILE_NAME = "Output.txt"; // Modifiable
     public static readonly String CODE_PREFIX = "US-"; // Unmodifiable
-    public static readonly String TituloDelFormulario = "Consulta de Novedades"; // Unmodifiable        
+    public static readonly String TituloDelFormulario = "Carga de Novedades Docentes"; // Unmodifiable        
 }
 
 //                       CONSULTA DE NOVEDADES: SE UTILIZARÁ PARA CONSULTAR NOVEDADES HISTORICAS                         // 
