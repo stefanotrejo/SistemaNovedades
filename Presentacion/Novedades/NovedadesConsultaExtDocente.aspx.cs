@@ -34,9 +34,11 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     DataTable dt, dt2, listaJurisdiccion = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-    LiquidacionSueldos.Negocio.Liquidacion objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+    LiquidacionSueldos.Negocio.LiquidacionExtensionDocente oLiquidacionExtDoc = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
     LiquidacionSueldos.Negocio.Jurisdiccion oJurisdiccion = new LiquidacionSueldos.Negocio.Jurisdiccion();
     LiquidacionSueldos.Negocio.NovedadInasistencia oNovedadInasistencia = new LiquidacionSueldos.Negocio.NovedadInasistencia();
+    LiquidacionSueldos.Negocio.NovedadExtensionDocente oNovedadExtDoc = new LiquidacionSueldos.Negocio.NovedadExtensionDocente();
+
     int mesActual, anioActualInt;
     String mesActualString, anioActualString;
     Boolean agregarAnio;
@@ -131,110 +133,53 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
         this.Master.TituloDelFormulario = Globals.TituloDelFormulario;
         try
         {
-            #region PERFILES
-            int perfil = Convert.ToInt32(Session["_esAdministrador"]);
-            switch (perfil)
-            {
-                //ADMINISTRADOR
-                case 1:
-                    break;
-                //D.G. PERSONAL - GRUPO 7                       
-                case 2:
-                    break;
-                //UERT            
-                case 3:
-                    break;
-                //DIRECTOR
-                case 4:
-                    break;
-                //PERSONAL EXTENDIDO
-                //CASO 2 MAS BOTON CONCEPTOS
-                case 5:
-                    break;
-            }
-            #endregion
-
             /*En Session: guardo los valores actuales seleccionados por el usuario para recargarlos cuando vuelva 
             * desde otra pagina (POSTBACK). Es vacio cuando carga por primera vez la pagina*/
 
-            // Combos                        
-            if (Convert.ToInt32(Session["_esAdministrador"]) == 2 || Convert.ToInt32(Session["_esAdministrador"]) == 5)
-            {
-                if (selectJurisdiccion.DataTextField == "")
-                {
-                    listaJurisdiccion = oJurisdiccion.ObtenerTodosSelect();
-                    selectJurisdiccion.DataSource = listaJurisdiccion;
-                    selectJurisdiccion.DataTextField = "jurNombre";
-                    selectJurisdiccion.DataValueField = "jurId";
-                    selectJurisdiccion.DataBind();
-                    selectJurisdiccion.Enabled = false;
-                }
-            }
-            else
-            {
-                selectJurisdiccion.Visible = false;
-                checkObtenerTodos.Visible = false;
-                lblJurisdiccion.Visible = false;
-            }
-
-            #region Verificar Liquidaciones Abiertas o Cerradas para Personal
+            #region Verificar Liquidaciones Abiertas para Docentes
             // Liquidaciones
-            objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
-            objetoLiquidacion = objetoLiquidacion.ObtenerLiquidacionAbierta();
+            oLiquidacionExtDoc = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
+            oLiquidacionExtDoc = oLiquidacionExtDoc.ObtenerLiquidacionAbierta();
 
             lblLiquidacion.Text = "";
             lblEtapa.Text = "";
 
             btnGenerarArchivo.Visible = false;
 
-            // Si no encuentró Liquidaciones abiertas -> busca Liquidaciones abierta para Personal (liqEstado = 'P')
-            if (objetoLiquidacion == null)
+            // Si no hay liquidaciones abiertas
+            if (oLiquidacionExtDoc == null)
             {
-                objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
-                objetoLiquidacion = objetoLiquidacion.ObtenerLiquidacionAbiertaPersonal();
-
                 lblLiquidacion.Text = "No hay liquidaciones abiertas";
                 lblEtapa.Visible = false;
                 lblEtapa.Visible = false;
-
                 btnConsultar1.Enabled = false;
-                // Dejo activado para que puedan ver las novedades que enviaron en la liquidacion que ya cerró
-                //btnListar.Visible = false;
-                //btnListar.Enabled = false;                
             }
             else
             {
                 btnDescargarArchivos.Visible = false;
-                lblLiquidacion.Text = "Liquidacion (inicio de mes): " + objetoLiquidacion.mesAnioLiq;
-                mesActual = Convert.ToInt32(objetoLiquidacion.mesAnioLiq.Substring(0, 2));
+                lblLiquidacion.Text = "Liquidacion (inicio de mes): " + oLiquidacionExtDoc.mesanio;
+                mesActual = Convert.ToInt32(oLiquidacionExtDoc.mesanio.Substring(0, 2));
                 mesActualString = FuncionesUtiles.convertirNumeroAMesMasUno(mesActual);
-                //anioActualString = FuncionesUtiles.agregarAnio(mesActual);                                
+
+                anioActualString = DateTime.Now.ToString().Substring(6, 4);
                 if (FuncionesUtiles.agregarAnio(mesActual))
                 {
-                    anioActualInt = Int32.Parse(objetoLiquidacion.liqAnio.ToString()) + 1;
+                    anioActualInt = Int32.Parse(oLiquidacionExtDoc.anio.ToString()) + 1;
+                    anioActualString = DateTime.Now.ToString().Substring(6, 2) + anioActualInt.ToString();
                 }
-                anioActualString = DateTime.Now.ToString().Substring(6, 2) + anioActualInt.ToString();
 
                 string separador = " ";
 
-                lblEtapa.Text = "Etapa: " + objetoLiquidacion.liqEtapa.ToString() + separador + "del mes de" + separador + mesActualString + separador + "del" + separador + anioActualString;
-                if (objetoLiquidacion.liqFechaCierre < DateTime.Now)
+                lblEtapa.Text = "Etapa: " + oLiquidacionExtDoc.etapa.ToString() + separador + "del mes de" + separador + mesActualString + separador + "del" + separador + anioActualString;
+                if (oLiquidacionExtDoc.fechaCierre < DateTime.Now)
                 {
                     lblFechaCierre.Text = "No Disponible";
                 }
                 else
                 {
-                    lblFechaCierre.Text = objetoLiquidacion.liqFechaCierre.ToString().Substring(0, 16) + " hs";
+                    lblFechaCierre.Text = oLiquidacionExtDoc.fechaCierre.ToString().Substring(0, 16) + " hs";
                     lblFechaCierre.ForeColor = System.Drawing.Color.DarkGreen;
                 }
-            }
-
-            // Para la descarga de Archivos, la Liquidacion a descargar debe estar en estado 'P'. 
-            // Este if es para casos en los que no haya liquidaciones abiertas ni liquidaciones en estado 'P'. No deberia ocurrir. 
-            if (objetoLiquidacion != null)
-            {
-                Session["mesAnioLiq"] = objetoLiquidacion.mesAnioLiq;
-                Session["liqId"] = objetoLiquidacion.liqId;
             }
 
             #endregion
@@ -245,7 +190,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                 if (!Page.IsPostBack)
                 {
                     if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
-                    this.RadioDni.Checked = true;
+                    this.RadioNumeroControl.Checked = true;
                     Session["radioSeleccionado"] = 1;
                 }
                 // Cuando es postback!
@@ -269,24 +214,25 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
 
                             // Radios                                     
                             RadioNumeroControl.Checked = false;
-                            RadioApellidoyNombre.Checked = false;
-                            RadioDni.Checked = false;
-
-                            switch (Convert.ToInt32(Session["radioSeleccionado"].ToString()))
-                            {
-                                case 1:
-                                    RadioDni.Checked = true;
-                                    break;
-                                case 2:
-                                    RadioApellidoyNombre.Checked = true;
-                                    break;
-                                case 3:
-                                    RadioNumeroControl.Checked = true;
-                                    break;
-                                default:
-                                    RadioDni.Checked = true;
-                                    break;
-                            }
+                            //                            RadioApellidoyNombre.Checked = false;
+                            //                        RadioDni.Checked = false;
+                            /*
+                                                    switch (Convert.ToInt32(Session["radioSeleccionado"].ToString()))
+                                                    {
+                                                        case 1:
+                                                            RadioDni.Checked = true;
+                                                            break;
+                                                        case 2:
+                                                            RadioApellidoyNombre.Checked = true;
+                                                            break;
+                                                        case 3:
+                                                            RadioNumeroControl.Checked = true;
+                                                            break;
+                                                        default:
+                                                            RadioDni.Checked = true;
+                                                            break;
+                                                    }
+                                                    */
                             // Esto estaba activado para cargar nuevamente la grilla con resultados
                             //GrillaCargar(Convert.ToInt32(Session["index"]), Session["mesAnioLiq"].ToString());
                             //Limpio variables de Session                                                                                    
@@ -373,24 +319,33 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente2 = new LiquidacionSueldos.Negocio.NuevoAge1();
             Boolean errores = false;
 
-            // Validaciones
-            if (RadioDni.Checked == true)
-            {
-                if (txtAgeNroControl.Text.Length != 7 && txtAgeNroControl.Text.Length != 8 && txtAgeNroControl.Text.Length != 11)
+            /*
+             // Validaciones
+             if (RadioDni.Checked == true)
+             {
+                 if (txtAgeNroControl.Text.Length != 7 && txtAgeNroControl.Text.Length != 8 && txtAgeNroControl.Text.Length != 11)
+                 {
+                     lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un DNI o CUIL valido");
+                     errores = true;
+                 }
+             }
+             else
+             {
+                 if (RadioNumeroControl.Checked == true)
+                     if (txtAgeNroControl.Text.Length != 8)
+                     {
+                         lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control debe contener 8 digitos");
+                         errores = true;
+                     }
+             }
+             */
+
+            if (RadioNumeroControl.Checked == true)
+                if (txtAgeNroControl.Text.Length != 8)
                 {
-                    lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un DNI o CUIL valido");
+                    lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control debe contener 8 digitos");
                     errores = true;
                 }
-            }
-            else
-            {
-                if (RadioNumeroControl.Checked == true)
-                    if (txtAgeNroControl.Text.Length != 8)
-                    {
-                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control debe contener 8 digitos");
-                        errores = true;
-                    }
-            }
 
             if (!errores)
             {
@@ -614,13 +569,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             {
                 Session["AgenteConsulta.PageIndex"] = PageIndex;
                 dt = new DataTable();
-                int jurId;
-
-                if (checkObtenerTodos.Checked)
-                    jurId = 0;
-                else
-                    jurId = Convert.ToInt32(selectJurisdiccion.SelectedValue);
-
+                /*            
                 //Busca por DNI                      
                 if (RadioDni.Checked == true)
                 {
@@ -646,6 +595,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         dt = ocnAgente.ObtenerAgentesPorNroControlPorMesAnioLiq(txtAgeNroControl.Text, mesanioliq, jurId);                       
                     }
                 }
+                */
+
+                if (RadioNumeroControl.Checked)
+                    dt = ocnAgente.ObtenerAgentesPorNroControlPorMesAnioLiq(txtAgeNroControl.Text, mesanioliq, 0);
 
                 if (dt.Rows.Count != 0)
                 {
@@ -658,7 +611,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 {
                     this.Grilla.DataSource = null;
                     this.Grilla.DataBind();
-
+                    /*
                     if (RadioApellidoyNombre.Checked)
                         lblMensajeError.Text = FuncionesUtiles.MensajeError("El nombre ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
                     else
@@ -666,7 +619,11 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         lblMensajeError.Text = FuncionesUtiles.MensajeError("El DNI ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
                     else
                         lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control ingresado ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
-                 
+                        */
+
+                    if (RadioNumeroControl.Checked)
+                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control ingresado ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
+
                     lblCantidadRegistros.Text = "Cantidad de registros: 0";
                 }
             }
@@ -682,26 +639,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         }
     }
 
-    private int getRadioSeleccionado()
-    {
-        /*
-         Valores que devuelve:
-         1- Si seleccionó por DNI
-         2- Si seleccionó por Nombre y Apellido
-         3- Si seleccionó por Numero de Control
-         */
-        if (RadioDni.Checked == true)
-        {
-            return 1;
-        }
-        else
-        {
-            if (RadioApellidoyNombre.Checked == true)
-                return 2;
-            else
-                return 3;
-        }
-    }
 
     protected void Grilla_RowCommand(object sender, GridViewCommandEventArgs e)
     {
@@ -754,22 +691,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            int tipo = 0;
-            if (RadioDni.Checked == true)
-            {
-                tipo = 1;
-            }
-            else
-            {
-                if (RadioApellidoyNombre.Checked == true)
-                {
-                    tipo = 2;
-                }
-                else
-                {
-                    tipo = 3;
-                }
-            }
             if (Session["AgenteConsulta.PageIndex"] != null)
             {
                 Session["AgenteConsulta.PageIndex"] = e.NewPageIndex;
@@ -857,44 +778,44 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     }
 
-    protected void RadioDni_CheckedChanged(object sender, EventArgs e)
-    {
-        bool var1 = RadioDni.Checked;
-        bool var2 = RadioApellidoyNombre.Checked;
-        bool var3 = RadioNumeroControl.Checked;
+    //protected void RadioDni_CheckedChanged(object sender, EventArgs e)
+    //{
+    //    bool var1 = RadioDni.Checked;
+    //    bool var2 = RadioApellidoyNombre.Checked;
+    //    bool var3 = RadioNumeroControl.Checked;
 
-        Session["radioSeleccionado"] = 1;
-        RadioNumeroControl.Checked = false;
-        RadioApellidoyNombre.Checked = false;
+    //    Session["radioSeleccionado"] = 1;
+    //    RadioNumeroControl.Checked = false;
+    //    RadioApellidoyNombre.Checked = false;
 
-        //RadioDni.Checked = true;
-        this.txtAgeNroControl.Text = "";
-        this.txtAgeNroControl.Focus();
-    }
+    //    //RadioDni.Checked = true;
+    //    this.txtAgeNroControl.Text = "";
+    //    this.txtAgeNroControl.Focus();
+    //}
 
-    protected void RadioApellidoyNombre_CheckedChanged(object sender, EventArgs e)
-    {
-        bool var1 = RadioDni.Checked;
-        bool var2 = RadioApellidoyNombre.Checked;
-        bool var3 = RadioNumeroControl.Checked;
+    //protected void RadioApellidoyNombre_CheckedChanged(object sender, EventArgs e)
+    //{
+    //    bool var1 = RadioDni.Checked;
+    //    bool var2 = RadioApellidoyNombre.Checked;
+    //    bool var3 = RadioNumeroControl.Checked;
 
-        Session["radioSeleccionado"] = 2;
-        RadioNumeroControl.Checked = false;
-        RadioDni.Checked = false;
-        RadioApellidoyNombre.Checked = true;
-        this.txtAgeNroControl.Text = "";
-        this.txtAgeNroControl.Focus();
-    }
+    //    Session["radioSeleccionado"] = 2;
+    //    RadioNumeroControl.Checked = false;
+    //    RadioDni.Checked = false;
+    //    RadioApellidoyNombre.Checked = true;
+    //    this.txtAgeNroControl.Text = "";
+    //    this.txtAgeNroControl.Focus();
+    //}
 
     protected void RadioNumeroControl_CheckedChanged(object sender, EventArgs e)
     {
-        bool var1 = RadioDni.Checked;
-        bool var2 = RadioApellidoyNombre.Checked;
+        //bool var1 = RadioDni.Checked;
+        //bool var2 = RadioApellidoyNombre.Checked;
         bool var3 = RadioNumeroControl.Checked;
 
         Session["radioSeleccionado"] = 3;
-        RadioDni.Checked = false;
-        RadioApellidoyNombre.Checked = false;
+        //RadioDni.Checked = false;
+        //RadioApellidoyNombre.Checked = false;
         RadioNumeroControl.Checked = true;
         this.txtAgeNroControl.Text = "";
         this.txtAgeNroControl.Focus();
@@ -926,20 +847,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())
             + "&reparticion=" + reparticion
                 + "&NomRep=" + NomRep);
-    }
-
-    protected void checkObtenerTodos_CheckedChanged(object sender, EventArgs e)
-    {
-        if (checkObtenerTodos.Checked)
-        {
-            selectJurisdiccion.Enabled = false;
-            //selectJurisdiccion.Visible = false;
-        }
-        else
-        {
-            selectJurisdiccion.Enabled = true;
-            //      selectJurisdiccion.Visible = true;
-        }
     }
 
     public string obtenerPrefijoURLServidor(string serverUrl, bool forceHttps)

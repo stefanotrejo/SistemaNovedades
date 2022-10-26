@@ -10,7 +10,7 @@ namespace LiquidacionSueldos
 {
     namespace Negocio
     {
-        public partial class NovedadExtensionDocente
+        public class NovedadExtensionDocente
         {
             #region Variables
             private Datos.Gestor ocdGestor = new Datos.Gestor();
@@ -142,54 +142,52 @@ namespace LiquidacionSueldos
                 get { return _anio; }
                 set { _anio = value; }
             }
+
             // FIN - PARA INFORMES 
-                        
-            #region Metodos
 
             public int Insertar()
             {
-                /* Verificar que no se haya agregado antes una novedad con ese codigo para ese id y etapa
-                 */
+                //Verificar que no se haya agregado antes una novedad con ese codigo para ese id y etapa
                 try
                 {
                     int IdMax = 0;
-                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[NovedadInasistencia.Insertar]", new object[,] {
+                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[NovedadExtensionDocente.Insertar]", new object[,] {
                         {
-                            "@NuevoAgeId1",
-                            NuevoAgeId1
+                            "@age_id",
+                            ageId
                         },
                         {
-                            "@ncoId",
-                            ncoId
+                            "@age_nrocontrol",
+                            ageNrocontrol
                         },
                         {
-                            "@ninFechaRegistro",
-                            ninFechaRegistro
+                            "@dias_descontar",
+                            dias_descontar
                         },
 
                         {
-                            "@ninFechaDesde",
-                            ninFechaDesde
-                        },
-                        {
-                            "@ninCantidad",
-                            ninCantidad
-                        },
-                        {
-                            "@liqId",
+                            "@liq_id",
                             liqId
                         },
+                        {
+                            "@usu_id",
+                            usuId
+                        },
+                        {
+                            "@fechaHoraCrea",
+                            fechaHoraCrea
+                        },
                          {
-                            "@perEsAdministrador",
-                            perEsAdministrador
+                            "@fechaHoraActualiza",
+                            fechaHoraActualiza
                         },
                         {
-                            "@usuCreaID",
-                            usuCreaID
+                            "@fechaHoraElimina",
+                            fechaHoraElimina
                         },
                         {
-                            "@ninActivo",
-                            ninActivo
+                            "@usuCrea_id",
+                            usuId
                         }
                     });
                     return IdMax;
@@ -217,65 +215,15 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
-            public DataTable ObtenerTodoPorAgenteEtapa(int ageId, int liqId)
-            {
-                ocdGestor = new Datos.Gestor();
-                /*Traer liqId basandome en cual esta con estado=abierto en la tabla Liquidacion*/
-                try
-                {
-                    Fila = new DataTable();
-                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.ObtenerTodoPorAgenteEtapa]", new object[,] {
-                     {
-                            "@liqEtapa",
-                            liqId
-                        },
-                     {
-                             "@NuevoAgeId1",
-                            ageId
-                        }
-                });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                return Fila;
-            }
-
-            public DataTable ObtenerTodoLiquidacionJurisdiccion(int liqId, int jurId)
-            {
-                ocdGestor = new Datos.Gestor();
-                /*Traer liqId basandome en cual esta con estado=abierto en la tabla Liquidacion*/
-                try
-                {
-                    Fila = new DataTable();
-                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.InformeNovedadesCargadasJurisdiccion]", new object[,] {
-                     {
-                            "@liqId",
-                            liqId
-                        },
-                     {
-                             "@jurId",
-                            jurId
-                        }
-                });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                return Fila;
-            }
-
-            public DataTable ObtenerUno(int ninId)
+            public DataTable ObtenerUno(int id)
             {
                 try
                 {
                     Tabla = new DataTable();
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.ObtenerUno]", new object[,] {
+                    Tabla = ocdGestor.EjecutarReader("[NovedadExtensionDocente.ObtenerUno]", new object[,] {
                      {
-                            "@ninId",
-                            ninId
+                            "@id",
+                            id
                         }
                 });
                 }
@@ -286,302 +234,53 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
-            public DataTable GenerarNoPresentismo(int liqId)
+            public int ValidarRepetido(int nro_control, int liq_id)
             {
                 ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.GenerarNoPresentismo]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        }
-                    });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable GenerarMultasSuspensiones(int liqId)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.GenerarMultasSuspensiones]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        }
-                    });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable GenerarListadoTestigoNoPresentismo(int liqId, int perEsAdministrador)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.ListadoTestigoNoPresentismo]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        },
-                      {
-                            "@perEsAdministrador",
-                            perEsAdministrador
-                        }
-                    });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable GenerarArchivoNoPresentismo(int liqId, int perEsAdministrador)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.ArchivoNoPresentismo]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        },
-                      {
-                            "@perEsAdministrador",
-                            perEsAdministrador
-                        }
-                    });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable PerfilesConNovedades(int liqId)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.PerfilesConNovedades]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        }
-                    });
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable GenerarDbfMultasSuspensiones(int liqId, string rutaDestino, string etapaLiquidacion)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.GenerarMultasSuspensionesFinal]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        }
-                    });
-                    ocdGestor.GenerarDbfMultasSuspensiones(Tabla, rutaDestino, etapaLiquidacion);
-                }
-
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public DataTable GenerarDbfBajas(int liqId, string rutaDestino, string etapaLiquidacion)
-            {
-                ocdGestor = new Datos.Gestor();
-                Tabla = new DataTable();
-                try
-                {
-                    Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.GenerarBajasFinal]", new object[,] {
-                    {
-                            "@liqId",
-                            liqId
-                        }
-                    });
-                    ocdGestor.GenerarDbfBajas(Tabla, rutaDestino, etapaLiquidacion);
-                }
-
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return Tabla;
-            }
-
-            public int ValidarConceptoRepetido(int ncoId, int ageId, int liqId)
-            {
-                ocdGestor = new Datos.Gestor();
-                int conceptoRepetido = 0;
-
-                // si el  
+                int repetido = 0;
 
                 try
                 {
                     Fila = new DataTable();
-                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.ValidarConceptoRepetido]", new object[,] {
+                    Fila = ocdGestor.EjecutarReader("[NovedadesExtensionDocente.ValidarRepetido]", new object[,] {
                      {
-                            "@liqId",
-                            liqId
+                            "@nro_control",
+                            nro_control
                         },
                      {
-                             "@NuevoAgeId1",
-                            ageId
-                        },
-                       {
-                             "@ncoId",
-                            ncoId
+                             "@liq_id",
+                            liq_id
                         }
                 });
 
                     if (Fila.Rows.Count > 0)
-                        conceptoRepetido = Convert.ToInt32(Fila.Rows[0][0]);
+                        repetido = Convert.ToInt32(Fila.Rows[0][0]);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-                return conceptoRepetido;
+                return repetido;
             }
-
-            public int ValidarConsistencia(int ncoId, int ageId, int liqId)
-            {
-                ocdGestor = new Datos.Gestor();
-                int conceptoRepetido = 0;
-                /*Traer liqId basandome en cual esta con estado=abierto en la tabla Liquidacion*/
+                    
+            public void Eliminar(int id, int usu_id)
+            {                
                 try
                 {
-                    Fila = new DataTable();
-                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.ValidarConceptoRepetido]", new object[,] {
-                     {
-                            "@liqEtapa",
-                            liqId
-                        },
-                     {
-                             "@NuevoAgeId1",
-                            ageId
-                        },
-                       {
-                             "@ncoId",
-                            ncoId
-                        }
-                });
-
-                    if (Fila.Rows.Count > 0)
-                        conceptoRepetido = Convert.ToInt32(Fila.Rows[0][0]);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                return conceptoRepetido;
-            }
-
-            public void Actualizar(int ninId, int ninCantidad, DateTime ninFechaDesde, int usuActualizaID)
-            {
-                try
-                {
-                    ocdGestor.EjecutarNonQuery("[NovedadInasistencia.Actualizar]", new object[,] { {
-                        "@ninId",
-                        ninId
+                    ocdGestor.EjecutarNonQuery("[NovedadesExtensionDocente.Eliminar]", new object[,] { {
+                        "@id",
+                        id
                     },
                     {
-                        "@ninCantidad",
-                        ninCantidad
-                    },
-                    {
-                        "@ninFechaDesde",
-                        ninFechaDesde
-                    },
-                    {
-                        "@usuActualizaID",
-                        usuActualizaID
+                        "@usu_id",
+                        usu_id
                     }});
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-            }
-
-            public void Eliminar(int ninId, int usuEliminaID)
-            {
-                //Poner la columna Activo del registro de Novedad Inasistencia en 0. 
-                try
-                {
-                    ocdGestor.EjecutarNonQuery("[NovedadInasistencia.Eliminar]", new object[,] { {
-                        "@ninId",
-                        ninId
-                    },
-                    {
-                        "@usuEliminaID",
-                        usuEliminaID
-                    }});
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-
-            public int ValidarBajaCargoRetenido(int NuevoAgeId1, int liqId)
-            {
-                int num;
-                try
-                {
-                    Gestor gestor = this.ocdGestor;
-                    object[,] nuevoAgeId1 = new object[2, 2];
-                    nuevoAgeId1[0, 0] = "@NuevoAgeId1";
-                    nuevoAgeId1[0, 1] = NuevoAgeId1;
-                    nuevoAgeId1[1, 0] = "@liqId";
-                    nuevoAgeId1[1, 1] = liqId;
-                    num = gestor.EjecutarNonQueryRetornaId("[NovedadInasistencia.ValidarBajaCargoRetenido]", nuevoAgeId1);
-                }
-                catch (Exception exception)
-                {
-                    throw exception;
-                }
-                return num;
-            }
-
-            #endregion
-
+            }                    
         }
     }
 }

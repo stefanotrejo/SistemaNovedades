@@ -59,6 +59,7 @@
     <Compile Include="Liquidacion.cs" />
     <Compile Include="NovedadConcepto.cs" />
     <Compile Include="Jurisdiccion.cs" />
+    <Compile Include="NovedadExtensionDocente.cs" />
     <Compile Include="NovedadInasistencia.cs" />
     <Compile Include="archivo_extdoc_educacion.cs" />
     <Compile Include="PrestacionDineraria.cs" />

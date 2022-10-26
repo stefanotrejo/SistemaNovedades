@@ -1,0 +1,16 @@
+## Descripción
+Se requiere implementar la carga de novedades de docentes
+
+## Pruebas realizadas
+
+## Issues resueltos
+
+## Dependencias
+- SPS: 
+NovedadExensionDocente.Insertar
+NovedadExtensionDocente.ObtenerTodo
+NovedadExtensionDocente.ObtenerUno
+NovedadesExtensionDocente.ValidarRepetido
+NovedadesExtensionDocente.Eliminar
+
+

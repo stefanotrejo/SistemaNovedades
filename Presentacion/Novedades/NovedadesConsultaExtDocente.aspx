@@ -40,11 +40,13 @@
                             <%--  RADIO IN LINE --%>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Buscar Agente por:</label>
-                                <div class="col-md-6">
+                                <div class="col-md-6">                                    
+                                    <%--
                                     <asp:RadioButton ID="RadioDni" runat="server" Text="DNI o CUIL" AutoPostBack="True" OnCheckedChanged="RadioDni_CheckedChanged"></asp:RadioButton>
                                     &nbsp; &nbsp;
                                     <asp:RadioButton ID="RadioApellidoyNombre" runat="server" Text="Apellido y Nombre" AutoPostBack="True" OnCheckedChanged="RadioApellidoyNombre_CheckedChanged"></asp:RadioButton>
                                     &nbsp; &nbsp;
+                                       --%>
                                     <asp:RadioButton ID="RadioNumeroControl" runat="server" Text="Numero de Control" AutoPostBack="True" OnCheckedChanged="RadioNumeroControl_CheckedChanged"></asp:RadioButton>
                                 </div>
                             </div>
@@ -52,28 +54,10 @@
                           
                             <div class="form-group">
                                 <div class="col-md-4 col-md-offset-2" style="left: 0px; top: 0px">
-                                    <asp:TextBox ID="txtAgeNroControl" class="form-control" placeholder="Ingrese DNI, Nombre o Nº de Control" required runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtAgeNroControl" class="form-control" placeholder="Ingrese Nº de Control" required runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2"></label>
-                                <asp:CheckBox ID="checkObtenerTodos" runat="server" AutoPostBack="true" Checked="true" Width="20px" OnCheckedChanged="checkObtenerTodos_CheckedChanged" />
-                                <!--<label>Buscar en Todas las Jurisdicciones</label>-->
-                                <asp:Label ID="lblJurisdiccion" runat="server" Text="Buscar en Todas las Jurisdicciones" Font-Bold></asp:Label>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">
-                                </label>
-                                <div class="col-md-4">
-                                    <asp:DropDownList ID="selectJurisdiccion" runat="server" class="form-control" data-placeholder="Seleccione una opcion"
-                                        Enabled="true" AutoPostBack="false">
-                                    </asp:DropDownList>
-                                </div>
-                                <div class="col-md-8">
-                                </div>
-                            </div>
-
+                           
                             <div class="form-group">
                                 <div class="col-md-4 col-md-offset-2">
                                     <asp:Button ID="btnConsultar1" class="btn btn-w-m btn-primary" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
