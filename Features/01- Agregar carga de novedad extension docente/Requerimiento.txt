@@ -12,5 +12,6 @@ NovedadExtensionDocente.ObtenerTodo
 NovedadExtensionDocente.ObtenerUno
 NovedadesExtensionDocente.ValidarRepetido
 NovedadesExtensionDocente.Eliminar
+ExtensionDocente.ObtenerAgentes
 
 

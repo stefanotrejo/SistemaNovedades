@@ -156,6 +156,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
             }
             else
             {
+                Session["mesAnioLiq"] = oLiquidacionExtDoc.mesanio;
                 btnDescargarArchivos.Visible = false;
                 lblLiquidacion.Text = "Liquidacion (inicio de mes): " + oLiquidacionExtDoc.mesanio;
                 mesActual = Convert.ToInt32(oLiquidacionExtDoc.mesanio.Substring(0, 2));
@@ -598,7 +599,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 */
 
                 if (RadioNumeroControl.Checked)
-                    dt = ocnAgente.ObtenerAgentesPorNroControlPorMesAnioLiq(txtAgeNroControl.Text, mesanioliq, 0);
+                    dt = ocnAgente.ObtenerAgentesExtDocente(mesanioliq, txtAgeNroControl.Text,"","");
 
                 if (dt.Rows.Count != 0)
                 {
@@ -638,7 +639,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             "</div>";
         }
     }
-
 
     protected void Grilla_RowCommand(object sender, GridViewCommandEventArgs e)
     {

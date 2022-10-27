@@ -1800,7 +1800,42 @@ namespace LiquidacionSueldos.Negocio
         }
 
         // FIN - CONSULTA DE NOVEDADES
-  
+
+        // INICIO -  EXTENSION DOCENTE
+
+        public DataTable ObtenerAgentesExtDocente(string mesanioliq, string nro_control, string nombre, string cuil)
+        {
+            try
+            {
+                Tabla = new DataTable();
+                Tabla = ocdGestor.EjecutarReader("[ExtensionDocente.ObtenerAgentes]", new object[,] {
+                    {
+                            "@mesanioliq",
+                            mesanioliq
+                        },
+                    {
+                            "@nro_control",
+                            nro_control
+                        },
+                     {
+                            "@nombre",
+                            nombre
+                        },
+                     {
+                            "@cuil",
+                            cuil
+                        }
+                });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Tabla;
+        }
+
+        // FIN - EXTENSION DOCENTE
+
 
         #region Metodos viejos sin usar
 
