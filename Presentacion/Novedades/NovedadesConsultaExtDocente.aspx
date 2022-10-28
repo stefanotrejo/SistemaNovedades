@@ -28,11 +28,10 @@
                     <div class="ibox-content m-b-sm border-bottom h5">
                         <asp:Label ID="lblFechaCierreTitulo" class="control-label col-md-2 m-b" runat="server" Text="Fecha de Cierre: " Font-Bold></asp:Label>
                         <asp:Label ID="lblFechaCierre" class="control-label col-md-8 m-b" runat="server" Text="" Font-Bold></asp:Label>
-                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12">
-                    
-                    </div>
+                </div>
 
                 <div class="col-md-12">
                     <div class="ibox-content">
@@ -40,24 +39,24 @@
                             <%--  RADIO IN LINE --%>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Buscar Agente por:</label>
-                                <div class="col-md-6">                                    
+                                <div class="col-md-6">
                                     <%--
                                     <asp:RadioButton ID="RadioDni" runat="server" Text="DNI o CUIL" AutoPostBack="True" OnCheckedChanged="RadioDni_CheckedChanged"></asp:RadioButton>
                                     &nbsp; &nbsp;
                                     <asp:RadioButton ID="RadioApellidoyNombre" runat="server" Text="Apellido y Nombre" AutoPostBack="True" OnCheckedChanged="RadioApellidoyNombre_CheckedChanged"></asp:RadioButton>
                                     &nbsp; &nbsp;
-                                       --%>
+                                    --%>
                                     <asp:RadioButton ID="RadioNumeroControl" runat="server" Text="Numero de Control" AutoPostBack="True" OnCheckedChanged="RadioNumeroControl_CheckedChanged"></asp:RadioButton>
                                 </div>
                             </div>
                             <%-- FIN RADIO IN LINE --%>
-                          
+
                             <div class="form-group">
                                 <div class="col-md-4 col-md-offset-2" style="left: 0px; top: 0px">
                                     <asp:TextBox ID="txtAgeNroControl" class="form-control" placeholder="Ingrese Nº de Control" required runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                           
+
                             <div class="form-group">
                                 <div class="col-md-4 col-md-offset-2">
                                     <asp:Button ID="btnConsultar1" class="btn btn-w-m btn-primary" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
@@ -66,122 +65,44 @@
                     </div>
                 </div>
 
-                <!--</div>-->
+                <div class="col-md-12">
+                    <div class="ibox-content">
+                        <fieldset class="form-horizontal">
 
-
-                <%-- CARGOS DEL AGENTE --%>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Nombre y Apellido</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtNombre" Height="50px" TextMode="MultiLine" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Cuil</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtCuil" Height="50px" TextMode="MultiLine" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Lugar de Pago</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtLugarPago" Height="50px" TextMode="MultiLine" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Cargo</label><div class="col-md-6">
+                                    <asp:TextBox ID="txtCargo" Height="50px" TextMode="MultiLine" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
 
                 <div class="col-sm-12">
-                    <div class="ibox-title">
-                        <h5>Cargos del Agente |
-                    <asp:Label ID="lblCantidadRegistros" runat="server" Text=""></asp:Label></h5>
-                    </div>
-                    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
-                        <ProgressTemplate>
-                            Cargando informacion...
-                        </ProgressTemplate>
-                    </asp:UpdateProgress>
-                    <div class="ibox-content">
-                        <div class="table-responsive">
-                            <asp:GridView ID="Grilla" runat="server" GridLines="None" CssClass="table table-striped"
-                                AutoGenerateColumns="False" OnRowDataBound="Grilla_RowDataBound" OnRowCommand="Grilla_RowCommand"
-                                PageSize="12" AllowPaging="True" OnPageIndexChanging="Grilla_PageIndexChanging">
-
-                                <PagerStyle
-                                    Height="30px"
-                                    VerticalAlign="Bottom"
-                                    HorizontalAlign="Center" Font-Size="Medium" />
-
-                                <Columns>
-                                    <asp:TemplateField HeaderText="Periodo">
-                                        <ItemTemplate>
-                                            <asp:HyperLink
-                                                ForeColor="Black"
-                                                Font-Size="Small"
-                                                ID="HyperLink1"
-                                                runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + Session["pageIndex"].ToString()
-                                                            + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString() %>'
-                                                Text='<%# Eval("Periodo") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Nº de Control">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ForeColor="Black" Font-Size="Small" ID="HyperLink1" runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + GlobalesNovedadesConsulta.pageIndex
-                                                             + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString() %>'
-                                                Text='<%# Eval("Numero de Control") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Cuil">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ForeColor="Black" Font-Size="Small" ID="Id" runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + GlobalesNovedadesConsulta.pageIndex
-                                                             + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString() %>'
-                                                Text='<%# Eval("Cuil")
-                                                              %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Nombre">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ForeColor="Black" Font-Size="Small" ID="Nombre" runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + GlobalesNovedadesConsulta.pageIndex
-                                                             + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString() %>'
-                                                Text='<%# Eval("Nombre") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Organismo">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ForeColor="Black" Font-Size="Small" ID="EsAdministrador" runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + GlobalesNovedadesConsulta.pageIndex
-                                                             + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString() %>'
-                                                Text='<%# Eval("Lugar de Pago") 
-                                                        %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Cargo">
-                                        <ItemTemplate>
-                                            <asp:HyperLink ForeColor="Black" Font-Size="Small" ID="Activo" runat="server"
-                                                NavigateUrl='<%# "NovedadesNuevo.aspx?Id=" + DataBinder.Eval(Container.DataItem,"NuevoAgeId1").ToString() 
-                                                            + "&periodo=" + DataBinder.Eval(Container.DataItem,"Periodo").ToString() + "&textBox=" 
-                                                            + txtAgeNroControl.Text 
-                                                            + "&radioSeleccionado=" + Session["radioSeleccionado"].ToString()
-                                                            + "&pageIndex=" + GlobalesNovedadesConsulta.pageIndex
-                                                             + "&agrupamiento=" + DataBinder.Eval(Container.DataItem,"agru").ToString()%>'
-                                                Text='<%# Eval("Cargo") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                                <FooterStyle HorizontalAlign="Left" />
-                                <HeaderStyle HorizontalAlign="Left" />
-                                <PagerSettings Position="Top" />
-                                <PagerStyle HorizontalAlign="Left" />
-                            </asp:GridView>
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-4 col-md-offset-0">
+                            <asp:Button ID="btnAceptar1" class="btn btn-w-m btn-primary" runat="server" Text="Grabar" OnClick="btnAceptar_Click" />
                         </div>
                     </div>
                 </div>
+
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

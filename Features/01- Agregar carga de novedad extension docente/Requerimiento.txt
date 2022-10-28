@@ -13,5 +13,5 @@ NovedadExtensionDocente.ObtenerUno
 NovedadesExtensionDocente.ValidarRepetido
 NovedadesExtensionDocente.Eliminar
 ExtensionDocente.ObtenerAgentes
-
+[NovedadesExtensionDocente.InformeNovedadesCargadas]
 

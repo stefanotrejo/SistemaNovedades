@@ -133,13 +133,14 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
         this.Master.TituloDelFormulario = Globals.TituloDelFormulario;
         try
         {
+            this.Session["usuId"] = int.Parse(this.Session["_usuId"].ToString());
+
             /*En Session: guardo los valores actuales seleccionados por el usuario para recargarlos cuando vuelva 
             * desde otra pagina (POSTBACK). Es vacio cuando carga por primera vez la pagina*/
 
             #region Verificar Liquidaciones Abiertas para Docentes
             // Liquidaciones
-            oLiquidacionExtDoc = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
-            oLiquidacionExtDoc = oLiquidacionExtDoc.ObtenerLiquidacionAbierta();
+            oLiquidacionExtDoc = liquidacionAbierta();
 
             lblLiquidacion.Text = "";
             lblEtapa.Text = "";
@@ -315,8 +316,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         try
         {
             lblMensajeError.Text = "";
-            Grilla.PageIndex = 0;
-            Session["pageIndex"] = Grilla.PageIndex;
             LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente2 = new LiquidacionSueldos.Negocio.NuevoAge1();
             Boolean errores = false;
 
@@ -351,7 +350,53 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             if (!errores)
             {
                 //  getLiquidacionAbierta();
-                GrillaCargar(Grilla.PageIndex, Session["mesAnioLiq"].ToString());
+                string mesanio = Session["mesAnioLiq"].ToString();
+                DataTable dt = new DataTable();
+                dt = ocnAgente.ObtenerAgentesExtDocente(mesanio, txtAgeNroControl.Text, "", "");
+
+                if (dt.Rows.Count == 0)
+                {
+                    if (RadioNumeroControl.Checked)
+                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control ingresado ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
+                }
+                else
+                {
+                    if (dt.Rows[0]["Nombre"].ToString().Trim().Length > 0)
+                    {
+                        txtNombre.Text = Convert.ToString(dt.Rows[0]["Nombre"]);
+                    }
+                    else
+                    {
+                        txtNombre.Text = "";
+                    }
+
+                    if (dt.Rows[0]["Cuil"].ToString().Trim().Length > 0)
+                    {
+                        txtCuil.Text = Convert.ToString(dt.Rows[0]["Cuil"]);
+                    }
+                    else
+                    {
+                        txtCuil.Text = "";
+                    }
+
+                    if (dt.Rows[0]["Lugar de Pago"].ToString().Trim().Length > 0)
+                    {
+                        txtLugarPago.Text = Convert.ToString(dt.Rows[0]["Lugar de Pago"]);
+                    }
+                    else
+                    {
+                        txtLugarPago.Text = "";
+                    }
+
+                    if (dt.Rows[0]["Cargo"].ToString().Trim().Length > 0)
+                    {
+                        txtCargo.Text = Convert.ToString(dt.Rows[0]["Cargo"]);
+                    }
+                    else
+                    {
+                        txtCargo.Text = "";
+                    }
+                }
             }
         }
         catch (Exception oError)
@@ -364,6 +409,56 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             "</div>";
         }
     }
+
+    protected void btnAceptar_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (txtNombre.Text == "")
+            {
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un Agente");
+            }
+            else
+            {
+                this.lblMensajeError.Text = "";
+                oLiquidacionExtDoc = liquidacionAbierta();
+
+                oNovedadExtDoc.ageId = 0; // lo actualizamos por b.d
+                oNovedadExtDoc.ageNrocontrol = txtAgeNroControl.Text;
+                oNovedadExtDoc.dias_descontar = 30;
+                oNovedadExtDoc.liqId = oLiquidacionExtDoc.id;
+                oNovedadExtDoc.usuId = Convert.ToInt32(this.Session["usuId"].ToString());
+                oNovedadExtDoc.usuCrea_id = oNovedadExtDoc.usuId;
+
+                if (oNovedadExtDoc.ValidarRepetido(oLiquidacionExtDoc.id, txtAgeNroControl.Text) != 0)
+                {
+                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("La Novedad ingresada ya existe en el Sistema");
+                    return;
+                }
+
+                oNovedadExtDoc.Insertar();
+                base.Response.Redirect(base.Request.UrlReferrer.ToString(), true);
+                return;
+            }
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+            <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+            Se ha producido el siguiente error:<br/>
+            MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+            "</div>";
+        }
+    }
+
+    protected LiquidacionSueldos.Negocio.LiquidacionExtensionDocente liquidacionAbierta()
+    {
+        oLiquidacionExtDoc = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
+        oLiquidacionExtDoc = oLiquidacionExtDoc.ObtenerLiquidacionAbierta();
+        return oLiquidacionExtDoc;
+    }
+
 
     protected void btnDescargarArchivos_Click(object sender, EventArgs e)
     {
@@ -509,7 +604,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
             string forma1 = System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo/" + liqId.ToString() + "/" + reparticion.ToString() + "/" + nombreArchivo);
             string forma2 = fileName;
-            
+
             Response.WriteFile(forma1);
 
 
@@ -559,158 +654,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
            "</div>";
         }
 
-    }
-
-    private void GrillaCargar(int PageIndex, string mesanioliq)
-    {
-        // Carga la grilla segun el Radio seleccionado
-        try
-        {
-            if (txtAgeNroControl.Text != "")
-            {
-                Session["AgenteConsulta.PageIndex"] = PageIndex;
-                dt = new DataTable();
-                /*            
-                //Busca por DNI                      
-                if (RadioDni.Checked == true)
-                {
-                    string parametroDni = "";
-                    // Convierte cuil a dni
-                    if (txtAgeNroControl.Text.Length == 11)
-                        parametroDni = txtAgeNroControl.Text.Substring(2, 8);
-                    else
-                        parametroDni = txtAgeNroControl.Text;
-
-                    dt = ocnAgente.ObtenerAgentesPorDniPorMesAnioLiq(parametroDni, mesanioliq, jurId);                    
-                }
-                else
-                {
-                    //Buscar por Nombre                
-                    if (RadioApellidoyNombre.Checked == true)
-                    {
-                        dt = ocnAgente.ObtenerAgentesPorNombrePorMesAnioLiq(txtAgeNroControl.Text, mesanioliq, jurId);                       
-                    }
-                    // Busca por Numero de Control
-                    else
-                    {
-                        dt = ocnAgente.ObtenerAgentesPorNroControlPorMesAnioLiq(txtAgeNroControl.Text, mesanioliq, jurId);                       
-                    }
-                }
-                */
-
-                if (RadioNumeroControl.Checked)
-                    dt = ocnAgente.ObtenerAgentesExtDocente(mesanioliq, txtAgeNroControl.Text,"","");
-
-                if (dt.Rows.Count != 0)
-                {
-                    this.Grilla.DataSource = dt;
-                    this.Grilla.PageIndex = PageIndex;
-                    this.Grilla.DataBind();
-                    lblCantidadRegistros.Text = "Cantidad de registros: " + dt.Rows.Count.ToString();
-                }
-                else
-                {
-                    this.Grilla.DataSource = null;
-                    this.Grilla.DataBind();
-                    /*
-                    if (RadioApellidoyNombre.Checked)
-                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El nombre ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
-                    else
-                        if (RadioDni.Checked)
-                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El DNI ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
-                    else
-                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control ingresado ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
-                        */
-
-                    if (RadioNumeroControl.Checked)
-                        lblMensajeError.Text = FuncionesUtiles.MensajeError("El Numero de Control ingresado ingresado No existe o pertenece a otra área en el periodo de liquidacion seleccionado");
-
-                    lblCantidadRegistros.Text = "Cantidad de registros: 0";
-                }
-            }
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-            <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-            Se ha producido el siguiente error:<br/>
-            MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-            "</div>";
-        }
-    }
-
-    protected void Grilla_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        try
-        {
-            if (e.CommandName != "Sort" && e.CommandName != "Page" && e.CommandName != "")
-            {
-                string Id = ((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Controls[1]).Text;
-
-                //if (e.CommandName == "Eliminar")
-                //{
-                //    ocnPerfil.Eliminar(Convert.ToInt32(Id));
-                //    this.GrillaCargar(this.Grilla.PageIndex);
-                //}
-
-                //if (e.CommandName == "Copiar")
-                //{
-                //    ocnPerfil = new LiquidacionSueldos.Negocio.Perfil(Convert.ToInt32(Id));
-                //    ocnPerfil.Copiar();
-                //    this.GrillaCargar(this.Grilla.PageIndex);
-                //}
-
-                if (e.CommandName == "Ver")
-                {
-                    Response.Redirect("PerfilRegistracion.aspx?Id=" + Id + "&Ver=1", false);
-                }
-            }
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-    <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-    <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-    Se ha producido el siguiente error:<br/>
-    MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-    "</div>";
-        }
-    }
-
-    protected void Grilla_RowDataBound(object sender, GridViewRowEventArgs e)
-    {
-        if (e.Row.RowType == DataControlRowType.DataRow)
-        {
-            e.Row.Attributes.Add("onmouseover", "this.originalcolor=this.style.backgroundColor; this.style.backgroundColor='#F7F7DE';");
-            e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalcolor;");
-        }
-    }
-
-    protected void Grilla_PageIndexChanging(object sender, GridViewPageEventArgs e)
-    {
-        try
-        {
-            if (Session["AgenteConsulta.PageIndex"] != null)
-            {
-                Session["AgenteConsulta.PageIndex"] = e.NewPageIndex;
-            }
-            else
-            {
-                Session.Add("AgenteConsulta.PageIndex", e.NewPageIndex);
-            }
-
-            this.GrillaCargar(e.NewPageIndex, Session["mesAnioLiq"].ToString());
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-Se ha producido el siguiente error:<br/>
-MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-    "</div>";
-        }
     }
 
     protected void btnEliminarCancelar_Click(object sender, EventArgs e)
@@ -829,10 +772,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         else
             reparticion = Convert.ToInt32(Session["_esAdministrador"]);
 
-        String NomRep = "InformeNovedadesCargadas2.rpt";
-        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())
-            + "&reparticion=" + reparticion
-                + "&NomRep=" + NomRep);
+        String NomRep = "NovedadesCargadasExtDoc.rpt";           
+        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())            
+                + "&NomRep=" + NomRep);        
     }
 
     protected void btnListarPorUsuario_Click(object sender, EventArgs e)

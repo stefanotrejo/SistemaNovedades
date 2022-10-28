@@ -35,8 +35,8 @@ namespace LiquidacionSueldos
                 set { _ageId = value; }
             }
 
-            private int _ageNrocontrol;
-            public int ageNrocontrol
+            private string _ageNrocontrol;
+            public string ageNrocontrol
             {
                 get { return _ageNrocontrol; }
                 set { _ageNrocontrol = value; }
@@ -151,11 +151,7 @@ namespace LiquidacionSueldos
                 try
                 {
                     int IdMax = 0;
-                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[NovedadExtensionDocente.Insertar]", new object[,] {
-                        {
-                            "@age_id",
-                            ageId
-                        },
+                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[NovedadesExtensionDocente.Insertar] ", new object[,] {                        
                         {
                             "@age_nrocontrol",
                             ageNrocontrol
@@ -164,29 +160,12 @@ namespace LiquidacionSueldos
                             "@dias_descontar",
                             dias_descontar
                         },
-
                         {
                             "@liq_id",
                             liqId
                         },
                         {
                             "@usu_id",
-                            usuId
-                        },
-                        {
-                            "@fechaHoraCrea",
-                            fechaHoraCrea
-                        },
-                         {
-                            "@fechaHoraActualiza",
-                            fechaHoraActualiza
-                        },
-                        {
-                            "@fechaHoraElimina",
-                            fechaHoraElimina
-                        },
-                        {
-                            "@usuCrea_id",
                             usuId
                         }
                     });
@@ -234,7 +213,7 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
-            public int ValidarRepetido(int nro_control, int liq_id)
+            public int ValidarRepetido(int liq_id, string nro_control)
             {
                 ocdGestor = new Datos.Gestor();
                 int repetido = 0;
