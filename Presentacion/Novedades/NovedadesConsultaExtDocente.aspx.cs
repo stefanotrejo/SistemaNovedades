@@ -158,6 +158,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
             else
             {
                 Session["mesAnioLiq"] = oLiquidacionExtDoc.mesanio;
+                Session["liqId"] = oLiquidacionExtDoc.id;
                 btnDescargarArchivos.Visible = false;
                 lblLiquidacion.Text = "Liquidacion (inicio de mes): " + oLiquidacionExtDoc.mesanio;
                 mesActual = Convert.ToInt32(oLiquidacionExtDoc.mesanio.Substring(0, 2));
@@ -773,7 +774,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             reparticion = Convert.ToInt32(Session["_esAdministrador"]);
 
         String NomRep = "NovedadesCargadasExtDoc.rpt";           
-        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())            
+        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" 
+            + Session["liqId"].ToString()            
                 + "&NomRep=" + NomRep);        
     }
 
