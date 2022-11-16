@@ -1,0 +1,21 @@
+EXTENSION DOCENTE -----------------
+
+.) Filtro consultas.sql 
+	-> script que genere la liquidacion de extension docente
+	a partir de los nomencladores. 
+	-> genera orden de pago para contaduria.
+	-> inserta en agentes_extension_docente la liquidacion generada
+
+.) GENERACION ARCHIVOS EDUCACION Y GANANCIAS
+	-> Se hace a traves del servidor de aplicaciones o a traves de 
+	extensiondocente.gob.ar entrando con usuario administrador. 
+	Inicio -> importar datos -> "Txt educacion". Los archivos se generan
+	en c:/temp
+	RECORDAR QUE EL ARCHIVO GANANCIAS HAY QUE PROCESARLO CON EL JOBEHDCHARA
+	EN LINUX PARA ENVIARLO!!!
+
+.) GENERAR HISTORICOS
+	-> exec [ExtensionDocente.Guardar_En_Historico] 'mm', 'aa' 
+	-> Esto se hace cuando hayamos finalizado con la liquidacion definitiva.
+	-> Esto guarda en las tablas de extension docente pero con _historico y
+	   le adjunta el mes y año

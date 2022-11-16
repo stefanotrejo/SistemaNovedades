@@ -4,7 +4,6 @@ select * from PagosEventuales
 
 select * from DetallePagoEventual
 
-aguantame
 
 declare @dni decimal(11)
 set @dni='29486809'

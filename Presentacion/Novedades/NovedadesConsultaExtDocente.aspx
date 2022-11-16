@@ -18,7 +18,7 @@
                         <asp:Label ID="lblEtapa" class="control-label col-md-4 m-b" runat="server" Text="Etapa: " Font-Bold></asp:Label>
                         <asp:LinkButton ID="btnListar" runat="server" class="btn btn-w-m btn-primary m-b;" OnClick="btnListar_Click">
                                       <i class="fa fa-print"></i> Novedades Cargadas</asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-w-m btn-primary m-b;" OnClick="btnListarPorUsuario_Click">
+                        <asp:LinkButton ID="btnListarUsuario" runat="server" class="btn btn-w-m btn-primary m-b;" OnClick="btnListarPorUsuario_Click">
                                       <i class="fa fa-print"></i> Novedades Por Usuario</asp:LinkButton>
                         <asp:LinkButton ID="btnGenerarArchivo" runat="server" class="btn btn-w-m btn-primary m-b;" OnClick="btnGenerarArchivo_Click">
                                       <i class="fa fa-download"></i>Generar Archivos</asp:LinkButton>

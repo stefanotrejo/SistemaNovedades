@@ -131,6 +131,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         this.Master.TituloDelFormulario = Globals.TituloDelFormulario;
+        habilitarDeshabilitarBotones(false);
         try
         {
             this.Session["usuId"] = int.Parse(this.Session["_usuId"].ToString());
@@ -154,6 +155,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                 lblEtapa.Visible = false;
                 lblEtapa.Visible = false;
                 btnConsultar1.Enabled = false;
+                btnAceptar1.Visible = false;
             }
             else
             {
@@ -803,4 +805,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             "://" + originalUri.Authority + newUrl;
         return newUrl;
     }
+
+    protected void habilitarDeshabilitarBotones(bool estado)
+    {
+        btnDescargarArchivos.Visible = estado;
+        btnGenerarArchivo.Visible = estado;
+        btnListarUsuario.Visible = estado;
+    }
+
 }
