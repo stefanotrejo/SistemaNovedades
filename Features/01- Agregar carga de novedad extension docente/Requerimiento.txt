@@ -7,11 +7,12 @@ Se requiere implementar la carga de novedades de docentes
 
 ## Dependencias
 - SPS: 
+LiquidacionExtensionDocente.LiquidacionAbierta'. LISTO
 NovedadExensionDocente.Insertar
 NovedadExtensionDocente.ObtenerTodo
 NovedadExtensionDocente.ObtenerUno
 NovedadesExtensionDocente.ValidarRepetido
 NovedadesExtensionDocente.Eliminar
 ExtensionDocente.ObtenerAgentes
-[NovedadesExtensionDocente.InformeNovedadesCargadas]
+NovedadesExtensionDocente.InformeNovedadesCargadas
 

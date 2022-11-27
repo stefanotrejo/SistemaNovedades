@@ -79,9 +79,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-            //string Ruta = "C:/Users/stefano/Desktop/ArchivoCreado";
-            string Ruta = "C:/Users/stefano/Desktop/PagoEventual";
+            String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');            
+            //string Ruta = "C:/Users/stefano/Desktop/PagoEventual";
+            string Ruta = "C:/temp/PagosEventuales";
             if (System.IO.File.Exists(Ruta + fecha + ".txt"))
             {
                 File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
@@ -119,13 +119,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         {
             #region Variables de sesion para filtros
             //[VariablesDeSesionParaFiltros1]
-            #endregion
-            // int menId = 0;
-            DateTime fechaseleccionada = Convert.ToDateTime(MenuRaizLista.SelectedValue);
-
-            //  menId = Convert.ToInt32(MenuRaizLista.SelectedValue);
-            dt = new DataTable();
-            //     dt = ocnParametro.ObtenerTodoBuscarxNombre(Nombre.Text.Trim());
+            #endregion            
+            DateTime fechaseleccionada = Convert.ToDateTime(MenuRaizLista.SelectedValue);            
+            dt = new DataTable();            
             dt = ocnAgente.ObtenerRegistrosDeAgentes(fechaseleccionada);
             CrearArchivo(dt); //Genera TXT            
             ocnAgente.pevFechaCarga = fechaseleccionada;
@@ -149,10 +145,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         {
             String NomRep = "InformeContaduria.rpt";
             DateTime fechaseleccionada = Convert.ToDateTime(MenuRaizLista.SelectedValue);
-            DateTime periodoDesde = fechaseleccionada;
-            String nombre = "";
-            String nrocontrol = "";
-            String dni = "";
+            //DateTime periodoDesde = fechaseleccionada;            
             FuncionesUtiles.AbreVentana("Reporte.aspx?fechaseleccionada=" + fechaseleccionada + "&NomRep=" + NomRep);
         }
         catch (Exception oError)
@@ -170,13 +163,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            String NomRep = "InformeTesoreria.rpt";
+            String NomRep = "Informe_Tesoreria_Nuevo.rpt";
             DateTime fechaseleccionada = Convert.ToDateTime(MenuRaizLista.SelectedValue);
-            DateTime periodoDesde = fechaseleccionada;
-            //DateTime periodoHasta = Globales.periodoHasta;
-            String nombre = "";
-            String nrocontrol = "";
-            String dni = "";
+            //DateTime periodoDesde = fechaseleccionada;                        
             FuncionesUtiles.AbreVentana("Reporte.aspx?fechaseleccionada=" + fechaseleccionada + "&NomRep=" + NomRep);
         }
         catch (Exception oError)
