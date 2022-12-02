@@ -97,8 +97,10 @@
                 <div class="col-sm-12">
                     <div class="form-group">
                         <br />
-                        <div class="col-md-4 col-md-offset-0">
+                        <div class="col-md-4 col-md-offset-2">
                             <asp:Button ID="btnAceptar1" class="btn btn-w-m btn-primary" runat="server" Text="Grabar" OnClick="btnAceptar_Click" />
+                            <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-w-m btn-danger" OnClick="btnEliminar_Click">
+                                      <i class="fa fa-trash"></i> Eliminar</asp:LinkButton>                            
                         </div>
                     </div>
                 </div>

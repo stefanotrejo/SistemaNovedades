@@ -39,7 +39,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     LiquidacionSueldos.Negocio.NovedadInasistencia oNovedadInasistencia = new LiquidacionSueldos.Negocio.NovedadInasistencia();
     LiquidacionSueldos.Negocio.NovedadExtensionDocente oNovedadExtDoc = new LiquidacionSueldos.Negocio.NovedadExtensionDocente();
 
-    int mesActual, anioActualInt;
+    int mesActual, anioActualInt, novedadId;
     String mesActualString, anioActualString;
     Boolean agregarAnio;
 
@@ -321,6 +321,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             lblMensajeError.Text = "";
             LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente2 = new LiquidacionSueldos.Negocio.NuevoAge1();
             Boolean errores = false;
+            btnEliminar.Visible = false;
 
             /*
              // Validaciones
@@ -399,6 +400,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                     {
                         txtCargo.Text = "";
                     }
+                    // Verificamos si existen novedades registradas. Si hay, guardamos id en novedadID
+                    novedadId = oNovedadExtDoc.ValidarRepetido(oLiquidacionExtDoc.id, txtAgeNroControl.Text);
+                    if (novedadId != 0)
+                        btnEliminar.Visible = true;
                 }
             }
         }
@@ -461,7 +466,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         oLiquidacionExtDoc = oLiquidacionExtDoc.ObtenerLiquidacionAbierta();
         return oLiquidacionExtDoc;
     }
-
 
     protected void btnDescargarArchivos_Click(object sender, EventArgs e)
     {
@@ -775,10 +779,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         else
             reparticion = Convert.ToInt32(Session["_esAdministrador"]);
 
-        String NomRep = "NovedadesCargadasExtDoc.rpt";           
-        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" 
-            + Session["liqId"].ToString()            
-                + "&NomRep=" + NomRep);        
+        String NomRep = "NovedadesCargadasExtDoc.rpt";
+        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId="
+            + Session["liqId"].ToString()
+                + "&NomRep=" + NomRep);
     }
 
     protected void btnListarPorUsuario_Click(object sender, EventArgs e)
@@ -813,4 +817,36 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         btnListarUsuario.Visible = estado;
     }
 
+    protected void btnEliminar_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (txtNombre.Text == "")
+            {
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un Agente");
+                return;
+            }
+
+            this.lblMensajeError.Text = "";
+            int usuId = Convert.ToInt32(this.Session["usuId"].ToString());
+            if (usuId == 0 || novedadId == 0)
+            {
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Ocurrio un error");
+                return;
+            }
+
+            oNovedadExtDoc.Eliminar(novedadId, usuId);
+            base.Response.Redirect(base.Request.UrlReferrer.ToString(), true);
+            return;
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+                                    <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+                                    <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+                                    Se ha producido el siguiente error:<br/>
+                                    MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+                                    "</div>";
+        }
+    }
 }
