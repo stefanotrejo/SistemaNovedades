@@ -39,7 +39,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     LiquidacionSueldos.Negocio.NovedadInasistencia oNovedadInasistencia = new LiquidacionSueldos.Negocio.NovedadInasistencia();
     LiquidacionSueldos.Negocio.NovedadExtensionDocente oNovedadExtDoc = new LiquidacionSueldos.Negocio.NovedadExtensionDocente();
 
-    int mesActual, anioActualInt, novedadId;
+    int mesActual, anioActualInt;
     String mesActualString, anioActualString;
     Boolean agregarAnio;
 
@@ -124,6 +124,19 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                 _liqId = value;
             }
         }
+
+        private static int _novedadId;
+        public static int novedadId
+        {
+            get
+            {
+                return _novedadId;
+            }
+            set
+            {
+                _novedadId = value;
+            }
+        }        
     }
 
     #endregion
@@ -320,8 +333,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         {
             lblMensajeError.Text = "";
             LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente2 = new LiquidacionSueldos.Negocio.NuevoAge1();
-            Boolean errores = false;
-            btnEliminar.Visible = false;
+            Boolean errores = false;            
+            habilitarDeshabilitarBotones(false);
 
             /*
              // Validaciones
@@ -400,10 +413,14 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                     {
                         txtCargo.Text = "";
                     }
-                    // Verificamos si existen novedades registradas. Si hay, guardamos id en novedadID
-                    novedadId = oNovedadExtDoc.ValidarRepetido(oLiquidacionExtDoc.id, txtAgeNroControl.Text);
-                    if (novedadId != 0)
+
+                    btnAceptar1.Visible = true;  
+                    GlobalesNovedadesConsulta.novedadId = oNovedadExtDoc.ValidarRepetido(oLiquidacionExtDoc.id, txtAgeNroControl.Text);
+                    if (GlobalesNovedadesConsulta.novedadId != 0)
+                    {
                         btnEliminar.Visible = true;
+                        btnAceptar1.Visible = false;
+                    }                    
                 }
             }
         }
@@ -815,6 +832,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         btnDescargarArchivos.Visible = estado;
         btnGenerarArchivo.Visible = estado;
         btnListarUsuario.Visible = estado;
+        btnEliminar.Visible = estado;
     }
 
     protected void btnEliminar_Click(object sender, EventArgs e)
@@ -829,14 +847,15 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
             this.lblMensajeError.Text = "";
             int usuId = Convert.ToInt32(this.Session["usuId"].ToString());
-            if (usuId == 0 || novedadId == 0)
+            if (usuId == 0 || GlobalesNovedadesConsulta.novedadId == 0)
             {
                 this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Ocurrio un error");
                 return;
             }
 
-            oNovedadExtDoc.Eliminar(novedadId, usuId);
-            base.Response.Redirect(base.Request.UrlReferrer.ToString(), true);
+            oNovedadExtDoc.Eliminar(GlobalesNovedadesConsulta.novedadId, usuId);
+            //base.Response.Redirect(base.Request.UrlReferrer.ToString(), true);
+            Response.Redirect("NovedadesConsultaExtDocente.aspx", false);
             return;
         }
         catch (Exception oError)
