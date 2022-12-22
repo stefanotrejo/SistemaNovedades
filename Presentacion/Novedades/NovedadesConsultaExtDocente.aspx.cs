@@ -855,6 +855,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
             oNovedadExtDoc.Eliminar(GlobalesNovedadesConsulta.novedadId, usuId);
             //base.Response.Redirect(base.Request.UrlReferrer.ToString(), true);
+            //lResponse.Redirect("NovedadesConsultaExtDocente.aspx" + "?operacion=2", true);
             Response.Redirect("NovedadesConsultaExtDocente.aspx", false);
             return;
         }
