@@ -39,23 +39,6 @@ FROM
 	ON t1.pevId = t2.pevId 
 
 
-	
-		
-	
-				
-	
-		
-
-					
-			
-
-	
-		
-			
-	
-
-
-
 declare @dni varchar(255)
 declare @numero_control varchar(8)
 set @dni = '28743673'
