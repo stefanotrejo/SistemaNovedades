@@ -331,10 +331,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     protected void btnGenerar_Click(object sender, EventArgs e)
     {
         // Importa desde un TXT y realiza los pagos eventuales automaticamente. Se debe ingresar el mes, año, imorte y descripcion
-
         try
         {
-            bool hayErrores = false;            
+            bool hayErrores = false;
 
             #region Validar Errores
             if (DropDownListMesDesde.SelectedIndex != 0)
@@ -374,113 +373,31 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             #endregion
 
             if (!hayErrores)
-            {                
+            {
                 String linea;
                 System.IO.StreamReader archivo2 = new System.IO.StreamReader(@"c:\pagoseventuales.txt");
-
                 while (archivo2.EndOfStream == false)
                 {
-                    linea = archivo2.ReadLine();                    
+                    linea = archivo2.ReadLine();
                     String numeroControl = linea.Substring(0, 8);
-                                        
                     if (txtAgeImporte.Text.Trim().Length != 0)
                     {
-                        // BUSQUEDA POR CUIL
-                        if (RadioCuil.Checked == true)
-                        {
-                            //  ocnAgente = ocnAgente.ObtenerAgentePorCuil(cuil);
-                        }
-                        // BUSQUEDA POR NRO DE CONTROL
-                        else
-                        {
-                            ocnAgente = ocnAgente.ObtenerAgentePorNroControl(numeroControl);
-                        }
-                        
-                        //String ageCuit = ocnAgente.ageCUIT;                        
-                        ocnAgente.ageDNI = ocnAgente.ageCUIT.Substring(2, 8);                                                
+                        //// BUSQUEDA POR NRO DE CONTROL
+                        ocnAgente = ocnAgente.ObtenerAgentePorNroControl(numeroControl);
+                        ocnAgente.ageDNI = ocnAgente.ageCUIT.Substring(2, 8);
                         ocnAgente.facimporte = Convert.ToSingle(txtAgeImporte.Text);
-                                                 
-                        int fechaCorrecta;
                         int id = 0;
+                        ocnAgente.pevPagoAcumulado = 0;
+                        id = ocnAgente.Insertar();
 
-                        if (CheckBoxAcumulado.Checked == true)
-                        #region    PAGO ACUMULADO
-                        {
-                            ocnAgente.pevPagoAcumulado = 1;
-                            fechaCorrecta = FechaComparar(DropDownListMesDesde.SelectedIndex, DropDownListMesHasta.SelectedIndex, Convert.ToInt32(TxtBoxAnioDesde.Text), Convert.ToInt32(TxtBoxAnioHasta.Text));
-                            if (fechaCorrecta == 1)
-                            {
-                                id = ocnAgente.Insertar();
-                                ocnAgente.pevId = id;
-                                for (int i = DropDownListMesDesde.SelectedIndex; i <= DropDownListMesHasta.SelectedIndex; i++)
-                                {
-                                    ocnAgente.dpeMes = i;
-                                    ocnAgente.dpeAnio = Convert.ToInt32(TxtBoxAnioDesde.Text);
-                                    ocnAgente.InsertarDetallePagoEventual();
-                                }
-                                Response.Redirect("PagosEventualesConsulta.aspx", true);
-                            }
-                            else
-                            {
-                                if (fechaCorrecta == 2)
-                                {
-                                    //INSERTA PAGO EVENTUAL EN PAGOS EVENTUALES
-                                    id = ocnAgente.Insertar();
-                                    ocnAgente.pevId = id;
-                                    for (int i = DropDownListMesDesde.SelectedIndex; i <= 12; i++)
-                                    {
-                                        ocnAgente.dpeMes = i;
-                                        ocnAgente.dpeAnio = Convert.ToInt32(TxtBoxAnioDesde.Text);
-                                        ocnAgente.InsertarDetallePagoEventual();
-                                    }
-
-                                    for (int i = 1; i <= DropDownListMesHasta.SelectedIndex; i++)
-                                    {
-                                        ocnAgente.dpeMes = i;
-                                        ocnAgente.dpeAnio = Convert.ToInt32(TxtBoxAnioHasta.Text);
-                                        ocnAgente.InsertarDetallePagoEventual();
-                                    }
-                                    Response.Redirect("PagosEventualesConsulta.aspx", true);
-                                }
-                                else
-                                {
-                                    lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-                                <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-                                <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-                                Los años o meses ingresados son incorrectos<br>" + "</div>";
-                                }
-                            }
-                        }
-                        #endregion
-
-                        else
-                        // PAGO UNICO 
-                        {
-                            //fechaCorrecta = FechaValidar(DropDownListMesDesde.SelectedIndex, Convert.ToInt32(TxtBoxAnioDesde.Text));
-                            fechaCorrecta = 1;
-                            if (fechaCorrecta == 1)
-                            {
-                                ocnAgente.pevPagoAcumulado = 0;
-                                id = ocnAgente.Insertar();
-
-                                // DAR DE ALTA EL/LOS MESES PAGADOS EN DetallePagoEventual
-                                ocnAgente.pevId = id;
-                                ocnAgente.dpeMes = DropDownListMesDesde.SelectedIndex;
-                                ocnAgente.dpeAnio = Convert.ToInt32(TxtBoxAnioDesde.Text);
-                                ocnAgente.dpeConcepto = txtConcepto.Text;
-                                ocnAgente.InsertarDetallePagoEventual();                                
-                            }
-                            // FECHA INCORRECTA
-                            else
-                            {
-                                lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-                            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-                           <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-                            El mes ingresado no es valido<br>" + "</div>";
-                            }
-                        }                        
+                        // DAR DE ALTA EL/LOS MESES PAGADOS EN DetallePagoEventual
+                        ocnAgente.pevId = id;
+                        ocnAgente.dpeMes = DropDownListMesDesde.SelectedIndex;
+                        ocnAgente.dpeAnio = Convert.ToInt32(TxtBoxAnioDesde.Text);
+                        ocnAgente.dpeConcepto = txtConcepto.Text;
+                        ocnAgente.InsertarDetallePagoEventual();
                     }
-                    // NO INGRESÓ EL IMPORTE
+                    //ERROR IMPORTE
                     else
                     {
                         lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
@@ -489,18 +406,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         Debe ingresar el importe<br>" + "</div>";
                     }
                 }
-                lblMensajeError.Text = FuncionesUtiles.MensajeExito("Carga realizada correctamente");
-                limpiarCampos();
-                //Response.Redirect("PagosEventualesConsulta.aspx", true);
-                
             }
-            else
-            {
-
-            }
+                     
+            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Carga realizada correctamente");
+            limpiarCampos();
+            //Response.Redirect("PagosEventualesConsulta.aspx", true);              
         }
-       
-
         catch (Exception oError)
         {
             lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
@@ -525,7 +436,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
 Se ha producido el siguiente error:<br/>
 MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-"</div>";
+    "</div>";
         }
     }
 
@@ -533,7 +444,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         this.txtAgeNroControl.Text = "";
         this.txtAgeImporte.Text = "";
-        this.txtConcepto.Text = "";        
+        this.txtConcepto.Text = "";
     }
 
     protected void CheckBoxAcumulado_CheckedChanged(object sender, EventArgs e)
@@ -596,6 +507,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     }
 
 
-    
+
 
 }
