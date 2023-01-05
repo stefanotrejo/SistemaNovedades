@@ -1,0 +1,22 @@
+
+DECLARE @mes varchar(2)
+DECLARE @anio varchar(2)
+DECLARE @cuil varchar(11)
+DECLARE @dni varchar(8)
+DECLARE @control varchar(8)
+
+SELECT @mes = '12'
+SELECT  @anio = '22'
+SELECT @cuil = 'X'
+SELECT @dni = '36878354'
+SELECT @control = 'X'
+
+
+SELECT nombre, 'EXEC [PagosEventuales.Validar]', Cuil, NroCOntrol 
+FROM PruebasAge 
+WHERE MesAnioLiq = CONCAT(@mes,'/',@anio) AND 
+(Cuil = @cuil
+OR NroCOntrol = @control
+OR SUBSTRING(Cuil,3,8) = @dni)
+
+

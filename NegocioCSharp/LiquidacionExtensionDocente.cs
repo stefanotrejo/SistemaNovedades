@@ -145,13 +145,13 @@ namespace LiquidacionSueldos
                         else
                             objetoLiquidacion.descripcion = "";
 
-                        if (Tabla.Rows[0]["mes"].ToString().Trim().Length > 0)
-                            objetoLiquidacion.mes = Tabla.Rows[0]["mes"].ToString();
+                        if (Tabla.Rows[0]["mes_referencia"].ToString().Trim().Length > 0)
+                            objetoLiquidacion.mes = Tabla.Rows[0]["mes_referencia"].ToString();
                         else
                             objetoLiquidacion.mes = "";
 
-                        if (Tabla.Rows[0]["anio"].ToString().Trim().Length > 0)
-                            objetoLiquidacion.anio = Tabla.Rows[0]["anio"].ToString();
+                        if (Tabla.Rows[0]["anio_referencia"].ToString().Trim().Length > 0)
+                            objetoLiquidacion.anio = Tabla.Rows[0]["anio_referencia"].ToString();
                         else
                             objetoLiquidacion.anio = "";
 
