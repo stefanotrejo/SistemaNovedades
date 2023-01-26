@@ -56,19 +56,25 @@ namespace LiquidacionSueldos.Negocio
 
         // INICIO - Importacion de Agentes
 
-        public void ObtenerAgentesExtDoc()
+        public void GenerarArchivosExtDoc()
         {
             try
             {
                 ArchivoExtDocEducacion oAgente = new ArchivoExtDocEducacion();
                 Fila = new DataTable();
+
                 Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Educacion]", new object[,] {
                 });
                 Crear_Archivo_Educacion(Fila);
 
                 Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ganancias]", new object[,] {
                 }); 
-                Crear_Archivo_Ganancias(Fila);           
+                Crear_Archivo_Ganancias(Fila);
+
+                //Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ministerio]", new object[,] {
+                //});
+                //Crear_Archivo_Ministerio(Fila);         
+
             }
             catch (Exception ex)
             {
@@ -294,6 +300,47 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         string linea = row["encabezado"].ToString().Trim() + cantidad_items_string + conceptos_importes;
                         file.WriteLine(linea);
 
+                    }
+                }
+            }
+            catch (Exception oError)
+            {
+                string error = @"<div class=""alert alert-danger alert-dismissable"">
+<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+Se ha producido el siguiente error:<br/>
+MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+               "</div>";
+            }
+        }
+
+        protected void Crear_Archivo_Ministerio(DataTable dt)
+        {
+            try
+            {
+                String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
+                string Ruta = "C:/temp/extdoc_ministerio";
+                if (System.IO.File.Exists(Ruta + fecha + ".txt"))
+                {
+                    File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
+                    File.Delete(Ruta + fecha + ".txt");
+                }
+                using (StreamWriter file = new StreamWriter(Ruta += fecha + ".txt", true))
+                {
+                    var delimiter = "\t";
+                    string line = "";
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        line = line + string.Join(delimiter, column.ColumnName);
+                    }
+                    file.WriteLine(line);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        for (int i = 0; i < dt.Columns.Count; i++)
+                        {                            
+                            file.WriteLine(row[i].ToString());
+                        }                      
                     }
                 }
             }

@@ -91,7 +91,7 @@
         <asp:Button ID="btnExportarDbf" runat="server" Text="Exportar DBF" OnClick="btnExportarDbf_Click"/>
         <br />
         <br />
-        <asp:Button ID="btn_generar_arch_educacion" runat="server" Text="txt Educacion" OnClick="btn_generar_arch_educacion_Click"/>
+        <asp:Button ID="btn_generar_arch_ext_doc" runat="server" Text="Generar Archivos Ext Doc" OnClick="btn_generar_arch_ext_doc_Click"/>
 
        <br />
         <br />
