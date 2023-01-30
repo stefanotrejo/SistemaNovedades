@@ -193,99 +193,13 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         try
-        {
-            #region PERFILES
-            int perfil = Convert.ToInt32(Session["_esAdministrador"]);
-            switch (perfil)
-            {
-                case 1: //ADMINISTRADOR
-                    break;
-
-                case 2: //D.G. PERSONAL - GRUPO 7                       
-                    //btnListar.Visible = false;
-                    break;
-
-                case 3: //UERT            
-                    break;
-
-                case 4: //DIRECTOR                   
-                    break;
-
-                case 5: //PERSONAL EXTENDIDO
-                        //CASO 2 MAS BOTON CONCEPTOS
-                        //btnListar.Visible = false;
-                    break;
-            }
-            #endregion
-
-            if (Session["EstadoLiquidacion"].ToString() != "")
-            {
-                /*
-                 ESTADOS LIQUIDACION:
-                 1- Nueva liquidacion
-                 2- Se modifico la liquidacion
-                 3- Se eliminó la liquidacion
-                 4- Se abrió la liquidacion
-                 5- Se cerro para personal
-                 6- Se cerro para todos                 
-                 */
-
-                switch (int.Parse(Session["EstadoLiquidacion"].ToString()))
-                {
-                    case 1:
-
-
-                        break;
-
-                    case 2:
-
-                        break;
-
-                    case 3:
-
-                        break;
-
-                    case 4:
-
-                        break;
-
-                    case 5:
-                        lblMensajeError.Text = @"<div class=""alert alert-success alert-dismissable"">
-                                <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-                                <a class=""alert-link"" href=""#"">Confirmacion</a><br/>
-                                Liquidacion cerrada para personal con exito<br>" + "</div>";
-                        break;
-
-                    case 6:
-
-                        break;
-
-
-                    default:
-
-                        break;
-                }
-                Session["EstadoLiquidacion"] = "";
-
-
-                //if (int.Parse(Session["EstadoLiquidacion"].ToString()) == 4) { 
-
-                //lblMensajeError.Text = @"<div class=""alert alert-success alert-dismissable"">
-                //        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-                //        <a class=""alert-link"" href=""#"">Confirmacion</a><br/>
-                //        Liquidacion abierta con exito<br>" + "</div>";
-                //}               
-            }
-
-            String Sesion = Session["Resultado"].ToString();
-            if (Sesion == "")
-            {
+        {                                                   
                 //Si se esta cargando por primera vez
                 if (!Page.IsPostBack)
                 {
                     DeshabilitarBotonesLiquidacion();
 
-                    this.Master.TituloDelFormulario = "Consulta de Liquidaciones";
+                    this.Master.TituloDelFormulario = "Consulta de Liquidaciones Extension Docente";
                     if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
                     int Id = 0;
                     if (Request.QueryString["Id"] != null)
@@ -305,17 +219,8 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
                     MenuRaizListaAnioDesde.DataSource = dt;
                     MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
                     MenuRaizListaAnioDesde.DataBind();
-
-                    //Combo Mes Desde
-                    //MenuRaizListaMesDesde.DataSource = dt2;
-                    //MenuRaizListaMesDesde.DataTextField = "MesLiq";
-                    //MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-                    //MenuRaizListaMesDesde.SelectedIndex = dt2.Rows.Count - 1;
-                    //MenuRaizListaMesDesde.DataBind();
-                    //Pongo meses manualmente - 08/11/19
                 }
-            }
-
+        
             //SI VUELVE DE AGENTE DETALLE
             else
             {
@@ -360,22 +265,17 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
 
                     //Variables de Indices seleccionados
                     GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
-                    GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;
-                    //GrillaCargar(Convert.ToInt32(Session["AgenteConsulta.PageIndex"]), Tipo);
+                    GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;                    
                 }
                 catch
                 {
                     // EN CASO DE ERROR CON VARIABLES DE SESSION -> CARGAR VALORES POR DEFECTO
-
                     this.Master.TituloDelFormulario = "Consulta de Agentes";
                     if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
                     int Id = 0;
                     if (Request.QueryString["Id"] != null)
                     {
-                        Id = Convert.ToInt32(Request.QueryString["Id"]);
-                        /*INCIALIZADORES*/
-                        //  ComboAgente.DataValueField = "Valor"; ComboAgente.DataTextField = "Texto"; ComboAgente.DataSource = (new LiquidacionSueldos.Negocio.Perfil()).ObtenerLista("[Seleccionar...]"); ComboAgente.DataBind();        
-                        // this.ComboAgente.Focus();
+                        Id = Convert.ToInt32(Request.QueryString["Id"]);                   
                     }
 
                     ocnMenu = new LiquidacionSueldos.Negocio.Menu();
@@ -575,7 +475,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 {
                     generarArchivosNoPresentismo(liqId, Convert.ToInt32(row["perEsAdministrador"].ToString()));
                 }
-                              
+
                 Response.Redirect("~/Liquidaciones/LiquidacionesConsulta.aspx", true);
             }
             else
@@ -862,7 +762,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
         GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;
     }
-    
+
     protected void btnGenerarArchivos_Click(object sender, EventArgs e)
     {
         try
@@ -880,9 +780,9 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
             //  GENERACION DBF MULTAS/SUSPENSIONES Y BAJAS                        
             //string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString());
-            string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString(), "2");            
+            string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString(), "2");
             oNovedadInasistencia.GenerarDbfMultasSuspensiones(liqId, rutaDestino, etapaLiquidacion);
-            oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);            
+            oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);
             lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Exito");
         }
         catch (Exception oError)
@@ -897,7 +797,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     }
 
     protected void generarArchivosNoPresentismo(int paramLiqId, int paramReparticion)
-    {        
+    {
         DataTable dt = new DataTable();
         string nombreArchivo, path, pathConNombreArchivo;
 

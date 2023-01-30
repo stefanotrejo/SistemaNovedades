@@ -93,7 +93,7 @@ namespace LiquidacionSueldos
                 try
                 {
                     int IdMax = 0;
-                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[LiquidacionNovedades.Insertar]", new object[,] {
+                    IdMax = ocdGestor.EjecutarNonQueryRetornaId("[LiquidacionExtensionDocente.Insertar]", new object[,] {
                         {
                             "@descripcion",
                             descripcion
@@ -194,7 +194,7 @@ namespace LiquidacionSueldos
 
                 return objetoLiquidacion;
             }
-         
+           
             #endregion
         }
     }
