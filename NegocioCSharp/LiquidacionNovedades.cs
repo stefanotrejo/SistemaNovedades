@@ -252,91 +252,91 @@ namespace LiquidacionSueldos.Negocio
         {
             this.ocdGestor = new Gestor();
             this.Tabla = new DataTable();
-            LiquidacionNovedades liquidacionNovedade = new LiquidacionNovedades();
+            LiquidacionNovedades liquidacionNovedades = new LiquidacionNovedades();
             try
             {
                 this.Tabla = this.ocdGestor.EjecutarReader("[LiquidacionNovedades.ObtenerLiquidacionAbierta]", new object[0, 0]);
                 if (this.Tabla.Rows.Count <= 0)
                 {
-                    liquidacionNovedade = null;
+                    liquidacionNovedades = null;
                 }
                 else
                 {
                     if (this.Tabla.Rows[0]["liqId"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqId = 0;
+                        liquidacionNovedades.liqId = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
+                        liquidacionNovedades.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
                     }
                     if (this.Tabla.Rows[0]["liqDescripcion"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqDescripcion = "";
+                        liquidacionNovedades.liqDescripcion = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
+                        liquidacionNovedades.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqMes"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqMes = "";
+                        liquidacionNovedades.liqMes = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
+                        liquidacionNovedades.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqAnio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqAnio = "";
+                        liquidacionNovedades.liqAnio = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
+                        liquidacionNovedades.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
                     }
-                    if ((liquidacionNovedade.liqMes != "") & (liquidacionNovedade.liqAnio != ""))
+                    if ((liquidacionNovedades.liqMes != "") & (liquidacionNovedades.liqAnio != ""))
                     {
-                        liquidacionNovedade.mesAnioLiq = string.Concat(liquidacionNovedade.liqMes, "/", liquidacionNovedade.liqAnio);
+                        liquidacionNovedades.mesAnioLiq = string.Concat(liquidacionNovedades.liqMes, "/", liquidacionNovedades.liqAnio);
                     }
                     if (this.Tabla.Rows[0]["liqEtapa"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEtapa = 0;
+                        liquidacionNovedades.liqEtapa = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
+                        liquidacionNovedades.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
                     }
                     if (this.Tabla.Rows[0]["liqEstado"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEstado = "";
+                        liquidacionNovedades.liqEstado = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
+                        liquidacionNovedades.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqFechaInicio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime("01/01/2001");
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime("01/01/2001");
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
                     }
                     if (this.Tabla.Rows[0]["liqFechaCierre"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
                     }
                     if (this.Tabla.Rows[0]["liqActivo"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqActivo = 0;
+                        liquidacionNovedades.liqActivo = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqActivo = Convert.ToInt32(this.Tabla.Rows[0]["liqActivo"]);
+                        liquidacionNovedades.liqActivo = Convert.ToInt32(this.Tabla.Rows[0]["liqActivo"]);
                     }
                 }
             }
@@ -344,98 +344,98 @@ namespace LiquidacionSueldos.Negocio
             {
                 throw exception;
             }
-            return liquidacionNovedade;
+            return liquidacionNovedades;
         }
 
         public LiquidacionNovedades ObtenerLiquidacionAbiertaPersonal()
         {
             this.ocdGestor = new Gestor();
             this.Tabla = new DataTable();
-            LiquidacionNovedades liquidacionNovedade = new LiquidacionNovedades();
+            LiquidacionNovedades liquidacionNovedades = new LiquidacionNovedades();
             try
             {
                 this.Tabla = this.ocdGestor.EjecutarReader("[LiquidacionNovedades.ObtenerLiquidacionAbiertaPersonal]", new object[0, 0]);
                 if (this.Tabla.Rows.Count <= 0)
                 {
-                    liquidacionNovedade = null;
+                    liquidacionNovedades = null;
                 }
                 else
                 {
                     if (this.Tabla.Rows[0]["liqId"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqId = 0;
+                        liquidacionNovedades.liqId = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
+                        liquidacionNovedades.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
                     }
                     if (this.Tabla.Rows[0]["liqDescripcion"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqDescripcion = "";
+                        liquidacionNovedades.liqDescripcion = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
+                        liquidacionNovedades.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqMes"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqMes = "";
+                        liquidacionNovedades.liqMes = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
+                        liquidacionNovedades.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqAnio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqAnio = "";
+                        liquidacionNovedades.liqAnio = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
+                        liquidacionNovedades.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
                     }
-                    if ((liquidacionNovedade.liqMes != "") & (liquidacionNovedade.liqAnio != ""))
+                    if ((liquidacionNovedades.liqMes != "") & (liquidacionNovedades.liqAnio != ""))
                     {
-                        liquidacionNovedade.mesAnioLiq = string.Concat(liquidacionNovedade.liqMes, "/", liquidacionNovedade.liqAnio);
+                        liquidacionNovedades.mesAnioLiq = string.Concat(liquidacionNovedades.liqMes, "/", liquidacionNovedades.liqAnio);
                     }
                     if (this.Tabla.Rows[0]["liqEtapa"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEtapa = 0;
+                        liquidacionNovedades.liqEtapa = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
+                        liquidacionNovedades.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
                     }
                     if (this.Tabla.Rows[0]["liqEstado"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEstado = "";
+                        liquidacionNovedades.liqEstado = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
+                        liquidacionNovedades.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqFechaInicio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime("01/01/2001");
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime("01/01/2001");
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
                     }
                     if (this.Tabla.Rows[0]["liqFechaCierre"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
                     }
                     if (this.Tabla.Rows[0]["liqActivo"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqActivo = 0;
+                        liquidacionNovedades.liqActivo = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqActivo = Convert.ToInt32(this.Tabla.Rows[0]["liqActivo"]);
+                        liquidacionNovedades.liqActivo = Convert.ToInt32(this.Tabla.Rows[0]["liqActivo"]);
                     }
                 }
             }
@@ -443,7 +443,7 @@ namespace LiquidacionSueldos.Negocio
             {
                 throw exception;
             }
-            return liquidacionNovedade;
+            return liquidacionNovedades;
         }
 
         public DataTable ObtenerTodos(string liqMes, string liqAnio, int liqEtapa)
@@ -507,7 +507,7 @@ namespace LiquidacionSueldos.Negocio
 
         public LiquidacionNovedades ObtenerUno(int liqId)
         {
-            LiquidacionNovedades liquidacionNovedade = new LiquidacionNovedades();
+            LiquidacionNovedades liquidacionNovedades = new LiquidacionNovedades();
             try
             {
                 this.Tabla = new DataTable();
@@ -520,67 +520,67 @@ namespace LiquidacionSueldos.Negocio
                 {
                     if (this.Tabla.Rows[0]["liqId"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqId = 0;
+                        liquidacionNovedades.liqId = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
+                        liquidacionNovedades.liqId = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
                     }
                     if (this.Tabla.Rows[0]["liqDescripcion"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqDescripcion = "";
+                        liquidacionNovedades.liqDescripcion = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
+                        liquidacionNovedades.liqDescripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqMes"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqMes = "";
+                        liquidacionNovedades.liqMes = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
+                        liquidacionNovedades.liqMes = this.Tabla.Rows[0]["liqMes"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqAnio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqAnio = "";
+                        liquidacionNovedades.liqAnio = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
+                        liquidacionNovedades.liqAnio = this.Tabla.Rows[0]["liqAnio"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqEtapa"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEtapa = 0;
+                        liquidacionNovedades.liqEtapa = 0;
                     }
                     else
                     {
-                        liquidacionNovedade.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
+                        liquidacionNovedades.liqEtapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
                     }
                     if (this.Tabla.Rows[0]["liqEstado"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqEstado = "";
+                        liquidacionNovedades.liqEstado = "";
                     }
                     else
                     {
-                        liquidacionNovedade.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
+                        liquidacionNovedades.liqEstado = this.Tabla.Rows[0]["liqEstado"].ToString();
                     }
                     if (this.Tabla.Rows[0]["liqFechaInicio"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime("01/01/2001");
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime("01/01/2001");
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
+                        liquidacionNovedades.liqFechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
                     }
                     if (this.Tabla.Rows[0]["liqFechaCierre"].ToString().Trim().Length <= 0)
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
                     }
                     else
                     {
-                        liquidacionNovedade.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
+                        liquidacionNovedades.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
                     }
                 }
             }
@@ -588,7 +588,7 @@ namespace LiquidacionSueldos.Negocio
             {
                 throw exception;
             }
-            return liquidacionNovedade;
+            return liquidacionNovedades;
         }
 
         public int ValidarRepetido(string liqMes, string liqAnio, int liqEtapa)
@@ -618,7 +618,5 @@ namespace LiquidacionSueldos.Negocio
             }
             return num;
         }
-
-
     }
 }

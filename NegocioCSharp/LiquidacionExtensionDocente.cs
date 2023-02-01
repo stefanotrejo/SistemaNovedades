@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using LiquidacionSueldos.Datos;
 
 namespace LiquidacionSueldos
 {
@@ -13,7 +14,7 @@ namespace LiquidacionSueldos
         {
             #region Propiedades
 
-            private Datos.Gestor ocdGestor = new Datos.Gestor();
+            private Gestor ocdGestor = new Gestor();
             private DataTable Tabla = new DataTable();
 
             private int _id;
@@ -194,7 +195,201 @@ namespace LiquidacionSueldos
 
                 return objetoLiquidacion;
             }
-           
+
+            public void Actualizar(int liqId, string liqDescripcion, string liqMes, string liqAnio, int liqEtapa, string liqEstado, DateTime liqFechaInicio, DateTime? liqFechaCierre, int liqActivo)
+            {
+                try
+                {
+                    ocdGestor = new Datos.Gestor();
+                    object[,] objArray = new object[9, 2];
+                    objArray[0, 0] = "@liqId";
+                    objArray[0, 1] = liqId;
+                    objArray[1, 0] = "@liqDescripcion";
+                    objArray[1, 1] = liqDescripcion;
+                    objArray[2, 0] = "@liqMes";
+                    objArray[2, 1] = liqMes;
+                    objArray[3, 0] = "@liqAnio";
+                    objArray[3, 1] = liqAnio;
+                    objArray[4, 0] = "@liqEtapa";
+                    objArray[4, 1] = liqEtapa;
+                    objArray[5, 0] = "@liqEstado";
+                    objArray[5, 1] = liqEstado;
+                    objArray[6, 0] = "@liqFechaInicio";
+                    objArray[6, 1] = liqFechaInicio;
+                    objArray[7, 0] = "@liqFechaCierre";
+                    objArray[7, 1] = liqFechaCierre;
+                    objArray[8, 0] = "@liqActivo";
+                    objArray[8, 1] = liqActivo;
+
+                    ocdGestor.EjecutarNonQuery("[liquidacionExtensionDocentes.Actualizar]", objArray);
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+            }
+
+            public DataTable ObtenerUno(string liqMes, string liqAnio, string liqEtapa)
+            {
+                try
+                {
+                    this.Tabla = new DataTable();
+                    ocdGestor = new Datos.Gestor();
+                    object[,] objArray = new object[3, 2];
+                    objArray[0, 0] = "@liqMes";
+                    objArray[0, 1] = liqMes;
+                    objArray[1, 0] = "@liqAnio";
+                    objArray[1, 1] = liqAnio;
+                    objArray[2, 0] = "@liqEtapa";
+                    objArray[2, 1] = liqEtapa;
+
+                    this.Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.ObtenerUno]", objArray);
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+                return this.Tabla;
+            }
+
+            public LiquidacionExtensionDocente ObtenerUno(int liqId)
+            {
+                LiquidacionExtensionDocente liquidacionExtensionDocente = new LiquidacionExtensionDocente();
+                try
+                {
+                    this.Tabla = new DataTable();
+                    ocdGestor = new Datos.Gestor();
+                    object[,] objArray = new object[1, 2];
+                    objArray[0, 0] = "@liqId";
+                    objArray[0, 1] = liqId;
+                    this.Tabla = ocdGestor.EjecutarReader("[liquidacionExtensionDocentes.ObtenerUnoPorLiqId]", objArray);
+
+                    if (this.Tabla.Rows.Count > 0)
+                    {
+                        if (this.Tabla.Rows[0]["id"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.id = 0;
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.id = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
+                        }
+
+                        if (this.Tabla.Rows[0]["descripcion"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.descripcion = "";
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.descripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
+                        }
+
+                        if (this.Tabla.Rows[0]["mes"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.mes = "";
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.mes = this.Tabla.Rows[0]["liqMes"].ToString();
+                        }
+
+                        if (this.Tabla.Rows[0]["anio"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.anio = "";
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.anio = this.Tabla.Rows[0]["liqAnio"].ToString();
+                        }
+
+                        if (this.Tabla.Rows[0]["etapa"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.etapa = 0;
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.etapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
+                        }
+
+                        if (this.Tabla.Rows[0]["estado"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.estado = "";
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.estado = this.Tabla.Rows[0]["liqEstado"].ToString();
+                        }
+
+                        if (this.Tabla.Rows[0]["fechaInicio"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.fechaInicio = Convert.ToDateTime("01/01/2001");
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.fechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
+                        }
+
+                        if (this.Tabla.Rows[0]["fechaCierre"].ToString().Trim().Length <= 0)
+                        {
+                            liquidacionExtensionDocente.fechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001"));
+                        }
+                        else
+                        {
+                            liquidacionExtensionDocente.fechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
+                        }
+                    }
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+
+                return liquidacionExtensionDocente;
+            }
+
+            public int ValidarRepetido(string liqMes, string liqAnio, int liqEtapa)
+            {
+                this.ocdGestor = new Gestor();
+                this.Tabla = new DataTable();
+                int num = 0;
+                try
+                {
+                    Gestor gestor = this.ocdGestor;
+                    object[,] objArray = new object[3, 2];
+                    objArray[0, 0] = "@liqMes";
+                    objArray[0, 1] = liqMes;
+                    objArray[1, 0] = "@liqAnio";
+                    objArray[1, 1] = liqAnio;
+                    objArray[2, 0] = "@liqEtapa";
+                    objArray[2, 1] = liqEtapa;
+                    this.Tabla = gestor.EjecutarReader("[LiquidacionNovedades.ValidarDuplicado]", objArray);
+                    if (this.Tabla.Rows.Count > 0)
+                    {
+                        num = Convert.ToInt32(this.Tabla.Rows[0]["Existe"].ToString());
+                    }
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+                return num;
+            }
+
+            public void AbrirEtapa(int liqId)
+            {
+                try
+                {
+                    Gestor gestor = this.ocdGestor;
+                    object[,] objArray = new object[1, 2];
+                    objArray[0, 0] = "@liqID_destino";
+                    objArray[0, 1] = liqId;
+                    gestor.EjecutarNonQuery("[LiquidacionExtensionDocente.AbrirEtapa]", objArray);
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+            }
             #endregion
         }
     }

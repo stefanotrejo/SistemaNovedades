@@ -16,7 +16,7 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
     DataTable dt, dt2 = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();    
     LiquidacionSueldos.Negocio.LiquidacionExtensionDocente objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
-    LiquidacionNovedades objetoLiquidacionAbierta = new LiquidacionNovedades();
+    LiquidacionExtensionDocente objetoLiquidacionAbierta = new LiquidacionExtensionDocente();
 
     #region Variables Globales
     public class GlobalesAgenteConsulta
@@ -190,44 +190,44 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
     {
         try
         {
-            if (!this.Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
-                this.Master.TituloDelFormulario = "Nueva Liquidacion Extension Docente";
-                this.txtAnio.Text = DateTime.Now.Year.ToString();
-                this.generarDescripcion();
-                this.txtFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                Master.TituloDelFormulario = "Nueva Liquidacion Extension Docente";
+                txtAnio.Text = DateTime.Now.Year.ToString();
+                generarDescripcion();
+                txtFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
                 int liquidacionID = 0;
                 if (base.Request.QueryString["Id"] != null)
                 {
                     liquidacionID = Convert.ToInt32(base.Request.QueryString["Id"]);
                     if (liquidacionID == 0)
                     {
-                        this.txtEstado.Enabled = false;
-                        this.txtEstado.Text = "A";
+                        txtEstado.Enabled = false;
+                        txtEstado.Text = "A";
                     }
                     // Si es modificacion
                     else
                     {
-                        this.Master.TituloDelFormulario = "Modificar liquidacion";
-                        this.objetoLiquidacion = this.objetoLiquidacion.ObtenerUno(liquidacionID);
-                        this.comboMesLiquidacion.SelectedIndex = Convert.ToInt32(this.objetoLiquidacion.liqMes) - 1;
-                        this.txtAnio.Text = this.objetoLiquidacion.liqAnio;
-                        this.txtEstado.Text = this.objetoLiquidacion.liqEstado;
-                        this.comboEtapa.SelectedIndex = this.objetoLiquidacion.liqEtapa - 1;
-                        this.txtDescripcion.Text = this.objetoLiquidacion.liqDescripcion;
-                        this.comboMesLiquidacion.Enabled = false;
-                        this.txtAnio.Enabled = false;
-                        this.comboEtapa.Enabled = false;
+                        Master.TituloDelFormulario = "Modificar liquidacion";
+                        objetoLiquidacion = objetoLiquidacion.ObtenerUno(liquidacionID);
+                        comboMesLiquidacion.SelectedIndex = Convert.ToInt32(objetoLiquidacion.mes) - 1;
+                        txtAnio.Text = objetoLiquidacion.anio;
+                        txtEstado.Text = objetoLiquidacion.estado;
+                        comboEtapa.SelectedIndex = objetoLiquidacion.etapa- 1;
+                        txtDescripcion.Text = objetoLiquidacion.descripcion;
+                        comboMesLiquidacion.Enabled = false;
+                        txtAnio.Enabled = false;
+                        comboEtapa.Enabled = false;
                     }
                 }
-                this.objetoLiquidacionAbierta = new LiquidacionNovedades();
-                this.objetoLiquidacionAbierta = this.objetoLiquidacionAbierta.ObtenerLiquidacionAbierta();
+                objetoLiquidacionAbierta = new LiquidacionExtensionDocente();
+                objetoLiquidacionAbierta = objetoLiquidacionAbierta.ObtenerLiquidacionAbierta();
             }
         }
         catch (Exception exception1)
         {
             Exception exception = exception1;
-            Label label = this.lblMensajeError;
+            Label label = lblMensajeError;
             object[] message = new object[] { "<div class=\"alert alert-danger alert-dismissable\">\r\n<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n<a class=\"alert-link\" href=\"#\">Error de Sistema</a><br/>\r\nSe ha producido el siguiente error:<br/>\r\nMESSAGE:<br>", exception.Message, "<br><br>EXCEPTION:<br>", exception.InnerException, "<br><br>TRACE:<br>", exception.StackTrace, "<br><br>TARGET:<br>", exception.TargetSite, "</div>" };
             label.Text = string.Concat(message);
         }
@@ -239,62 +239,63 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
         {
             if (base.Request.QueryString["Id"] != null)
             {
-                this.generarDescripcion();
-                this.objetoLiquidacion.liqId = Convert.ToInt32(base.Request.QueryString["Id"]);
-                this.objetoLiquidacion.liqMes = this.convertirMesAnumeroMenosUno(this.comboMesLiquidacion.SelectedValue);
-                if (this.txtAnio.Text.Length != 4)
+                generarDescripcion();
+                objetoLiquidacion.id = Convert.ToInt32(base.Request.QueryString["Id"]);
+                objetoLiquidacion.mes = convertirMesAnumeroMenosUno(comboMesLiquidacion.SelectedValue);
+                if (txtAnio.Text.Length != 4)
                 {
-                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text;
+                    objetoLiquidacion.anio = txtAnio.Text;
                 }
                 else
                 {
-                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text.Substring(2, 2);
+                    objetoLiquidacion.anio = txtAnio.Text.Substring(2, 2);
                 }
-                this.objetoLiquidacion.liqEtapa = Convert.ToInt32(this.comboEtapa.SelectedValue);
-                this.objetoLiquidacion.liqDescripcion = this.txtDescripcion.Text;
-                if (this.txtFechaInicio.Text == "")
+                objetoLiquidacion.etapa = Convert.ToInt32(comboEtapa.SelectedValue);
+                objetoLiquidacion.descripcion = txtDescripcion.Text;
+
+                if (txtFechaInicio.Text == "")
                 {
-                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
-                }
-                else
-                {
-                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime(this.txtFechaInicio.Text);
-                }
-                if (this.txtFechaCierre.Text == "")
-                {
-                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
+                    objetoLiquidacion.fechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
                 }
                 else
                 {
-                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.txtFechaCierre.Text));
+                    objetoLiquidacion.fechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
                 }
 
-                this.objetoLiquidacion.liqEstado = this.txtEstado.Text;
-                this.objetoLiquidacion.liqActivo = 1;
-
-                if (this.objetoLiquidacion.liqId != 0)
+                if (txtFechaCierre.Text == "")
                 {
-                    this.objetoLiquidacion.Actualizar(this.objetoLiquidacion.liqId, this.objetoLiquidacion.liqDescripcion, this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa, this.objetoLiquidacion.liqEstado, this.objetoLiquidacion.liqFechaInicio, this.objetoLiquidacion.liqFechaCierre, this.objetoLiquidacion.liqActivo);
-                }
-                else if (this.objetoLiquidacion.ValidarRepetido(this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa) != 0)
-                {
-                    this.lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
+                    objetoLiquidacion.fechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
                 }
                 else
                 {
-                    int num = this.objetoLiquidacion.Insertar();
-                    if (this.objetoLiquidacion.liqEtapa > 1)
+                    objetoLiquidacion.fechaCierre = new DateTime?(Convert.ToDateTime(txtFechaCierre.Text));
+                }
+
+                objetoLiquidacion.estado = txtEstado.Text;
+                
+                if (objetoLiquidacion.id != 0)
+                {
+                    objetoLiquidacion.Actualizar(objetoLiquidacion.id, objetoLiquidacion.descripcion, objetoLiquidacion.mes, objetoLiquidacion.anio, objetoLiquidacion.etapa, objetoLiquidacion.estado, objetoLiquidacion.fechaInicio, objetoLiquidacion.fechaCierre, objetoLiquidacion.activo);
+                }
+                else if (objetoLiquidacion.ValidarRepetido(objetoLiquidacion.mes, objetoLiquidacion.anio, objetoLiquidacion.etapa) != 0)
+                {
+                    lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
+                }
+                else
+                {
+                    int num = objetoLiquidacion.Insertar();
+                    if (objetoLiquidacion.etapa > 1)
                     {
-                        this.objetoLiquidacion.AbrirEtapa(num);
+                        objetoLiquidacion.AbrirEtapa(num);
                     }
-                    this.lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
+                    lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
                 }
             }
         }
         catch (Exception exception1)
         {
             Exception exception = exception1;
-            Label label = this.lblMensajeError;
+            Label label = lblMensajeError;
             object[] message = new object[] { "<div class=\"alert alert-danger alert-dismissable\">\r\n<button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n<a class=\"alert-link\" href=\"#\">Error de Sistema</a><br/>\r\nSe ha producido el siguiente error:<br/>\r\nMESSAGE:<br>", exception.Message, "<br><br>EXCEPTION:<br>", exception.InnerException, "<br><br>TRACE:<br>", exception.StackTrace, "<br><br>TARGET:<br>", exception.TargetSite, "</div>" };
             label.Text = string.Concat(message);
         }
@@ -319,13 +320,13 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void comboMesLiquidacion_SelectedIndexChanged(object sender, EventArgs e)
     {
-        this.generarDescripcion();
+        generarDescripcion();
     }
 
     protected void generarDescripcion()
     {
         string str = "";
-        string text = this.comboEtapa.Text;
+        string text = comboEtapa.Text;
         string str1 = text;
         if (text != null)
         {
@@ -342,19 +343,19 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 str = "Tercera";
             }
         }
-        TextBox textBox = this.txtDescripcion;
-        string[] strArrays = new string[] { str, " Etapa del mes de ", this.comboMesLiquidacion.Text, " del ", this.txtAnio.Text };
+        TextBox textBox = txtDescripcion;
+        string[] strArrays = new string[] { str, " Etapa del mes de ", comboMesLiquidacion.Text, " del ", txtAnio.Text };
         textBox.Text = string.Concat(strArrays);
     }
 
     protected void txtAnio_TextChanged(object sender, EventArgs e)
     {
-        this.generarDescripcion();
+        generarDescripcion();
     }
 
     protected void comboEtapa_SelectedIndexChanged(object sender, EventArgs e)
     {
-        this.generarDescripcion();
+        generarDescripcion();
     }
 
     protected string convertirMesAnumeroMenosUno(string mes)
