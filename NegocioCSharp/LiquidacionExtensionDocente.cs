@@ -202,26 +202,26 @@ namespace LiquidacionSueldos
                 {
                     ocdGestor = new Datos.Gestor();
                     object[,] objArray = new object[9, 2];
-                    objArray[0, 0] = "@liqId";
+                    objArray[0, 0] = "@id";
                     objArray[0, 1] = liqId;
-                    objArray[1, 0] = "@liqDescripcion";
+                    objArray[1, 0] = "@descripcion";
                     objArray[1, 1] = liqDescripcion;
-                    objArray[2, 0] = "@liqMes";
+                    objArray[2, 0] = "@mes_referencia";
                     objArray[2, 1] = liqMes;
-                    objArray[3, 0] = "@liqAnio";
+                    objArray[3, 0] = "@anio_referencia";
                     objArray[3, 1] = liqAnio;
-                    objArray[4, 0] = "@liqEtapa";
+                    objArray[4, 0] = "@etapa";
                     objArray[4, 1] = liqEtapa;
-                    objArray[5, 0] = "@liqEstado";
+                    objArray[5, 0] = "@estado";
                     objArray[5, 1] = liqEstado;
-                    objArray[6, 0] = "@liqFechaInicio";
+                    objArray[6, 0] = "@fechaInicio";
                     objArray[6, 1] = liqFechaInicio;
-                    objArray[7, 0] = "@liqFechaCierre";
+                    objArray[7, 0] = "@fechaCierre";
                     objArray[7, 1] = liqFechaCierre;
-                    objArray[8, 0] = "@liqActivo";
+                    objArray[8, 0] = "@activo";
                     objArray[8, 1] = liqActivo;
 
-                    ocdGestor.EjecutarNonQuery("[liquidacionExtensionDocentes.Actualizar]", objArray);
+                    ocdGestor.EjecutarNonQuery("[LiquidacionExtensionDocente.Actualizar]", objArray);
                 }
                 catch (Exception exception)
                 {
@@ -252,7 +252,7 @@ namespace LiquidacionSueldos
                 return this.Tabla;
             }
 
-            public LiquidacionExtensionDocente ObtenerUno(int liqId)
+            public LiquidacionExtensionDocente ObtenerUno(int id)
             {
                 LiquidacionExtensionDocente liquidacionExtensionDocente = new LiquidacionExtensionDocente();
                 try
@@ -260,9 +260,9 @@ namespace LiquidacionSueldos
                     this.Tabla = new DataTable();
                     ocdGestor = new Datos.Gestor();
                     object[,] objArray = new object[1, 2];
-                    objArray[0, 0] = "@liqId";
-                    objArray[0, 1] = liqId;
-                    this.Tabla = ocdGestor.EjecutarReader("[liquidacionExtensionDocentes.ObtenerUnoPorLiqId]", objArray);
+                    objArray[0, 0] = "@id";
+                    objArray[0, 1] = id;
+                    this.Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocentes.ObtenerUnoPorLiqId]", objArray);
 
                     if (this.Tabla.Rows.Count > 0)
                     {
@@ -272,7 +272,7 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.id = Convert.ToInt32(this.Tabla.Rows[0]["liqId"]);
+                            liquidacionExtensionDocente.id = Convert.ToInt32(this.Tabla.Rows[0]["id"]);
                         }
 
                         if (this.Tabla.Rows[0]["descripcion"].ToString().Trim().Length <= 0)
@@ -281,25 +281,25 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.descripcion = this.Tabla.Rows[0]["liqDescripcion"].ToString();
+                            liquidacionExtensionDocente.descripcion = this.Tabla.Rows[0]["descripcion"].ToString();
                         }
 
-                        if (this.Tabla.Rows[0]["mes"].ToString().Trim().Length <= 0)
+                        if (this.Tabla.Rows[0]["mes_referencia"].ToString().Trim().Length <= 0)
                         {
                             liquidacionExtensionDocente.mes = "";
                         }
                         else
                         {
-                            liquidacionExtensionDocente.mes = this.Tabla.Rows[0]["liqMes"].ToString();
+                            liquidacionExtensionDocente.mes = this.Tabla.Rows[0]["mes_referencia"].ToString();
                         }
 
-                        if (this.Tabla.Rows[0]["anio"].ToString().Trim().Length <= 0)
+                        if (this.Tabla.Rows[0]["anio_referencia"].ToString().Trim().Length <= 0)
                         {
                             liquidacionExtensionDocente.anio = "";
                         }
                         else
                         {
-                            liquidacionExtensionDocente.anio = this.Tabla.Rows[0]["liqAnio"].ToString();
+                            liquidacionExtensionDocente.anio = this.Tabla.Rows[0]["anio_referencia"].ToString();
                         }
 
                         if (this.Tabla.Rows[0]["etapa"].ToString().Trim().Length <= 0)
@@ -308,7 +308,7 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.etapa = Convert.ToInt32(this.Tabla.Rows[0]["liqEtapa"]);
+                            liquidacionExtensionDocente.etapa = Convert.ToInt32(this.Tabla.Rows[0]["etapa"]);
                         }
 
                         if (this.Tabla.Rows[0]["estado"].ToString().Trim().Length <= 0)
@@ -317,7 +317,7 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.estado = this.Tabla.Rows[0]["liqEstado"].ToString();
+                            liquidacionExtensionDocente.estado = this.Tabla.Rows[0]["estado"].ToString();
                         }
 
                         if (this.Tabla.Rows[0]["fechaInicio"].ToString().Trim().Length <= 0)
@@ -326,7 +326,7 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.fechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaInicio"].ToString());
+                            liquidacionExtensionDocente.fechaInicio = Convert.ToDateTime(this.Tabla.Rows[0]["fechaInicio"].ToString());
                         }
 
                         if (this.Tabla.Rows[0]["fechaCierre"].ToString().Trim().Length <= 0)
@@ -335,7 +335,7 @@ namespace LiquidacionSueldos
                         }
                         else
                         {
-                            liquidacionExtensionDocente.fechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["liqFechaCierre"].ToString()));
+                            liquidacionExtensionDocente.fechaCierre = new DateTime?(Convert.ToDateTime(this.Tabla.Rows[0]["fechaCierre"].ToString()));
                         }
                     }
                 }

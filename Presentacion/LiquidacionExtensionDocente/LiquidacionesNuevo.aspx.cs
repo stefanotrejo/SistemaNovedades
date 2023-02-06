@@ -14,9 +14,9 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
 {
     LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();
     DataTable dt, dt2 = new DataTable();
-    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();    
+    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     LiquidacionSueldos.Negocio.LiquidacionExtensionDocente objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
-    LiquidacionExtensionDocente objetoLiquidacionAbierta = new LiquidacionExtensionDocente();
+    //LiquidacionExtensionDocente objetoLiquidacionAbierta = new LiquidacionExtensionDocente();
 
     #region Variables Globales
     public class GlobalesAgenteConsulta
@@ -190,38 +190,32 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
     {
         try
         {
+            Master.TituloDelFormulario = "Nueva Liquidacion Extension Docente";
             if (!Page.IsPostBack)
             {
-                Master.TituloDelFormulario = "Nueva Liquidacion Extension Docente";
                 txtAnio.Text = DateTime.Now.Year.ToString();
-                generarDescripcion();
                 txtFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                generarDescripcionLiquidacion();
+
                 int liquidacionID = 0;
                 if (base.Request.QueryString["Id"] != null)
                 {
                     liquidacionID = Convert.ToInt32(base.Request.QueryString["Id"]);
-                    if (liquidacionID == 0)
-                    {
-                        txtEstado.Enabled = false;
-                        txtEstado.Text = "A";
-                    }
-                    // Si es modificacion
-                    else
+                    if (liquidacionID != 0)
                     {
                         Master.TituloDelFormulario = "Modificar liquidacion";
-                        objetoLiquidacion = objetoLiquidacion.ObtenerUno(liquidacionID);
-                        comboMesLiquidacion.SelectedIndex = Convert.ToInt32(objetoLiquidacion.mes) - 1;
-                        txtAnio.Text = objetoLiquidacion.anio;
-                        txtEstado.Text = objetoLiquidacion.estado;
-                        comboEtapa.SelectedIndex = objetoLiquidacion.etapa- 1;
-                        txtDescripcion.Text = objetoLiquidacion.descripcion;
-                        comboMesLiquidacion.Enabled = false;
-                        txtAnio.Enabled = false;
-                        comboEtapa.Enabled = false;
                     }
+                    objetoLiquidacion = objetoLiquidacion.ObtenerUno(liquidacionID);
+                    comboMesLiquidacion.SelectedIndex = Convert.ToInt32(objetoLiquidacion.mes) - 1;
+                    txtAnio.Text = objetoLiquidacion.anio;
+                    txtEstado.Text = objetoLiquidacion.estado;
+                    comboEtapa.SelectedIndex = objetoLiquidacion.etapa - 1;
+                    txtDescripcion.Text = objetoLiquidacion.descripcion;
+                    //comboMesLiquidacion.Enabled = false;
+                    //txtAnio.Enabled = false;
+                    //comboEtapa.Enabled = false;
+
                 }
-                objetoLiquidacionAbierta = new LiquidacionExtensionDocente();
-                objetoLiquidacionAbierta = objetoLiquidacionAbierta.ObtenerLiquidacionAbierta();
             }
         }
         catch (Exception exception1)
@@ -237,49 +231,55 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
     {
         try
         {
+            objetoLiquidacion.mes = convertirMesAnumeroMenosUno(comboMesLiquidacion.SelectedValue);
+            if (txtAnio.Text.Length != 4)
+            {
+                objetoLiquidacion.anio = txtAnio.Text;
+            }
+            else
+            {
+                objetoLiquidacion.anio = txtAnio.Text.Substring(2, 2);
+            }
+
+            objetoLiquidacion.etapa = Convert.ToInt32(comboEtapa.SelectedValue);
+            generarDescripcionLiquidacion();
+            objetoLiquidacion.descripcion = txtDescripcion.Text;
+
+            if (txtFechaInicio.Text == "")
+            {
+                objetoLiquidacion.fechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
+            }
+            else
+            {
+                objetoLiquidacion.fechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+            }
+
+            if (txtFechaCierre.Text == "")
+            {
+                objetoLiquidacion.fechaCierre = Convert.ToDateTime("01/01/2001 00:00:00");
+            }
+            else
+            {
+                objetoLiquidacion.fechaCierre = Convert.ToDateTime(txtFechaCierre.Text);
+            }
+
+            objetoLiquidacion.estado = txtEstado.Text;
+
+
+
+
+
+
             if (base.Request.QueryString["Id"] != null)
             {
-                generarDescripcion();
                 objetoLiquidacion.id = Convert.ToInt32(base.Request.QueryString["Id"]);
-                objetoLiquidacion.mes = convertirMesAnumeroMenosUno(comboMesLiquidacion.SelectedValue);
-                if (txtAnio.Text.Length != 4)
-                {
-                    objetoLiquidacion.anio = txtAnio.Text;
-                }
-                else
-                {
-                    objetoLiquidacion.anio = txtAnio.Text.Substring(2, 2);
-                }
-                objetoLiquidacion.etapa = Convert.ToInt32(comboEtapa.SelectedValue);
-                objetoLiquidacion.descripcion = txtDescripcion.Text;
+            }
 
-                if (txtFechaInicio.Text == "")
-                {
-                    objetoLiquidacion.fechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
-                }
-                else
-                {
-                    objetoLiquidacion.fechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
-                }
-
-                if (txtFechaCierre.Text == "")
-                {
-                    objetoLiquidacion.fechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
-                }
-                else
-                {
-                    objetoLiquidacion.fechaCierre = new DateTime?(Convert.ToDateTime(txtFechaCierre.Text));
-                }
-
-                objetoLiquidacion.estado = txtEstado.Text;
-                
+            if (objetoLiquidacion.ValidarRepetido(objetoLiquidacion.mes, objetoLiquidacion.anio, objetoLiquidacion.etapa) == 0)
+            {
                 if (objetoLiquidacion.id != 0)
                 {
                     objetoLiquidacion.Actualizar(objetoLiquidacion.id, objetoLiquidacion.descripcion, objetoLiquidacion.mes, objetoLiquidacion.anio, objetoLiquidacion.etapa, objetoLiquidacion.estado, objetoLiquidacion.fechaInicio, objetoLiquidacion.fechaCierre, objetoLiquidacion.activo);
-                }
-                else if (objetoLiquidacion.ValidarRepetido(objetoLiquidacion.mes, objetoLiquidacion.anio, objetoLiquidacion.etapa) != 0)
-                {
-                    lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
                 }
                 else
                 {
@@ -290,6 +290,10 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
                     }
                     lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
                 }
+            }
+            else
+            {
+                lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
             }
         }
         catch (Exception exception1)
@@ -320,10 +324,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void comboMesLiquidacion_SelectedIndexChanged(object sender, EventArgs e)
     {
-        generarDescripcion();
+        generarDescripcionLiquidacion();
     }
 
-    protected void generarDescripcion()
+    protected void generarDescripcionLiquidacion()
     {
         string str = "";
         string text = comboEtapa.Text;
@@ -350,12 +354,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void txtAnio_TextChanged(object sender, EventArgs e)
     {
-        generarDescripcion();
+        generarDescripcionLiquidacion();
     }
 
     protected void comboEtapa_SelectedIndexChanged(object sender, EventArgs e)
     {
-        generarDescripcion();
+        generarDescripcionLiquidacion();
     }
 
     protected string convertirMesAnumeroMenosUno(string mes)
