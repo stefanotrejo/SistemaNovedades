@@ -55,6 +55,7 @@
     <Compile Include="Agentes.cs" />
     <Compile Include="LiquidacionExtensionDocente.cs" />
     <Compile Include="LiquidacionNovedades.cs" />
+    <Compile Include="PagosEventuales.cs" />
     <Compile Include="LugarPago.cs" />
     <Compile Include="Liquidacion.cs" />
     <Compile Include="NovedadConcepto.cs" />

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Web;
@@ -1283,5 +1284,29 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
     {
         LiquidacionSueldos.Negocio.ArchivoExtDocEducacion arch_extdoc = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
         arch_extdoc.GenerarArchivosExtDoc();
+    }
+
+    protected void btn_importar_pagos_eventuales_Click(object sender, EventArgs e)
+    {
+        String linea;
+        System.IO.StreamReader archivo = new System.IO.StreamReader(@"c:\temp\pagos_eventuales\pagoseventuales.txt");
+        while (archivo.EndOfStream == false)
+        {
+            linea = archivo.ReadLine();
+            String nombre = linea.Substring(0, 24);
+            String dni = linea.Substring(25, 8);
+            String lugar_pago = linea.Substring(33, 5);
+            //int ceros = 65;
+            String importe = linea.Substring(103, 7)
+                    + '.' + linea.Substring(110, 2);
+            //int ceros2 = 6;
+            float importe_float = float.Parse(importe, CultureInfo.InvariantCulture.NumberFormat);
+            string cuit = linea.Substring(118, 11);
+            string sexo = linea.Substring(129, 1);
+            string concepto = txt_concepto.Text;
+
+            LiquidacionSueldos.Negocio.PagosEventualesBanco pagosEventuales = new LiquidacionSueldos.Negocio.PagosEventualesBanco();
+            pagosEventuales.InsertarBanco(nombre, dni, lugar_pago, importe_float, cuit, sexo, concepto);
+        }
     }
 }

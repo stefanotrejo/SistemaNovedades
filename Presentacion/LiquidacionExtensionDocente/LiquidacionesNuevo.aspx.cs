@@ -265,11 +265,6 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
 
             objetoLiquidacion.estado = txtEstado.Text;
 
-
-
-
-
-
             if (base.Request.QueryString["Id"] != null)
             {
                 objetoLiquidacion.id = Convert.ToInt32(base.Request.QueryString["Id"]);
