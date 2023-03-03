@@ -104,7 +104,7 @@
 
         <br />
         <br />
-        <asp:TextBox ID="txt_concepto" Text="Concepto Pagos Eventuales" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txt_concepto" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="btn_importar_pagos_eventuales" runat="server" Text="Importar pagos eventuales" OnClick="btn_importar_pagos_eventuales_Click" />
 

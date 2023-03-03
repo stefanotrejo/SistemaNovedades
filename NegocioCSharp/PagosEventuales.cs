@@ -14,7 +14,7 @@ namespace LiquidacionSueldos
             private Datos.Gestor ocdGestor = new Datos.Gestor();
 
             public int InsertarBanco(string nombre, string dni, string lugar_pago,
-                float importe, string cuit, string sexo, string concepto)
+                float importe, string cuit, string sexo, string concepto, string nombre_directorio, string nombre_archivo)
             {
                 try
                 {
@@ -48,6 +48,14 @@ namespace LiquidacionSueldos
                         {
                             "@concepto",
                             concepto
+                        },
+                        {
+                            "@nombre_directorio",
+                            nombre_directorio
+                        },
+                        {
+                            "@nombre_archivo",
+                            nombre_archivo
                         }
                     });
                     return IdMax;
