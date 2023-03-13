@@ -1282,8 +1282,8 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
     protected void btn_generar_arch_ext_doc_Click(object sender, EventArgs e)
     {
-        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion arch_extdoc = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
-        arch_extdoc.GenerarArchivosExtDoc();
+        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivos = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
+        archivos.Generar();
     }
 
     protected void btn_importar_pagos_eventuales_Click(object sender, EventArgs e)
