@@ -99,6 +99,7 @@
         <br />
         <asp:Button ID="btnExportarDbf" runat="server" Text="Exportar DBF" OnClick="btnExportarDbf_Click" />
         <br />
+        <asp:TextBox ID="txt_liqID" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="btn_generar_arch_ext_doc" runat="server" Text="Generar Archivos Ext Doc" OnClick="btn_generar_arch_ext_doc_Click" />
 

@@ -1,11 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using System.IO;
-using System.Text;
 using LiquidacionSueldos.Negocio;
 
 // ABM DE LIQUIDACIONES
@@ -14,8 +9,7 @@ public partial class PerfilRegistracion : System.Web.UI.Page
 {
     LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();
     DataTable dt, dt2 = new DataTable();
-    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
-    //LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();    
     LiquidacionSueldos.Negocio.LiquidacionNovedades objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionNovedades();
     LiquidacionNovedades objetoLiquidacionAbierta = new LiquidacionNovedades();
 

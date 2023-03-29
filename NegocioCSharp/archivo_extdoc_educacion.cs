@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualBasic;
-using System.Collections;
 using System.Data;
-using System.Diagnostics;
-using LiquidacionSueldos.Datos;
 using System.IO;
+using System.Web;
 
 namespace LiquidacionSueldos.Negocio
 {
     public class ArchivoExtDocEducacion
     {
         private Datos.Gestor ocdGestor = new Datos.Gestor();
-        private DataTable Fila;
-        private DataTable Tabla = new DataTable();
+        private DataTable Results;
+        const string Educacion = "EDUCACION";
+        const string Ganancias = "GANANCIAS";
 
         #region Propiedades
         public string NroCOntrol { get; set; }
@@ -51,21 +46,21 @@ namespace LiquidacionSueldos.Negocio
         public string I08 { get; set; }
 
         #endregion
-   
-        public void Generar()
+
+        public void Generar(int liqID)
         {
             try
             {
                 ArchivoExtDocEducacion oAgente = new ArchivoExtDocEducacion();
-                Fila = new DataTable();
+                Results = new DataTable();
 
-                Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Educacion]", new object[,] {
+                Results = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Educacion]", new object[,] {
                 });
-                Crear_Archivo_Educacion(Fila);
+                Crear_Archivo_Educacion(Results, GetDestinyPathFile(Educacion, liqID));
 
-                Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ganancias]", new object[,] {
-                }); 
-                Crear_Archivo_Ganancias(Fila);
+                Results = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ganancias]", new object[,] {
+                });
+                Crear_Archivo_Ganancias(Results, GetDestinyPathFile(Ganancias, liqID));
 
                 //Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ministerio]", new object[,] {
                 //});
@@ -77,25 +72,18 @@ namespace LiquidacionSueldos.Negocio
             }
         }
 
-        protected void Crear_Archivo_Educacion(DataTable dt)
+        protected void Crear_Archivo_Educacion(DataTable dt, string pathFile)
         {
             try
             {
-                String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-                string Ruta = "C:/temp/extdoc_cge";
+                DeleteFileIfExists(pathFile);
 
-                if (System.IO.File.Exists(Ruta + fecha + ".txt"))
-                {
-                    File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
-                    File.Delete(Ruta + fecha + ".txt");
-                }
-
-                using (StreamWriter file = new StreamWriter(Ruta += fecha + ".txt", true))
+                using (StreamWriter streamWriter = new StreamWriter(pathFile, true))
                 {
                     foreach (DataRow row in dt.Rows)
-                    {                                                
+                    {
                         int cantidad_items = 0;
-                        string conceptos_importes = "";                        
+                        string conceptos_importes = "";
 
                         if (row["C01"].ToString().Trim().Length > 0
                             && row["I01"].ToString().Trim() != "000000000")
@@ -132,7 +120,7 @@ namespace LiquidacionSueldos.Negocio
                                                 + row["C04"].ToString().Trim()
                                                 + row["I04"].ToString().Trim();
                         }
-                        
+
                         if (row["C05"].ToString().Trim().Length > 0
                               && row["I05"].ToString().Trim() != "000000000")
                         {
@@ -170,13 +158,14 @@ namespace LiquidacionSueldos.Negocio
                         }
 
                         string cantidad_items_string = cantidad_items.ToString();
+
                         if (cantidad_items < 10)
                             cantidad_items_string = "0" + cantidad_items;
 
                         string linea = row["encabezado"].ToString().Trim() + cantidad_items_string + conceptos_importes;
-                        file.WriteLine(linea);
+                        streamWriter.WriteLine(linea);
                     }
-                }                
+                }
             }
             catch (Exception oError)
             {
@@ -189,18 +178,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             }
         }
 
-        protected void Crear_Archivo_Ganancias(DataTable dt)
+        protected void Crear_Archivo_Ganancias(DataTable dt, string pathFile)
         {
             try
             {
-                String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-                string Ruta = "C:/temp/ganancias_extdoc";
-                if (System.IO.File.Exists(Ruta + fecha + ".txt"))
-                {
-                    File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
-                    File.Delete(Ruta + fecha + ".txt");
-                }
-                using (StreamWriter file = new StreamWriter(Ruta += fecha + ".txt", true))
+                DeleteFileIfExists(pathFile);                
+                using (StreamWriter streamWriter = new StreamWriter(pathFile, true))
                 {
                     foreach (DataRow row in dt.Rows)
                     {
@@ -225,7 +208,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             conceptos_importes = conceptos_importes
                                                 + row["C02"].ToString().Trim()
                                                 + row["I02"].ToString().Trim()
-                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim(); 
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
 
                         }
 
@@ -290,11 +273,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         }
 
                         string cantidad_items_string = cantidad_items.ToString();
+
                         if (cantidad_items < 10)
                             cantidad_items_string = "0" + cantidad_items;
 
                         string linea = row["encabezado"].ToString().Trim() + cantidad_items_string + conceptos_importes;
-                        file.WriteLine(linea);
+                        streamWriter.WriteLine(linea);
                     }
                 }
             }
@@ -309,45 +293,90 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             }
         }
 
-//        protected void Crear_Archivo_Ministerio(DataTable dt)
-//        {
-//            try
-//            {
-//                String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
-//                string Ruta = "C:/temp/extdoc_ministerio";
-//                if (System.IO.File.Exists(Ruta + fecha + ".txt"))
-//                {
-//                    File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
-//                    File.Delete(Ruta + fecha + ".txt");
-//                }
-//                using (StreamWriter file = new StreamWriter(Ruta += fecha + ".txt", true))
-//                {
-//                    var delimiter = "\t";
-//                    string line = "";
-//                    foreach (DataColumn column in dt.Columns)
-//                    {
-//                        line = line + string.Join(delimiter, column.ColumnName);
-//                    }
-//                    file.WriteLine(line);
+        protected string GetDestinyPathFile(string archivo, int liqID)
+        {
+            String fecha_actual = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
+            string directory_path = System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosExtensionDocente");
+            string nombre_archivo;
 
-//                    foreach (DataRow row in dt.Rows)
-//                    {
-//                        for (int i = 0; i < dt.Columns.Count; i++)
-//                        {                            
-//                            file.WriteLine(row[i].ToString());
-//                        }                      
-//                    }
-//                }
-//            }
-//            catch (Exception oError)
-//            {
-//                string error = @"<div class=""alert alert-danger alert-dismissable"">
-//<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-//<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-//Se ha producido el siguiente error:<br/>
-//MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-//               "</div>";
-//            }
-//        }
+            CreateDirectoryIfNotExists(System.IO.Path.Combine(directory_path, liqID.ToString()));
+
+            switch (archivo)
+            {
+                case Educacion:
+                    nombre_archivo = "extdoc_cge.txt";
+                    break;
+                case Ganancias:
+                    nombre_archivo = "ganancias_extdoc.txt";
+                    break;
+                default:
+                    return "";
+            }
+
+            return System.IO.Path.Combine(directory_path, liqID.ToString(), nombre_archivo);
+        }
+
+        protected void DeleteFileIfExists(string pathFile)
+        {
+            if (System.IO.File.Exists(pathFile))
+            {
+                File.SetAttributes(pathFile, FileAttributes.Normal);
+                File.Delete(pathFile);
+            }
+        }
+
+        protected void CreateDirectoryIfNotExists(string directory)
+        {            
+            if (Directory.Exists(directory))
+            {                
+                return;
+            }
+            
+            DirectoryInfo di = Directory.CreateDirectory(directory);
+        }
     }
+
+
+
+    //        protected void Crear_Archivo_Ministerio(DataTable dt)
+    //        {
+    //            try
+    //            {
+    //                String fecha = DateTime.Today.ToString("dd/MM/yyyy").Replace('/', '-');
+    //                string Ruta = "C:/temp/extdoc_ministerio";
+    //                if (System.IO.File.Exists(Ruta + fecha + ".txt"))
+    //                {
+    //                    File.SetAttributes(Ruta + fecha + ".txt", FileAttributes.Normal);
+    //                    File.Delete(Ruta + fecha + ".txt");
+    //                }
+    //                using (StreamWriter file = new StreamWriter(Ruta += fecha + ".txt", true))
+    //                {
+    //                    var delimiter = "\t";
+    //                    string line = "";
+    //                    foreach (DataColumn column in dt.Columns)
+    //                    {
+    //                        line = line + string.Join(delimiter, column.ColumnName);
+    //                    }
+    //                    file.WriteLine(line);
+
+    //                    foreach (DataRow row in dt.Rows)
+    //                    {
+    //                        for (int i = 0; i < dt.Columns.Count; i++)
+    //                        {                            
+    //                            file.WriteLine(row[i].ToString());
+    //                        }                      
+    //                    }
+    //                }
+    //            }
+    //            catch (Exception oError)
+    //            {
+    //                string error = @"<div class=""alert alert-danger alert-dismissable"">
+    //<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+    //<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+    //Se ha producido el siguiente error:<br/>
+    //MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+    //               "</div>";
+    //            }
+    //        }
+    //}
 }

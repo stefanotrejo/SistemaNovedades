@@ -1,19 +1,11 @@
-﻿using ASP;
-using LiquidacionSueldos.Negocio;
+﻿using LiquidacionSueldos.Negocio;
 using System;
 using System.Data;
-using System.Data.Common;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Web;
-using System.Web.Profile;
-using System.Web.SessionState;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 //28.11.19 -- Incluye ajuste de 5 caracteres agregados (puntaje miembro junta)
 
@@ -1264,7 +1256,6 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
                     Label1.ForeColor = System.Drawing.Color.Red;
                     Label1.Text = "El periodo de liqudiacion ya fue importado !!";
                 }
-
                 // ELSE DE VALIDACIONES
             }
             else
@@ -1282,8 +1273,9 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
     protected void btn_generar_arch_ext_doc_Click(object sender, EventArgs e)
     {
-        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivos = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
-        archivos.Generar();
+        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivosEducacion = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();        
+        int liqID = Convert.ToInt32(txt_liqID.Text);
+        archivosEducacion.Generar(liqID);
     }
 
     protected void btn_importar_pagos_eventuales_Click(object sender, EventArgs e)
@@ -1323,3 +1315,5 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         }
     }
 }
+
+
