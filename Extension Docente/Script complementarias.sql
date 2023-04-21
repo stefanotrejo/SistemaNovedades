@@ -63,6 +63,47 @@ DELETE from agentes_extension_docente
 
 
 
+------------------------------------------------------------------------------------------------------------------------------ 
+----------------  DESCUENTO POR DIFERENCIA PAGO ENERO 2023 Y FEBRERO 2023 ----------------------------------------------------
+----------------  DUPLICADO POR COMPLEMENTARIA A 2 ESCUELAS QUE HABIAN COBRADO---------------- 
+----------------  EN LA LIQUIDACION ORIGINAL---------------- 
+--------------------------------------------------------------- --------------------------------------------------------------- 
+
+--DECLARE @liq_id_origen int
+--SELECT @liq_id_origen = 15
+
+--DECLARE @liq_id_destino int
+--SELECT @liq_id_destino = 
+--(SELECT id
+--					  FROM LiquidacionExtensionDocente 
+--					  WHERE 
+--						 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
+--					  AND etapa = (SELECT max(etapa) 
+--									FROM LiquidacionExtensionDocente
+--									WHERE 
+--										 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
+--									) 
+--						AND Activo = 1
+--						)
+
+--INSERT INTO 
+--	agentes_extension_docente_diferencias 
+--	(NroCOntrol, liq_id_origen, liq_id_destino, monto_origen_rem_descontar, monto_origen_norem_descontar,
+--	fecha_descuento, activoRem, activoNoRem)
+--SELECT 
+--	NroCOntrol, @liq_id_origen, @liq_id_destino, I01, I02, GETDATE(), 1,1
+--from 
+--	agentes_extension_docente_historico 
+--where 
+--	liq_id = @liq_id_origen 
+--AND Escuela in (1885, 3884)
+
+
+------------------------------ FIN PREPARAR TABLA DIFERENCIAS ------------------------------
+
+
+
+
 DROP TABLE #agentes_filtrados
 DROP TABLE #t1
 
@@ -282,8 +323,6 @@ WHERE
 -- DELETE FROM #agentes_filtrados 
 
 
-
-
 --------------- COPIA EN #agentes_filtrados  --------------- 
 
 INSERT INTO  
@@ -399,58 +438,24 @@ SET
 					ELSE 0 -- = O MAYOR
 					END)
 
------------------------------------------------------------------------------------------------------------------------------- 
-----------------  DESCUENTO POR DIFERENCIA PAGO ENERO 2023 Y FEBRERO 2023 ----------------------------------------------------
-----------------  DUPLICADO POR COMPLEMENTARIA A 2 ESCUELAS QUE HABIAN COBRADO---------------- 
-----------------  EN LA LIQUIDACION ORIGINAL---------------- 
---------------------------------------------------------------- --------------------------------------------------------------- 
 
---DECLARE @liq_id_origen int
---SELECT @liq_id_origen = 15
-
---DECLARE @liq_id_destino int
---SELECT @liq_id_destino = 
---(SELECT id
---					  FROM LiquidacionExtensionDocente 
---					  WHERE 
---						 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
---					  AND etapa = (SELECT max(etapa) 
---									FROM LiquidacionExtensionDocente
---									WHERE 
---										 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
---									) 
---						AND Activo = 1
---						)
-
---INSERT INTO 
---	agentes_extension_docente_diferencias 
---	(NroCOntrol, liq_id_origen, liq_id_destino, monto_origen_rem_descontar, monto_origen_norem_descontar,
---	fecha_descuento, activoRem, activoNoRem)
---SELECT 
---	NroCOntrol, @liq_id_origen, @liq_id_destino, I01, I02, GETDATE(), 1,1
---from 
---	agentes_extension_docente_historico 
---where 
---	liq_id = @liq_id_origen 
---AND Escuela in (1885, 3884)
-
-
+select * from agentes_extension_docente_diferencias
 
 UPDATE 
 	agentes_extension_docente_diferencias
 SET 
 	monto_destino_rem_descontado =
-								(CASE WHEN IMP_521 >= t2.monto_origen_rem_descontar 
+								(CASE WHEN IMP_521 >= convert(decimal (18,2), t2.monto_origen_rem_descontar)
 									THEN t2.monto_origen_rem_descontar
-									ELSE IMP_521 
+									ELSE Convert(varchar, IMP_521) 
 									END),
 	monto_destino_norem_descontado =
-									(CASE WHEN IMP_522 >= t2.monto_origen_norem_descontar 
+									(CASE WHEN IMP_522 >= convert(decimal (18,2),t2.monto_origen_norem_descontar) 
 									THEN t2.monto_origen_norem_descontar 
-									ELSE IMP_522 
+									ELSE Convert(varchar,IMP_522) 
 									END),
-	saldo_rem = t2.monto_origen_rem_descontar - monto_destino_rem_descontado,
-	saldo_norem = t2.monto_origen_norem_descontar - monto_destino_norem_descontado
+	saldo_rem = convert(decimal (18,2),t2.monto_origen_rem_descontar) - convert(decimal (18,2),monto_destino_rem_descontado),
+	saldo_norem = convert(decimal (18,2),t2.monto_origen_norem_descontar) - convert(decimal (18,2),monto_destino_norem_descontado)
 FROM
 	#agentes_filtrados t1
 	INNER JOIN agentes_extension_docente_diferencias t2
@@ -460,25 +465,36 @@ FROM
 UPDATE 
 	agentes_extension_docente_diferencias
 SET 
-	activoRem = (CASE WHEN saldo_rem = 0 
-									THEN 0								
+	activoRem = (CASE WHEN CONVERT(numeric (18,2), saldo_rem) = 0 
+									THEN 0
+									ELSE 1								
 										END),
-	activonoRem = (CASE WHEN saldo_norem = 0 
-									THEN 0								
+	activonoRem = (CASE WHEN Convert(numeric (18,2), saldo_norem) = 0 
+									THEN 0
+									ELSE 1								
 										END)
 
 UPDATE 
 	#agentes_filtrados
 SET 
-	IMP_521 = ( IMP_521 - t2.monto_origen_rem_descontar),
-	IMP_522 = ( IMP_522 - t2.monto_origen_norem_descontar)	
+	IMP_521 = ( IMP_521 - CONVERT(numeric (18,2), t2.monto_destino_rem_descontado)),	
+	IMP_522 = ( IMP_522 - CONVERT(numeric (18,2), t2.monto_destino_norem_descontado))	
 FROM
 	#agentes_filtrados t1
-	INNER JOIN agentes_extension_docente_diferencias t2
-	ON T1.numeroControl = t2.NroCOntrol
+INNER JOIN 
+	agentes_extension_docente_diferencias t2
+ON  T1.numeroControl = t2.NroCOntrol
+
+
+--select t1.IMP_521, t2.monto_origen_rem_descontar, t2.monto_destino_rem_descontado, t2.saldo_rem from #agentes_filtrados t1
+--INNER JOIN 
+--	agentes_extension_docente_diferencias t2
+--ON  T1.numeroControl = t2.NroCOntrol
+--order by IMP_521 
+
 
 -------------------------- PARA CONTROLAR SI PAGAMOS DUPLICADO EN UNA LIQ ANTERIOR --------------------------  
---SELECT 
+--SELECT l
 --	*
 --FROM  
 --	#agentes_filtrados t1
@@ -571,6 +587,12 @@ SET
 
 ----------------------->>>>> FIN - CALCULOS <<<<<-----------------------
 
+SELECT * from #agentes_filtrados T1
+INNER JOIN 
+	agentes_extension_docente_diferencias t2
+ON  T1.numeroControl = t2.NroCOntrol
+and T1.IMP_521 != 0
+
 ----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO <<<<<-----------------------
 SELECT  	
 	 RTRIM(LTRIM(CAST(UPPER(
@@ -625,7 +647,6 @@ FROM
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
-
 
 ----------------  FIN GENERACION TXT PARA EL BANCO----------------
 	
