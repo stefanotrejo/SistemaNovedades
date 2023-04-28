@@ -157,6 +157,24 @@ namespace LiquidacionSueldos.Negocio
                                                 + row["I08"].ToString().Trim();
                         }
 
+                        if (row["C09"].ToString().Trim().Length > 0
+                           && row["I09"].ToString().Trim() != "000000000")
+                        {
+                            cantidad_items++;
+                            conceptos_importes = conceptos_importes
+                                                + row["C09"].ToString().Trim()
+                                                + row["I09"].ToString().Trim();
+                        }
+
+                        if (row["C10"].ToString().Trim().Length > 0
+                           && row["I10"].ToString().Trim() != "000000000")
+                        {
+                            cantidad_items++;
+                            conceptos_importes = conceptos_importes
+                                                + row["C10"].ToString().Trim()
+                                                + row["I10"].ToString().Trim();
+                        }
+
                         string cantidad_items_string = cantidad_items.ToString();
 
                         if (cantidad_items < 10)
@@ -189,8 +207,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                     {
                         int cantidad_items = 0;
                         string conceptos_importes = "";
-                        string prueba = row["C01"].ToString();
-
+                                                
                         if (row["C01"].ToString().Trim().Length > 0
                             && row["I01"].ToString().Trim() != "000000000")
                         {
@@ -269,6 +286,26 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             conceptos_importes = conceptos_importes
                                                 + row["C08"].ToString().Trim()
                                                 + row["I08"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
+                        }
+
+                        if (row["C09"].ToString().Trim().Length > 0
+                           && row["I09"].ToString().Trim() != "000000000")
+                        {
+                            cantidad_items++;
+                            conceptos_importes = conceptos_importes
+                                                + row["C09"].ToString().Trim()
+                                                + row["I09"].ToString().Trim()
+                                                + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
+                        }
+
+                        if (row["C10"].ToString().Trim().Length > 0
+                           && row["I10"].ToString().Trim() != "000000000")
+                        {
+                            cantidad_items++;
+                            conceptos_importes = conceptos_importes
+                                                + row["C10"].ToString().Trim()
+                                                + row["I10"].ToString().Trim()
                                                 + row["numero_cuota"].ToString().Trim() + row["total_cuota"].ToString().Trim();
                         }
 

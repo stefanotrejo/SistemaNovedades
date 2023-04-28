@@ -7,7 +7,7 @@
 
 -- ESTE MES ES MES ACTUAL ES PARA  LA TABLA PRUEBAS AGE (PRE Y DEFINITIVA)
 DECLARE @mesanioPruebasAge varchar(50) 
-SELECT 	@mesanioPruebasAge = '03/23'
+SELECT 	@mesanioPruebasAge = '04/23'
 
 --INSERT INTO 
 --	ConceptoExtensionDocente (conCodigo)
@@ -26,10 +26,10 @@ FROM
 	and cteCodigoConcepto < '600'
 	and cteCodigoConcepto > '001'
 	and cteCodigoConcepto not in ('78', '553')
-AND NOT EXISTS (
-	SELECT * FROM ConceptoExtensionDocente t3
-	WHERE t2.cteCodigoConcepto = t3.conCodigo
-)
+--AND NOT EXISTS (
+--	SELECT * FROM ConceptoExtensionDocente t3
+--	WHERE t2.cteCodigoConcepto = t3.conCodigo
+--)
 ORDER BY 
 	cteCodigoConcepto
 
@@ -69,35 +69,36 @@ DELETE from agentes_extension_docente
 ----------------  EN LA LIQUIDACION ORIGINAL---------------- 
 --------------------------------------------------------------- --------------------------------------------------------------- 
 
---DECLARE @liq_id_origen int
---SELECT @liq_id_origen = 15
+DECLARE @liq_id_origen int
+SELECT @liq_id_origen = 15
 
---DECLARE @liq_id_destino int
---SELECT @liq_id_destino = 
---(SELECT id
---					  FROM LiquidacionExtensionDocente 
---					  WHERE 
---						 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
---					  AND etapa = (SELECT max(etapa) 
---									FROM LiquidacionExtensionDocente
---									WHERE 
---										 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
---									) 
---						AND Activo = 1
---						)
+DECLARE @liq_id_destino int
+SELECT @liq_id_destino = 
+(SELECT id
+					  FROM LiquidacionExtensionDocente 
+					  WHERE 
+						 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
+					  AND etapa = (SELECT max(etapa) 
+									FROM LiquidacionExtensionDocente
+									WHERE 
+										 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
+									) 
+						AND Activo = 1
+						)
 
---INSERT INTO 
---	agentes_extension_docente_diferencias 
---	(NroCOntrol, liq_id_origen, liq_id_destino, monto_origen_rem_descontar, monto_origen_norem_descontar,
---	fecha_descuento, activoRem, activoNoRem)
---SELECT 
---	NroCOntrol, @liq_id_origen, @liq_id_destino, I01, I02, GETDATE(), 1,1
---from 
---	agentes_extension_docente_historico 
---where 
---	liq_id = @liq_id_origen 
---AND Escuela in (1885, 3884)
+INSERT INTO 
+	agentes_extension_docente_diferencias 
+	(NroCOntrol, liq_id_origen, liq_id_destino, monto_origen_rem_descontar, monto_origen_norem_descontar,
+	fecha_descuento, activoRem, activoNoRem)
+SELECT 
+	NroCOntrol, @liq_id_origen, @liq_id_destino, I01, I02, GETDATE(), 1,1
+from 
+	agentes_extension_docente_historico 
+where 
+	liq_id = @liq_id_origen 
+AND Escuela in (1885, 3884)
 
+--DELETE from agentes_extension_docente_diferencias 
 
 ------------------------------ FIN PREPARAR TABLA DIFERENCIAS ------------------------------
 
@@ -439,7 +440,7 @@ SET
 					END)
 
 
-select * from agentes_extension_docente_diferencias
+--select * from agentes_extension_docente_diferencias
 
 UPDATE 
 	agentes_extension_docente_diferencias
@@ -587,11 +588,11 @@ SET
 
 ----------------------->>>>> FIN - CALCULOS <<<<<-----------------------
 
-SELECT * from #agentes_filtrados T1
-INNER JOIN 
-	agentes_extension_docente_diferencias t2
-ON  T1.numeroControl = t2.NroCOntrol
-and T1.IMP_521 != 0
+--SELECT * from #agentes_filtrados T1
+--INNER JOIN 
+--	agentes_extension_docente_diferencias t2
+--ON  T1.numeroControl = t2.NroCOntrol
+--and T1.IMP_521 != 0
 
 ----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO <<<<<-----------------------
 SELECT  	
@@ -784,11 +785,14 @@ WHERE
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
 ----------------------->>>>> INICIO - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
+--25/04/23
+delete from agentes_extension_docente 
+---
 INSERT INTO 
 	agentes_extension_docente 
 	(age_id,NroCOntrol, PlantaTipo,tipo_planta_OP , agrupamiento, tramo, apertura, cuil, LugarPago, Escuela, Juris, Prog, SubP, Actividad, fuente,dias_trabajados, haberSinAporte, haberConAporte, total_haberes,
 	total_descuentos, total_liquido, AP_IOSEP, AP_OSPLAD, AP_ANSES,
-	C01, I01, C02, I02, C03, I03, C04, I04, C05, I05, C06, I06, C07, I07, C08, I08 )
+	C01, I01, C02, I02, C03, I03, C04, I04, C05, I05, C06, I06, C07, I07, C08, I08,C09, I09,C10, I10)
 
 SELECT 
 	t2.NuevoAgeId1,
@@ -850,11 +854,18 @@ SELECT
 	'664', 
 	IMP_664, 
 	'665', 
-	IMP_665_1
+	IMP_665_1,
+	--- CODIGOS NUEVOS DIFERENCIA
+		'601', 
+	t3.monto_destino_rem_descontado,
+		'746', 
+	t3.monto_destino_norem_descontado
 FROM  
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
+	LEFT JOIN agentes_extension_docente_diferencias t3
+	ON t1.numeroControl = t3.NroCOntrol
 
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
@@ -874,7 +885,7 @@ and liq_id = 14
 
 select * from agentes_extension_docente_historico
 where mes = 01
-and anio =23
+and anio = 23
 and liq_id = 14
 
 select distinct Escuela from agentes_extension_docente_historico
