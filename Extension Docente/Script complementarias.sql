@@ -856,9 +856,9 @@ SELECT
 	'665', 
 	IMP_665_1,
 	--- CODIGOS NUEVOS DIFERENCIA
-		'601', 
+	'601', 
 	t3.monto_destino_rem_descontado,
-		'746', 
+	'746', 
 	t3.monto_destino_norem_descontado
 FROM  
 	#agentes_filtrados t1
