@@ -21,7 +21,7 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
     DataTable dt, dt2 = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-    LiquidacionSueldos.Negocio.Liquidacion objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+    LiquidacionSueldos.Negocio.LiquidacionExtensionDocente objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionExtensionDocente();
     LiquidacionSueldos.Negocio.NovedadInasistencia oNovedadInasistencia = new LiquidacionSueldos.Negocio.NovedadInasistencia();
 
     #region Variables Globales
@@ -219,75 +219,7 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
                     MenuRaizListaAnioDesde.DataSource = dt;
                     MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
                     MenuRaizListaAnioDesde.DataBind();
-                }
-        
-            //SI VUELVE DE AGENTE DETALLE
-            else
-            {
-                try
-                {
-                    this.Master.TituloDelFormulario = "Consulta de Agentes";
-                    int Tipo = Convert.ToInt32(Session["Tipo"]);
-                    int index = Convert.ToInt32(Session["index"]);
-                    String txtSesion = Session["Textbox"].ToString();
-
-                    Session["Resultado"] = "";
-                    Session["Tipo"] = "";
-                    Session["index"] = "";
-                    Session["Textbox"] = "";
-
-                    //CARGA DE MENU LISTA
-                    ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-                    dt = ocnMenu.LiquidacionObtenerTodo();
-                    MenuRaizListaAnioDesde.DataSource = dt;
-                    MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
-                    //MenuRaizListaAnioDesde.DataValueField = "Periodo de Liquidacion";
-                    MenuRaizListaAnioDesde.DataBind();
-                    MenuRaizListaAnioDesde.SelectedIndex = GlobalesAgenteConsulta.IndiceDropDownList1;
-
-                    //CARGO MENU LISTA DE MESES CON LOS VALORES QUE ESTABA ANTERIORMENTE
-                    DataTable dtmesdesde = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(MenuRaizListaAnioDesde.SelectedValue));
-
-                    MenuRaizListaMesDesde.DataSource = dtmesdesde;
-                    MenuRaizListaMesDesde.DataTextField = "MesLiq";
-                    MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-                    MenuRaizListaMesDesde.DataBind();
-                    MenuRaizListaMesDesde.SelectedIndex = GlobalesAgenteConsulta.IndiceMenuListaMesDesde;
-
-                    //PRUEBA                    
-                    Session["Periodo1"] = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
-
-                    //GlobalesAgenteConsulta.tipoOp = tipo.ToString();
-                    GlobalesAgenteConsulta.indexOp = Grilla.PageIndex.ToString();
-
-                    //Variables de Fechas seleccionadas                    
-                    GlobalesAgenteConsulta.FechaAux1 = MenuRaizListaMesDesde.SelectedValue;
-
-                    //Variables de Indices seleccionados
-                    GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
-                    GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;                    
-                }
-                catch
-                {
-                    // EN CASO DE ERROR CON VARIABLES DE SESSION -> CARGAR VALORES POR DEFECTO
-                    this.Master.TituloDelFormulario = "Consulta de Agentes";
-                    if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
-                    int Id = 0;
-                    if (Request.QueryString["Id"] != null)
-                    {
-                        Id = Convert.ToInt32(Request.QueryString["Id"]);                   
-                    }
-
-                    ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-                    dt = ocnMenu.LiquidacionObtenerTodo();
-
-                    //Combo Anio Desde
-                    MenuRaizListaAnioDesde.DataSource = dt;
-                    MenuRaizListaAnioDesde.DataTextField = "Mes";
-                    MenuRaizListaAnioDesde.DataValueField = "Periodo de Liquidacion";
-                    MenuRaizListaAnioDesde.DataBind();
-                }
-            }
+                }                
         }
         catch (Exception oError)
         {
@@ -540,12 +472,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             int liqEtapa = Convert.ToInt32(comboEtapa.SelectedValue);
             if (chkObtenerTodos.Checked == true)
                 liqEtapa = 0;
-
-            /*if (chkObtenerTodos.Checked == true)
-                dt = objetoLiquidacion.ObtenerTodos(MenuRaizListaMesDesde.Text, MenuRaizListaAnioDesde.Text.Substring(2));
-            //Traigo solo uno
-            else
-                dt = objetoLiquidacion.ObtenerUno(MenuRaizListaMesDesde.Text, MenuRaizListaAnioDesde.Text.Substring(2), comboEtapa.Text);*/
+                                    
             dt = objetoLiquidacion.ObtenerTodos(MenuRaizListaMesDesde.Text, MenuRaizListaAnioDesde.Text.Substring(2), liqEtapa);
 
             if (dt.Rows.Count > 0)

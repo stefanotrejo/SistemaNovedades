@@ -162,14 +162,14 @@
                                     OnRowCommand="Grilla_RowCommand" CssClass="table table-striped" data-page-size="30"
                                     data-filter="#filter" PageSize="30">
                                     <Columns>
-                                        <asp:BoundField DataField="liqId" HeaderText="Id" />
-                                        <asp:BoundField DataField="liqDescripcion" HeaderText="Descripcion" />
-                                        <asp:BoundField DataField="liqMes" HeaderText="Mes" />
-                                        <asp:BoundField DataField="liqAnio" HeaderText="Año" />
-                                        <asp:BoundField DataField="liqEtapa" HeaderText="Etapa" />
-                                        <asp:BoundField DataField="liqFechaInicio" HeaderText="Fecha inicio" />
-                                        <asp:BoundField DataField="liqFechaCierre" HeaderText="Fecha cierre" />
-                                        <asp:BoundField DataField="liqEstado" HeaderText="Estado" />
+                                        <asp:BoundField DataField="id" HeaderText="Id" />
+                                        <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
+                                        <asp:BoundField DataField="mes_referencia" HeaderText="Mes" />
+                                        <asp:BoundField DataField="anio_referencia" HeaderText="Año" />
+                                        <asp:BoundField DataField="etapa" HeaderText="Etapa" />
+                                        <asp:BoundField DataField="fechaInicio" HeaderText="Fecha inicio" />
+                                        <asp:BoundField DataField="fechaCierre" HeaderText="Fecha cierre" />
+                                        <asp:BoundField DataField="estado" HeaderText="Estado" />
                                         <asp:ButtonField CommandName="Seleccionar" HeaderText="Seleccionar" Text="Seleccionar"  />
 
                                         <%--  <asp:TemplateField HeaderText="">

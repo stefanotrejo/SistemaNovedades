@@ -229,6 +229,27 @@ namespace LiquidacionSueldos
                 }
             }
 
+            public void ActualizarEstado(int liqId, string liqEstado)
+            {
+                try
+                {
+                    ocdGestor.EjecutarNonQuery("[LiquidacionExtensionDocente.ActualizarEstado]", new object[,] {
+                        {
+                            "@liqId",
+                            liqId
+                        },
+                        {
+                            "@liqEstado",
+                            liqEstado
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
             public DataTable ObtenerUno(string liqMes, string liqAnio, string liqEtapa)
             {
                 try
@@ -262,7 +283,7 @@ namespace LiquidacionSueldos
                     object[,] objArray = new object[1, 2];
                     objArray[0, 0] = "@id";
                     objArray[0, 1] = id;
-                    this.Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocentes.ObtenerUnoPorLiqId]", objArray);
+                    this.Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.ObtenerUnoPorLiqId]", objArray);
 
                     if (this.Tabla.Rows.Count > 0)
                     {
@@ -389,6 +410,33 @@ namespace LiquidacionSueldos
                 {
                     throw exception;
                 }
+            }
+
+            public DataTable ObtenerTodos(string liqMes, string liqAnio, int liqEtapa)
+            {
+                try
+                {
+                    Tabla = new DataTable();
+                    Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.ObtenerTodoPorMesAnio]", new object[,] {
+                     {
+                            "@liqMes",
+                            liqMes
+                        },
+                      {
+                            "@liqAnio",
+                            liqAnio
+                        },
+                      {
+                            "@liqEtapa",
+                            liqEtapa
+                        }
+                });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return Tabla;
             }
             #endregion
         }
