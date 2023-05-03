@@ -10,7 +10,7 @@ namespace LiquidacionSueldos.Negocio
         private Datos.Gestor ocdGestor = new Datos.Gestor();
         private DataTable Results;
         const string Educacion = "EDUCACION";
-        const string Ganancias = "GANANCIAS";
+        const string Ganancias = "GANANCIAS";        
 
         #region Propiedades
         public string NroCOntrol { get; set; }
@@ -61,7 +61,7 @@ namespace LiquidacionSueldos.Negocio
                 Results = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ganancias]", new object[,] {
                 });
                 Crear_Archivo_Ganancias(Results, GetDestinyPathFile(Ganancias, liqID));
-
+                
                 //Fila = ocdGestor.EjecutarReader("[ExtensionDocente.Archivo_Ministerio]", new object[,] {
                 //});
                 //Crear_Archivo_Ministerio(Fila);

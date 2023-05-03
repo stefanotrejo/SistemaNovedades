@@ -193,33 +193,33 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         try
-        {                                                   
-                //Si se esta cargando por primera vez
-                if (!Page.IsPostBack)
+        {
+            //Si se esta cargando por primera vez
+            if (!Page.IsPostBack)
+            {
+                DeshabilitarBotonesLiquidacion();
+
+                this.Master.TituloDelFormulario = "Consulta de Liquidaciones Extension Docente";
+                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+                int Id = 0;
+                if (Request.QueryString["Id"] != null)
                 {
-                    DeshabilitarBotonesLiquidacion();
+                    Id = Convert.ToInt32(Request.QueryString["Id"]);
+                }
 
-                    this.Master.TituloDelFormulario = "Consulta de Liquidaciones Extension Docente";
-                    if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
-                    int Id = 0;
-                    if (Request.QueryString["Id"] != null)
-                    {
-                        Id = Convert.ToInt32(Request.QueryString["Id"]);
-                    }
+                ocnMenu = new LiquidacionSueldos.Negocio.Menu();
 
-                    ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+                //Trae solo años
+                dt = ocnMenu.LiquidacionObtenerTodo();
 
-                    //Trae solo años
-                    dt = ocnMenu.LiquidacionObtenerTodo();
+                //Trae meses por año seleccionado
+                dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(dt.Rows[0]["AnioLiq"].ToString()));
 
-                    //Trae meses por año seleccionado
-                    dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(dt.Rows[0]["AnioLiq"].ToString()));
-
-                    //Combo Anio Desde
-                    MenuRaizListaAnioDesde.DataSource = dt;
-                    MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
-                    MenuRaizListaAnioDesde.DataBind();
-                }                
+                //Combo Anio Desde
+                MenuRaizListaAnioDesde.DataSource = dt;
+                MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
+                MenuRaizListaAnioDesde.DataBind();
+            }
         }
         catch (Exception oError)
         {
@@ -472,7 +472,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             int liqEtapa = Convert.ToInt32(comboEtapa.SelectedValue);
             if (chkObtenerTodos.Checked == true)
                 liqEtapa = 0;
-                                    
+
             dt = objetoLiquidacion.ObtenerTodos(MenuRaizListaMesDesde.Text, MenuRaizListaAnioDesde.Text.Substring(2), liqEtapa);
 
             if (dt.Rows.Count > 0)
@@ -572,6 +572,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         btnEliminar.Enabled = true;
         btnAbrir.Enabled = true;
         btnModificar.Enabled = true;
+        btnGenerarOrdenPago.Enabled = true;
     }
 
     protected void DeshabilitarBotonesLiquidacion()
@@ -583,6 +584,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         btnCerrar.Enabled = false;
         btnModificar.Enabled = false;
         btnGenerarArchivos.Enabled = false;
+        btnGenerarOrdenPago.Enabled = false;
     }
 
     protected void Grilla_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -692,35 +694,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void btnGenerarArchivos_Click(object sender, EventArgs e)
     {
-        try
-        {
-            DataTable perfilesConNovedades = new DataTable();
-            int liqId = Convert.ToInt32(txtLiqId.Text);
-            String etapaLiquidacion = txtEtapa.Text;
-            perfilesConNovedades = oNovedadInasistencia.PerfilesConNovedades(liqId);
-
-            // GENERA TXT DE NO PRESENTISMO POR LUGAR DE PAGO
-            foreach (DataRow row in perfilesConNovedades.Rows)
-            {
-                generarArchivosNoPresentismo(liqId, Convert.ToInt32(row["perEsAdministrador"].ToString()));
-            }
-
-            //  GENERACION DBF MULTAS/SUSPENSIONES Y BAJAS                        
-            //string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString());
-            string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString(), "2");
-            oNovedadInasistencia.GenerarDbfMultasSuspensiones(liqId, rutaDestino, etapaLiquidacion);
-            oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);
-            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Exito");
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-<button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-<a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-Se ha producido el siguiente error:<br/>
-MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-"</div>";
-        }
+        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivosEducacion = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
+        int liqID = Convert.ToInt32(txtLiqId.Text);
+        archivosEducacion.Generar(liqID);
+        lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Exito");
     }
 
     protected void generarArchivosNoPresentismo(int paramLiqId, int paramReparticion)
@@ -838,4 +815,24 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         #endregion
     }
 
+    protected void btnGenerarOrdenPago_Click(object sender, EventArgs e)
+    {                
+        try
+        {
+            String NomRep = "OrdenPagoExtensionHoraria.rpt";
+            NomRep = "OrdenPago.rpt";
+            
+            int liqID = Convert.ToInt32(txtLiqId.Text);                        
+            FuncionesUtiles.AbreVentana("../Pagos_Eventuales/Reporte.aspx?liq_id=" + liqID+ "&NomRep=" + NomRep);
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+        <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+        Se ha producido el siguiente error:<br/>
+        MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+"</div>";
+        }
+    }
 }

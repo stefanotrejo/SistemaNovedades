@@ -214,7 +214,6 @@ public partial class LiquidacionExtensionDocenteAlta : System.Web.UI.Page
                     //comboMesLiquidacion.Enabled = false;
                     //txtAnio.Enabled = false;
                     //comboEtapa.Enabled = false;
-
                 }
             }
         }

@@ -127,10 +127,6 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
             //   throw oError;
         }
 
-
-
-
-
         #region EJEMPLO OTROS PARAMETROS
 
         //try

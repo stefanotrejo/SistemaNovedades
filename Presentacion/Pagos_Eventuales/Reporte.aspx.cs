@@ -50,6 +50,20 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
 
         try
         {
+            Int32 liqID;
+            liqID = Int32.Parse(Request.QueryString["liq_id"].ToString()); 
+            Par.Value = liqID;  
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@liq_id"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //    throw oError;
+        }
+
+
+        try
+        {
             DateTime fechaseleccionada;
             fechaseleccionada = DateTime.Parse(Request.QueryString["fechaseleccionada"]);
             Par.Value = fechaseleccionada;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
@@ -86,9 +100,7 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             //    throw oError;
         }
-
-
-    
+           
         try
         {
             Int32 aplicafiltrofecha;
