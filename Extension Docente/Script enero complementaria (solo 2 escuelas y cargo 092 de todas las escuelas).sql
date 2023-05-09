@@ -5,7 +5,7 @@
 
 -- ESTE MES ES MES ACTUAL ES PARA  LA TABLA PRUEBAS AGE (PRE Y DEFINITIVA)
 DECLARE @mesanioPruebasAge varchar(50) 
-SELECT 	@mesanioPruebasAge = '03/23'
+SELECT 	@mesanioPruebasAge = '01/23'
 
 --INSERT INTO 
 --	ConceptoExtensionDocente (conCodigo)
@@ -23,28 +23,28 @@ FROM
 	and SUBSTRING(LugarPago,1,2) = '38'
 	and cteCodigoConcepto < '600'
 	and cteCodigoConcepto > '001'
-	AND cteCodigoConcepto NOT IN ('78', '553', '559', '595')
+	--AND cteCodigoConcepto NOT IN ('78', '553', '559', '595')
+	--AND cteCodigoConcepto NOT IN ('78', '111', '112', '113', '114', '115', '117', '118', '137', '550', '553', '559', '595', '597')
+
 	--AND cteCodigoConcepto NOT IN ('550') -> CONSULTAR
-	AND NOT EXISTS (
-	SELECT * FROM ConceptoExtensionDocente t3
-	WHERE t2.cteCodigoConcepto = t3.conCodigo
-	)
+
+	--AND NOT EXISTS (
+	--SELECT * FROM ConceptoExtensionDocente t3
+	--WHERE t2.cteCodigoConcepto = t3.conCodigo
+	--)
+
 ORDER BY 
 	cteCodigoConcepto
 
 
-	
+	select * from ConceptoExtensionDocente
 
-		
-
-
-	
+				
 ---- SELECT ----
 
 Select * from ConceptoExtensionDocente ORDER BY conCodigo
 
 -- UPDATE CONID ---
-
 UPDATE 
 	ConceptoExtensionDocente
 SET 
@@ -53,7 +53,6 @@ FROM
 	ConceptoExtensionDocente T1
 	INNER JOIN Concepto T2
 	ON T1.conCodigo = T2.conCodigo
-
 -- FIN ACTUALIZACION DE TABLA CONCEPTOS --
 
 
@@ -149,36 +148,36 @@ SELECT
 		SUM (cteImporte) 
 	 FROM 
 		ConceptoTemporal b1 
-		INNER JOIN ConceptoExtensionDocente_historico b2 ON b1.cteCodigoConcepto = b2.conCodigo
+		INNER JOIN ConceptoExtensionDocente b2 ON b1.cteCodigoConcepto = b2.conCodigo
 		INNER JOIN Concepto b3				   ON b2.conCodigo = b3.conCodigo
 	 WHERE 
 		b3.conRemunerativoNoRemunerativo = '1'	
-		AND b2.liq_id = 14
+		--AND b2.liq_id = 14
 		AND b1.ageId = t1.NuevoAgeId1) as R,
 	-- NO REMUNERATIVO
 	(SELECT 
 		SUM (cteImporte) 
 	FROM 
 		ConceptoTemporal b1 
-		INNER JOIN ConceptoExtensionDocente_historico b2 on b1.cteCodigoConcepto = b2.conCodigo
+		INNER JOIN ConceptoExtensionDocente b2 on b1.cteCodigoConcepto = b2.conCodigo
 		INNER JOIN Concepto b3 on b2.conCodigo = b3.conCodigo
 	 WHERE 
 		b3.conRemunerativoNoRemunerativo = '2'
 	 AND (b1.cteCodigoConcepto < '108' OR b1.cteCodigoConcepto > '118')
 	 AND b1.cteCodigoConcepto not in ('137', '202', '208')
-	 AND cteCodigoConcepto NOT IN ('559', '595') -- nuevo filtro 28.4.23
-	 AND b2.liq_id = 14
+	 AND cteCodigoConcepto NOT IN ('550', '553', '559', '595', '597') -- nuevo filtro 28.4.23
+	 --AND b2.liq_id = 14
 	 AND b1.ageId = t1.NuevoAgeId1) as NR,
 	-- ASIGNACIONES FAMILIARES
 	 ISNULL((SELECT 
 		SUM (b1.cteImporte) 
 	FROM 
 		ConceptoTemporal b1 
-		INNER JOIN ConceptoExtensionDocente_historico b2 on b1.cteCodigoConcepto = b2.conCodigo
+		INNER JOIN ConceptoExtensionDocente b2 on b1.cteCodigoConcepto = b2.conCodigo
 		INNER JOIN Concepto b3 on b2.conCodigo = b3.conCodigo
 	WHERE 
 		 b1.ageId = t1.NuevoAgeId1
-	AND b2.liq_id = 14
+	--AND b2.liq_id = 14
 	AND	b3.conRemunerativoNoRemunerativo = '2'
 	AND ((b1.cteCodigoConcepto >= '108' AND b1.cteCodigoConcepto <= '118')
 			OR b1.cteCodigoConcepto in ('137', '202', '208') )),0) AS AF,
@@ -210,88 +209,103 @@ FROM
 WHERE 
 		t1.MesAnioLiq = @mesanioPruebasAge
 	-- Filtro escuelas habilitadas
-	AND 
+	AND	
 	(
 		(
-		EXISTS (
-		SELECT CUISE FROM EscuelaExtensionDocente_historico	 t2
-		WHERE CONVERT(int,t1.Escuela) = t2.CUISE
-		AND CUISE in (263 ,1065)
-		AND t2.liq_id = 14
-				)
-	-- Filtro cargos habilitados
-		AND EXISTS (
-		SELECT * 
-		FROM CargosExtensionDocente_historico	 t3
-		WHERE t1.Agru = t3.agrupamiento
-		AND t1.tramo = t3.tramo
-		AND t1.Apertura = t3.apertura
-		AND t3.liq_id = 14
-					)
-		) 
-		OR ( 
+		(
+			(
 			EXISTS (
 			SELECT CUISE FROM EscuelaExtensionDocente_historico	 t2
-			WHERE CONVERT(int,t1.Escuela) = t2.CUISE		
-			AND t2.liq_id = 7			
-			-- Filtro cargos habilitados
+			WHERE CONVERT(int,t1.Escuela) = t2.CUISE
+			AND CUISE in (263 ,1065)
+			AND t2.liq_id = 14
+					)
+		-- Filtro cargos habilitados
 			AND EXISTS (
 			SELECT * 
-			FROM CargosExtensionDocente	 t3
+			FROM CargosExtensionDocente_historico	 t3
 			WHERE t1.Agru = t3.agrupamiento
 			AND t1.tramo = t3.tramo
 			AND t1.Apertura = t3.apertura
-			AND t1.Apertura = '092'
+			AND t3.liq_id = 14
 						)
-					)
-			)
-	)
-	AND t1.SituRev != 'A' -- FILTRO ADSCRIPTOS
-	AND t1.SituRev != 'V' -- FILTRO VACANTES (ES LO MISMO QUE LEGAJO '9999999’)
-	AND t1.Legajo != '9999999'
-	AND t1.SituRev != 'N' -- FILTRO NACION 
-	AND t1.SituRev != 'R' -- FILTRO RETENIDO 
-	AND t1.Liquido != 0 -- FILTRO LIQUIDO
-	AND t1.TotalHaberes != 0 -- FILTRO tot.hab.rem
-	AND t1.TotalSinCargosAlHaber != 0 -- FILTRO tot.hab.no rem
-	-- FILTRO que tengan codigo 002
-	AND exists ( 	 
-		SELECT * FROM ConceptoTemporal b2
-		WHERE t1.NuevoAgeId1 = b2.ageId
-		AND cteCodigoConcepto = '002'
-	)
-	AND not exists ( -- FILTRO 1 solo item
-		SELECT * FROM PruebasAge b1
-		WHERE b1.CantItemsOcupados = 1
-		AND MesAnioLiq = @mesanioPruebasAge
-		AND b1.NuevoAgeId1 = t1.NuevoAgeId1
-		AND exists ( -- FILTRO que tengan solo codigo 595
-		SELECT * FROM ConceptoTemporal b2
-		WHERE b1.NuevoAgeId1 = b2.ageId
-		AND cteCodigoConcepto = '595')
-	)
-	-- FILTRO Registros con cero en días trab y líquido, e (importe cod.601 = tot.desctos)
-	AND not exists (
-		SELECT * FROM PruebasAge b1
-		WHERE 
-			b1.DiasTrabajados = 0
-		AND b1.Liquido = 0
-		AND MesAnioLiq = @mesanioPruebasAge
-		AND b1.NuevoAgeId1 = t1.NuevoAgeId1
-		AND b1.TotalDescuentos = (
-						SELECT cteImporte FROM ConceptoTemporal b2
-						WHERE b1.NuevoAgeId1 = b2.ageId
-						AND cteCodigoConcepto = '601'
+			) 
+			OR ( 
+				EXISTS (
+				SELECT CUISE FROM EscuelaExtensionDocente_historico	 t2
+				WHERE CONVERT(int,t1.Escuela) = t2.CUISE		
+				AND t2.liq_id = 7			
+				-- Filtro cargos habilitados
+				AND EXISTS (
+				SELECT * 
+				FROM CargosExtensionDocente	 t3
+				WHERE t1.Agru = t3.agrupamiento
+				AND t1.tramo = t3.tramo
+				AND t1.Apertura = t3.apertura
+				AND t1.Apertura = '092'
+							)
 						)
-	)
-	-- FILTRO ARCHIVO NOVEDADES PARA DESCONTAR (FILTRO POR NRO CONTROL Y DIAS)
-	AND not exists (
-		SELECT * FROM NovedadesExtensionDocente p2
-		WHERE t1.NroCOntrol = p2.age_nrocontrol
-		AND p2.dias_descontar >= 30
-		AND t1.PlantaTipo = 'D'
-		AND p2.activo = 1
-		AND liq_id = 14
+				)
+		)	
+		AND t1.SituRev != 'A' -- FILTRO ADSCRIPTOS
+		AND t1.SituRev != 'V' -- FILTRO VACANTES (ES LO MISMO QUE LEGAJO '9999999’)
+		AND t1.Legajo != '9999999'
+		AND t1.SituRev != 'N' -- FILTRO NACION 
+		AND t1.SituRev != 'R' -- FILTRO RETENIDO 
+		AND t1.Liquido != 0 -- FILTRO LIQUIDO
+		AND t1.TotalHaberes != 0 -- FILTRO tot.hab.rem
+		AND t1.TotalSinCargosAlHaber != 0 -- FILTRO tot.hab.no rem
+		-- FILTRO que tengan codigo 002
+		AND exists ( 	 
+			SELECT * FROM ConceptoTemporal b2
+			WHERE t1.NuevoAgeId1 = b2.ageId
+			AND cteCodigoConcepto = '002'
+		)
+		AND not exists ( -- FILTRO 1 solo item
+			SELECT * FROM PruebasAge b1
+			WHERE b1.CantItemsOcupados = 1
+			AND MesAnioLiq = @mesanioPruebasAge
+			AND b1.NuevoAgeId1 = t1.NuevoAgeId1
+			AND exists ( -- FILTRO que tengan solo codigo 595
+			SELECT * FROM ConceptoTemporal b2
+			WHERE b1.NuevoAgeId1 = b2.ageId
+			AND cteCodigoConcepto = '595')
+		)
+		-- FILTRO Registros con cero en días trab y líquido, e (importe cod.601 = tot.desctos)
+		AND not exists (
+			SELECT * FROM PruebasAge b1
+			WHERE 
+				b1.DiasTrabajados = 0
+			AND b1.Liquido = 0
+			AND MesAnioLiq = @mesanioPruebasAge
+			AND b1.NuevoAgeId1 = t1.NuevoAgeId1
+			AND b1.TotalDescuentos = (
+							SELECT cteImporte FROM ConceptoTemporal b2
+							WHERE b1.NuevoAgeId1 = b2.ageId
+							AND cteCodigoConcepto = '601'
+							)
+		)
+		-- FILTRO ARCHIVO NOVEDADES PARA DESCONTAR (FILTRO POR NRO CONTROL Y DIAS)
+		AND not exists (
+			SELECT * FROM NovedadesExtensionDocente p2
+			WHERE t1.NroCOntrol = p2.age_nrocontrol
+			AND p2.dias_descontar >= 30
+			AND t1.PlantaTipo = 'D'
+			AND p2.activo = 1
+			AND liq_id = 14
+						)	
+		)		
+													
+		OR  NroCOntrol in (
+			'38723624',
+			'38978122',
+			'38747372',
+			--'38887193',
+			'38888314',
+			'38211525',
+			'38885942',
+			'38272063'
+							)
 	)
 
 --------------- FINAL COPIA EN #t1 --------------- 
@@ -302,6 +316,20 @@ WHERE
 -- DELETE FROM #agentes_filtrados 
 
 --259
+-- 267
+
+SELECT * FROM PruebasAge
+WHERE MesAnioLiq = '01/23'
+AND  NroCOntrol in (
+'38723624',
+'38978122',
+'38747372',
+'38887193',
+'38888314',
+'38211525',
+'38885942',
+'38272063'
+)
 
 
 SELECT distinct t2.Escuela FROM #t1 t1
@@ -351,6 +379,12 @@ WHERE liq_id = 7
 AND 
 SELECT distinct agrupamiento,tramo, apertura from agentes_extension_docente_historico
 WHERE liq_id = 9
+
+SELECT  * from agentes_extension_docente_historico
+where NroCOntrol = '38272063'
+
+select 1 from 
+
 
 
 
@@ -438,7 +472,7 @@ SET
 					ELSE R -- CUANDO NO EXISTE 601
 					END)
 
--- SELECT * FROM #agentes_filtrados
+ 
 
 ----------------  C) ---------------- 
 UPDATE 
@@ -518,6 +552,36 @@ SET
 	AP_ANSES = IMP_521 * 0.1017
 
 ----------------------->>>>> FIN - CALCULOS <<<<<-----------------------
+
+select IMP_522 from #agentes_filtrados
+where numeroControl = '38271274'
+
+SELECT t2.I01, t2.I02, ageId, numeroControl, t2.mes, t2.anio from #agentes_filtrados t1
+inner join agentes_extension_docente_historico t2
+on t1.numeroControl = t2.NroCOntrol 
+where NroCOntrol = '38271274'
+order by IMP_521 desc
+
+select * from agentes_extension_docente_historico
+where NroCOntrol = '38271274'
+
+select * from PruebasAge
+where NuevoAgeId1 = 15266838
+
+select * from agentes_extension_docente_historico
+where NroCOntrol = '38271274'
+and mes = '11'
+
+select * from PruebasAge
+where MesAnioLiq = '01/23'
+and NroCOntrol = '38271274'
+
+select * from ConceptoTemporal
+where ageId = 14966838
+
+15266811
+
+
 
 ----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO <<<<<-----------------------
 SELECT  	
@@ -688,6 +752,9 @@ FROM
 
 ----------------------->>>>> FIN - UPDATE TIPO PLANTA <<<<<-----------------------
 
+select * from #agentes_filtrados
+where numeroControl = ''
+
 ----------------------->>>>> INICIO - ORDEN DE PAGO <<<<<-----------------------
 SELECT 
 	-- LIQUIDO
@@ -741,8 +808,9 @@ FROM
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
 WHERE 
-	--t1.tipoPlanta = 'PC'
-	t1.tipoPlanta = 'PP'
+	--t1.tipoPlanta = 'PP'
+	t1.tipoPlanta = 'PC'
+	
 
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
@@ -801,7 +869,7 @@ FROM
 	INNER JOIN PruebasAge t2	
 	ON t1.age_id = t2.NuevoAgeId1
 WHERE 
-	t1.liq_id = 17
+	t1.liq_id = 18
 	--t1.tipoPlanta = 'PC'
 AND	t1.tipo_planta_OP = 'PP'
 
@@ -809,7 +877,7 @@ select * from agentes_extension_docente_historico
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
 
-SELECT * from agentes_extension_docente_historico
+
 
 ----------------------->>>>> INICIO - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 INSERT INTO 
@@ -909,4 +977,22 @@ where liq_id = 18
 
 select * from CargosExtensionDocente
 
-exec [ExtensionDocente.OrdenPago] 18
+exec [ExtensionDocente.OrdenPago]
+
+delete from EscuelaExtensionDocente_historico
+where liq_id = 18
+
+delete from CargosExtensionDocente_historico
+where liq_id = 18
+
+delete from ConceptoExtensionDocente_historico 
+where liq_id = 18
+
+select * from LiquidacionExtensionDocente
+where id = 18
+
+delete from agentes_extension_docente
+
+
+
+exec [ExtensionDocente.Archivo_Ministerio]

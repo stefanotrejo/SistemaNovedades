@@ -780,3 +780,9 @@ FROM
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
 EXEC [ExtensionDocente.Archivo_Ministerio]
+
+exec [ExtensionDocente.ArchivoBanco] 17
+
+exec [ExtensionDocente.OrdenPago] 17
+
+exec [ExtensionDocente.Archivo_Educacion] 
