@@ -59,7 +59,7 @@ FROM
 -- GUARDR EN HISTORICOS--
 exec [ExtensionDocente.Guardar_En_Historico] '02','23',9 -- FEBRERO DEFINITVA 
 DELETE from agentes_extension_docente
--- FIN GUARDAR EN HISTORICOS --
+-- FIN GUARDAR EN HISTORICOS --l
 
 
 
@@ -126,6 +126,8 @@ CREATE TABLE #agentes_filtrados (
 --------------- INICIO COPIA EN #t1 --------------- 
 
 -- drop table #t1
+
+
 
 -- MES ANTERIOR (SE USA PARA OBTENER LIQ_ID DE NOVEDADES CARGADAS)
 DECLARE @mesanio varchar(50) 
@@ -283,14 +285,14 @@ SELECT
 FROM 
 	#t1
 
-SELECT * FROM #agentes_filtrados
-ORDER BY ageid
+--SELECT * FROM #agentes_filtrados
+--ORDER BY ageid
 -- 1626
 
 --------------- FIN - COPIA EN #agentes_filtrados  --------------- 
 
-SELECT * from LiquidacionExtensionDocente
-where  id = 14
+--SELECT * from LiquidacionExtensionDocente
+--where  id = 14
 
 SELECT distinct agrupamiento,tramo, apertura from agentes_extension_docente_historico
 WHERE liq_id = 7
@@ -304,7 +306,7 @@ where NroCOntrol = '38272063'
 select 1 from 
 
 
-SELECT * FROM #agentes_filtrados
+--SELECT * FROM #agentes_filtrados
 
 ----------------------->>>>> INICIO - CALCULOS <<<<<-----------------------
 
@@ -391,7 +393,7 @@ SET
 					END)
 
  
- select * from #agentes_filtrados
+ --select * from #agentes_filtrados
 ----------------  C) ---------------- 
 UPDATE 
 	#agentes_filtrados
@@ -791,7 +793,7 @@ WHERE
 	--t1.tipoPlanta = 'PC'
 AND	t1.tipo_planta_OP = 'PP'
 
-select * from agentes_extension_docente_historico
+--select * from agentes_extension_docente_historico
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
 
@@ -873,6 +875,7 @@ FROM
 	ON t1.numeroControl = t3.NroCOntrol
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
+exec [ExtensionDocente.ArchivoBanco] 20
 
 select * from agentes_extension_docente
 select * from agentes_extension_docente_historico
@@ -881,11 +884,14 @@ where  CONVERT(numeric,i01) = 0
 
 select * from LiquidacionExtensionDocente
 
-delete from agentes_extension_docente
+exec [ExtensionDocente.OrdenPago] 19
+--delete from agentes_extension_docente
 
-exec [ExtensionDocente.Guardar_En_Historico] '01', '23', 18, 1, 14
 
-select * from agen
+exec [ExtensionDocente.Guardar_En_Historico] '10', '22', 20, 0, 14
+
+
+select * from a
 
 select * from LiquidacionExtensionDocente
 
@@ -897,7 +903,7 @@ where liq_id = 18
 
 select * from CargosExtensionDocente
 
-exec [ExtensionDocente.OrdenPago]
+exec [ExtensionDocente.OrdenPago] 
 
 delete from EscuelaExtensionDocente_historico
 where liq_id = 18
@@ -917,4 +923,24 @@ delete from agentes_extension_docente
 
 exec [ExtensionDocente.Archivo_Ministerio]
 
-select * from agentes_extension_docente
+select * from agentes_extension_docente_historico 
+where liq_id = 20
+
+
+select distinct liq_id from agentes_extension_docente_historico
+where apertura = '092'
+and Escuela in (
+'50034'
+,'50107'
+,'50073'
+,'50065'
+,'50096'
+,'50081'
+,'50042'
+,'50057'
+
+)
+
+
+SELECT * from LiquidacionExtensionDocente
+where id in (9, 11, 17, 18)

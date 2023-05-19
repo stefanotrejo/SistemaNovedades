@@ -64,7 +64,7 @@ DELETE from agentes_extension_docente
 
 
 ------------------------------------------------------------------------------------------------------------------------------ 
-----------------  DESCUENTO POR DIFERENCIA PAGO ENERO 2023 Y FEBRERO 2023 ----------------------------------------------------
+----------------  DESCUENTO POR DIFERENCIA PAGO FEBRERO 2023 ----------------------------------------------------
 ----------------  DUPLICADO POR COMPLEMENTARIA A 2 ESCUELAS QUE HABIAN COBRADO---------------- 
 ----------------  EN LA LIQUIDACION ORIGINAL---------------- 
 --------------------------------------------------------------- --------------------------------------------------------------- 
@@ -914,7 +914,7 @@ exec [ExtensionDocente.Archivo_Ministerio]
 
 
 
-
+exec [ExtensionDocente.Guardar_En_Historico] '01', '23', 18, 0, 0
 
 
 

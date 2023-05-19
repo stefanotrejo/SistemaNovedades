@@ -577,7 +577,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void DeshabilitarBotonesLiquidacion()
     {
-
         btnEliminar.Enabled = false;
         btnAbrir.Enabled = false;
         btnCerrarPersonal.Enabled = false;
@@ -833,6 +832,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         Se ha producido el siguiente error:<br/>
         MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
 "</div>";
-        }
+        }   
     }
 }
