@@ -467,6 +467,8 @@ SET
 					ELSE 0 -- = O MAYOR
 					END)
 
+
+select OSPLAD, IOSEP from #agentes_filtrados 
 -- CALCULO APORTE PREVISIONAL 
 UPDATE 
 	#agentes_filtrados

@@ -133,6 +133,7 @@ CREATE TABLE #agentes_filtrados (
 	NR_1 			numeric (18,2), 
 	NR_DEPURADO		numeric (18,2), 
 	IMP_522			numeric (18,2),
+	IMP_522_original			numeric (18,2),
 
 	-- Remunerativo
 	haberConAporte  varchar(255),
@@ -144,6 +145,7 @@ CREATE TABLE #agentes_filtrados (
 	--R_1 			numeric (18,2), 	
 	R_DEPURADO		numeric (18,2), 
 	IMP_521			numeric (18,2),
+	IMP_521_original			numeric (18,2),
 	
 	-- Descuentos
 	IMP_602			numeric (18,2),	
@@ -935,3 +937,8 @@ and NroCOntrol = '38152344'
 select * from NovedadesExtensionDocente
 where liq_id = 17
 and age_nrocontrol = '38152344'
+
+
+
+
+

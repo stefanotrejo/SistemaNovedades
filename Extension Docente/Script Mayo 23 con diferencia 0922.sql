@@ -426,8 +426,10 @@ SET
 	IMP_522_original = IMP_522
 
 
+	UPDATE agentes_extdoc_diferencia_0922 set monto_destino_rem_descontado = null
+	UPDATE agentes_extdoc_diferencia_0922 set monto_destino_norem_descontado = null
 
-	
+---------------- ACTUALIZA DIFERENCIAS DESCONTADAS ----------------
 UPDATE 
 	agentes_extdoc_diferencia_0922
 SET 
@@ -448,6 +450,7 @@ FROM
 	INNER JOIN agentes_extdoc_diferencia_0922 t2
 	ON T1.numeroControl = t2.NroCOntrol
 
+---------------- FIN - SOLO EN LA PRE EJECUTAR ESTO ----------------
 
 
 
@@ -488,7 +491,7 @@ where monto_origen_norem_descontar != monto_destino_norem_descontado
 -- FIN - AGENTES QUE SE LES DESCUENTE UNA PARTE DEL SALDO PORQUE NO LES ALCANZA ---
 
 
-
+----------------  EJECUTAR ESTO PARA DETERMINAR SI SE CANCELÓ LA DEUDA O NO ----------------
 UPDATE 
 	agentes_extdoc_diferencia_0922
 SET 
@@ -501,9 +504,8 @@ SET
 									ELSE 1								
 										END)
 
+----------------  EJECUTAR ESTO PARA DETERMINAR SI SE CANCELÓ LA DEUDA O NO ----------------L
 
-SELECT * from agentes_extdoc_diferencia_0922
-where activoNoRem != 0
 
 -- NO TIENE SENTIDO --
 --UPDATE 
@@ -578,15 +580,9 @@ SET
 	AP_ANSES = IMP_521 * 0.1017
 
 
--- CALCULO TOTALIZADORES 
-UPDATE 
-	#agentes_filtrados
-SET 
-	-- ANSES
-	AP_ANSES = IMP_521 * 0.1017
-
 ----------------------->>>>> FIN - CALCULOS <<<<<-----------------------
 
+select * from #agentes_filtrados 
 ----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO <<<<<-----------------------
 SELECT  	
 	 RTRIM(LTRIM(CAST(UPPER(
@@ -642,47 +638,129 @@ FROM
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
 
-SELECT t1.monto_destino_norem_descontado ,t2.* from agentes_extdoc_diferencia_0922 t1
-inner join #agentes_filtrados t2
-on t1.NroCOntrol = t2.numeroControl
-where CONVERT(numeric (18,2), t1.monto_destino_norem_descontado) != 0
-and t2.ageId = 15919543
+--SELECT t1.monto_destino_norem_descontado ,t2.* from agentes_extdoc_diferencia_0922 t1
+--inner join #agentes_filtrados t2
+--on t1.NroCOntrol = t2.numeroControl
+--where CONVERT(numeric (18,2), t1.monto_destino_norem_descontado) != 0
+--and t2.ageId = 15919543
 
-select total_descuentos, total_liquido from agentes_extension_docente_historico
-where liq_id = 17
-and NroCOntrol = '38772165'
+--select total_descuentos, total_liquido from agentes_extension_docente_historico
+--where liq_id = 17
+--and NroCOntrol = '38772165'
 
-select * from LiquidacionExtensionDocente
+--select * from LiquidacionExtensionDocente
 
-select IMP_522_original, numeroControl from #agentes_filtrados
-where ageId = 15919543
+--select IMP_522_original, numeroControl from #agentes_filtrados
+--where ageId = 15919543
 
-select * from ConceptoTemporal t1 inner join Concepto t2
-on t1.cteCodigoConcepto = t2.conCodigo
-where ageId = 15919543
-and t2.conRemunerativoNoRemunerativo = 2
+--select * from ConceptoTemporal t1 inner join Concepto t2
+--on t1.cteCodigoConcepto = t2.conCodigo
+--where ageId = 15919543
+--and t2.conRemunerativoNoRemunerativo = 2
 
-SELECT 
-		SUM (cteImporte) 
-	FROM 
-		ConceptoTemporal b1 
-		INNER JOIN ConceptoExtensionDocente b2 on b1.cteCodigoConcepto = b2.conCodigo
-		INNER JOIN Concepto b3 on b2.conCodigo = b3.conCodigo
-	 WHERE 
-		b3.conRemunerativoNoRemunerativo = '2'
-	 AND (b1.cteCodigoConcepto < '108' OR b1.cteCodigoConcepto > '118')
-	 AND b1.cteCodigoConcepto not in ('137', '202', '208')
-	 AND cteCodigoConcepto NOT IN ('550', '553', '559', '595', '597') -- nuevo filtro 28.4.23
-	 --AND b2.liq_id = 14
-	 AND b1.ageId = 15919543
+--SELECT 
+--		SUM (cteImporte) 
+--	FROM 
+--		ConceptoTemporal b1 
+--		INNER JOIN ConceptoExtensionDocente b2 on b1.cteCodigoConcepto = b2.conCodigo
+--		INNER JOIN Concepto b3 on b2.conCodigo = b3.conCodigo
+--	 WHERE 
+--		b3.conRemunerativoNoRemunerativo = '2'
+--	 AND (b1.cteCodigoConcepto < '108' OR b1.cteCodigoConcepto > '118')
+--	 AND b1.cteCodigoConcepto not in ('137', '202', '208')
+--	 AND cteCodigoConcepto NOT IN ('550', '553', '559', '595', '597') -- nuevo filtro 28.4.23
+--	 --AND b2.liq_id = 14
+--	 AND b1.ageId = 15919543
 
 
 ----------------  FIN GENERACION TXT PARA EL BANCO----------------
-	
-select * from #agentes_filtrados
+
+-- AGENTES QUE SE AGREGARON	
+select 
+	t3.NroCOntrol, t3.Cuil, t3.Nombre, t3.Escuela,
+	t3.Agru, t3.tramo, t3.Apertura, t4.esuNombre	
+from 
+	#agentes_filtrados t1
+INNER JOIN PruebasAge t3
+on t1.ageId = t3.NuevoAgeId1
+INNER JOIN Escuela t4
+ON CONVERT(int,t3.Escuela) = CONVERT(int, t4.esuCodigo)
+WHERE not exists (
+	select * from agentes_extension_docente_0523_PRE_TEMP t2
+	where t1.numeroControl = t2.NroCOntrol
+)
+
+
+select * from agentes_extdoc_diferencia_0922
+where monto_destino_norem_descontado is  null
+
+select * from #agentes_filtrados  t1
+inner join agentes_extdoc_diferencia_0922  t2
+on t1.numeroControl = t2.NroCOntrol
+
+
+
+select * from LiquidacionExtensionDocente
+
+select * from NovedadesExtensionDocente
+where liq_id = 23
+
+select * from PruebasAge
+where MesAnioLiq = '05/23'
+and NroCOntrol = '38993533'
+
+select * from PruebasAge
+where (NroCOntrol = '38869925' OR NroCOntrol = '38993533')
+and MesAnioLiq = '05/23'
+
+SELECT * from CargosExtensionDocente_historico
+where apertura = '716'
+
+
+select * from agentes_extension_docente_0523_PRE_TEMP
+where NroCOntrol = '38152035'
+
+select * from ConceptoTemporal
+where ageId = 16006084
+
+select * from CargoCategoriaPresupuestado
+where ccpApertura in ('098', '070')
+
+
+select * from ConceptoTemporal
+where ageId = 16006083
+
+-- AGENTES QUE SE ELIMINARON	
+select t1.NroCOntrol, t1.cuil, (select top 1 nombre from PruebasAge where cuil = t1.cuil order by FechaLiquidacion desc),
+ t1.Escuela, t1.agrupamiento, t1.tramo, t1.apertura, t4.esuNombre
+ from agentes_extension_docente_0523_PRE_TEMP t1
+ INNER JOIN Escuela t4
+ON CONVERT(int,t1.Escuela) = CONVERT(int, t4.esuCodigo)
+ WHERE not exists (
+	select * from #agentes_filtrados  t2
+	where t1.NroCOntrol = t2.numeroControl
+)
+
+INNER JOIN PruebasAge t3
+on t1.ageId = t3.NuevoAgeId1
+INNER JOIN Escuela t4
+ON CONVERT(int,t3.Escuela) = CONVERT(int, t4.esuCodigo)
+
+
+
+SELECT  				
+	 SUM (convert(decimal (18,2), t3.monto_destino_norem_descontado))
+AS Columna 
+FROM  
+	#agentes_filtrados t1
+	INNER JOIN PruebasAge t2	
+	ON t1.ageId = t2.NuevoAgeId1
+	LEFT JOIN agentes_extdoc_diferencia_0922 t3
+	ON t1.numeroControl = t3.NroCOntrol
+
 
 ----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO V2 <<<<<-----------------------
-SELECT  	
+SELECT  				
 	  CAST (dbo.RellenarTextoDerecha(t2.Nombre,' ',25) AS VARCHAR(25)) -- NOMBRE + RELLENO
     + CAST (dbo.RellenarTextoIzquierda(SUBSTRING(t1.cuil,3,8),'0',8) AS VARCHAR(8)) -- RELLENO + DNI
     + CAST (dbo.RellenarTextoIzquierda(t2.LugarPago,'0',5) AS VARCHAR(5)) -- RELLENO + LUGAR PAGO 	
@@ -692,12 +770,13 @@ SELECT
     + CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_522 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. SIN APORTE
 	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_521 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. CON APORTE
 	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_521) 
-	+ (convert(decimal (18,2),t1.IMP_522)) AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB.
+		+ (convert(decimal (18,2),t1.IMP_522)) AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB.
 	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_602)
-		+ (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) 
-		+ (convert(decimal (18,2),t1.IMP_664)) + convert(decimal (18,2), t1.IMP_665_1)  
-		+ ISNULL(convert(decimal (18,2), t3.monto_destino_rem_descontado),'000000000') + ISNULL(convert(decimal (18,2), t3.monto_destino_norem_descontado), '000000000')
-		  AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOTAL DESCUENTOS	
+			+ (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) 
+			+ (convert(decimal (18,2),t1.IMP_664)) + convert(decimal (18,2), t1.IMP_665_1)  
+			+ ISNULL(convert(decimal (18,2), t3.monto_destino_rem_descontado),'000000000') 
+			+ ISNULL(convert(decimal (18,2), t3.monto_destino_norem_descontado), '000000000')
+			AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOTAL DESCUENTOS	
 	+ CAST(t2.PlantaTipo AS VARCHAR(1))  -- PLANTA
 	+ '000000000' -- SALARIO	
 	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(
@@ -720,7 +799,16 @@ FROM
 	ON t1.ageId = t2.NuevoAgeId1
 	LEFT JOIN agentes_extdoc_diferencia_0922 t3
 	ON t1.numeroControl = t3.NroCOntrol
+
+
 ----------------  FIN GENERACION TXT PARA EL BANCO V2 ----------------
+select SUM(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522)))
+from #agentes_filtrados t1
+
+
+select SUM(convert(decimal (18,2), t1.I01) + (convert(decimal (18,2),t1.I02)))
+from agentes_extension_docente t1
+
 
 ----------------------->>>>> INICIO UPDATE TIPO PLANTA <<<<<-----------------------
 
@@ -797,12 +885,14 @@ FROM
 
 ----------------------->>>>> FIN - UPDATE TIPO PLANTA <<<<<-----------------------
 
+
 ----------------------->>>>> INICIO - ORDEN DE PAGO <<<<<-----------------------
 SELECT 
 	-- LIQUIDO
 	SUM(
 		(t1.IMP_521 + t1.IMP_522) 
-			- ( t1.IMP_602 + t1.IMP_665_1 + t1.IMP_615 + t1.IMP_616 + t1.IMP_663 +t1.IMP_664) 
+			- ( t1.IMP_602 + t1.IMP_665_1 + t1.IMP_615 + t1.IMP_616 + t1.IMP_663 +t1.IMP_664 + ISNULL(t3.monto_destino_rem_descontado,0) 
+			+ ISNULL(t3.monto_destino_norem_descontado,0)) 
 		) AS liquido,
 	-- AP EMPLEADO ANSES
 	SUM (
@@ -849,13 +939,26 @@ FROM
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
+	LEFT JOIN agentes_extdoc_diferencia_0922 t3
+	ON t2.NroCOntrol = t3.NroCOntrol
+
+
 WHERE 
 	t1.tipoPlanta = 'PC'
 	--t1.tipoPlanta = 'PP'
 
 
 
+
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
+
+SELECT 	 SUM (convert(decimal (18,2), t1.I01) + (convert(decimal (18,2),t1.I02)))
+from agentes_extension_docente t1
+
+
+
+
+----------------------->>>>> INICIO - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 INSERT INTO 
 	agentes_extension_docente 
 	(age_id,NroCOntrol, PlantaTipo,tipo_planta_OP , agrupamiento, tramo, apertura, cuil, LugarPago, Escuela, Juris, Prog, SubP, Actividad, fuente,dias_trabajados, haberSinAporte, haberConAporte, total_haberes,
@@ -936,6 +1039,17 @@ FROM
 	ON t2.NroCOntrol = t3.NroCOntrol
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
+
+select * from agentes_extension_docente_historico
+where mes = 05
+and anio = 23
+
+exec [ExtensionDocente.Archivo_Ministerio] 
+
+select * from LiquidacionExtensionDocente
+exec [ExtensionDocente.Eliminar_En_Historico] '05', '23', 23
+
+
 select * from liquidacionex
 
 select * from agentes_extdoc_diferencia_0922
@@ -959,6 +1073,12 @@ SELECT * from agentes_extension_docente
 select * from LiquidacionExtensionDocente
 
 exec [ExtensionDocente.Guardar_En_Historico] '01','23', 14
+
+select * from LiquidacionExtensionDocente
+
+exec [ExtensionDocente.Guardar_En_Historico] '05', '23', 23, 0, 0
+
+
 select * from LiquidacionExtensionDocente
 
 select * from EscuelaExtensionDocente_historico
@@ -998,6 +1118,7 @@ exec [ExtensionDocente.Archivo_Ministerio]
 
 
 
+SELECT  * from LiquidacionExtensionDocente
 
 select * from LiquidacionPagosEventuales
 exec [PagosEventuales.GenerarExcel] '2023-21-04', 8
@@ -1008,3 +1129,42 @@ and pevId = 939
 
 select * from DetallePagoEventual
 where pevId = 939
+
+select * from agentes_extension_docente
+
+SELECT * from PruebasAge
+where MesAnioLiq = '04/23'
+and Legajo = '8044074'
+
+select * from agentes_extension_docente
+
+
+select t1.monto_destino_norem_descontado 
+from agentes_extdoc_diferencia_0922 t1
+inner join #agentes_filtrados t2
+on t1.NroCOntrol = t2.numeroControl
+and t1.NroCOntrol = '38000131'
+
+select * from agentes_extension_docente_historico
+where NroCOntrol = '38000131'
+and mes = 04
+and anio = 23
+
+
+select * from agentes_extdoc_diferencia_0922
+
+
+
+select * from agentes_extension_docente_historico
+where mes = 09
+and anio = 22
+
+
+
+select * from PruebasAge
+where NroCOntrol = '38000131'
+and MesAnioLiq = '09/22'
+
+select * from ConceptoTemporal
+where ageId = 14593979
+order by cteCodigoConcepto
