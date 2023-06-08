@@ -1,0 +1,25 @@
+HORA EXTRAORDINARIA ----------------------------------------
+1) SAC DE LAS COMPLEMENTARIAS QUE SE HICIERON DESP DE DICIEMBRE 22 
+(SAC DICIEMBRE 22) -> NOMBRE DE LA LIQUIDACION / PERIODO
+
+(Se hizo el SAC de los agentes que habian cobrado hasta diciembre 22 pero
+como se agregaron complementaria con agerntes nuevos (sept, oct, nov y dic)
+faltaria hacer ese SAC para esos agentes.
+
+2) Intefaz para descargar archvos de consejo, ministerio, etc. 
+(ganancias generar aparte en linux y ponerlo en la carpeta corresponndiente)
+
+3) SAC JUNIO 23 EXT DOC
+
+4) Revisar estructuras y datos de los descuentos realizados,no realizados 
+y realizados parciales (diferencias por pago indebido de codigo 559 y 595) 
+Codigo 746 (no remunerativo)
+
+
+PERSONAL--------------------------------------------------------------------
+1) Consulta de agentes y detalle -> VARIABLES DE SESSION
+
+PAGOS EVENTUALES -----------------------------------------------------------
+1) Mejorar la carga para que la carguen otros usuarios. Agregar origen
+(Expediente, Nota o mail) y validación de pagos existentes.
+2) Automatizar generación de archivos txt y excel de pagos eventuales

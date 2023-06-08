@@ -1,0 +1,23 @@
+
+columnas
+
+OCTUBRE 5000 + sept 1000
+norem a cobrar (original) + saldo_anterior
+liq_id_salto_anterior
+
+may 23
+sep 22 14, 28
+
+jun 23
+sep 22 2
+oct 22 5
+
+
+TABLA DETALLE (saldos actuales > 0)
+-> saldo , liq_id_origen_saldo
+-> primero cobrar saldo anterior (y desctivar campo de norem)
+-> sgundo cobrar saldo actual 
+-> si queda salgo actual, insertar en detalle el saldo y la liq id actual
+
+
+
