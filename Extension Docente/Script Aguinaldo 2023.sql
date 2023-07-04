@@ -1182,7 +1182,6 @@ FROM
 	#aguinaldo t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
-
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
 

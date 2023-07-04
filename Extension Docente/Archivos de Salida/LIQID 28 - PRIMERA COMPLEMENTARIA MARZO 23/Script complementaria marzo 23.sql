@@ -3,11 +3,9 @@
 -- INSERTA EN CONCEPTO EXTENSION DOCENTES LOS CONCEPTOS ACTUALIZADOS --
 -- EJECUTAR TODOS LOS MESES Y ENVIAR EXCEL A MYRIAM !!
 
--- DELETE FROM ConceptoExtensionDocente
-
 -- ESTE MES ES MES ACTUAL ES PARA  LA TABLA PRUEBAS AGE (PRE Y DEFINITIVA)
 DECLARE @mesanioPruebasAge varchar(50) 
-SELECT 	@mesanioPruebasAge = '04/23'
+SELECT 	@mesanioPruebasAge = '03/23'
 
 --INSERT INTO 
 --	ConceptoExtensionDocente (conCodigo)
@@ -25,25 +23,26 @@ FROM
 	and SUBSTRING(LugarPago,1,2) = '38'
 	and cteCodigoConcepto < '600'
 	and cteCodigoConcepto > '001'
-	and cteCodigoConcepto not in ('78', '553')
---AND NOT EXISTS (
---	SELECT * FROM ConceptoExtensionDocente t3
---	WHERE t2.cteCodigoConcepto = t3.conCodigo
---)
+	--AND cteCodigoConcepto NOT IN ('78', '553', '559', '595')
+	--AND cteCodigoConcepto NOT IN ('78', '111', '112', '113', '114', '115', '117', '118', '137', '550', '553', '559', '595', '597')
+	--AND cteCodigoConcepto NOT IN ('550') -> CONSULTAR
+	AND NOT EXISTS (
+	SELECT * FROM ConceptoExtensionDocente t3
+	WHERE t2.cteCodigoConcepto = t3.conCodigo
+	)
+
 ORDER BY 
 	cteCodigoConcepto
 
 
-		
+select * from ConceptoExtensionDocente
 
-
-	
+				
 ---- SELECT ----
 
 Select * from ConceptoExtensionDocente ORDER BY conCodigo
 
 -- UPDATE CONID ---
-
 UPDATE 
 	ConceptoExtensionDocente
 SET 
@@ -52,63 +51,12 @@ FROM
 	ConceptoExtensionDocente T1
 	INNER JOIN Concepto T2
 	ON T1.conCodigo = T2.conCodigo
-
 -- FIN ACTUALIZACION DE TABLA CONCEPTOS --
-
-
--- GUARDR EN HISTORICOS--
-exec [ExtensionDocente.Guardar_En_Historico] '02','23',9 -- FEBRERO DEFINITVA 
-DELETE from agentes_extension_docente
--- FIN GUARDAR EN HISTORICOS --
-
-
-
------------------------------------------------------------------------------------------------------------------------------- 
-----------------  DESCUENTO POR DIFERENCIA PAGO FEBRERO 2023 ----------------------------------------------------
-----------------  DUPLICADO POR COMPLEMENTARIA A 2 ESCUELAS QUE HABIAN COBRADO---------------- 
-----------------  EN LA LIQUIDACION ORIGINAL---------------- 
---------------------------------------------------------------- --------------------------------------------------------------- 
-
-DECLARE @liq_id_origen int
-SELECT @liq_id_origen = 15
-
-DECLARE @liq_id_destino int
-SELECT @liq_id_destino = 
-(SELECT id
-					  FROM LiquidacionExtensionDocente 
-					  WHERE 
-						 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
-					  AND etapa = (SELECT max(etapa) 
-									FROM LiquidacionExtensionDocente
-									WHERE 
-										 CONCAT(mes_referencia,'/',anio_referencia) = '03/23'
-									) 
-						AND Activo = 1
-						)
-
-INSERT INTO 
-	agentes_extension_docente_diferencias 
-	(NroCOntrol, liq_id_origen, liq_id_destino, monto_origen_rem_descontar, monto_origen_norem_descontar,
-	fecha_descuento, activoRem, activoNoRem)
-SELECT 
-	NroCOntrol, @liq_id_origen, @liq_id_destino, I01, I02, GETDATE(), 1,1
-from 
-	agentes_extension_docente_historico l
-where 
-	liq_id = @liq_id_origen 
-AND Escuela in (1885, 3884)
-
---DELETE from agentes_extension_docente_diferencias 
-
------------------------------- FIN PREPARAR TABLA DIFERENCIAS ------------------------------
-
 
 
 
 DROP TABLE #agentes_filtrados
 DROP TABLE #t1
-
-
 
 CREATE TABLE #agentes_filtrados (
 	-- Agente
@@ -133,7 +81,6 @@ CREATE TABLE #agentes_filtrados (
 	NR_1 			numeric (18,2), 
 	NR_DEPURADO		numeric (18,2), 
 	IMP_522			numeric (18,2),
-	IMP_522_original			numeric (18,2),
 
 	-- Remunerativo
 	haberConAporte  varchar(255),
@@ -145,7 +92,6 @@ CREATE TABLE #agentes_filtrados (
 	--R_1 			numeric (18,2), 	
 	R_DEPURADO		numeric (18,2), 
 	IMP_521			numeric (18,2),
-	IMP_521_original			numeric (18,2),
 	
 	-- Descuentos
 	IMP_602			numeric (18,2),	
@@ -169,17 +115,15 @@ CREATE TABLE #agentes_filtrados (
 
 --------------- INICIO COPIA EN #t1 --------------- 
 
--- drop table #t1
-
 -- MES ANTERIOR (SE USA PARA OBTENER LIQ_ID DE NOVEDADES CARGADAS)
 DECLARE @mesanio varchar(50) 
 --SELECT 	@mesanio = '02/23'
-SELECT 	@mesanio = '03/23'
+SELECT 	@mesanio = '02/23'
 	
 -- ESTE MES ES MES ACTUAL ES PARA PRUEBAS AGE (PRE Y DEFINITIVA)
 DECLARE @mesanioPruebasAge varchar(50) 
 --SELECT 	@mesanioPruebasAge = '03/23'
-SELECT 	@mesanioPruebasAge = '04/23'
+SELECT 	@mesanioPruebasAge = '03/23'
  
 SELECT
 	t1.NuevoAgeId1, t1.NroCOntrol, t1.Cuil, t1.[HaberS/aporte] AS haberSinAporte,
@@ -195,7 +139,8 @@ SELECT
 		INNER JOIN ConceptoExtensionDocente b2 ON b1.cteCodigoConcepto = b2.conCodigo
 		INNER JOIN Concepto b3				   ON b2.conCodigo = b3.conCodigo
 	 WHERE 
-		b3.conRemunerativoNoRemunerativo = '1'
+		b3.conRemunerativoNoRemunerativo = '1'	
+		--AND b2.liq_id = 14
 		AND b1.ageId = t1.NuevoAgeId1) as R,
 	-- NO REMUNERATIVO
 	(SELECT 
@@ -208,6 +153,8 @@ SELECT
 		b3.conRemunerativoNoRemunerativo = '2'
 	 AND (b1.cteCodigoConcepto < '108' OR b1.cteCodigoConcepto > '118')
 	 AND b1.cteCodigoConcepto not in ('137', '202', '208')
+	 AND cteCodigoConcepto NOT IN ('550', '553', '559', '595', '597') -- nuevo filtro 28.4.23
+	 --AND b2.liq_id = 14
 	 AND b1.ageId = t1.NuevoAgeId1) as NR,
 	-- ASIGNACIONES FAMILIARES
 	 ISNULL((SELECT 
@@ -218,9 +165,10 @@ SELECT
 		INNER JOIN Concepto b3 on b2.conCodigo = b3.conCodigo
 	WHERE 
 		 b1.ageId = t1.NuevoAgeId1
+	--AND b2.liq_id = 14
 	AND	b3.conRemunerativoNoRemunerativo = '2'
 	AND ((b1.cteCodigoConcepto >= '108' AND b1.cteCodigoConcepto <= '118')
-	OR b1.cteCodigoConcepto in ('137', '202', '208') )),0) AS AF,
+			OR b1.cteCodigoConcepto in ('137', '202', '208') )),0) AS AF,
 	ISNULL((SELECT cteImporte FROM ConceptoTemporal b2
 			WHERE t1.NuevoAgeId1 = b2.ageId
 			AND cteCodigoConcepto = '746'),0) AS IMP_746,
@@ -319,12 +267,33 @@ WHERE
 						)
 	)
 
+
 --------------- FINAL COPIA EN #t1 --------------- 
 
--- SELECT * FROM #t1 --Tiene todos los agentes a liquidar
--- drop table #t1
--- DELETE FROM #agentes_filtrados 
 
+
+SELECT distinct t2.Escuela FROM #t1 t1
+INNER JOIN PruebasAge t2
+ON t1.NuevoAgeId1 = t2.NuevoAgeId1
+WHERE
+	Apertura = '092'
+
+
+
+select distinct escuela from PruebasAge
+where MesAnioLiq = '01/22'
+and Apertura = '092'
+
+
+and Escuela in (263,
+1065,
+1885,
+3884)
+
+
+
+select * from EscuelaExtensionDocente_historico
+where liq_id = 14
 
 --------------- COPIA EN #agentes_filtrados  --------------- 
 
@@ -337,10 +306,27 @@ FROM
 	#t1
 
 --SELECT * FROM #agentes_filtrados
+--ORDER BY ageid
 -- 1626
 
 --------------- FIN - COPIA EN #agentes_filtrados  --------------- 
 
+--SELECT * from LiquidacionExtensionDocente
+--where  id = 14
+
+SELECT distinct agrupamiento,tramo, apertura from agentes_extension_docente_historico
+WHERE liq_id = 7
+AND 
+SELECT distinct agrupamiento,tramo, apertura from agentes_extension_docente_historico
+WHERE liq_id = 9
+
+SELECT  * from agentes_extension_docente_historico
+where NroCOntrol = '38272063'
+
+select 1 from 
+
+
+--SELECT * FROM #agentes_filtrados
 
 ----------------------->>>>> INICIO - CALCULOS <<<<<-----------------------
 
@@ -369,7 +355,7 @@ SET
 					ELSE 0 -- = O MAYOR
 					END)
 
--- SELECT * FROM #agentes_filtrados
+ --SELECT NR_1, NR_DEPURADO, IMP_746, NR_1, * FROM #agentes_filtrados 
 
 UPDATE 
 	#agentes_filtrados
@@ -426,8 +412,8 @@ SET
 					ELSE R -- CUANDO NO EXISTE 601
 					END)
 
--- SELECT * FROM #agentes_filtrados
-
+ 
+ --select * from #agentes_filtrados
 ----------------  C) ---------------- 
 UPDATE 
 	#agentes_filtrados
@@ -440,89 +426,6 @@ SET
 					THEN R_DEPURADO * 0.25
 					ELSE 0 -- = O MAYOR
 					END)
-
-
---select * from agentes_extension_docente_diferencias
-
-UPDATE 
-	agentes_extension_docente_diferencias
-SET 
-	monto_destino_rem_descontado =
-								(CASE WHEN IMP_521 >= convert(decimal (18,2), t2.monto_origen_rem_descontar)
-									THEN t2.monto_origen_rem_descontar
-									ELSE Convert(varchar, IMP_521) 
-									END),
-	monto_destino_norem_descontado =
-									(CASE WHEN IMP_522 >= convert(decimal (18,2),t2.monto_origen_norem_descontar) 
-									THEN t2.monto_origen_norem_descontar 
-									ELSE Convert(varchar,IMP_522) 
-									END),
-	saldo_rem = convert(decimal (18,2),t2.monto_origen_rem_descontar) - convert(decimal (18,2),monto_destino_rem_descontado),
-	saldo_norem = convert(decimal (18,2),t2.monto_origen_norem_descontar) - convert(decimal (18,2),monto_destino_norem_descontado)
-FROM
-	#agentes_filtrados t1
-	INNER JOIN agentes_extension_docente_diferencias t2
-	ON T1.numeroControl = t2.NroCOntrol
-
-
-UPDATE 
-	agentes_extension_docente_diferencias
-SET 
-	activoRem = (CASE WHEN CONVERT(numeric (18,2), saldo_rem) = 0 
-									THEN 0
-									ELSE 1								
-										END),
-	activonoRem = (CASE WHEN Convert(numeric (18,2), saldo_norem) = 0 
-									THEN 0
-									ELSE 1								
-										END)
-
-UPDATE 
-	#agentes_filtrados
-SET 
-	IMP_521 = ( IMP_521 - CONVERT(numeric (18,2), t2.monto_destino_rem_descontado)),	
-	IMP_522 = ( IMP_522 - CONVERT(numeric (18,2), t2.monto_destino_norem_descontado))	
-FROM
-	#agentes_filtrados t1
-INNER JOIN 
-	agentes_extension_docente_diferencias t2
-ON  T1.numeroControl = t2.NroCOntrol
-
-
---select t1.IMP_521, t2.monto_origen_rem_descontar, t2.monto_destino_rem_descontado, t2.saldo_rem from #agentes_filtrados t1
---INNER JOIN 
---	agentes_extension_docente_diferencias t2
---ON  T1.numeroControl = t2.NroCOntrol
---order by IMP_521 
-
-
--------------------------- PARA CONTROLAR SI PAGAMOS DUPLICADO EN UNA LIQ ANTERIOR --------------------------  
---SELECT l
---	*
---FROM  
---	#agentes_filtrados t1
---	inner join agentes_extension_docente_historico t2
---	ON t1.numeroControl = t2.NroCOntrol
---	WHERE
---		t2.liq_id = 15
---	AND  t2.Escuela in (1885, 3884)
---	AND  EXISTS (
---		select * 
---		from agentes_extension_docente_historico t3
---		where liq_id = 15
---		AND  t2.Escuela in (1885, 3884)
---				)
---	AND t3.NroCOntrol = t1.numeroControl
-	--AND t1.IMP_521 != t2.I01
-	--AND t1.IMP_522 < t2.I02
---)
-
--------------------------- FIN - PARA CONTROLAR SI PAGAMOS DUPLICADO EN UNA LIQ ANTERIOR --------------------------  
-
-
------------------------------------------------------------------------------------------------------------------------------- 
-----------------------------------------------FIN DESCUENTOS POR DIFERENCIAS -------------------------------------------------
-
 
 -- CALCULO APORTE PREVISIONAL 
 UPDATE 
@@ -590,69 +493,83 @@ SET
 
 ----------------------->>>>> FIN - CALCULOS <<<<<-----------------------
 
---SELECT * from #agentes_filtrados T1
---INNER JOIN 
---	agentes_extension_docente_diferencias t2
---ON  T1.numeroControl = t2.NroCOntrol
---and T1.IMP_521 != 0
+select IMP_522 from #agentes_filtrados
+where numeroControl = '38271274'
 
------------------------>>>>> INICIO GENERACION TXT PARA EL BANCO <<<<<-----------------------
-SELECT  	
-	 RTRIM(LTRIM(CAST(UPPER(
-	 replace(replace(replace((replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(t2.Nombre, 'ñ', 'n'),'/',''),'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Ñ','N'),'´',''),'''',''),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) ,',',''),'¥','N')
-	 ,'à','O')
-	 )
-	 AS VARCHAR(25)))) -- NOMBRE (25)
+SELECT t2.I01, t2.I02, ageId, numeroControl, t2.mes, t2.anio from #agentes_filtrados t1
+inner join agentes_extension_docente_historico t2
+on t1.numeroControl = t2.NroCOntrol 
+where NroCOntrol = '38271274'
+order by IMP_521 desc
 
-	+REPLICATE(' ', 25-len(RTRIM(
-	(LTRIM(CAST(UPPER(
-	 replace(replace(replace((replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(t2.Nombre, 'ñ', 'n'),'/',''),'á','a'),'é','e'),'í','i'),'ó','o'),'ú','u'),'Ñ','N'),'´',''),'''',''),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U')) ,',',''),'¥','N')
-	 ,'à','O')
-	 )
-	 AS VARCHAR(25)))) -- relleno	
-	))) +	
-	+REPLICATE('0', 8-len(ltrim(CAST(SUBSTRING(t1.cuil,3,8) AS VARCHAR(8))))) -- RELLENO DNI
-	+CAST(SUBSTRING(t1.cuil,3,8) AS VARCHAR(8)) -- DNI
-	+REPLICATE('0', 5-len(ltrim(CAST(t2.LugarPago AS VARCHAR(5))))) -- RELLENO LUGAR DE PAGO
-	+ltrim(CAST(t2.LugarPago AS VARCHAR(5))) -- LUGAR DE PAGO
-	+REPLICATE('0', 5-len(ltrim(CAST(t2.Escuela AS VARCHAR(5))))) -- RELLENO ESCUELA
-	+ltrim(CAST(t2.Escuela AS VARCHAR(5))) -- ESCUELA
-	+REPLICATE('0', 8-len(ltrim(CAST(t2.NroCOntrol AS VARCHAR(8))))) -- RELLENO CONTROL
-	+ltrim(CAST(t2.NroCOntrol AS VARCHAR(8))) -- CONTROL
-	+REPLICATE(' ', 6-len(ltrim(CAST(t2.Agru + t2.tramo + t2.Apertura AS VARCHAR(6))))) -- RELLENO CARGO
-	+ltrim(CAST(t2.Agru + t2.tramo + t2.Apertura  AS VARCHAR(6))) -- CARGO
-	+REPLICATE('0', 9- len(ltrim(CAST(replace(cast(t1.IMP_522 as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT. HAB. SIN APORTE
-	+CAST(replace(cast(t1.IMP_522 as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOT. HAB. SIN APORTE
-	+REPLICATE('0', 9- len(ltrim(CAST(replace(cast(t1.IMP_521 as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT. HAB. CON APORTE
-	+CAST(replace(cast(t1.IMP_521 as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOT. HAB. CON APORTE
-	+REPLICATE('0', 9- len(ltrim(CAST(replace(cast(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522)) as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT. HAB.
-	+CAST(replace(cast((convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOT. HAB. 
-	+REPLICATE('0', 9- len(ltrim(CAST(replace(cast(convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) + (convert(decimal (18,2),t1.IMP_664)) as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOTAL DESCUENTOS
-	+CAST(replace(cast((convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) + (convert(decimal (18,2),t1.IMP_664))) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOTAL DESCUENTOS
-	+CAST(t2.PlantaTipo AS VARCHAR(1))  -- PLANTA
-	+'000000000' -- SALARIO	
-	+REPLICATE('0', 9- len(ltrim(CAST(replace(cast(
-		(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
-		- (convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + convert(decimal (18,2), t1.IMP_615) + convert(decimal (18,2), t1.IMP_616) + convert(decimal (18,2), t1.IMP_663) + convert(decimal (18,2), t1.IMP_664)) -- tot desc.
-		as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT LIQ.
-	+CAST(replace(cast((
-		(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
-		- (convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + convert(decimal (18,2), t1.IMP_615) + convert(decimal (18,2), t1.IMP_616) + convert(decimal (18,2), t1.IMP_663) + convert(decimal (18,2), t1.IMP_664)) -- tot desc.
-		) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOTAL LIQ.
-	+REPLICATE('0', 6-len(ltrim(CAST(t2.FechaIngreso AS VARCHAR(6))))) -- RELLENO FECHA INGRESO
-	+CAST(t2.FechaIngreso AS VARCHAR(6)) -- FECHA INGRESO
-	+REPLICATE('0', 11-len(ltrim(CAST(t1.cuil AS VARCHAR(11))))) -- RELLENO CUIL
-	+CAST(t1.cuil AS VARCHAR(11)) -- CUIL
-	+CAST(t2.Sexo AS VARCHAR(1)) -- SEXO
+select * from agentes_extension_docente_historico
+where NroCOntrol = '38271274'
+
+select * from PruebasAge
+where NuevoAgeId1 = 15266838
+
+select * from agentes_extension_docente_historico
+where NroCOntrol = '38271274'
+and mes = '11'
+
+select * from PruebasAge
+where MesAnioLiq = '01/23'
+and NroCOntrol = '38271274'
+
+select * from ConceptoTemporal
+where ageId = 14966838
+
+15266811
+
+
+select * from #agentes_filtrados
+where SUBSTRING(cuil,3,8)= '25217736'
+
+select * from #agentes_filtrados
+where numeroControl in ('38288051', '38758213')
+
+
+
+----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO V2 <<<<<-----------------------
+SELECT  		
+	  CAST (dbo.RellenarTextoDerecha(t2.Nombre,' ',25) AS VARCHAR(25)) -- NOMBRE + RELLENO
+    + CAST (dbo.RellenarTextoIzquierda(SUBSTRING(t1.cuil,3,8),'0',8) AS VARCHAR(8)) -- RELLENO + DNI
+    + CAST (dbo.RellenarTextoIzquierda(t2.LugarPago,'0',5) AS VARCHAR(5)) -- RELLENO + LUGAR PAGO 	
+    + CAST (dbo.RellenarTextoIzquierda(t2.Escuela,'0',5) AS VARCHAR(5)) -- RELLENO + ESCUELA	
+    + CAST (dbo.RellenarTextoIzquierda(t2.NroCOntrol,'0',8) AS VARCHAR(8)) -- RELLENO + CONTROL		
+    + CAST (dbo.RellenarTextoIzquierda(t2.Agru + t2.tramo + t2.Apertura,' ',6) AS VARCHAR(6)) -- RELLENO + CARGO
+    + CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_522 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. SIN APORTE
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_521 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. CON APORTE
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_521) 
+	+ (convert(decimal (18,2),t1.IMP_522)) AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB.
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_602)
+		+ (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) 
+		+ (convert(decimal (18,2),t1.IMP_664)) + convert(decimal (18,2), t1.IMP_665_1)  
+		  AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOTAL DESCUENTOS	
+	+ CAST(t2.PlantaTipo AS VARCHAR(1))  -- PLANTA
+	+ '000000000' -- SALARIO	
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(
+			  (convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
+			- (
+					convert(decimal (18,2), t1.IMP_602) 					
+					+ convert(decimal (18,2), t1.IMP_615) 
+					+ convert(decimal (18,2), t1.IMP_616) 
+					+ convert(decimal (18,2), t1.IMP_663) 
+					+ convert(decimal (18,2), t1.IMP_664)
+					+ convert(decimal (18,2), t1.IMP_665_1) 
+				) -- tot desc. 
+			AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT LIQ.			
+	+ CAST (dbo.RellenarTextoIzquierda(t2.FechaIngreso,'0',6) AS VARCHAR(6)) -- RELLENO + FECHA INGRESO			
+	+ CAST (dbo.RellenarTextoIzquierda(t1.cuil ,'0',11) AS VARCHAR(11)) -- RELLENO + CUIL	
+	+ CAST(t2.Sexo AS VARCHAR(1)) -- SEXO
 	--+ '000000000' -- PORCENTAJE DE IMP DESCUENTO - 
 AS Columna 
 FROM  
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
+----------------  FIN GENERACION TXT PARA EL BANCO V2 ----------------
 
-----------------  FIN GENERACION TXT PARA EL BANCO----------------
-	
 ----------------------->>>>> INICIO UPDATE TIPO PLANTA <<<<<-----------------------
 
 --SELECT * FROM #agentes_filtrados
@@ -733,7 +650,12 @@ SELECT
 	-- LIQUIDO
 	SUM(
 		(t1.IMP_521 + t1.IMP_522) 
-			- ( t1.IMP_602 + t1.IMP_665_1 + t1.IMP_615 + t1.IMP_616 + t1.IMP_663 +t1.IMP_664) 
+			- ( t1.IMP_602 
+				+ t1.IMP_615 + t1.IMP_616
+				 + t1.IMP_663 
+				 +ISNULL(t1.IMP_664,0)
+				 + t1.IMP_665_1 
+				)
 		) AS liquido,
 	-- AP EMPLEADO ANSES
 	SUM (
@@ -781,20 +703,22 @@ FROM
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
 WHERE 
-	t1.tipoPlanta = 'PC'
-	--t1.tipoPlanta = 'PP'
-
+	--t1.tipoPlanta = 'PC'
+	t1.tipoPlanta = 'PP'
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
+
+
+select * from agentes_extension_docente_historico
+where liq_id = 27
+
+
 ----------------------->>>>> INICIO - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
---25/04/23
-delete from agentes_extension_docente 
----
 INSERT INTO 
 	agentes_extension_docente 
 	(age_id,NroCOntrol, PlantaTipo,tipo_planta_OP , agrupamiento, tramo, apertura, cuil, LugarPago, Escuela, Juris, Prog, SubP, Actividad, fuente,dias_trabajados, haberSinAporte, haberConAporte, total_haberes,
 	total_descuentos, total_liquido, AP_IOSEP, AP_OSPLAD, AP_ANSES,
-	C01, I01, C02, I02, C03, I03, C04, I04, C05, I05, C06, I06, C07, I07, C08, I08,C09, I09,C10, I10)
+	C01, I01, C02, I02, C03, I03, C04, I04, C05, I05, C06, I06, C07, I07, C08, I08)
 
 SELECT 
 	t2.NuevoAgeId1,
@@ -831,11 +755,25 @@ SELECT
 
 	REPLICATE('0', 9- len(ltrim(CAST(replace(cast(
 		(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
-		- (convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + convert(decimal (18,2), t1.IMP_615) + convert(decimal (18,2), t1.IMP_616) + convert(decimal (18,2), t1.IMP_663) + convert(decimal (18,2), t1.IMP_664)) -- tot desc.
+		- (
+				convert(decimal (18,2), t1.IMP_602) 				
+				+ convert(decimal (18,2), t1.IMP_615) 
+				+ convert(decimal (18,2), t1.IMP_616) 
+				+ convert(decimal (18,2), t1.IMP_663) 
+				+ convert(decimal (18,2), t1.IMP_664)
+				+ convert(decimal (18,2), t1.IMP_665_1) 
+			) -- tot desc.
 		as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT LIQ.
 	+CAST(replace(cast((
 		(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
-		- (convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + convert(decimal (18,2), t1.IMP_615) + convert(decimal (18,2), t1.IMP_616) + convert(decimal (18,2), t1.IMP_663) + convert(decimal (18,2), t1.IMP_664)) -- tot desc.
+		- (
+			convert(decimal (18,2), t1.IMP_602) 				
+			+ convert(decimal (18,2), t1.IMP_615) 
+			+ convert(decimal (18,2), t1.IMP_616) 
+			+ convert(decimal (18,2), t1.IMP_663) 
+			+ convert(decimal (18,2), t1.IMP_664)
+			+ convert(decimal (18,2), t1.IMP_665_1) 
+		) -- tot desc.
 		) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOTAL LIQ.
 	AS total_liquido,
 	t1.AP_IOSEP, 
@@ -856,89 +794,86 @@ SELECT
 	'664', 
 	IMP_664, 
 	'665', 
-	IMP_665_1,
+	IMP_665_1
 	--- CODIGOS NUEVOS DIFERENCIA
-	'601', 
-	t3.monto_destino_rem_descontado,
-	'746', 
-	t3.monto_destino_norem_descontado
 FROM  
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
-	ON t1.ageId = t2.NuevoAgeId1
-	LEFT JOIN agentes_extension_docente_diferencias t3
-	ON t1.numeroControl = t3.NroCOntrol
+	ON t1.ageId = t2.NuevoAgeId1	
 
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
-exec [ExtensionDocente.Archivo_Ministerio]
-SELECT * from agentes_extension_docente
-
 select * from LiquidacionExtensionDocente
-
-exec [ExtensionDocente.Guardar_En_Historico] '01','23', 14
-select * from LiquidacionExtensionDocente
-
-select * from EscuelaExtensionDocente_historico
-where mes = 01
-and anio =23
-and liq_id = 14
-
 
 select * from agentes_extension_docente_historico
-where mes = 01
-and anio = 23
-and liq_id = 14
+where liq_id = 11
 
-select distinct Escuela from agentes_extension_docente_historico
-where mes = 01
-and anio =23
-and liq_id = 14
+exec [ExtensionDocente.ArchivoBanco] 20
+
+select * from agentes_extension_docente
+select * from agentes_extension_docente_historico
+where fecha_creacion >= '2023-30-04'
+where  CONVERT(numeric,i01) = 0
+
+select * from LiquidacionExtensionDocente
+
+exec [ExtensionDocente.OrdenPago] 19
+--delete from agentes_extension_docente
+
+
+
+exec [ExtensionDocente.Guardar_En_Historico] '03', '23', 28, 0, 0
+
+
+
+select * from LiquidacionExtensionDocente
+
+select * from agentes_extension_docente_historico
+where liq_id = 18
+
+select * from CargosExtensionDocente_historico
+where liq_id = 18
+
+select * from CargosExtensionDocente
+
+exec [ExtensionDocente.OrdenPago] 
+
+delete from EscuelaExtensionDocente_historico
+where liq_id = 18
+
+delete from CargosExtensionDocente_historico
+where liq_id = 18
+
+delete from ConceptoExtensionDocente_historico 
+where liq_id = 18
+
+select * from LiquidacionExtensionDocente
+where id = 18
+
+delete from agentes_extension_docente
+
+
+
+exec [ExtensionDocente.Archivo_Ministerio] '03','23'
+
+select * from agentes_extension_docente_historico 
+where liq_id = 20
+
+
+select distinct liq_id from agentes_extension_docente_historico
+where apertura = '092'
 and Escuela in (
-
-'00263',
-	'01065',
-	'01881',
-	'03884',
-	'50034',
-	'50107',
-	'50073',
-	'50065',
-	'50096',
-	'50081',
-	'50042',
-	'50057'
-
+'50034'
+,'50107'
+,'50073'
+,'50065'
+,'50096'
+,'50081'
+,'50042'
+,'50057'
 
 )
 
-exec [ExtensionDocente.Archivo_Ministerio] 
 
-
-
-exec [ExtensionDocente.Guardar_En_Historico] '01', '23', 18, 0, 0
-
-
-
-
-		
-select * from LiquidacionExtensionDocente
-	
-	--'521',
-	--t1.IMP_521, 
-	--'522', 
-	--IMP_522, 
-
-
-select * from PruebasAge
-where MesAnioLiq = '04/23'
-and NroCOntrol = '38152344'
-
-select * from NovedadesExtensionDocente
-where liq_id = 17
-and age_nrocontrol = '38152344'
-
-
-
-
-
+SELECT * from LiquidacionExtensionDocente
+where id in (9, 11, 17, 18)

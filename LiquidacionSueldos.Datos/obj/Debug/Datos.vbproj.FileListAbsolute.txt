@@ -99,4 +99,3 @@ C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Da
 C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
 C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
 C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
-C:\Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
