@@ -438,6 +438,21 @@ namespace LiquidacionSueldos
                 }
                 return Tabla;
             }
+
+            public DataTable ObtenerTodosSinFiltro()
+            {
+                try
+                {
+                    Tabla = new DataTable();
+                    Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.ObtenerTodoPorMesAnioSinFiltro]", new object[,] {
+                });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return Tabla;
+            }
             #endregion
         }
     }

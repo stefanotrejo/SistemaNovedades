@@ -10,7 +10,7 @@ using System.Text;
 public partial class ParametroConsultaCustom : System.Web.UI.Page
 {
     DataTable dt = new DataTable();
-    LiquidacionSueldos.Negocio.Parametro ocnParametro = new LiquidacionSueldos.Negocio.Parametro();
+    LiquidacionSueldos.Negocio.PagosEventualesOrigenReclamo ocnOrigenReclamo = new LiquidacionSueldos.Negocio.PagosEventualesOrigenReclamo();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,8 +19,6 @@ public partial class ParametroConsultaCustom : System.Web.UI.Page
             if (!Page.IsPostBack)
             {
                 this.Master.TituloDelFormulario = "Pagos Eventuales - Origen Reclamo";
-
-                //if (this.Session["_Autenticado"] == null) Response.Redirect("Login.aspx", true);
 
                 #region PageIndex
                 int PageIndex = 0;
@@ -69,14 +67,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         }
     }
 
-    protected void btnExportarAExcel_Click(object sender, EventArgs e)
-    {
-        dt = new DataTable();
-        dt = ocnParametro.ObtenerTodoBuscarxNombre(Nombre.Text.Trim());
-        string ArchivoNombre = "ParametroConsulta_" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-        FuncionesUtiles.ExportarAExcel(dt, ArchivoNombre, this);
-    }
-
     private void GrillaCargar(int PageIndex)
     {
         try
@@ -88,7 +78,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             #endregion
 
             dt = new DataTable();
-            dt = ocnParametro.ObtenerTodoBuscarxNombre(Nombre.Text.Trim());
+            dt = ocnOrigenReclamo.ObtenerTodo();
             this.Grilla.DataSource = dt;
             this.Grilla.PageIndex = PageIndex;
             this.Grilla.DataBind();
@@ -131,7 +121,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
                 if (e.CommandName == "Copiar")
                 {
-                    ocnParametro = new LiquidacionSueldos.Negocio.Parametro(Convert.ToInt32(Id));
+                    //ocnParametro = new LiquidacionSueldos.Negocio.Parametro(Convert.ToInt32(Id));
                     //ocnParametro.Copiar();
                     this.GrillaCargar(this.Grilla.PageIndex);
                 }
@@ -139,6 +129,11 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 if (e.CommandName == "Ver")
                 {
                     Response.Redirect("ParametroRegistracion.aspx?Id=" + Id + "&Ver=1", false);
+                }
+
+                if (e.CommandName == "Seleccionar")
+                {
+           
                 }
             }
         }
@@ -214,7 +209,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             int Id = 0;
             Id = Convert.ToInt32(((HyperLink)((GridViewRow)((Button)sender).Parent.Parent).Cells[0].Controls[1]).Text);
 
-            ocnParametro.Eliminar(Id);
+            //ocnParametro.Eliminar(Id);
 
             ((Button)sender).Parent.Controls[1].Visible = true;
             ((Button)sender).Parent.Controls[3].Visible = false;

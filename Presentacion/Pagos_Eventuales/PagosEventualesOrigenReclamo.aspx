@@ -8,10 +8,16 @@
         <div class="form-group">
             <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>
         </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12">
-            <div class="ibox-content m-b-sm border-bottom">
-                <asp:Button ID="btnExportarAExcel" class="btn btn-w-m btn-success" runat="server"
-                    Text="Exportar a Excel" OnClick="btnExportarAExcel_Click" />
+            <div class="ibox-content">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <asp:Button ID="btnNuevoMenuSecundario" class="btn btn-w-m btn-warning" runat="server"
+                            Text="Nuevo GEDO" ValidationGroup="AceptarMenuSecundario" Width="100%" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -24,49 +30,45 @@
                             AutoPostBack="True" OnTextChanged="Nombre_TextChanged"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <asp:Button ID="btnAplicar" class="btn btn-w-m btn-info" runat="server" Text="Aplicar" Width="100%" Visible="false"
+                        <asp:Button ID="btnAplicar" class="btn btn-w-m btn-info" runat="server" Text="Aplicar" Width="100%" Visible="true"
                             OnClick="btnAplicar_Click" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top: 5px">
         <div class="col-sm-12">
             <div class="ibox-title">
-                <h5>Listado |
-                    <asp:Label ID="lblCantidadRegistros" runat="server" Text=""></asp:Label></h5>
+                <!--<h3>Resultados</h3>-->
+                <h3>
+                    <!--<asp:Label ID="Label1" runat="server" Text="Resultados - "></asp:Label>-->
+                    <asp:Label ID="lblCantidadRegistros" runat="server" Text=""></asp:Label>
+                </h3>
             </div>
-            <div class="ibox-content">
-                <div class="table-responsive">
-                    <asp:GridView ID="Grilla" runat="server" GridLines="None" CssClass="table table-striped"
-                        AutoGenerateColumns="False" OnRowDataBound="Grilla_RowDataBound" OnRowCommand="Grilla_RowCommand"
-                        PageSize="12" AllowPaging="True" OnPageIndexChanging="Grilla_PageIndexChanging">
-                        <Columns>
-                            <asp:TemplateField HeaderText="Id">
-                                <ItemTemplate>
-                                    <asp:HyperLink ForeColor="Black" ID="Id" runat="server" NavigateUrl='<%# "ParametroRegistracionCustom.aspx?Id=" + DataBinder.Eval(Container.DataItem,"Id").ToString() %>'
-                                        Text='<%# Eval("Id") %>' />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Nombre">
-                                <ItemTemplate>
-                                    <asp:HyperLink ForeColor="Black" ID="Nombre" runat="server" NavigateUrl='<%# "ParametroRegistracionCustom.aspx?Id=" + DataBinder.Eval(Container.DataItem,"Id").ToString() %>'
-                                        Text='<%# Eval("Nombre") %>' />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Valor">
-                                <ItemTemplate>
-                                    <asp:HyperLink ForeColor="Black" ID="Valor" runat="server" NavigateUrl='<%# "ParametroRegistracionCustom.aspx?Id=" + DataBinder.Eval(Container.DataItem,"Id").ToString() %>'
-                                        Text='<%# Eval("Valor") %>' />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                        <FooterStyle HorizontalAlign="Left" />
-                        <HeaderStyle HorizontalAlign="Left" />
-                        <PagerSettings Position="Top" />
-                        <PagerStyle HorizontalAlign="Left" />
-                    </asp:GridView>
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                <ProgressTemplate>
+                    Cargando informacion...
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <asp:GridView ID="Grilla" runat="server" AutoGenerateColumns="False" OnRowDataBound="Grilla_RowDataBound"
+                            OnRowCommand="Grilla_RowCommand" CssClass="table table-striped" data-page-size="30"
+                            data-filter="#filter" PageSize="30">
+                            <Columns>
+                                <asp:BoundField DataField="ID" HeaderText="Id" />
+                                <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
+                                <asp:ButtonField CommandName="Actualizar" HeaderText="Actualizar GEDO" Text="Actualizar" />
+                                <asp:ButtonField CommandName="Cargar Pagos" HeaderText="Cargar Pagos" Text="Cargar" />
+                            </Columns>
+                            <FooterStyle HorizontalAlign="Left" />
+                            <HeaderStyle HorizontalAlign="Left" />
+                            <PagerSettings Position="Top" />
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
         </div>
