@@ -766,6 +766,6 @@ where id in (
 
 
 select t2.descripcion, t1.* from agentes_extension_docente_historico t1
-left join LiquidacionExtensionDocente t2
+left join LiquidacionExtensionDolcente t2
 on t1.liq_id = t2.id
 where NroCOntrol = '38863291'

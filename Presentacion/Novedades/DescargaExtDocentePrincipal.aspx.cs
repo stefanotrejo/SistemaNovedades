@@ -298,7 +298,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 if (e.CommandName == "Seleccionar")
                 {
                     string liqId = Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
-                    Response.Redirect("DescargasExtensionDocente.aspx?liqID=" + liqId, false);
+                    int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
+                    Response.Redirect("DescargasExtensionDocente.aspx?liqID=" + liqId+"&reparticion=" + reparticion, false);
                 }
 
                 if (e.CommandName == "ActivarInactivar")

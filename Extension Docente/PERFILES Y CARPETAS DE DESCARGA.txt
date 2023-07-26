@@ -1,0 +1,30 @@
+USUARIO POR PERFIL
+
+MARIO - carpeta 1 -------------------------------------------
+usuario: jromero
+ARCHIVOS -> TODOS
+
+BANCO - carpeta 20 -------------------------------------------
+usuario: bancoextensiondocente
+ARCHIVOS:
+1) BANCO
+2) OP
+
+
+EXTENSION DOCENTE - carpeta 21 -------------------------------------------
+usuario: stefanoextensiondocente
+ARCHIVOS:
+1) ARCHIVO CONSEJO
+
+
+MINISTERIO DE EDUCACION - carpeta 22 ---------------------------------------
+usuario: ministerioextensiondocente
+ARCHIVOS:
+1) ARCHIVO MINISTERIO
+2) OP
+
+
+GANANCIAS (CONTROL CALIDAD) - carpeta 99 -------------------------------------
+usuario: ministerioextensiondocente
+ARCHIVOS:
+1) GANANCIAS

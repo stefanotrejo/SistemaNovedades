@@ -25,24 +25,31 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
 
                 Int32 liqId;
                 liqId = Int32.Parse(Request.QueryString["liqID"].ToString());
-                //reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
-                //string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/" + reparticion;
-                string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId ;
+                //int reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
+                int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
+                if (reparticion == 5)
+                    reparticion = 2;
 
-                // Cargo el data table
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Archivo");
-                dt.Columns.Add("Tamaño");
-                dt.Columns.Add("Tipo");
+                string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/" + reparticion;
+                //string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId ;
 
-                foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
+                if (Directory.Exists(Server.MapPath(directorio)))
                 {
-                    FileInfo fi = new FileInfo(strfile);
-                    dt.Rows.Add(fi.Name, fi.Length.ToString(),
-                        GetFileTypeByExtension(fi.Extension));
+                    // Cargo el data table
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("Archivo");
+                    dt.Columns.Add("Tamaño");
+                    dt.Columns.Add("Tipo");
+
+                    foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
+                    {
+                        FileInfo fi = new FileInfo(strfile);
+                        dt.Rows.Add(fi.Name, fi.Length.ToString(),
+                            GetFileTypeByExtension(fi.Extension));
+                    }
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
                 }
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
             }
         }
         catch (Exception oError)
@@ -75,8 +82,9 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
         GridViewCommandEventArgs e)
     {
         Int32 liqId;
-        liqId = Int32.Parse(Request.QueryString["liqID"].ToString());        
-        string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId+"/";
+        liqId = Int32.Parse(Request.QueryString["liqID"].ToString());
+        int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
+        string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/" + reparticion+"/";
 
         Response.Clear();
         Response.ContentType = "application/octet-stream";
@@ -91,7 +99,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
     {
         try
         {
-            Response.Redirect("~/Novedades/DescargaExtDocentePrincipal.aspx", true);            
+            Response.Redirect("~/Novedades/DescargaExtDocentePrincipal.aspx", true);
         }
 
         catch (Exception oError)
