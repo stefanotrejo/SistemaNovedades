@@ -13,39 +13,53 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
     LiquidacionSueldos.Negocio.Parametro ocnParametro = new LiquidacionSueldos.Negocio.Parametro();
     DataTable dt = new DataTable();
 
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
             if (!Page.IsPostBack)
             {
-                //this.Master.TituloDelFormulario = "Menu Inicio";
+                var archivosPorPerfil = new Dictionary<string, string[]>();
+                Int32 liqId;
+                int reparticion;
+
                 this.Master.TituloDelFormulario = "Descarga de Archivos Extension Docente";
                 if (this.Session["_Autenticado"] == null) Response.Redirect("PaginasBasicas/Login.aspx", true);
 
-                Int32 liqId;
+                archivosPorPerfil.Add("1", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden" });
+                archivosPorPerfil.Add("20", new string[] { "Banco", "Orden" });
+                archivosPorPerfil.Add("21", new string[] { "extdoc_cge" });
+                archivosPorPerfil.Add("22", new string[] { "Ministerio", "Orden" });
+
                 liqId = Int32.Parse(Request.QueryString["liqID"].ToString());
-                //int reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
-                int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
+                reparticion = Convert.ToInt32(Session["_esAdministrador"]);
+
                 if (reparticion == 5)
                     reparticion = 2;
 
-                string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/" + reparticion;
-                //string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId ;
+                string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId;
 
                 if (Directory.Exists(Server.MapPath(directorio)))
-                {
-                    // Cargo el data table
+                {                    
                     DataTable dt = new DataTable();
                     dt.Columns.Add("Archivo");
                     dt.Columns.Add("Tamaño");
                     dt.Columns.Add("Tipo");
 
+                    string[] archivosPermitidos = archivosPorPerfil[reparticion.ToString()];
                     foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
                     {
                         FileInfo fi = new FileInfo(strfile);
-                        dt.Rows.Add(fi.Name, fi.Length.ToString(),
+                        string fileName = fi.Name.ToLower();
+                        foreach (string archivo in archivosPermitidos)
+                        {
+                            if (fileName.Contains(archivo.ToLower()))
+                            {
+                                dt.Rows.Add(fi.Name, fi.Length.ToString(),
                             GetFileTypeByExtension(fi.Extension));
+                            }
+                        }
                     }
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
@@ -84,7 +98,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
         Int32 liqId;
         liqId = Int32.Parse(Request.QueryString["liqID"].ToString());
         int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
-        string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/" + reparticion+"/";
+        string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId + "/";
 
         Response.Clear();
         Response.ContentType = "application/octet-stream";
