@@ -1084,7 +1084,6 @@ INSERT INTO
 	(age_id,NroCOntrol, PlantaTipo,tipo_planta_OP , agrupamiento, tramo, apertura, cuil, LugarPago, Escuela, Juris, Prog, SubP, Actividad, fuente,dias_trabajados, haberSinAporte, haberConAporte, total_haberes,
 	total_descuentos, total_liquido, AP_IOSEP, AP_OSPLAD, AP_ANSES,
 	C01, I01, C02, I02, C03, I03, C04, I04, C05, I05, C06, I06, C07, I07, C08, I08, C09, I09,C10, I10)
-
 SELECT 
 	t2.NuevoAgeId1,
 	t2.NroCOntrol, 
@@ -1113,9 +1112,15 @@ SELECT
 	REPLICATE('0', 9- len(ltrim(CAST(replace(cast(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522)) as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOT. HAB.
 	+CAST(replace(cast((convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOT. HAB. 
 	AS total_haberes,
-
-	REPLICATE('0', 9- len(ltrim(CAST(replace(cast(convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) + (convert(decimal (18,2),t1.IMP_664)) as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOTAL DESCUENTOS
-	+CAST(replace(cast((convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) + (convert(decimal (18,2),t1.IMP_664))) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOTAL DESCUENTOS
+	REPLICATE('0', 9- len(ltrim(CAST(replace(cast(convert(decimal (18,2), t1.IMP_602) + convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) + (convert(decimal (18,2),t1.IMP_664)) 
+		+ ISNULL(convert(decimal (18,2), t3.monto_destino_rem_descontado),0) 
+		+ ISNULL(convert(decimal (18,2), t3.monto_destino_norem_descontado),0) as decimal(18,2)),'.','') AS VARCHAR(9))))) -- RELLENO TOTAL DESCUENTOS
+	+CAST(replace(cast((convert(decimal (18,2), t1.IMP_602) 
+	+ convert(decimal (18,2), t1.IMP_665_1) + (convert(decimal (18,2),t1.imp_615)) 
+	+ (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) 
+	+ (convert(decimal (18,2),t1.IMP_664)))
+	+ ISNULL(convert(decimal (18,2), t3.monto_destino_rem_descontado),0) 
+	+ ISNULL(convert(decimal (18,2), t3.monto_destino_norem_descontado),0) as decimal(18,2)),'.','') AS VARCHAR(9)) -- TOTAL DESCUENTOS
 	AS total_descuentos,
 	REPLICATE('0', 9- len(ltrim(CAST(replace(cast(
 		(convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
@@ -1172,6 +1177,8 @@ FROM
 	-- ids de controles pagados 2 veces en liq 21 (ya habian cobrado en liq 1)}
 	-- esto fue causado por un pedido de pago de una lista de nro de controles 
 	)
+WHERE 
+	t1.numeroControl = 38853432
 ----------------------->>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
 

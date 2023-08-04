@@ -1,0 +1,1777 @@
+010001GOBERNADOR                                                                      
+010002MINISTRO                                                                        
+010003SECRETARIO GRAL.DE LA GOBERNACION                                               
+010004JEFE DE GABINETE                                                                
+010005SUBSECRETARIO                                                                   
+010006FISCAL DE ESTADO                                                                
+010007SECRETARIO                                                                      
+010008DIPUTADO                                                                        
+010010SECRETARIO DE ESTADO                                                            
+010011PRESIDENTE SUP.TRIBUNAL JUSTICIA                                                
+010012VOCAL SUP.TRIBUNAL JUSTICIA                                                     
+010013FISCAL SUP.TRIBUNAL JUSTICIA                                                    
+010014PRESIDENTE TRIBUNAL DE CUENTAS                                                  
+010015VOCAL TRIBUNAL DE CUENTAS                                                       
+010016CONTADOR GENERAL DE LA PROVINCIA                                                
+010017TESORERO GENERAL DE LA PROVINCIA                                                
+010019VICEPRESIDENTE EJECUTIVO                                                        
+010026PRESIDENTE CONSEJO PCIAL.VIALIDAD                                               
+010027VOCAL VICEPRESIDENTE CJO.PROV.VIALIDAD                                          
+010028VOCAL CONSEJO PCIAL.DE VIALIDAD                                                 
+010031ADMINISTRADOR DE LA CAJA SOCIAL                                                 
+010033SECRETARIO DE ACTAS P.L.                                                        
+010034PRESIDENTE I.O.S.E.P.                                                           
+010035VOCAL I.O.S.E.P.                                                                
+010036PRESIDENTE INSTITUTO PROVINCIAL VIVIENDA Y URBANISMO                            
+010037PRESIDENTE BANCO PROVINCIA                                                      
+010038SINDICO BANCO PROVINCIA                                                         
+010039JEFE DE POLICIA                                                                 
+010041SECRETARIO ADMINISTRATIVO P.L.                                                  
+010044PROSECRETARIO LEGISLATIVO P.L.                                                  
+010045PRESIDENTE AD.PROV.DE RECURSOS HIDRICOS                                         
+010046VICE-PRESID.AD.PROV.DE RECURSOS HIDRICOS                                        
+010047FISCAL DE ESTADO ADJ.                                                           
+010048PROCURADOR DEL TESORO                                                           
+010050SECRETARIO PRIVADO GOBERNADOR                                                   
+010052PROSECRETARIO ADMINISTRATIVO P.L.                                               
+010054RELATOR JURIDICO P.L.                                                           
+010055RELATOR ECONOMICO P.L.                                                          
+010056DIRECTOR DE COMISIONES P.L.                                                     
+010057COORDINADOR GRAL.LEGISLATIVO P.L.                                               
+010058COORDINADOR GRAL CONTABLE                                                       
+010059ESCRIBANO DE GOBIERNO                                                           
+010060PRESIDENTE DE ORG.DESCENTRALIZADOS                                              
+010061SINDICO CAJA SOCIAL                                                             
+010063PROSEC PARLAMENTARIO HCC              35                                        
+010064PROSEC ADMINISTRATIVO HCC             35                                        
+010065COORDINADOR GRAL HCC                  35                                        
+010066COMISIONADO DE PRIMERA CATEGORIA                                                
+010067COMISIONADO DE SEGUNDA CATEGORIA                                                
+010072VICE-GOBERNADOR                                                                 
+010075VOCAL VICE-PRESIDENTE                                                           
+010079SINDICO DEL IOSEP                                                               
+010080DIRECTOR GRAL. 'A'                                                              
+010082DIRECTOR GRAL. 'B'                                                              
+010083DIRECTOR                                                                        
+010085DIRECTOR D.I.P.O.S.                                                             
+010086SECRETARIO TECNICO DE LA GOBERNACION                                            
+010087SUBDIRECTOR D.I.P.O.S.                                                          
+010089DELEGADO DEPARTAMENTAL                                                          
+010090ASESOR GREMIAL                                                                  
+010091DIREC.GRAL.ADM.P.L.(NIVEL 1)                                                    
+010092DIRECCION GRAL.CONT.P.L.(NIVEL 1)                                               
+010093DIREC.GRAL.IMP.Y D.DE SES.P.L.(NIVEL 4)                                         
+010094DIREC.GRAL.COM.P.L.(NIVEL 1)                                                    
+010095DIREC.GRAL.DE INF.PARL.P.L.(NIVEL 1)                                            
+010096CORDINADOR GENERAL DE BLOQUE P.L                                                
+010097GERENTE GENERAL IOSEP                                                           
+010098DIRERCTOR DE LOG.Y SEG.DE LA GOBERNACION                                        
+010099COORD.EJECUTIVO PRO.SA.FI.C.E.                                                  
+010101COORDINADOR DE RELACIONES MUNICIPALES                                           
+010102VOCERO GUBERNAMENTAL                                                            
+010106COORDINADOR GRAL.COMISIONES P.L.                                                
+010107COORDINADOR GRAL. ACCION SOCIAL Y SALUD-P.L.                                    
+010108COORDINADOR GRAL.RELACION PARLAMENTARIA-P.L.                                    
+010110INTENDENTE DE RIEGO                                                             
+010111DIRECTOR DE ACCION SOCIAL                                                       
+010114PRESIDENTE INST.AUT.P.SEGURO                                                    
+010118COORDINADOR EJECUTIVO                                                           
+010119DIRECTOR FISCALIA DE ESTADO                                                     
+010120CONTRATADO NIVEL VOCAL ORG.DESCENTRALIZ                                         
+010122DIRECTOR DE ASUNTOS JURIDICOS DEL MRIO. DE ECONOMIA                             
+010123DIRECTOR ASUNTOS JURIDICOS M.GOBIERNO                                           
+010124DIRECTOR DE ASUNTOS JURIDICOS DE SECRET.DEL AGUA                                
+010125DIRECTOR ASUNTOS JURIDICOS DE JEFATURA  DE GABINETE                             
+010127DIRECTOR GRAL.DE ADMINISTRACION                                                 
+010128COORD.PROV.PLAN DIRECTOR DE RIEGO                                               
+010130SECRETARIO P.L.                                                                 
+010131PROSECRETARIO P.L.                                                              
+010132DIR.ADM.CONTABLE P.L.                                                           
+010133DIRECTOR GENERAL DE PRENSA-P.L.                                                 
+010135DIRECTOR GRAL DE INFORMACIONES                                                  
+010136DEFENSOR DEL PUEBLO                                                             
+010137ADJUNTO DEL DEFENSOR DEL PUEBLO                                                 
+010138DIR.DE ESTABL.ASIST.COMPLEJIDAD IV                                              
+010139DIR.DE ESTABL.ASIST.COMPLEJIDAD III                                             
+010140DIR.DE ESTABL.DE ASIST.COMPLEJIDAD II                                           
+010141DIREC.ESTAB.ASISTENCIAL COMPLEJIDAD I                                           
+010142DIREC.ASISTENTE ESTAB.ASIST.COMPLEJIDAD IV                                      
+010143DIR.ASIST.ESTABL.ASIST.COMPLEJIDAD III                                          
+010149SECRETARIO GRAL.DE FISCALIA DE ESTADO                                           
+010151SECRETARIO GRAL.DEFENSORIA DEL PUEBLO                                           
+010152COORDINADOR PROV.P/PROGRAMAS DE EMPLEO Y CAP.LABORAL                            
+010153ASESOR NIVEL MINISTRO                                                           
+010154RESP.TECN.PROG.EMP.COORD.PROV.                                                  
+010155ADMINISTRADOR DE RIESGOS DEL TRABAJO                                            
+010156DIRECTOR EMPLEO Y CAPACITACION LABORAL                                          
+010157SUB JEFE DE POLICIA                                                             
+010158RELATOR ADMINISTRATIVO-P.L.                                                     
+010159RELATOR LEGISLATIVO-P.L.                                                        
+010160SUBSECRETARIO DE DERECHOS HUMANOS                                               
+010162COORDINADOR DE INVESTIGACIONES                                                  
+010163COORDINADOR DE MODERNIZACION DEL ESTADO                                         
+010164COORDINADOR GRAL.REC.HIDRICOS Y SANEAM.                                         
+010167COORDINADOR DE GESTION                                                          
+010168COORDINADOR DE PROYECTOS                                                        
+010169COORDINADOR GENERAL                                                             
+010170ASESOR-NIVEL DIRECTOR GRAL "A"                                                  
+010171ASESOR-NIVEL DIRECTOR                                                           
+010172ASESOR-NIVEL SUBSECRETARIO                                                      
+010173TESORERO ADJUNTO                                                                
+010174PRESIDENTE TRIBUNAL FISCAL DE APELACIONES                                       
+010175VOCAL TRIBUNAL FISCAL DE APELACIONES                                            
+010176SECRETARIO TRIBUNAL FISCAL APELACIONES                                          
+010177DIRECTOR PROVINCIAL DE AVIACION CIVIL                                           
+010178ADMINISTRADOR AUTODROMO TERMAS RIO HONDO                                        
+010179SUB-ADMINISTR.AUTODROMO TERMAS RIO HONDO                                        
+010180SINDICO AUTODROMO TERMAS RIO HONDO                                              
+010181DIRECTOR EJECUTIVO CePSI EVA PERON                                              
+010182SINDICO CePSI EVA PERON                                                         
+010183DIRECTOR MEDICO ADJUNTO CePSI EVA PERON                                         
+010184DIRECTOR ADMINIS.ADJUNTO CePSI EVA PERON                                        
+010185COORDINADOR CEPSI EVA PERON                                                     
+010186ASESOR LEGAL Y TECNICO                                                          
+010190PRESIDENTE CONSEJO GENERAL DE EDUCACION                                         
+010191VOCAL CONSEJO GENERAL DE EDUCACION                                              
+010192SECRETARIO GRAL.CONSEJO GRAL.EDUCACION                                          
+010193DIRECTOR GENERAL DE NIVEL                                                       
+010194SUBCONTADOR GRAL.REGISTRAC.E INFORMAC.                                          
+010195SUBCONTADOR GRAL.AUDIT.Y CTROL.INTERNO                                          
+010196SINDICO ADJUNTO CEPSI EVA PERON                                                 
+010197FISCAL GENERAL                                                                  
+010198DEFENSOR GENERAL                                                                
+010199DIRECTOR GRAL.ADMINISTRACION FINANCIERA                                         
+010200DIRECTOR EJECUTIVO                                                              
+010201DIRECTOR DE MUSEO                                                               
+010202DIRECTOR COORDINADOR GENERAL                                                    
+010203DIRECTOR DE MANTENIMIENTO                                                       
+010204DIRECTOR DE RELACIONES INSTITUCIONALES                                          
+010205DIRECTOR ASUNTOS TRIBUTARIOS Y REVISION DE RECURSOS                             
+010208SECRETARIO EJECUTIVO-COMISIONES RURALES DE FOMENTOS                             
+010209SECRETARIO TECNICO MRIO.DE ECONOMIA                                             
+010210SUBDIRECTOR RECURSOS HUMANO D.G.RENTAS                                          
+010211SUBDIRECTOR DELEGACION DE RENTAS EN LA CIUDAD DE BUENOS AIRES                   
+010212SUBDIRECTOR DEL HIPODROMO                                                       
+010213SUBDIRECTOR DE COMERCIO                                                         
+010214COORDINADOR DE PRESUPUESTO Y HACIENDA                                           
+010215COORDINADOR DE ADMINISTRACION                                                   
+010216COORDINADOR IMPOSITIVO                                                          
+010217SUBDIRECTOR DE BROMATOLOGIA                                                     
+010218SUBDIRECTOR DE PRESUPUESTO                                                      
+010219COORDINADOR PROGRAMA CTRO.PROV.DE SANGRE                                        
+010220JUEZ ADMINISTRAT.DE FALTAS DE TRANSITO                                          
+010221SECRETARIO ADM. DE FALTAS DE TRANSITO                                           
+010222COORDINADOR GRAL.MINISTERIO DE SALUD                                            
+010223DIRECTOR GENERAL DE AUDITORIA                                                   
+010224DIRECTOR EJECUTIVO COMPLEJO TURISTICO TERMAS I                                  
+010226DIRECTOR DE POLITICAS DE SEGURIDAD DE LA SECRETARIA DE SEGURIDAD                
+010227DIRECTOR DE DESARROLLO PROFESIONAL DE LA SECRETARIA DE SEGURIDAD                
+010228DIRECTOR DE INTERVENCION ANTE EL DELITO DE LA SECRETARIA DE SEGURIDAD           
+010229ADM.GRAL.U.A.COMPLEJ.EDILICIO J.F.IBARRA                                        
+010230RESPONS.TECNICO MINISTERIO DE ECONOMIA                                          
+010231DIRECTOR COORDINADOR - CISB                                                     
+010233SINDICO - CISB                                                                  
+010234SINDICO ADJUNTO - CISB                                                          
+010235DIRECTOR DE ADMINISTRACION - CISB                                               
+010236DIRECT.MEDICO SERV.TECNIC/INTERNAC.-CISB                                        
+010237DIRECTOR MATERNIDAD Y NEONATOLOGIA-CISB                                         
+010238DIRECTOR DE PEDIATRIA Y REDES - CISB                                            
+010239DIRECTOR DOCENCIA E INVESTIGACION - CISB                                        
+010240RESPONSABLE TECNICO CONFLICTO COLECTIVO                                         
+010241RESPONSABLE TECNICO RELACIONES LABORALES                                        
+010242RESPONSABLE TECNICO DE EMPLEO                                                   
+010243RESPONS.TECN.HIGIENEY SEGURIDAD LABORAL                                         
+010244RESPONSABLE TECNICO DELEGAC.DEL INTERIOR                                        
+010245SUBDIRECTOR DE COORDINACION Y DESARROLLODE PROYECTOS INFORMATICOS               
+010246COORDINADOR REGISTRO UNICO PROVEEDORES                                          
+010247COORDINADOR DE CONTROL ADMINISTRATIVO                                           
+010248SUBDIRECTOR DE AVIACION CIVIL                                                   
+010249DIRECTOR GRAL.CONTABLE Y ADMINISTRATIVO                                         
+010250COORDINADOR FINANCIERO                                                          
+010251ADMINISTRADOR CASA DE GOBIERNO                                                  
+010252DIRECTOR MEDICO DE PROCESOS-CISRH                                               
+010253DIRECTOR DE MATERNIDAD Y PEDIATRIA-CISRH                                        
+010254DIRECTOR ADMINISTRATIVO-CISRH                                                   
+010255DIRECTOR ADJUNTO-CISRH                                                          
+010256DIRECTOR DOCENCIA E INVESTIGACION-CISRH                                         
+010257SINDICO TITULAR-CISRH                                                           
+010258SINDICO ADJUNTO-CISRH                                                           
+010259DIRECTOR COORDINADOR-CISRH                                                      
+010265COORDINADOR PROGR.FEDERAL INCLUIR SALUD                                         
+010269COORDINADOR DE DESPACHO MIN.DE ECONOMIA                                         
+010270DIRECTOR DE CONTROL DE GESTION                                                  
+010275DIRECTOR DEL REGISTRO DE FIRMA DIGITAL                                          
+010278DIRECTOR DE RELACIONES INSTITUCIONALES-MINISTERIO DE ECONOMIA                   
+010280DIRECTOR GRAL.FDO.UNICO COMBUSTIBLE PROV                                        
+010281COORD.TECNOLOG.INFORMACION Y COMUNICAC.                                         
+010282COORDINADOR RELACIONES INSTITUCIONALES                                          
+010284DIRECTOR GRAL.DE INFORMATICA (PL)                                               
+010285DIRECTOR GRAL. DE TAQUIGRAFOS (PL)                                              
+010286DIRECTOR DE GESTION ADMINISTRATIVA                                              
+010287COORDINADOR DE CONTROL ORG.PROVINCIALES                                         
+010288CORDINADOR DE CONTROL ORG.LOCALES                                               
+010289DIRECTOR GESTION MANTEN.FLOTA AUTOMOTOR                                         
+010290DIRECTOR GRAL. DE COORDINACION LEGAL                                            
+010291DIRECTOR DE GESTION OPERATIVA                                                   
+010292SUBDIRECTOR DE RECAUDACION                                                      
+010293SUBDIRECTOR DE ASUNTOS TECNICOS                                                 
+010295SUBDIRECTOR DE ESTADISTICAS Y CENSOS                                            
+010299DIRECTOR GRAL DEL REGISTRO PROV DE DATOS GENETICOS                              
+010356DIRECTOR EJECUTIVO DEL TERMAS DE RIO HONDO GOLF CLUB                            
+010357DIRECTOR EJECUTIVO DEL AUTODROMO TERMAS DE RIO HONDO                            
+010358SUBDIRECT.EJECUTIVO AUTODROMO TERMAS RH                                         
+010359COORDINADOR INFORMATICO DEL SISTEMA DE  GESTION DOCUMENTAL ELECTRONICA          
+010360DIRECTOR DEL SISTEMA DE GESTION         DOCUMENTAL ELECTRONICA                  
+010361DIRECT.GRAL.OBSERVAT.PROV.TRATA PERSONAS                                        
+010362DIR.REFUG.TRANSIT.MUJERES VICTIM.VIOLENC                                        
+010363SECRETARIO DE COORDINACION DEL PROGRAMA MIS PRIMEROS 1.700 DIAS                 
+010380DIRECTOR COORDINADOR - HOSPITAL REGIONAL                                        
+010381DIRECTOR ADMINISTRAC.- HOSPITAL REGIONAL                                        
+010382DIRECTOR MEDICO SERVIC.TECNICOS/INTERNAC- HOSPITAL REGIONAL                     
+010383COORD.EJECUTIV.COMPL.PENIT.COLONIA PINTO                                        
+010385DIRECTOR ADMIN.SERV.PENIT.COLONIA PINTO                                         
+010395SECRETARIO EJECUTIVO                                                            
+010396DIRECTOR GENERAL DE ADICCIONES                                                  
+021252CAT.24 SECRETARIO TEC.(IPVU)                                                    
+021256CAT.23 SECRET.TEC.PLANEAMIENTO                                                  
+021260CAT.23 PROSECRET.ADM.P.L.                                                       
+021261CAT.24 SECRETARIO TECNICO "A"                                                   
+021262CAT.23 GERENTE GENERAL                                                          
+021263CAT.24 SECRETARIO TECNICO "B"                                                   
+021264CAT.24 SUB.DIRECTOR GRAL.'A'                                                    
+021265CAT.24 SUB.TESORERO GRAL.DE LA PCIA                                             
+021266CAT.23 SECRETARIO TECNICO A                                                     
+021267CAT.23 AUDITOR MAYOR                                                            
+021268CAT.23 JEFE SER.CONTAB.FINAN.                                                   
+021271CATEGORIA 23                                                                    
+021272CAT.24 DIRECTOR DE SERVICIOS GRALS.                                             
+021273CAT.24 SECR.ADM.P.L.                                                            
+021274CAT.22 SUBGERENTE                                                               
+021276CAT.23 SUB-DIRECTOR GRAL.'B'                                                    
+021277CAT.23 DIRECTOR DE SERVICIOS            ASISTENCIALES (M.B.S.)                  
+021278CAT.24 DIRECTOR DE DESPACHO                                                     
+021279CAT.23 JEFE DEPARTAMENTO "A"                                                    
+021280CAT.22 GERENTE ORG.DESCENTRALIZ.                                                
+021281CAT.22 JEFE DPTO.INSPECCION                                                     
+021282CATEGORIA 22                                                                    
+021283CAT.23 ESCRIBANO DE GOBIERNO                                                    
+021284CAT.22 AUDITOR CONTABLE                                                         
+021285CAT.22 SECRETARIO TECNICO B                                                     
+021286CAT.21 JEFE DEPARTAMENTO A                                                      
+021287CAT.21 SECTORIALISTA                                                            
+021288CAT.23 SUB.DIRECTOR                                                             
+021289CAT.22 DIRECTOR DE FABRICAS.D.G.S.P.                                            
+021290CAT.23 SUB DIRECTOR DE DESPACHO                                                 
+021291CAT.21 SUBGERENTE O.D.                                                          
+021292CATEGORIA 21                                                                    
+021295CAT.23 DIRECTOR DE CORO                                                         
+021296CAT.21 JEFE DIVISION "A"                                                        
+021299CAT.20 SECTORIALISTA                                                            
+021302CAT.20 AUDITOR                                                                  
+021304CAT.23 SECR.TEC.OPERACIONES                                                     
+021305CAT.22 JEFE DPTO.MANTENIM.                                                      
+021306CAT.24 INGENIERO JEFE                   (RECURSOS HIDRICOS)                     
+021307CATEGORIA 20                                                                    
+021309CATEGORIA 24                                                                    
+021310CAT. 21 SECRETARIO TECNICO MUSEO HISTORICO                                      
+021311CAT.20 JEFE DEPTO."B"                   (RECURSOS HIDRICOS)                     
+021312CAT.24 GERENTE GENERAL                                                          
+021313CAT.23 GERENTE                                                                  
+021314CAT.21 ADMINISTRADOR                                                            
+021315CAT.20-ADMINISTRADOR                                                            
+021316CAT.20 SECRETARIO PRIVADO               DE SECRETARIA DE ESTADO                 
+021317CAT.22 SUBGERENTE                                                               
+021318CAT.22 ADMINISTRADOR                                                            
+021319CAT.22 JEFE DEPARTAMENTO "A"                                                    
+021323CAT.21 JEFE DE CONTABILIDAD P.L.        (NIVEL 10)                              
+021324CAT.22 JEFE DE PERSONAL P.L.            (NIVEL-9)                               
+021325CAT.24 SUBDIRECTOR GRAL. `A` ENCARGADO  DE COMISIONES (NIVEL 1)                 
+021328CAT.23 SUBDIRECTOR COMIS.P.L.           (NIVEL-4)                               
+021330CAT.24 SECRET.ADM.(TRIB.TASAC.)                                                 
+021332CAT.23 SECRETARIO GRAL DE FISCALIA      DE ESTADO                               
+021334CAT.24 RELATOR JURIDICO PL              NIVEL 1                                 
+021335CAT.24 RELATOR ECONOMICO PL             NIVEL 1                                 
+021336CAT 24 GERENTE GRAL.JERARQ. SUP                                                 
+021337CAT 24 GERENTE                                                                  
+021338CAT 23 SUB GERENTE                                                              
+021339CAT 23 CONTADOR                                                                 
+021340CAT.24 DIRECTOR GRAL.COMIS.P.L.-        NIVEL 1                                 
+021342CAT.23 COORDINADOR                                                              
+021343CAT.22 SECRETARIO PRIVADO VICE-GOB.                                             
+021344CAT 23 TESORERO                                                                 
+021347CAT.24 GERENTE DE HIPODROMO                                                     
+021349CAT 24 ASESOR DE PRENSA Y DIFUSION                                              
+021360CAT.24-DIRECTOR P.A.S.                                                          
+021379CAT.23JEFE CONTABLE                                                             
+021380CAT.23 JEFE DE SERVICIO                                                         
+021381CAT.22 JEFE SERVICIO CONTAB             ILIDAD PRESUPUESTARIA                   
+021382CATEGORIA 22 JEFE DE AREA                                                       
+021383CAT.22 AUDITOR FISCAL A                                                         
+021384CATEGORIA 23 JEFE DPTO."A"                                                      
+021385CATEGORIA 22 SECTORIALISTA DGP                                                  
+021387CAT.22 JEFE SEC.PRIV.GOBERNADOR                                                 
+021390CAT.24 ASESOR TECNICO                                                           
+021391CAT.22 SECRETARIO BLOQUE MAYORIA        P.L. (NIVEL-9)                          
+021392CAT.22 DIRECTOR DE TAQUIGRAFOS          P.L.(NIVEL-9)                           
+021393CAT.22 SECRETARIO GENERAL                                                       
+021394CAT.23 JEFE POLICIA DE TRABAJO                                                  
+021395CAT.22 JEFE DE REG.DE TRAMITES                                                  
+021396CAT.18 ENCARGADO DE SUMARIOS                                                    
+021397CAT.21 INSPECTOR                                                                
+021398CAT.16 AUXILIAR                                                                 
+021399CAT.24COORDINADOR EN                    ASUNTOS MUNICIPALES                     
+021400CAT.24 ASESOR POLITICO                                                          
+021401CAT 23 ADMINISTRADOR                                                            
+021404 CAT.22 ASESOR LEGAL P.L.                                                       
+021405CAT.21JEFE DESP. ADMINIST.P.L.          (NIVEL 10)                              
+021406CAT. 21 REDACTOR DE ACTAS P.L.          (NIVEL 10)                              
+021407CAT.21 JEFE DE CEREM. Y PRENSA P.L.     (NIVEL 10)                              
+021408CAT.21 JEFE MESA DE ENTRADAS P.L.       (NIVEL 10)                              
+021409CAT.23 SUBDIRECTOR GRAL. DE IMPRENTA    P.L. NIVEL 4                            
+021410CAT.23 COMISARIO P.L. (NIVEL 4 )                                                
+021411CAT.21 SUBDIRECTOR TAQUIGRAFOS P.L.     (NIVEL 10)                              
+021412CAT.21 SECRETARIO PRIVADO PRESID.       P.L.                                    
+021413CAT.20 OFICIAL LEYES Y DOCUM P.L.       (NIVEL 11)                              
+021414CAT.20 TECNICO CONTABLE P.L.            (NIVEL 11)                              
+021415CAT.20 COMPAGINADOR IMPRENTA P.L.       NIVEL 11                                
+021416CAT.20 SECRETARIO DE BLOQUE PL          (NIVEL 11)                              
+021417CAT.20 BIBLIOTECARIA P.L.(NIVEL11)                                              
+021418CAT.20 TAQUIGRAFO DE PRIMERA P.L.       (NIVEL 11)                              
+021419CAT.23 SUBDIRECTOR CONTAB.P.L.          (NIVEL-4)                               
+021420CAT.24 ASESOR                                                                   
+021421CAT.20-AUXILIAR DE IMPRENTA-P.L.NIVEL 11                                        
+021428CAT.22 OFICIAL DE COMISIONES P.L.       (NIVEL 7)                               
+021430CAT.24 SEC. TEC. (M.O.P.)                                                       
+021432CAT.20 OFICIAL LEGISLATIVO  PL          NIVEL 11                                
+021435CAT.24 ENCARGADO DE DESPACHO LEGISLATIVO                                        
+021436CAT.21 JEFE DESPACHO LEGISLATIVO P.L.   NIVEL 10                                
+021437CAT.22 JEFE DE PROGRAMACION .                                                   
+021438CAT.22 JEFE DE ANALISTA DE SISTEMA CCSE                                         
+021439CAT.22 SUBCOMISARIO P.L.NIVEL 7                                                 
+021441CAT 24 SEC.TEC.MRIO.CULT.Y EDUCACION                                            
+021450CAT.23 SECTORIALISTA                                                            
+021451CAT.24 AUDITOR                                                                  
+021452CATEGORIA 23 AUDITOR                                                            
+021453CAT.22 SUBDIRECTOR                                                              
+021458CAT.24-SUBDIR GRAL.DE IMPRE.P.L.(NIV4)                                          
+021459CAT.20 SUBJEFE DE CONTABILIDAD P.L.                                             
+021460CAT.20 ENCARGADO BS.PATRIM.P.L                                                  
+021461CAT.20 AUX.DE COMISIONES P.L                                                    
+021462CAT.21 TEC.CONTABLE P.L                                                         
+021463CAT.21 TAQUIGRAFO 1RA .P.L                                                      
+021464CAT.21 OFICIAL LEYES Y DOC.P.L                                                  
+021465CAT.22 JEFE DESPACHO ADM.P.L.                                                   
+021466CAT.22 REDACTOR DE ACTAS P.L                                                    
+021467CAT.22 JEFE DE CONTABILIDAD P.L                                                 
+021468CAT.22 JEFE CEREMONIAL Y PRENSA P.L                                             
+021469CAT.23 JEFE DE PERSONAL P.L                                                     
+021470CAT.23 DIRECTOR CUERPO TAQUIGRAFO P.L                                           
+021471CAT.20 AUXILIAR DE IMPRENTA P.L.                                                
+021472CAT.24 SECRETARIO TECNICO                                                       
+021473CAT.24 SECRETARIO PRIVADO VICE GOBERNADOR                                       
+021474CAT.22 SECRETARIO PRIVADO PRESIDENCIA                                           
+021475CATEGORIA 22-P.L.                                                               
+021476CAT.23 JEFE DE BIENES PATRIMONIALES-P.L.                                        
+021477CAT.21JEFE DPTO.CONTROL Y LIQ.HABERES                                           
+021479CATEGORIA 24-DIRECTOR DE INFORMATICA                                            
+021480CAT.22 SECRETARIO PRIVADO                                                       
+021481CAT.23 JEFE ADMINISTR.                                                          
+021482CAT.24 JEFE DE SERVICIO DEL TESORO                                              
+021483CAT. 23JEFE SERVICIO DE PROGRAMACION    FINANCIERA                              
+021484CAT. 23 JEFE DE SERVICIO CONTABILIDAD                                           
+021485CAT.21 JEFE DE DEPARTAMENTO BANCO                                               
+021486CAT.21 JEFE DE DEPARTAMENTO PROGRAMACION DE PAGO                                
+021487CAT. 21 JEFE SERV. CONTABILIDAD Y RENDICION DE CUENTAS                          
+021488CAT. 21 JEFE DEPTO. TITULOS Y VALORES   FISCALES                                
+021489CAT.20 JEFE DE DIVISION                                                         
+021490CAT.21JEFE DEPTO.COMPUTOS                                                       
+021491CAT.21 JEFE DEPTO.ADMINISTRATIVO                                                
+021492CAT.23 JEFE DE SISTEMA                                                          
+021493CAT.22 JEFE DE DESPACHO                                                         
+021496CATEGORIA 23-INSPECTOR                                                          
+021498CATEGORIA 24-SECTORIALISTA                                                      
+021499CATEGORIA 24 - JEFE DEPTO. "A"                                                  
+022271CATEGORIA 23                                                                    
+022272CATEGORIA 20                                                                    
+022292CATEGORIA 21                                                                    
+022383CAT.19 JEFE DIVISION A                                                          
+022384CAT.19 JEFE DEPARTAMENTO B                                                      
+022387CAT. 19 JEFE DE OFICINA DE PERSONAL                                             
+022388CAT.20 SECRET.PRIV.FISCALIA DE ESTADO                                           
+022389CAT.19 INSPECTOR GRAL (M.B.S.)                                                  
+022390CAT. 19 JEFE LABORATORIO                                                        
+022391CAT.17 ANALISTA QUIMICO                                                         
+022392CATEGORIA 19                                                                    
+022393CAT.17 ANALISTA BROMATOLOGICO                                                   
+022395CAT.19 SUBCONTADOR (D.G.S.P.)                                                   
+022397CAT.18 JEFE DE SECCION A                                                        
+022398CAT.18 JEFE DE DIVISION B                                                       
+022399CAT.18 SUBTESORERO O.D.                                                         
+022400CATEGORIA 18                                                                    
+022401CATEGORIA 19 JEFE DIV."B"                                                       
+022402CAT.17 SUB INSPEC.GRAL.(MBS)                                                    
+022403CAT.17 SECRETARIO ADMINIST.                                                     
+022404CAT.15 ENCARGADO DE SUBSECTOR                                                   
+022405CAT.18 ADMINISTRADOR (M.B.S.)                                                   
+022406CAT.18 SECRET.ADMINISTRATIVO (MBS)                                              
+022407CAT.21 SECRETARIO ADMINIST                                                      
+022408CAT.17 JEFE SECCION (C.G.E.) (MBS)    30                                        
+022410CATEGORIA 17                          30                                        
+022413CAT.20 SECRETARIO PRIVADO MINISTRO                                              
+022414CAT.16 JEFE DE SECCION B              30                                        
+022416CAT.16 SEGUNDO JEFE SECCION           30                                        
+022417CAT.17 INSPECTOR GENERAL              30                                        
+022418CAT.16 ADMINISTRADOR (M.B.S.)         30                                        
+022419CAT.16 SUBADMINISTRADOR (M.B.S.)      30                                        
+022420CATEGORIA 16                          30                                        
+022421CAT.16 A CARGO SECTOR PRENSA                                                    
+022424CAT.15 VERIFICADOR FISCAL             30                                        
+022425CAT.15 INSPECTOR A                    30                                        
+022426CATEGORIA 15                          30                                        
+022427CAT.15 AUXILIAR ADMINISTRATIVO P.L.                                             
+022428CAT.20 SUB-ADMINISTRADOR                                                        
+022429CAT.14 INSPECTOR (M.B.S.)          30                                           
+022430CAT.14 INSPECTOR A                 30                                           
+022432CAT.16 SEC.PRIVADO SUBSECRE.          30                                        
+022433CATEGORIA 14                       30                                           
+022436CATEGORIA 13                       30                                           
+022437CATEGORIA 12                       30                                           
+022445CAT.14 ADMINISTRADOR               30                                           
+022446CAT.12 ADMINISTRADOR               30                                           
+022447CAT.13 ADMINISTRADOR               30                                           
+022448CAT.19 PRESIDENTE P.LIBERADOS         30                                        
+022449CAT.8 SECRETARIO P.LIBERADOS       30                                           
+022450CAT.8 TESORERO P.LIBERADOS         30                                           
+022451CAT.15-ADMINISTRADOR               30                                           
+022452CAT.17 ADMINISTRADOR                  30                                        
+022453CAT.19 ADMINISTRADOR                  30                                        
+022455CAT.17 CAJERO REGISTRO CIVIL          30                                        
+022459CAT.20 JEFE DE DESPACHO P.L.                                                    
+022460CAT.19 JEFE DE MESAS DE                 ENTRADAS Y ARCHIVO P.L.               30
+022461CAT.19 REDACTOR DE ACTAS P.L.         30                                        
+022462CAT.19 JEFE DE IMPRENTA P.L.          30                                        
+022463CAT.19 OFICIAL DE LEYES Y DOC. P.L.   30                                        
+022464CAT.19 COMISARIO P.L.                 30                                        
+022465CAT.19 SEC.PRIVADO SR.PRESID.P.L.     30                                        
+022466CAT.18 JEFE DE CEREM. Y PRENSA P.L.   30                                        
+022467CAT.18 COMPAGINADOR DE IMPREN. P.L.   30                                        
+022468CAT.18 TECNICO CONTABLE P.L.          30                                        
+022469CAT.17 BIBLIOTECARIO P.L.             30                                        
+022470CAT.17 SECRETARIO DE BLOQUE P.L.      30                                        
+022471CAT.19 ENC. BIENES PATRIMONIALES        P.L. (NIVEL 12)                       30
+022472CAT.15 AUX.SECRET.ADM. P.L.        30                                           
+022473CAT.18 AUXILIAR DE IMPRENTA A P.L.      (NIVEL 13)                            30
+022474CAT.14 AUXILIAR ADMINISTRATIVO P.L.30                                           
+022475CAT.17 AUX.CONTABLE B P.L.(NIVEL 14)  30                                        
+022476CAT.14 AUXILIAR DE IMPRENTA P.L.   30                                           
+022477CAT.17 AUXILIAR DE BIBLIOTECA B P.L.    (NIVEL 14)                            30
+022478CAT.17 AUXILIAR DE PERSONAL B P.L.      (NIVEL 14)                            30
+022480CAT.19 AUX.DE COMISIONES A P.L.         (NIVEL 12)                            30
+022481CAT.18 AUX.DE BLOQUE P.L.(NIVEL 13)                                             
+022482CAT.17 AUXILIAR DE INF.PARLAM.B         P.L.(NIVEL 14)                        30
+022483CAT.19 AUXILIAR VIGILANCIA A P.L.       (NIVEL 12)                            30
+022484CAT.18 SUBJEFE DE TAQUIGRAFOS P.L.    30                                        
+022485CAT.17 TAQUIGRAFO DE PRIMERA P.L.     30                                        
+022486CAT.18 TAQUIGRAFO DE 2DA .P.L.(N 13)                                            
+022487CAT.16 AUX.CUERPO TAQUIGRAFOS B         P.L. (NIVEL 15)                       30
+022488CAT.16 ENC.POLICIA DE TRABAJO         30                                        
+022489CAT.19 SECRETARIO DE BLOQUE P.L.        (NIVEL 12)                            30
+022490CAT.19 AUXILIAR ADMINIST.A.             P.L. (NIVEL 12)                       30
+022491CAT.18 AUXILIAR ADMINIST.A              P.L. (NIVEL 13)                       30
+022492CAT.17 AUXILIAR ADMINIST.B              P.L. (NIVEL 14)                       30
+022493CAT.17 AUXILIAR DE IMPRENTA B           P.L. (NIVEL 14)                       30
+022494CAT.18 AUXILIAR DE COMISIONES           P.L. (NIVEL 13)                       30
+022495CAT.18 AUXILIAR DESPACHO ADMINIST.      A P.L. (NIVEL 13)                     30
+022496CAT.21 INSPECTOR GENERAL                                                        
+022497CAT 16. ADM.SUPERIOR (C.R.D)                                                    
+022498CAT.16 AUXILIAR DIRECCION LEGISLATI     VA C P.L. (NIVEL 15)                  30
+022499CAT.17 ASESOR DE BLOQUE 3 MINORIA       P.L. (NIVEL 14)                       30
+022500CAT.17 AUXILIAR AREA                    LEGISLATIVA HCC                       30
+022501CAT.17 AUXILIAR AREA CONT.              HCC                                   30
+022502CAT.17 AUXILIAR AREA ADM HCC          30                                        
+022504CAT.23 DIRECTOR AREA CONT                                                       
+022505CAT.18 COMISARIO HCC                  30                                        
+022506CAT.17 TELEFONISTA HCC                30                                        
+022507CAT.18 JEFE DE PRENSA                 30                                        
+022508CAT 21 COORDINADOR                      COMISIONES HCC                          
+022509CAT.17 SECRETARIO COMISIONES            HCC                                   30
+022510CAT.17 SECRETARIO DE BLOQUE             HCC                                   30
+022511CAT 21 ASESOR TECNICO HCC                                                       
+022512CAT.22 SUPERVISOR DE OPERACIONES        C.C.S.E.                                
+022515CAT 17 AUX BLOQUE P.L.(NIVEL 14)                                                
+022516CAT 16 SECR. PRIVADO PRESIDENTE C.G.E                                           
+022517CAT.11 SECRETARIO P/LIBERADOS                                                   
+022518CAT.11 TESORERO P/LIBERADOS                                                     
+022522CAT 16 INSPECTOR M.B.S                                                          
+022523CAT 16 INSPECTOR "A"                                                            
+022529CAT.17 AUX.CUERPO TAQUIGRAFO P.L                                                
+022530CAT.18 AUXILIAR BIBLIOTECA P.L                                                  
+022532CAT.18 AUX ADMINISTRATIVO P.L                                                   
+022533CAT.18 AUX. PERSONAL P.L                                                        
+022534CAT.18 AUX CONTADURIA P.L                                                       
+022535CAT.18 AUX. IMPRENTA P.L                                                        
+022536CAT.19 TAQUIGRAFO SEGUNDA P.L                                                   
+022537CAT.19 AUX. ADMINISTRATIVO P.L                                                  
+022538CAT.19 AUX. DESPACHO ADM. P.L                                                   
+022539CAT.19 AUX.DE BLOQUE P.L                                                        
+022540CAT.19 AUX.DE COMISIONES P.L                                                    
+022541CAT.19 AUX. DE IMPRENTA P.L                                                     
+022543CATEGORIA 24-TAQUIGRAFO P.L.                                                    
+022544CATEGORIA 23-TAQUIGRAFO P.L.                                                    
+022545CATEGORIA 19-TAQUIGRAFO P.L.                                                    
+022683CAT.23 INSPECTOR GRAL.                                                          
+022690CATEGORIA 20 JEFE DIV. "B"                                                      
+023280CATEGORIA 24                                                                    
+023522CAT.11 ADMINISTRADOR (M.B.S.)      30                                           
+023524CATEGORIA 11                       30                                           
+023529CATEGORIA 10                       30                                           
+023531CATEGORIA 9                        30                                           
+023532CATEGORIA 8                        30                                           
+023534CATEGORIA 7                        30                                           
+023537CATEGORIA 6                        30                                           
+023538CATEGORIA 5                        30                                           
+023540CATEGORIA 4                        30                                           
+023542CATEGORIA 3                        30                                           
+023546CAT.10 ADMINISTRADOR               30                                           
+023547ENCARGADO REGISTRO CIVIL CAT 15                                                 
+023548GRAFICOS NIVEL 10                                                               
+023549GRAFICOS NIVEL 9                                                                
+023550GRAFICOS NIVEL 8                                                                
+023551GRAFICOS NIVEL 7                                                                
+023552GRAFICOS NIVEL 6                                                                
+023553GRAFICOS NIVEL 5                                                                
+023557CAT.16 INSPECTOR A                                                              
+028931CLASE XIV                             30                                        
+028932CLASE XIII                            30                                        
+028933CLASE XII                             30                                        
+028934CLASE XI                                                                        
+028935CLASE X                                                                         
+028936CLASE IX                                                                        
+028937CLASE VIII                                                                      
+028938CLASE VII                                                                       
+028939CLASE VI                                                                        
+028940CLASE V                                                                         
+028941CLASE IV                                                                        
+028942CLASE III                                                                       
+028943CLASE XV                                                                        
+028944CLASE XVII                                                                      
+028945CLASE XVI                                                                       
+029966JEFE DPTO.(JUSTICIA)                                                            
+029969JEFE DE DIVISION                   30                                           
+029970OFICIAL SUPERIOR DE PRIMERA        30                                           
+029971OFICIAL SUPERIOR DE SEGUNDA        30                                           
+029972JEFE DE DESPACHO                   30                                           
+029973OFICIAL MAYOR                      30                                           
+029974OFICIAL PRINCIPAL                  30                                           
+029975OFICIAL                            30                                           
+029976OFICIAL AUXILIAR                   30                                           
+029977ESCRIBIENTE MAYOR                  30                                           
+029978ESCRIBIENTE                        30                                           
+029979AUXILIAR                           30                                           
+029987ASIST.SOCIAL JUZGADO DE MENORES                                                 
+029988PERITO CALIGRAFO                                                                
+029989OFICIAL SUPERIOR DE PRIMERA ENC.DE PROT.PRENSA Y CEREM.S.TRIB.JUST.             
+032380CAT.16 INSPECTOR EXTERNO              30                                        
+032381CAT.19 CONTADOR FISCAL                30                                        
+032382CAT.19 SUBCONTADOR O.D.               30                                        
+032383CAT.19 PROGRAMADOR A (C.C.S.E.)       30                                        
+032385CAT.19 JEFE RADIO PLAN B.L.U.         30                                        
+032386CAT.21-PILOTO                                                                   
+032387CAT.18 PROGRAMADOR B (C.C.S.E.)       30                                        
+032388CATEGORIA 18                          30                                        
+032389CAT.19 SEGUNDO JEFE RADIO PLAN BLU    30                                        
+032390CAT.16 RADIOTECNICO PLAN BLU          30                                        
+032391CAT.16 OPERADOR PLAN BLU              30                                        
+032392CAT.17 INSPECTOR EXTERNO (D.G.R.)     30                                        
+032393CAT.17 TECNICO SECUNDARIO A           30                                        
+032394CATEGORIA 17                          30                                        
+032395CAT. 21 - JEFE DPTO. AGROPECUARIO                                               
+032399CAT.16 TECNICO SECUNDARIO B           30                                        
+032400CATEGORIA 16                          30                                        
+032401CAT.16 PROGRAMADOR C (C.C.S.E.)      30                                         
+032402CAT.15 TECNICO SECUNDARIO C        30                                           
+032404CATEGORIA 15                       30                                           
+032405CAT. 15 OPERAD COMP. A (C.C.S.E.)  30                                           
+032406CAT.14 OPERADOR MAQ. CONTABILIDAD  30                                           
+032407CAT.14 TECNICO SECUNDARIO D        30                                           
+032409CATEGORIA 14                       30                                           
+032410CAT. 13 OPERADOR COMP.B (C.C.S.E.) 30                                           
+032411CAT.14 TECNICO PLANEAMIENTO             EDUCATIVO                          30   
+032413CAT.19 SUPERVISOR FISCALIZACION       30                                        
+032414CAT.18 INSPECTOR EXTERNO              30                                        
+032415CAT.17 INSPECTOR INTERNO              30                                        
+032416CAT.18 JEFE SECCION A                 30                                        
+032417CAT.19 JEFE DIVISION A                30                                        
+032418CAT.15 INSPECTOR (M.B.S.)          30                                           
+032419CAT.15 OPERADOR COMP."A"           30                                           
+032420CATEGORIA 13                       30                                           
+032421CATEGORIA 19 TEC.SEC."A"                                                        
+032422CATEGORIA 12                       30                                           
+032423CAT.12 PERFOVERIF. B (CCSE)        30                                           
+032424CAT.11 CODIFICADOR C (C.C.S.E.)    30                                           
+032425CAT.13 SUB-INSPECTOR (M.B.S.)      30                                           
+032426CAT.15 AUXILIAR                    30                                           
+032427CAT.15 INSPECTOR DE FARMACIA       30                                           
+032428CAT.18 DELEGADO FISCAL                30                                        
+032429CATEGORIA 20                                                                    
+032430CATEGORIA 19                          30                                        
+032431CAT.20 ANALISTA "B"C.C.S.E.                                                     
+032432CAT.21 ANALISTA -A-                                                             
+032433CATEGORIA 18 OPERADOR MAYOR                                                     
+032434CAT.16 OPERADOR COMPUT A CCSE         30                                        
+032435CATEGORIA 19 INSP.EXT.-D.G.R.      30                                           
+032436CAT.15 OPERADOR PLAN BLU           30                                           
+032437CAT.20 SUPERVISOR FISCAL                                                        
+032438CATEGORIA 21                                                                    
+032439CAT.19 ANALISTA 'C' C.C.S.E.                                                    
+032440CAT.21 PROGRAMADOR DE SISTEMA           C.C.S.E.                                
+032441CAT. 15 PROGRAMADOR D                                                           
+032443CAT 16 PROGRAMADOR "D"                                                          
+032444CAT 16 OPERADOR C.CALIDAD "A"                                                   
+032445CAT 13 OPERADOR C.CALIDAD "C"                                                   
+032446CAT 14 OPERADOR ING.DE DATOS "C"                                                
+032447CAT 14 PERFOVERIFICADOR "B"                                                     
+032448CAT 13 CODIFICADOR "C"                                                          
+032449CAT 14 OP.COMP. "C"                                                             
+032450CAT 16 CODIF. "A"                                                               
+032451CAT 15 CODIF. "B"                                                               
+032452CAT 15 PERFORV "A"                                                              
+032454CATEGORIA 23-PILOTO                                                             
+032455CAT.20 JEFE RADIO PLAN B.L.U.                                                   
+032456CAT.20 SEGUNDO JEFE RADIO PLAN B.L.U.                                           
+032457CATEGORIA 17 OPERADDOR PLAN B.L.U.                                              
+032458CATEGORIA 22                                                                    
+032459CAT.22 PILOTO                                                                   
+032460CATEGORIA 23                                                                    
+032461CAT.19 DELEGADO FISCAL                                                          
+032462CAT.18 INSPECTOR INTERNO                                                        
+032463CAT.19 PROGRAMADOR DE SISTEMAS                                                  
+032464CAT.20 PROGRAMADOR DE SISTEMAS  B                                               
+032466CAT.24 JEFE DE PRODUCCION                                                       
+032467CAT.16 PERFOVERIFICADOR -A-                                                     
+032470CAT. 23 JEFE CENTRO DE COMUNICACIONES                                           
+032471CAT. 22 SEGUNDO JEFE CENTRO DE COMUNICACIONES                                   
+032472CAT. 19 OPERADOR PLAN B.L.U.                                                    
+032473CAT.23 ANALISTA -A-                                                             
+032474CAT.22 OPERADOR COMP.-A-                                                        
+032475CATEGORIA 24 - PILOTO                                                           
+032477CATEGORIA 18 TEC.SEC."B"                                                        
+032507CATEGORIA 24                                                                    
+034452CAT 15 PERFORVERIFICADOR "A" C.C.S.E                                            
+035300CATEGORIA 24                                                                    
+035440CATEGORIA 8                        30                                           
+035689CATEGORIA 11                       30                                           
+035696CATEGORIA 10                       30                                           
+035697CAT.10 PERFOVERIF. C (CCSE)        30                                           
+035698CAT.10 CODIFICADOR D (C.C.S.E.)    30                                           
+035700CAT.12 OPERADOR COMP. C (CCSE)     30                                           
+035701CAT.14 CODIFICADOR A (C.C.S.E.)    30                                           
+035702CAT.13 CODIFICADOR B (C.C.S.E.)    30                                           
+035703CAT.13 PERFOVERIFIC. A (C.C.S.E.)  30                                           
+035705CATEGORIA 9                        30                                           
+035709CATEGORIA 8                        30                                           
+035715CATEGORIA 7                        30                                           
+035720CATEGORIA 6                        30                                           
+035723CAT. 14 PROGRAMADOR D                                                           
+035726CATEGORIA 5                        30                                           
+035728CATEGORIA 4                        30                                           
+035729CATEGORIA 3                        30                                           
+035731CAT.15 GRABOVERIFICADOR-A- CCSE                                                 
+035732CAT.14 PROGRAMADOR -D-             30                                           
+035733CAT.14 OPERADOR C.CALIDAD -A-      30                                           
+035734CAT.11 OPERADOR C.CALIDAD -C-      30                                           
+035735CAT.12 OPERADOR ING.DE DATOS -C-   30                                           
+035736CAT 23 SUPERVISOR DE MANT. DE AERONAVES                                         
+038930CLASE XV                                                                        
+038931CLASE XIV                                                                       
+038932CLASE XIII                                                                      
+038933CLASE XII                                                                       
+038934CLASE XI                                                                        
+038935CLASE X                                                                         
+038936CLASE IX                                                                        
+038937CLASE VIII                                                                      
+038938CLASE VII                                                                       
+038939CLASE VI                                                                        
+038940CLASE XVI                                                                       
+038941CLASE XVII                                                                      
+040003ASESOR DE GABINETE-NIVEL GOBERNADOR                                             
+040004ASESOR DE GABINETE-NIVEL MINISTRO                                               
+040008ASESOR TEC NIVEL SUBSECRET.                                                     
+040009CAT. 24 ASESOR DE GABINETE                                                      
+040010ASESOR DE GABINETE-NIVEL SUBSECRETARIO                                          
+040011ASESOR COORDINADOR GRAL. -NIVEL MINISTRO                                        
+040012SECRETARIO LEGAL Y TECNICO                                                      
+040013SECRETARIO EJECUTIVO                                                            
+040014COORDINADOR DE INGRESOS PUBLICOS                                                
+050001VOCAL CAMARA DE APELACIONES                                                     
+050002FISCAL CAMARA DE APELACIONES                                                    
+050003JUEZ DE PRIMERA INSTANCIA                                                       
+050004AGENTE FISCAL DEL CRIMEN                                                        
+050005DEFENSOR DE MENORES                                                             
+050006FISCAL CIVIL Y COMERCIAL                                                        
+050007VOCAL CAMARA DE PAZ LETRADO                                                     
+050008RELATOR SUP.TRIBUNAL DE JUSTICIA                                                
+050009JUEZ DE 1RA. INSTANCIA-PAZ LETRADO                                              
+050010SECRETARIO SUP.TRIBUNAL JUSTICIA                                                
+050011SECRETARIO ELECTORAL                                                            
+050012SECRETARIO CAMARA DE APELACIONES                                                
+050013SECRETARIO DE PRIMERA INSTANCIA                                                 
+050014SECRETARIO CAMARA DE PAZ LETRADO                                                
+050015SECRETARIO DE 1RA.INSTANCIA-PAZ LETRADO                                         
+050016SECRETARIO MESA GRAL.DE ENTRADAS                                                
+050017INSPECTOR DE JUECES DE PAZ LEGOS                                                
+050018PROSECRETARIO                                                                   
+050019JEFE OFICINA DE MANDAMIENTOS       30                                           
+050020INSPECTOR DE PROTOCOLOS            30                                           
+050021DIRECTOR                                                                        
+050022SECRETARIO REG.PUBL.DE COMERCIO                                                 
+050025PROSECRETARIO ELECTORAL                                                         
+050026CONTADOR OFICIAL TRIBUNALES DE TRABAJO                                          
+050027JEFE OFICINA DE NOTIFICACIONES     30                                           
+050030ASESOR DEL TRABAJADOR                                                           
+050031SECRETARIO ADMINISTRATIVO                                                       
+050032SECRETARIO DE RELATORIA                                                         
+050033MEDICO PEDIATRA JUZGADO DE MENORES                                              
+050034SICOLOGO JUZGADO DE MENORES                                                     
+050035MEDICO FORENSE                                                                  
+050036JEFE CUERPO MEDICO FORENSE                                                      
+050037PSICOLOGO CUERPO MEDICO FORENSE                                                 
+050038PROSECRETARIO SUP. TRIBUNAL                                                     
+050039MEDICO CARDIOLOGO FUERO LABORAL                                                 
+050041VOCAL DE CAMARA DE TRABAJO Y MINAS                                              
+050042SECRETARIO DE CAMARAS DE TRABAJO Y MINAS                                        
+050048MEDICO DE RECONOCIMIENTO                                                        
+050050DIR.DESPACHO SALA CONTENCIOSA ADMINISTR.                                        
+050051DIR.DESPACHO SALA CIVIL Y COMERCIAL                                             
+050052DIR.DE DESPACHO DE SALA EN LO PERSONAL Y LABORAL                                
+050053DIR.DESPACHO SALA DE SUPERINTENDENCIA                                           
+050054ASISTENTE DE RELATORIA                                                          
+050055PROSECRETARIO DE INFORMATICA                                                    
+050056DEFENSOR CAMARA DE APELACIONES                                                  
+050057SECRETARIO CONSEJO DE LA MAGISTRATURA                                           
+050058DIRECTOR DE DESPACHO DEL MINISTERIO PUBLICO FISCAL                              
+050059COORD.EJECUTIVO-CTRO.UNICO CAPACITACION                                         
+050066FISCAL DE ALZADA                                                                
+050067FISCAL DE INSTRUCCION EN LO PENAL JUVENIL                                       
+050068DEFENSOR EN LO PENAL                                                            
+050069DEFENSOR EN LO PENAL JUVENIL                                                    
+050070DEFENSOR CIVIL Y FAMILIA-ASESOR TUTELAR DE NINOS,ADOLECENTES E INCAPACES        
+050071SECRETARIO GENERAL                                                              
+050072DIRECTOR DE AREA                                                                
+050073SECRETARIO DE INSTRUCCION                                                       
+050074SICOLOGO ASISTENCIA INTERDISCIPLINARIA                                          
+050075MEDICO DE ASISTENCIA INTERDISCIPLINARIA                                         
+050076ASISTENTE SOCIAL ASISTENCIA INTERDISCPL                                         
+050077FISCAL DE CAMARA                                                                
+050078FISCAL DE INSTRUCCION EN LO PENAL                                               
+050079FISCAL 1ERA INSTANCIA CIVIL Y COMERCIAL                                         
+050080DEFENSOR EN LO CIVIL Y DE FAMILIA                                               
+050081DIRECTOR DE ADMINISTRACION                                                      
+050082COORDINADOR OFICINA DE PROTECCION A LA  MUJER                                   
+050083PSICOLOGO JEFE                                                                  
+050084PSICOLOGO FORENSE 1ro.                                                          
+050085PSICOLOGO FORENSE 2do.                                                          
+050086DIRECTOR DE INFRAESTRUCTURA Y MANTENIMIENTO                                     
+050087DIRECTOR OFICINA GESTION AUDIENCIA                                              
+050088JUEZ DE 1RA.INSTANCIA-EJECUC.FISCALES                                           
+050089SECRETARIO 1RA.INSTANCIA-EJECUC.FISCALES                                        
+050090DIRECTOR TECNICO DE LABORATORIO                                                 
+050091AUXILIAR LETRADO                                                                
+050092AYUDANTE FISCAL                                                                 
+050093BIOQUIMICO                                                                      
+050096CONTADOR DEL PODER JUDICIAL                                                     
+050097TESORERO DEL PODER JUDICIAL                                                     
+050098CONTADOR PUBLICO OFICIAL                                                        
+050099DIR.O.GEST.AUD.-TRIB.ALZADA                                                     
+050100SECRETARIO FISCALIA GENERAL                                                     
+050101DIRECTOR GENERAL MINISTERIO PUBLICO                                             
+050102SECRETARIO TECNICO MINISTERIO PUBLICO                                           
+050103AUXILIAR FISCAL                                                                 
+050104DIRECTOR DE DESPACHO-DEFENSORIA GENERAL                                         
+050105TESORERO MINISTERIO PUBLICO DE DEFENSA                                          
+050106CONTADOR MINISTERIO PUBLICO DE DEFENSA                                          
+050107SECRETARIO SUPERIOR TRIBUNAL DE JUSTICIA-ADMINISTRACION Y PRESUPUESTO           
+050108CONTADOR-MINISTERIO PUBLICO FISCAL                                              
+050109TESORERO-MINISTERIO PUBLICO FISCAL                                              
+050110DIRECTOR BIENES PATRIMONIALES E INSUMOS                                         
+050111FISCAL AUXILIAR                                                                 
+050112MEDICO DEDICACION EXCLISIVA                                                     
+050113DEFENSOR AUXILIAR                                                               
+050114SECRETARIO RELATOR                                                              
+050115SECRETARIO PRIMERA INSTANCIA-CONTABLE                                           
+050116SECRETARIO TESORERO                                                             
+050117SECRET. INFRAESTRUCTURA Y MANTENIMIENTO                                         
+050118SECRETARIO DE RECURSOS HUMANOS                                                  
+050119SECRETARIO COORDINADOR PENAL                                                    
+050120SECRETARIO COORDINADOR CIVIL                                                    
+050121SECRETARIO CONTABLE MINIS.PUBL.DEFENSA                                          
+050122SECRETARIO TESORERIA MINIS.PUBL.DEFENSA                                         
+050123SECRETARIO CONTRATACIONES MIN.PUB.DEFENSA                                       
+050124SECRETARIO CONTABLE DEL M.P.F                                                   
+050125SECRETARIO DE REC.HUMANOS DEL M.P.F                                             
+050126SECRETARIO BIOQUIMICO DEL M.P.F.                                                
+050127SECRETARIA COORDINAD.CIVIL Y COMERCIAL                                          
+050128SECRETARIA COORDINADORA LABORAL                                                 
+050129SECRET.COORDINAD.CONTENCIOSO ADMNISTR.                                          
+050130SECRETARIA COORDINADORA PENAL                                                   
+050131SECRETARIA DE INFORMACION JURIDICA                                              
+050132SECRETARIO DE ESTRUCTURA Y MANTENIMIENTO                                        
+060002SUPERVISOR SECTORIAL TECNICO DOCENTE                                            
+060003ANALISTA PRINC.TEC.DOCENTE                                                      
+060004SECRETARIO TECNICO DOCENTE                                                      
+060006SUPERVISOR GENERAL                                                              
+060007ASESOR TECNICO DOCENTE                                                          
+060009SUPERVISOR PRE. PRIMARIA                                                        
+060010SUPERVISOR ESCOLAR                                                              
+060011SECRETARIO TECNICO DOCENTE (C.G.E.)                                             
+060012DIRECTOR SICOLOGIA EDUC.Y ASIST.ESCOLAR                                         
+060013RECTOR INSTITUTO SUPERIOR                                                       
+060014VICEDIRECTOR SICOLOG.EDUC.Y ASIST.ESCOL.                                        
+060015DIRECTOR ESCUELA DIFERENCIAL LISIADOS Y HOSPITALARIA                            
+060016DIRECTOR ESCUELA PENAL                                                          
+060017RECTOR DE PRIMERA                                                               
+060018DIRECTOR DE PRIMERA                                                             
+060019DIREC JARDIN INFANTES (EM)                                                      
+060020VICERECTOR INSTITUTO SUP.                                                       
+060021RECTOR DE SEGUNDA                                                               
+060022DIRECTOR DE SEGUNDA                                                             
+060023VICEDIRECTOR ESC.DIFERENCIAL Y LISIADOS                                         
+060024DIRECTOR DE GABINETE SICO-SOCIO-PEDAGOG.                                        
+060025RECTOR DE TERCERA                                                               
+060026DIRECTOR DE TERCERA                                                             
+060027VICERECTOR DE PRIMERA                                                           
+060028VICEDIRECTOR DE PRIMERA                                                         
+060029SECRET.TECNICO DOC.EN INF.E                                                     
+060030VICERECTOR DE SEGUNDA                                                           
+060032VICEDIRECTOR JARDIN DE INFANTES (E.M.)                                          
+060035COORDINADOR GRAL ENS.AGROP.                                                     
+060036COOR.CTRO. MULT.DE CIENCIAS                                                     
+060038REGTE.DE PRIM.CTRO.EXPERIM.                                                     
+060039REGTE DE SEG.CENTRO EXPERIM.                                                    
+060041SUBREGTE.DE PRIM.CTRO.EXPER.                                                    
+060042DIRECTOR JARDIN INF(CGE)                                                        
+060043SUBREGTE.DE SEG.CTRO.EXPER.                                                     
+060044DIRECTOR PERFEC.DOCENTE                                                         
+060045SECRETARIO INSTITUT.SUP.                                                        
+060046DIRECTOR ESC.CAPACITACION                                                       
+060047DIREC.ESC.COMUN DE PRIMERA                                                      
+060049DIRECTOR TURISMO ESCOLAR                                                        
+060050VICEDIRECTOR PERF.DOCENTE                                                       
+060051DIRECTOR EDIFICACION ESCOLAR                                                    
+060052DIRECTOR PRIMERA JARDIN INIFANTES (CGE)                                         
+060053JEFE DEPARTAMENTO                                                               
+060054DIRECTOR ESCUELA FABRICA                                                        
+060056GABINETISTA PSICOTECNICO                                                        
+060057MEDICO GABINETISTA                                                              
+060058MAESTRO REEDUCADOR                                                              
+060059MAESTRO GRUPO ESCOLAR                                                           
+060060MAESTRO ASISTENTE SOCIAL                                                        
+060061SECRETARIO GABINETE SICO-SOCIO-PEDAGOG.                                         
+060062COORDINADOR GRAL.COLEG.EDUC.TEC.                                                
+060063SECRET.ESC.PERFEC.DOCENTE                                                       
+060064DIREC.ESC.COMUN DE SEGUNDA                                                      
+060069ASESOR ESPECIALIZ. POR AREA DE GABINETE                                         
+060070DIREC.ESC.COMUN DE TERCERA                                                      
+060071SECRETARIO DE PRIMERA                                                           
+060072ASESOR PEDAGOGICO DE C.EXP.                                                     
+060073TESORERO DE PRIM.ESC.ESPEC.                                                     
+060074AUXILIAR TECNIC.MULTIPLIC.CIENCIAS (E.M)                                        
+060075SECRETARIO HAB.DE 2-ESC.DE E                                                    
+060076SECRETARIO TEC. JUNTA CALIF.TRIBUNAL DE DISCIPLINA                              
+060077VICEDIRECTOR PRIMERA JARD.INFANTES (CGE)                                        
+060078VICEDIRECTOR TURISMO ESCOLAR                                                    
+060079VICEDIR.ESC.COMUN DE PRIMERA                                                    
+060080SECRETARIO DE SEGUNDA                                                           
+060081SECRETARIO HABILIT. SEGUNDA                                                     
+060082MAESTRO JARDIN INFANTES E.M.                                                    
+060083MAES. JARDIN INFANTES (CGE)                                                     
+060084DIRECTOR SECCION INST.SUP.                                                      
+060086INSTRUCTOR ALFARERO                                                             
+060087VICEDIR.ESC.COMUN DE SEGUNDA                                                    
+060088SECRETARIO DE TERCERA                                                           
+060089GABINETISTA SICOTECNICO INST.SUPERIOR                                           
+060090MAESTRO MUSICA J.INFANTES EM                                                    
+060091AUXILIAR PSICOTECNICO                                                           
+060092MAESTRO GRADO CENTRO EXP.                                                       
+060093AUXILIAR DOCENTE                                                                
+060094PROSECRETARIO INSTITUTO SUP                                                     
+060095MAESTRO RECUPERACION                                                            
+060096JEFE DIVISION ARTICULACION                                                      
+060097MAESTRO AUX.SECRETARIA E.M.                                                     
+060098MAESTRO DE GRADO                                                                
+060100MAESTRO DE ENS.PRACTICA                                                         
+060101MAESTRO DE GRADO E.G.B.3                                                        
+060102MAESTRO GRADO AUXILIAR                                                          
+060103MAESTRO GRADO SECRETARIO                                                        
+060104JEFE SEC.ALUMNOS INST.SUP.                                                      
+060105BEDEL                                                                           
+060106MAESTRO ESPECIAL CENTRO EXP.                                                    
+060107MAESTRO CELADOR                                                                 
+060108JEFE PRECEPTORES DE PRIMERA                                                     
+060109MAESTRO DE MUSICA JARDIN INFANTES (CGE)                                         
+060110GUIA TURISMO ESCOLAR                                                            
+060111ENCARGADO GRAL.DE CONTROL                                                       
+060112SUBDIRECTOR DE SECCION INSTITUT.SUPERIOR                                        
+060113BIBLIOTECARIO INSTITUTO SUP.                                                    
+060115AYUDANTE TECNICO                                                                
+060116AYUDANTE ENSE#ANZA PRACTICA                                                     
+060117PROSECRETARIO DE PRIMERA                                                        
+060118PROSECRETARIO DE SEGUNDA                                                        
+060119BIBLIOTECARIO                                                                   
+060122AUXILIAR SECRETARIA INSTITUTO SUPERIOR                                          
+060123AUXILIAR DE REGENCIA                                                            
+060124AYUDANTE TECNICO(ES.ART.)                                                       
+060125PRECEPTOR                                                                       
+060126ENCARGADO DE GABINETE                                                           
+060127AYUDANTE TRABAJO PRACTICO INST.SUPERIOR                                         
+060128AUXILIAR DE BIBLIOTECA                                                          
+060129SECRET.TEC.JUNTA CLASIF.Y CALIF.E.MEDIA                                         
+060130AYUDANTE CLASES PRACTIC.(EM)                                                    
+060131AUXILIAR DE SECRETARIA                                                          
+060132HORA DE CATEDRA SUPERIOR                                                        
+060133HORA DE CATEDRA ENS.MEDIA                                                       
+060134TEC. DOC EN PLAN EDUCATIVO                                                      
+060135TEC.DOC EN INF.EDUCATIVA                                                        
+060136TEC.EN DOCUMENT.EDUCATIVA                                                       
+060137AYUDANTE TECNICO DOCENTE                                                        
+060139DIRECTOR DE ESC.COMUN DE PRIMERA (J.C.)                                         
+060140DIRECTOR DE ESC.COMUN DE SEGUNDA (J.C.)                                         
+060141DIRECTOR DE ESC.COMUN DE TERCERA (J.C.)                                         
+060142VICEDIRECTOR DE ESC.COMUN (J.C.)                                                
+060143MAESTRO JARDIN DE INFANTES (JORN.COMPL.)                                        
+060144MAESTRO DE GRADO (J.C.)                                                         
+060145MAESTRO ESPECIAL DE ESC.COMUN (J.C.)                                            
+060147DIRECTOR DE ESCUELA COMUN DE SEGUNDA                                            
+060148DIRECTOR DE ESCUELA COMUN DE TERCERA                                            
+060151MAESTRO ESPEC.DE ESC.COMUN                                                      
+060152DIRECTOR ESC.J.C.DE PRIMERA C/A.ALBERGUE                                        
+060153DIRECTOR ESC.J.C.DE SEGUNDA C/A.ALBERGUE                                        
+060154VICEDIRECTOR ESCUELA J.C. C/A.ALBERGUE                                          
+060155MAESTRO JARD.INFANTES J.C. C/A.ALBERGUE                                         
+060156MAESTRO DE GRADO J.C. C/ANEXO ALBERGUE                                          
+060157MAESTRO ESPECIAL J.C. C/ANEXO ALBERGUE                                          
+060158DIRECTOR DE TERCERA EX ESC.HOGAR NRO.21                                         
+060159VICEDIRECTOR TERCERA EX ESC.HOGAR NRO.21                                        
+060160SECRETARIO TECNICO EX ESC.HOGAR NRO.21                                          
+060161REGENTE EX.ESC.HOGAR N-21                                                       
+060162JEFE SERVICIOS SOC. EX ESC.HOGAR NRO.21                                         
+060163VISITADOR HIGIENE SOC. EX ESC.HOGAR N.21                                        
+060164MAESTRO DE GRADO EX.ESC.HOG.                                                    
+060165MAESTRO ESPEC.EX.ESC.HOG.                                                       
+060168RECTOR INST.FORMACION DOC.                                                      
+060169SECRET.INST.FORMACION DOC.                                                      
+060170DIRECTOR ESC.APICULTURA                                                         
+060172SECRETARIO ESC. DE APICULTURA                                                   
+060173DIRECTOR DE ESC.DE ESPECIALID.DE PRIMERA                                        
+060174DIRECTOR DE ESC.DE ESPECIALID.DE SEGUNDA                                        
+060175VICEDIRECTOR ESC. DE ESPEC. DE PRIMERA                                          
+060176VICEDIRECTOR ESC. DE ESPEC. DE SEGUNDA                                          
+060177PROSECRETARIO ESC.DE ESPECIAL.DE PRIMERA                                        
+060178PROSECRETARIO ESC.DE ESPECIAL.DE SEGUNDA                                        
+060179SECRET.ESC.CAPAC.AVIAC.CIVIL                                                    
+060180DIRECTOR ESC.J.C.DE TERCERA C/A.ALBERGUE                                        
+060181ANALISTA PRINCIPAL TECNICO DOCENTE (E.A)                                        
+060182DIRECTOR DE PRIMERA E.A.                                                        
+060183DIRECTOR DE SEGUNDA E.A.                                                        
+060184MAESTRO DE CENTRO EDUC. (E.A.)                                                  
+060185MAESTRO.DE.GRADO-E.A.-                                                          
+060186MAESTRO.ESPECIAL-E.A.-                                                          
+060187REG.ESC. ESPEC.DE PRIMERA                                                       
+060188REG.ESC.ESPEC.DE SEGUNDA                                                        
+060190SECR.ESC.ESPEC.DE PRIMERA                                                       
+060194SECR. TECNICO DOCENTE-CONSEJO GRAL. DE EDUCACION                                
+060195DIRECTOR COOPERATIVISMO ESCOLAR                                                 
+060196JEFE PROMOCION Y FOMENTO COOP.                                                  
+060197JEFE REGISTRO Y CONTROL COOP.                                                   
+060198JEFE EQUIPO COOPERATIVO                                                         
+060300ANALISTA PRINCIPAL TECNICO DOCENTE                                              
+060301RECTOR/DIRECTOR ESTAB.NIVEL MEDIO                                               
+060302VICERECTOR/VICEDIRECT.ESTAB.NIV.MEDIO                                           
+060303ASESOR PEDAGOGICO EST.NIVEL MEDIO                                               
+060304ASESOR PEDAGOGICO ESTABL NIVEL MEDIO                                            
+060305DIRECTOR DE 2DA 2 TURNOS                                                        
+060306DIRECTOR DE 2DA 1 TURNO                                                         
+060308DIRECTOR DE 3RA 1 TURNO                                                         
+060309VICEDIRECTOR DE 1RA                                                             
+060310VICEDIRECTOR 2DA                                                                
+060311SECRETARIO DE 1RA                                                               
+060312SECRETARIO DE 2DA                                                               
+060313PROSECRETARIO DE 1RA                                                            
+060314JEFE DE PRECEPTORES DE 1RA                                                      
+060315BIBLIOTECARIO                                                                   
+060316JEFE DE PRECEPTORES DE 2DA                                                      
+060317SUBJEFE DE PRECEPTORES DE 1RA                                                   
+060319SECRETARIO DE 3RA                                                               
+060320PROSECRETARIO DE 2DA                                                            
+060321PRECEPTORES                                                                     
+060322AYUDANTE DE CLASES PRACTICAS                                                    
+060323(P.T.C.)PROF.TIEMPO COMPLETO 36HS.                                              
+060324(P.T.P.1)PROF.TIEMPO PARCIAL 30 HS                                              
+060325(P.T.P.2)PROF.TIEMPO PARCIAL 24 HS                                              
+060326(P.T.P.3)PROF.TIEMPO PARCIAL 18 HS                                              
+060327(P.T.P.4)PROF.TIEMPO PARCIAL 12 HS                                              
+060340DIRECTOR DE 1RA 3 TURNOS                                                        
+060341DIRECTOR DE 1RA 2 TURNOS                                                        
+060345DIRECTOR DE 2DA 1 TURNO                                                         
+060349VICEDIRECTOR DE 1RA                                                             
+060351REGENTE DE 1RA                                                                  
+060352JEFE GRAL.DE TALLER 1RA(ACUM.HS/CARGO)                                          
+060354REGENTE DE 2DA                                                                  
+060355JEFE GRAL.DE TALLER 2DA(ACUM.HS/CARGO)                                          
+060357SUBREGENTE DE 1RA                                                               
+060364SECRETARIO DE 1RA                                                               
+060365SCRETARIO DE 2DA                                                                
+060366PROSECRETARIO DE 1RA                                                            
+060367JEFE DE PRECEPTORES DE 1RA                                                      
+060371MAESTRO DE TALLER JEFE DE SECCION                                               
+060372MAESTRO DE TALLER ENSENANZA PRACTICA                                            
+060373JEFE DE LABORATORIO                                                             
+060374JEFE DE TRABAJOS PRACTICOS                                                      
+060377MAESTRO AYUDANTE DE ENS.PRACTICA                                                
+060378BIBLIOTECARIO                                                                   
+060379SUB.JEFE DE PRECEPTORERS PRIMERA                                                
+060382AYUDANTE TECNICO TRABAJOS PRACTICOS                                             
+060383PRECEPTOR                                                                       
+060400RECTOR-DIRECTOR DE PRIMERA J.C.AGRIC.                                           
+060401COORD.GRAL.ACT.PRACT.J.C.AGRIC.                                                 
+060402REGENTE DE PRIMERA J.C.AGRIC.                                                   
+060403JEFE SECTORIAL ENS.PRC.J.C.AGRIC.                                               
+060404INSTRUCTOR J.C.AGRIC.                                                           
+060405JEFE DE PRECEPTORES J.C.AGRIC.                                                  
+060406SECRETARIO DE 1RA J.S.AGRIC.                                                    
+060407MAESTRO DE CULTURA RURAL Y DOMESTICA                                            
+060408PRECEPTOR AGRICOLA                                                              
+060412PRECEPTORA AGRICOLA                                                             
+060430DIRECTOR DE 3RA J.C.AGRIC.                                                      
+060431JEFE SECTORIAL                                                                  
+060432MAESTRO DE CULTURA RURAL                                                        
+060451VICERECTOR NIVEL SUPERIOR                                                       
+060452REGENTE NIVEL MEDIO                                                             
+060453SECRETARIO NIVEL SUPERIOR                                                       
+060462AYUDANTE DE CATEDRA NIVEL SUPERIOR                                              
+060463JEFE DE PRECEP.DE 1RA(DINES-ARTISTICA)                                          
+060464BEDEL                                                                           
+060467BIBLIOTECARIO (DINES-ARTISTICA)                                                 
+060468PRECEPTOR                                                                       
+060469CONTRAMAESTRE NIVEL MEDIO                                                       
+060472AYUDANTE CLASES PRACTICAS(DINES)                                                
+060480DIRECTOR CENS DE PRIMERA                                                        
+060481DIRECTOR CENS DE SEGUNDA                                                        
+060482DIRECTOR CENS DE TERCERA                                                        
+060483SECRETARIO CENS DE PRIMERA                                                      
+060490RECTOR C.E.N.T.                                                                 
+060491VICERECTOR C.E.N.T.                                                             
+060492PROFESOR JEFE TRABAJOS PRACTICOS                                                
+060493BEDEL C.E.N.T.                                                                  
+060494AYUDANTE TRABAJOS PRACTICOS                                                     
+060496DIRECTOR C.E.N.S.             .                                                 
+060498DIRECTOR 3RA (DINEA)                                                            
+060499SECRETARIO C.E.N.S.                                                             
+060501MAESTRO DE GRADO (DINEA)                                                        
+060520ANALISTA PRINCIPAL TEC.DOCENTE                                                  
+060521DIRECTOR DE 1RA C.E.F.                                                          
+060522VICEDIRECTOR DE 1RA C.E.F.                                                      
+060523REGENTE DE 1RA C.E.F.                                                           
+060524SECRETARIO DOCENTE DE 1RA C.E.F.                                                
+060525PROFESOR                                                                        
+060540DIRECTOR ESC.ESP.J.C.S/INT.                                                     
+060541GABINETISTA PSICOTECNICO                                                        
+060542MAESTRO REEDUCADOR/ACUSTICO/VOCAL/GRADO                                         
+060543MAESTRO REEDUC.DE GRUPO ESPEC./JARD.INF.                                        
+060544SECRETARIO ESCUELA ESPECIAL                                                     
+060545MAESTRO PSICOLOGO ESP.                                                          
+060546MAESTRO DE ACT.PRACTICAS ESC.ESP.                                               
+060548MAESTRO ESPECIAL DE ESC.ESPECIALES                                              
+060549MAESTRO ASIST.SOCIAL                                                            
+060550MAESTRO ESP.DE PSICOMOTRICIDAD                                                  
+060560DIRECTOR M.M.E.C.                                                               
+060561DIRECTOR M.C.R.D.                                                               
+060562MAESTRO DE ENSENANZA GENERAL                                                    
+060564MAESTRO DE CULTURA(M.C.R.)                                                      
+060565AYUDANTE SECRETARIA(M.C.R.)                                                     
+060566AYUDANTE DE TALLER                                                              
+060581DIRECTOR DE 3RA                                                                 
+060583REGENTE DE 3RA                                                                  
+060587SECRETARIO DE 3RA                                                               
+060588MAESTRO DE ENS.PRACTICA JEFE DE SECCION                                         
+060589MAESTRO DE GRADO                                                                
+060590MAESTRO DE TALLER-MAESTRO ENS.PRACTICA                                          
+060591PRECEPTOR                                                                       
+060614INSTRUCTOR ENFERMERIA                                                           
+060624SECRETARIO DE 1RA                                                               
+060625MAESTRO DE ENS.PRACTICA                                                         
+060626MAESTRO DE ENS.PRACTICA JEFE SECCION                                            
+060640EDUCADOR(PROG.FED.DE ALFABETIZACION)                                            
+060641CAPACITADOR LABORAL(P.F.DE.ALFABET.)                                            
+060642RESPONSABLE ZONAL                                                               
+060643EQUIPO TEC.CON PROLONG.DE JORNADA                                               
+060644EQUIPO TEC.SIN PROLONG.DE JORNADA                                               
+060660HORA CATEDRA NIVEL MEDIO                                                        
+060661HORA CATEDRA NIVEL SUPERIOR                                                     
+060690VICE RECTOR/VICE DIRECTOR 3 TURNOS                                              
+060691VICE RECTOR /VICE DIR. DE PRIMERA                                               
+060692ASESOR PEDAGOGICO-LEY 22416                                                     
+060694PROF. TIEMPO COMPLETO 36 HS. LEY 22416                                          
+060695PROFESOR TIEMPO PARCIAL 01 30 HS. LEY 22416                                     
+060696PROFESOR TPO. PARCIAL 02 24 HS. LEY 22416                                       
+060697PROF.TPO. PARCIAL 03 18 HS.LEY 22416                                            
+060698PROF. TPO. PARCIAL 04 12HS. LEY 22416                                           
+060699PRO-SECRE. DE PRIMERA DINES ARTISTICA                                           
+060701BIBLIOTECARIO DINES ARTISTICA                                                   
+060702JEFE DE PRECEPTORES DE PRIMERA DINES ARTISTICA                                  
+060704SUB. JEFE DE PRECEPTORES DE 1RA DE DINEA                                        
+060705PRECEPTORES DINES ARTISTICA AGRICOLA                                            
+060706MAETRO DE ENS.PRACTICA J.DE SECCIO DINES                                        
+060707AYUDANTE DE CLASES PRACTICAS DINES                                              
+060708REGENTE DPTO APLIC 1RA LENGUAS VIVAS                                            
+060709SUBREGENTE D APLIC 1RA LENGUAS VIVAS                                            
+060710DIRECTOR DE JARDINES DE INF.DPTO APLIC                                          
+060711REGENTE DEL DTO DE APLIC.DE 1RA                                                 
+060712VICE-DIRECTOR DE JARD.DE INF. 1RA.                                              
+060713SUB-REGENTE DPTO.APLICACION DE PRIMERA                                          
+060714MAESTRA DE GRADO DPTO.APLICAC.DE PRIMERA LENGUAS VIVAS                          
+060715MAESTRA DE JARDIN DE INFANTES - PRIM.MAE.AUXILIAR                               
+060716MAESTRO DE GRADO DPTO. DE APLICACION                                            
+060717MAESTRO ESPECIAL DPTO. DE APLICACION DE PRIMERA LENGUAS VIVAS                   
+060718MAESTRO ESPECIAL DPTO DE APLICACION                                             
+060720RECTOR CON PROFESORADO 4 NIV.                                                   
+060721RECT/DIR.SUP.3 TURNOS                                                           
+060722VICERECTOR CON PROFESORADO                                                      
+060724REGENTE NIV.SUP.3 TURNOS                                                        
+060725SECRETARIO E.NORMAL 3 TURNOS                                                    
+060726PROSECRETARIO NIVEL SUPERIOR                                                    
+060728BIBLIOTECARIO JEFE NIV.SUPERIOR                                                 
+060729AYUDANTE TRABAJOS PRACTICOS                                                     
+060730BEDEL                                                                           
+060731PRECEPTOR                                                                       
+060732BIBLIOTECARIO                                                                   
+060733RECTOR DE ENS.SUPERIOR                                                          
+060734SECRETARIO DE ENS.SUPERIOR                                                      
+060735JEFE DE TRAB.PRACTICOS                                                          
+060736BIBLIOTECARIO                                                                   
+060737AYUDANTE TRAB.PRACTICOS                                                         
+060738BEDEL                                                                           
+060739PRECEPTOR                                                                       
+060745INSPECTOR MEDICO                                                                
+060991DIF.CARGO SUBREGENTE A REGENTE                                                  
+060992DIF.CARGO MAE.ASIS.SOCIAL A VICEDIRECTOR                                        
+060993DIF.CARGO MAESTRO GRADO A SUBREGENTE                                            
+060994DIF.CARGO M.GRADO/SEC.TEC.JTA.CALIF.                                            
+060995DIF.CARGO MAESTRO GRADO A DIRECTOR                                              
+060996DIF.CARGO MAESTRO GRADO A VICE-DIRECTOR                                         
+060997DIRECTOR A SUPERVISOR ESCOLAR                                                   
+060998VICEDIRECTOR A DIRECTOR                                                         
+060999MIEMBRO DE JUNTA Y TRIBUNALES DEL CONSEJGRAL DE EDUCACION                       
+070001SUB-JEFE DE POLICIA                                                             
+070002DIRECTOR GRAL DE SERV.PENITENCIARIO                                             
+070003COMISARIO GENERAL                                                               
+070004COMISARIO MAYOR                                                                 
+070005COMISARIO INSPECTOR                                                             
+070006DIRECT.ESTAB.SERV.PENIT.COLONIA PINTO N4                                        
+070007COMISARIO                                                                       
+070008SUBCOMISARIO                                                                    
+070009OFICIAL PRINCIPAL                                                               
+070010OFICIAL INSPECTOR                                                               
+070011OFICIAL SUBINSPECTOR                                                            
+070012OFICIAL AYUDANTE                                                                
+070013SUBOFICIAL MAYOR                                                                
+070014SUBOFICIAL PRINCIPAL                                                            
+070015SARGENTO AYUDANTE                                                               
+070016SARGENTO PRIMERO                                                                
+070017SARGENTO                                                                        
+070018CABO PRIMERO                                                                    
+070019CABO                                                                            
+070020AGENTE                                                                          
+070021PREFECTO                                                                        
+070022SUBPREFECTO                                                                     
+070023ALCAIDE                                                                         
+070024SUBALCAIDE                                                                      
+070025ADJUTOR PRINCIPAL                                                               
+070026ADJUTOR                                                                         
+070027AYUDANTE PRINCIPAL                                                              
+070028AYUDANTE DE PRIMERA                                                             
+070029AYUDANTE DE SEGUNDA                                                             
+070030AYUDANTE DE TERCERA                                                             
+070031AYUDANTE DE CUARTA                                                              
+070032AYUDANTE DE QUINTA                                                              
+070033SUBAYUDANTE                                                                     
+070034SUBADJUTOR                                                                      
+070037ALCAIDE MAYOR                                                                   
+070038AYUDANTE MAYOR                                                                  
+070039INSPECTOR GENERAL                                                               
+070991CADETES 1ER A#O ESC.DE POLICIA                                                  
+070992CADETES 2DO A#O ESC.DE POLICIA                                                  
+070993CADETES 3ER ANO ESC.POLICIA                                                     
+080001CAT.24 CAPELLAN GENERAL                                                         
+080005CATEGORIA 5                        30                                           
+080006CATEGORIA 8                        30                                           
+080007CAT 11                                                                          
+080008CAT. 4 CAPELLAN                                                                 
+080010CATEGORIA 12                                                                    
+094587CATEGORIA 24-PROF.UNIVERSITARIO "A"                                             
+094588CAT.24 AUDITOR MAYOR                                                            
+094589CAT.23 JEFE DE SERVICIOS CONTAB.PRESUPUESTO                                     
+094590CAT.23 JEFE DE AREA                                                             
+094591CAT.24 SECRETARIO TECNICO D.G.A.                                                
+094592CAT.23 SECRETARIO TECNICO A A                                                   
+094593CATEGORIA 24 SECRETARIO TECNICO M.O.YS.P.                                       
+094594CAT.22 SECRETARIO TECNICO B                                                     
+094595CAT.22 JEFE DE AREA (M.B.S.)                                                    
+094596CAT.23 DIREC.PRINCIPAL                  (RECURSOS HIDRICOS)                     
+094597CAT.21 PROFES.UNIVERSITARIO  A                                                  
+094598CAT.21 AUDITOR FISCAL A                                                         
+094600CAT.21 PROF.MANTENIMIENTO TEC.MBS                                               
+094601CAT 18 BIOQUIMICO IOSEP                                                         
+094602CAT.20 CONTADOR                                                                 
+094605CAT.23 DELEGADO FISCAL                                                          
+094606CATEGORIA 20                                                                    
+094607CAT.19 AUDITOR FISCAL B               30                                        
+094608CAT.19 PROFES-UNIVERSITARIO B         30                                        
+094610CAT.19 ASESOR JURIDICO (M.B.S.)       30                                        
+094611CAT.18 MEDICO (IOSEP)                 30                                        
+094614CAT.18 PROFES.UNIVERSITARIO C         30                                        
+094617CAT.17 PROFES.UNIVERSITARIO D         30                                        
+094622CAT.16 ASESOR LEGAL                   30                                        
+094623CAT.18 ASESOR IMPOSITIVO (DGR)        30                                        
+094624CAT.16 ABOGADO ASESOR                 30                                        
+094630CATEGORIA 18 MEDICO                                                             
+094631CAT.24SECRETARIO TECNICO "A"                                                    
+094632CAT.22 PROF.UNIVERSITARIO "A"                                                   
+094633CATEGORIA 23 PROF.UNIV."A"                                                      
+094634CAT.24 SEC.TECNICO "B"                                                          
+094635CAT.24 DIRECTOR PRINCIPAL REC.HIDRICOS                                          
+094638CAT.22 SECRET.TEC. "B"                  (RECURSOS HIDRICOS)                     
+094639CAT.16 ABOGADO FISCAL AUXILIAR        30                                        
+094640CAT.21 ASESOR IMPOSITIVO                                                        
+094641CAT.17 ASESOR LETRADO JEFE            30                                        
+094643CAT.21 JEFE DEPARTAMENTO "A"            (RECURSOS HIDRICOS)                     
+094645CAT.21 ABOGADO ASESOR                                                           
+094646CAT.17 ASESOR LEGAL                   30                                        
+094648CATEGORIA 19                                                                    
+094649CATEGORIA 24                                                                    
+094650CATEGORIA 22 AUDITOR                                                            
+094651CAT.24 JEFE DE AREA C.G.E.                                                      
+094653CATEGORIA 23 JEFE DE SECTOR                                                     
+094654CAT.18 ASESOR LEGAL                                                             
+094655CATEGORIA 22 SECTORIALISTA                                                      
+094656CATEGORIA 21 SECTORIALISTA                                                      
+094657CAT.24 MEDICO AUDITOR                                                           
+094658CAT.22 ABOGADO ASESOR                                                           
+094659CATEGORIA 23                                                                    
+094660CATEGORIA 22                                                                    
+094661CATEGORIA 18                                                                    
+094663CAT.19 ABOGADO ASESOR                                                           
+094664CAT.20 ASESOR LETRADO                                                           
+094667CAT 19MEDICO VETERINARIO                                                        
+094668CAT.24 ASESOR CONTABLE                                                          
+094669CAT.24 ASESOR LEGAL                                                             
+094670CAT.23 ASESOR TECNICO                                                           
+094671CAT.23 COORDINADOR DE ADULTOS                                                   
+094672CAT.22 ASESOR CONTABLE                                                          
+094673CAT.21 JEFE DPTO.A                                                              
+094674CAT.21 ANALISTA "A"                                                             
+094675CAT.24-JEFA DE AREA ADMINIST. CONTABLE                                          
+094676CAT 23 SEC TECNICO DE ASESORAMIENTO LEGISLATIVO                                 
+094680CAT 22 ASESOR AUX.FINANZ.LEGALY MED(ISS)                                        
+094681CAT. 20 ABOGADO ASESOR                                                          
+094682CAT.23 AUDITOR                                                                  
+094683CAT 23 JEFE DE AREA M.S.                                                        
+094684CAT 24 ASESOR TECNICO DE LA GOBERNACION                                         
+094685CAT.23-ASESOR LEGAL SUBSECR.DE LA PRODUCCION                                    
+094686CATEGORIA 24-ASESOR TECNICO                                                     
+094688CAT.23 ASESOR JEFE REC.MEDICOS                                                  
+094689CATEG.24-JEFE DPTO.JURIDICO DIRECC. ADM.                                        
+094690CAT.23 SECTORIALISTA                                                            
+094691CAT.23 ABOGADO ASESOR                                                           
+094693CAT 21 ODONTOLOGO ASESOR (IOSEP)                                                
+094694CAT.22 DELEGADO FISCAL                                                          
+094697CAT.24 ABOGADO ASESOR                                                           
+094698CAT.24 ASESOR AGROP. Y FORESTAL                                                 
+094699CAT.21 MEDICO VETERINARIO                                                       
+094700CAT.21 ASESOR LETRADO                                                           
+094701CAT. 24 ASESOR CONTABLE MTRIO. CULTURA  Y EDUCACION                             
+094702CATEGORIA 23 ASESOR LEGAL MRIO. DE CULTURA Y EDUCACION                          
+094711CAT.24 ASESOR TECNICO MRIO.DE EDU.Y CUL.                                        
+094712CAT. 23 JEFE SECTOR DE INFORMATICA                                              
+094715CAT.24-JEFE DIV. PRO.SA.FI.CE.                                                  
+094716CAT.24 JEFE DE AREA DE DESARROLLO                                               
+094717CAT.24 JEFE MANTENIMIENTO DE SISTEMAS                                           
+094718CAT.24 JEFE DE SOPORTE TECNICO                                                  
+094719CAT.23 JEFE DELEGACIONES CONTABLES                                              
+094720CAT.24 JEFE DE SERVICIO DE CONTABILIDAD FINANCIERA                              
+094721CAT.24 JEFE DE SERVICIO DE CONTABILIDAD DE PRESUPUESTO                          
+094723CAT.24 SECTORIALISTA                                                            
+094724CATAGORIA 21                                                                    
+094810CAT.23 JEFE DPTO."A" REC.HIDRICOS                                               
+094811CAT.22 JEFE DPTO."A" REC.HIDRICOS                                               
+098931CLASE XX                                                                        
+098932CLASE XIX                                                                       
+098933CLASE XVIII                                                                     
+098934CLASE XVII                                                                      
+098935CLASE XV                                                                        
+098936CLASE XIII                                                                      
+098937CLASE XVI                                                                       
+098940CLASE XII                                                                       
+101429CATEGORIA 22                                                                    
+101430CATEGORIA 23                                                                    
+101431CATEGORIA 24                                                                    
+102371CATEGORIA 22                                                                    
+102372CATEGORIA 23                                                                    
+102381CAT.15 ENCARGADO MANTENIM.              CASA DE GOBIERNO                        
+102382CATEGORIA 15                       30                                           
+102383CATEGORIA 18                                                                    
+102384CATEGORIA 14                                                                    
+102385CAT.14 JEFE DE PANADERIA                                                        
+102387CATEGORIA 13                                                                    
+102388CAT.12 ENCARGADO DE TALLER                                                      
+102389CATEGORIA 12                                                                    
+102390CATEGORIA 11                                                                    
+102391CATEGORIA 14                                                                    
+102392CAT.12 EGDO. MAQUINA ESCRIBIR                                                   
+102393CAT.11 JEFE DE COCINA (MBS)                                                     
+102395CATEGORIA 10                                                                    
+102398CAT.10 ELECTRICISTA                                                             
+102399CAT.10 CARPINTERO                                                               
+102400CAT.12 COSTURERA                                                                
+102402CAT.12 ELECTRICISTA                                                             
+102403CAT.13 JEFE DE COCINA                                                           
+102404CAT.10 JEFE DE COCINA                                                           
+102405CATEGORIA 16                                                                    
+102406CATEGORIA 17                                                                    
+102407CAT 13 ENCARGADO MAQUINA DE             ESCRIBIR                                
+102408CAT.11 CARPINTERO                                                               
+102409CATEGORIA 18                                                                    
+102412CAT.16 ENC.MANTEN. SERV.ELEC.P.L.       (NIVEL 15)                              
+102415CAT.16 JARDINERO RESID.GOBERNADOR  30                                           
+102416CAT 14 ELECTRICISTA                                                             
+102417CAT 15 JEFE DE COCINA                                                           
+102418CAT 15 ENCARGADO MAQUINA DE ESCRIBIR                                            
+102419CAT 16 JEFE DE PANADERIA                                                        
+102420CAT 07 PEON M.B.S                                                               
+102421CAT 16 ELECTRICISTA M.B.S                                                       
+102422CAT 10 COSTURERA                                                                
+102423CAT 08 PEON M.B.S                                                               
+102424CAT 12 ROPERA                                                                   
+102426CAT 19                                                                          
+102427CATEGORIA 20                                                                    
+102428CATEGORIA 21                                                                    
+102429CATEGORIA 22                                                                    
+106770CATEGORIA 10                                                                    
+106771CATEGORIA 9                        30                                           
+106779CATEGORIA 8                        30                                           
+106783CATEGORIA 7                        30                                           
+106798CATEGORIA 6                        30                                           
+106808CATEGORIA 5                        30                                           
+106812CATEGORIA 4                        30                                           
+106814CATEGORIA 3                        30                                           
+106821CAT.8 CAPATAZ                      30                                           
+106822CAT.5 COCINERO                     30                                           
+106823CAT.6 CALDERISTA                   30                                           
+106824CAT.3 COCINERA                     30                                           
+106825CAT.3 COSTURERA                    30                                           
+106826CAT.6 CARPINTERO                   30                                           
+106827CAT.9 PINTOR                       30                                           
+106828CAT.9 COCINERA                     30                                           
+106829CAT.9 COSTURERA                    30                                           
+106830CAT.9 DESPENSERA                   30                                           
+106831CAT.9 LAVANDERA                    30                                           
+106832CAT.8 LAVANDERA                    30                                           
+106833CAT.6 MECANICO                     30                                           
+106834CAT.4 LAVANDERA                    30                                           
+106835CAT.4 PLANCHADORA                  30                                           
+106836CAT.3 CARPINTERO                   30                                           
+106837CAT.9 PLOMERO                      30                                           
+106838CAT.4 COCINERA                     30                                           
+106839CAT.6 PLOMERO                      30                                           
+106841CAT.5 PEON                         30                                           
+106842CAT.5 PINTOR                       30                                           
+106843CAT.5 PLANCHADORA                  30                                           
+106845CAT.3 PLANCHADORA                  30                                           
+106846CAT.3 LAVANDERA                    30                                           
+106847CAT.6 COSTURERA                    30                                           
+106848OFICIAL JORNALIZADO                                                             
+106849MEDIO OFICIAL JORNALIZADO                                                       
+106850AYUDANTE O PEON JORNALIZADO                                                     
+109966AUXILIAR SUPERIOR                  30                                           
+109967AUXILIAR PRINCIPAL TECNICO         30                                           
+111452CATEGORIA 22                                                                    
+111453CATEGORIA 23                                                                    
+111454CATEGORIA 24                                                                    
+112380CAT.16 CHOFER CASA SGO.                                                         
+112382CATEGORIA 12                                                                    
+112383CAT.14 CHOFER                                                                   
+112384CAT.12 CHOFER                                                                   
+112386CAT.11 CHOFER                                                                   
+112387CAT.11 MAYORDOMO                                                                
+112388CATEGORIA 11                                                                    
+112389CATEGORIA 10                       35                                           
+112390CAT.12 ENCERADOR                                                                
+112391CAT.10 ORDENANZA                                                                
+112393CAT.13 CHOFER                                                                   
+112394CAT.13 ORDENANZA                                                                
+112395CAT.12 MAYORDOMO                                                                
+112396CAT.12 ORDENANZA                                                                
+112397CAT.11 ORDENANZA                                                                
+112398CAT.10 CHOFER                                                                   
+112399CAT.13 MAYORDOMO                                                                
+112401CATEGORIA 14                                                                    
+112402CATEGORIA 15                                                                    
+112403CATEGORIA 13                                                                    
+112404CAT.18 CHOFER GOBERNADOR                                                        
+112405CAT.9-SERENO                                                                    
+112406CAT.14 MAYORDOMO                                                                
+112407CAT.15 CHOFER                                                                   
+112408CAT.14 ORDENANZA                                                                
+112409CATEGORIA 16                       35                                           
+112410CAT.15 MAYORDOMO                                                                
+112411CAT.18 INTENDENTE P.L. (NIVEL 13)                                               
+112412CAT.18 CHOFER SR. PRESIDENTE P.L.       (NIVEL 13)                              
+112413CAT.13 ORDENANZA P.L.                                                           
+112415CAT.16 CHOFER P.L.                                                              
+112416CAT. 17 CHOFER P.L. (NIVEL 14)                                                  
+112417CAT.16 ORDENANZA P.L.(NIVEL 15)                                                 
+112418CAT.16 CHOFER                                                                   
+112419CAT 15 ORDENANZA                                                                
+112420CAT 18 INTENDENTE HCC                                                           
+112421CAT.15 ORDENANZA HCC                                                            
+112424CATEGORIA 19                                                                    
+112425CAT 17 MAYORDOMO                                                                
+112426CAT 16 SUBMAYORDOMO                                                             
+112427CAT 16 MAYORDOMO                                                                
+112428CAT 16 ORDENANZA                                                                
+112429CAT 18                                                                          
+112430CAT 17                                                                          
+112431CAT.20 INTENDENTE CASA DE GOBIERNO                                              
+112434CAT.18 CHOFER                                                                   
+112435CAT.17 CHOFER                                                                   
+112436CAT. 17 ORDENANZA P.L.                                                          
+112437CAT.18 CHOFER P.L                                                               
+112438CAT.19 CHOFER SR. PTE.P.L.                                                      
+112439CAT.19 INTENDENTEP.L.                                                           
+112440CAT.22 INTENDENTE CASA DE GOBIERNO                                              
+112441CATEGORIA 12 CHOFER P.L.                                                        
+112442MAYORDOMO                                                                       
+112443CAT.19-CHOFER SR.VICE-GOBERNADOR DE LA PROVINCIA                                
+112450CATEGORIA 20                                                                    
+112451CATEGORIA 21                                                                    
+112452CATEGORIA 18 ORDENANZA                                                          
+112453CATEGORIA 20 CHOFER                                                             
+112454CATEGORIA 19 ORDENANZA                                                          
+112455CATEGORIA 17 ORDENANZA                                                          
+112458CATEGORIA 20 - ORDENANZA                                                        
+112459CATEGORIA 21 - ORDENANZA                                                        
+112760CATEGORIA 23                                                                    
+112770CATEGORIA 22                                                                    
+117850CATEGORIA 10                                                                    
+117861CATEGORIA 9                        30                                           
+117863CAT.9 CHOFER                       30                                           
+117864CAT.9 PELUQUERO                    30                                           
+117865CATEG. 8 CHOFER                    30                                           
+117867CAT.8 ORDENANZA                    30                                           
+117868CATEGORIA 8                        30                                           
+117869CAT.7 CHOFER                       30                                           
+117871CATEGORIA 7                        30                                           
+117872CAT.6 CHOFER                       30                                           
+117873CAT.6 SERENO                       30                                           
+117874CATEGORIA 6                        30                                           
+117875CAT.6 ORDENANZA                    30                                           
+117876CAT. 7 EGDO. CONMUTADOR            30                                           
+117878CATEGORIA 5                        30                                           
+117879CAT.4 MUCAMA                       30                                           
+117880CAT.4 ASCENSORISTA                 30                                           
+117881CAT.4 PEON                         30                                           
+117882CATEGORIA 4                        30                                           
+117886CATEGORIA 3                        30                                           
+117891CAT.5 MUCAMA                       30                                           
+11789207 MUCAMA M.B.S                                                                 
+117895CAT. 5 ORDENANZA                   30                                           
+117896CAT. 9 ORDENANZA                   30                                           
+117897CAT. 7 ORDENANZA                   30                                           
+117898CAT. 7 SERENO                      30                                           
+117899CAT.8-SERENO                       30                                           
+117900CAT. 8 EGDO. CONMUTADOR            30                                           
+117901CAT. 7 ASCENSORISTA                30                                           
+117902CAT. 4 ORDENANZA                   30                                           
+117903CAT.5 CHOFER                       30                                           
+117904CAT.3 MUCAMA                       30                                           
+117905CAT.3 ORDENANZA                    30                                           
+117907CAT.4 PORTERO                      30                                           
+117908CAT.4 CHOFER                                                                    
+117909CAT.10 ENCARGADO CONMUTADOR                                                     
+117910CATEGORIA 8 CELADOR M.B.S.         30                                           
+117911CAT 11 CELADOR M.B.S                                                            
+117912CAT 11 SERENO                                                                   
+117913CAT 12 ENCARGADO CONMUTADOR                                                     
+117914CAT.12 SERENO                                                                   
+119965INTENDENTE-P.J.                    30                                           
+119966AUXILIAR SUPERIOR                  30                                           
+119967AUXILIAR MAYOR                     30                                           
+119968AUXILIAR PRINCIPAL TECNICO         30                                           
+119969AUXILIAR TECNICO                   30                                           
+119970AUXILIAR DE PRIMERA                30                                           
+119971AUXILIAR DE SEGUNDA                30                                           
+119972AUXILIAR AYUDANTE                  30                                           
+119973AYUDANTE                           30                                           
+119974MAYORDOMO                          30                                           
+119975INTENDENTE                                                                      
+124551CU JEFE SEVICIO PROFESIONAL 35HS                                                
+124552CU JEFE SERVICIO PROFESIONAL 20HS                                               
+124553CU JEFE SECCION PROFESIONAL 35HS                                                
+124554CU JEFE SECCION PROFESIONAL 20HS                                                
+124555CU MEDICO 35HS                                                                  
+124556CU MEDICO DE GUARDIA C/EXT.HORARIO 35HS                                         
+124557CU MEDICO 24HS                                                                  
+124558CU MEDICO 20HS                                                                  
+124559CU ODONTOLOGO 20HS                                                              
+124560CU ODONTOLOGO 24HS                                                              
+124561CU ODONTOLOGO 35HS                                                              
+124562CU BIOQUIMICO 20HS                                                              
+124563CU BIOQUIMICO 35HS                                                              
+124564CU BIOQUIMICO 24HS                                                              
+124565CU FARMACEUTICO 20HS                                                            
+124566CU KINESIOLOGO 20HS                                                             
+124567CU SICOLOGO 20HS                                                                
+124568CU DIETISTA 20HS                                                                
+124569CU OBSTETRICA 24HS                                                              
+124570CU PSICOPEDAGOGO 20HS                                                           
+124571CU FONOAUDIOLOGO 20HS                                                           
+124572CU LABORTERAPISTA 20HS                                                          
+124573CU JEFE DEPARTAMENTO ASISTENCIAL 35HS                                           
+124574CU JEFE DIVISION ESTAB.ASISTENCIAL 35HS                                         
+124575CU JEFE SERVICIO SOCIAL 35HS                                                    
+124576CU ASISTENTE SOCIAL "A" 35HS                                                    
+124577CU ASISTENTE SOCIAL "B" 35HS                                                    
+124578CU ASISTENTE SOCIAL "C" 35HS                                                    
+124583CU EDUCADOR SANITARIO (1) 35HS                                                  
+124585MEDICO RESIDENTE DE 4TO ANIO                                                    
+124591JEFE DE SERVICIOS PROFESIONALES 20 HS                                           
+124592MEDICO 35 HS                       35                                           
+124593MEDICO 24 HS                       24                                           
+124595PROFESIONAL FUERA DE NIVEL            35                                        
+124596JEFE DE SECCION PROFESIONAL 20 HS  20                                           
+124598MEDICO 20 HS                       20                                           
+124599SUPERVISOR DE ENFERMERIA A         35                                           
+124600SUPERVISOR DE ENFERMERIA B         35                                           
+124601JEFE DE UNIDAD DE ENF. A           35                                           
+124603MEDICO DE GUARDIA C/EXT.HORARIA 35 HS                                           
+124605ODONTOLOGO 20 HS                   20                                           
+124606BIOQUIMICO 20 HS                   20                                           
+124607JEFE SERVICIO PROFESIONAL 35 HS    35                                           
+124608FARMACEUTICO 20 HS                 20                                           
+124609KINESIOLOGO 20 HS                  20                                           
+124610BIOQUIMICO 24 HS                   24                                           
+124615SICOLOGO 20 HS                     20                                           
+124616MEDICO ACCION RADIANTE 35 HS       35                                           
+124617ODONTOLOGO ACCION RADIANTE 35 HS   35                                           
+124618BIOQUIMICO ACCION RADIANTE 35 HS   35                                           
+124626JEFE DE SECCION PROFESIONAL 35 HS  35                                           
+124627DIETISTA 20 HS                     20                                           
+124628OBSTETRICA 24 HS                   24                                           
+124629ODONTOLOGO 24 HS                   24                                           
+124630SICOPEDAGOGO 20 HS                 20                                           
+124631FONOAUDIOLOGO 20 HS                20                                           
+124633LABORTERAPISTA 20 HS               20                                           
+124646SUPERVISOR AUXILIAR TECNICO A      30                                           
+124647AUXILIAR TEC.DE LA MEDICINA A      30                                           
+124649AUXILIAR SERVICIOS TECNICOS        30                                           
+124650AYUDANTE SERVICIOS TECNICOS        30                                           
+124651DIRECTOR DE ESTABL.ASISTENC.COMPLEJ. IV                                         
+124652DIRECTOR DE ESTABL.ASISTENC.COMPLEJ. III                                        
+124653DIRECTOR DE ESTABL.ASISTENC.COMPLEJ. II                                         
+124654DIRECTOR DE ESTABL.ASISTENC.COMPLEJ. I                                          
+124655DIRECTOR ASISTENTE ESTABL.ASIST.COMPL.IV                                        
+124656DIRECTOR ASISTENTE ESTAB.ASIST.COMPL.III                                        
+124657ENFERMERO A-3                      30                                           
+124658ENFERMERO A-2                      30                                           
+124659ENFERMERO A-1                      30                                           
+124660AUXILIAR DE ENFERMERIA B6          30                                           
+124661AUXILIAR DE ENFERMERIA B5          30                                           
+124662AUXILIAR DE ENFERMERIA B4          30                                           
+124663AUXILIAR DE ENFERMERIA B3          30                                           
+124664AUXILIAR DE ENFERMERIA B2          30                                           
+124665AUXILIAR DE ENFERMERIA B1          30                                           
+124666JEFE SERVICIO SOCIAL 35 HS         35                                           
+124667ASISTENTE SOCIAL "A" 35 HS         35                                           
+124668ASISTENTE SOCIAL "B" 35 HS         35                                           
+124669ASISTENTE SOCIAL "C" 35 HS         35                                           
+124670AUXILIAR SERVICIO SOCIAL           35                                           
+124671JEFE DEPART.ASISTENCIAL 35 HS      35                                           
+124672JEFE DIVISION ESTAB.ASIST.35 HS    35                                           
+124673EDUCADOR SANITARIO 35 HS           35                                           
+124674JEFE SUPERV DE ENFERMERIA          35                                           
+124675AGENTE SANITARIO                   30                                           
+124676ODONTOLOGO 35 HS                                                                
+124677BIOQUIMICO 35 HORAS                                                             
+124678ODONTOLOGO 35 HS.                                                               
+124683EDUCADOR SANITARIO                                                              
+124686MEDICO RESIDENTE DE 1ER ANIO                                                    
+124687MEDICO RESIDENTE DE 2DO ANIO                                                    
+124688MEDICO RESIDENTE DE 3ER ANIO                                                    
+124689JEFE DE RESIDENTES                                                              
+130001CONTADOR FISCAL GRAL SALA I CAT 1                                               
+130002CONTADOR FISCAL GRAL SALA II CAT 1                                              
+130003SECRETARIO GENERAL CATEGORIA 1                                                  
+130004JEFE DE AUDITORES CAT 2                                                         
+130005JEFE DE RENDICION DE CUENTAS CAT 2                                              
+130006JEFE DE CUENTAS FISCALES CAT 2                                                  
+130007RELATOR JURIDICO DEL TRIBUNAL DE CUENTAS                                        
+131010AUDITOR SENIOR CAT 3                                                            
+131011ABOGADO FISCAL A CAT 3                                                          
+131012ASESOR DE OBRAS PUBLICAS CAT 4                                                  
+131013AUDITOR SEMI-SENIOR CAT 4                                                       
+131014ABOGADO FISCAL 'B' CAT. 4                                                       
+131015ANALISTA CAT 4                                                                  
+131016AUDITOR JUNIOR CAT 5                                                            
+131017ABOGADO FISCAL C CAT 5                                                          
+131018JEFE DE DESPACHO CAT 5                                                          
+131019PROGRAMADOR CAT 5                                                               
+131020HABILITADO CAT 5                                                                
+131021OPERADOR CAT 6                                                                  
+131022JEFE DE SECCION CAT 7                                                           
+131023REVISORES A CAT 8                                                               
+131024AUXILIAR SUMARIO A CAT 8                                                        
+131025AUXILIAR ADMINISTRATIVO A CAT 8                                                 
+131026REVISORES B CAT 9                                                               
+131027AUXILIAR ADMINISTRATIVO B CAT 9                                                 
+131028REVISORES C CAT 10                                                              
+131029AUXILIAR ADMINISTRATIVO C CAT 10                                                
+132032MAYORDOMO CAT 11                                                                
+132033ORDENANZA CAT 12                                                                
+132034CHOFER CAT 12                                                                   
+158930CLASE XII                                                                       
+158931CLASE XI                                                                        
+158932CLASE X                                                                         
+158933CLASE IX                                                                        
+158934CLASE VIII                                                                      
+158935CLASE VII                                                                       
+158936CLASE VI                                                                        
+158937CLASE V                                                                         
+158938CLASE IV                                                                        
+158940CLASE XV                                                                        
+158941CLASE I                                                                         
+158942CLASE XIV                                                                       
+158943CLASE XIII                                                                      
+158944OFICIAL                                                                         
+158945MEDIO OFICIAL                                                                   
+158946PEON                                                                            
+168930CLASE X                                                                         
+168931CLASE VII                                                                       
+168932CLASE VI                                                                        
+168933CLASE V                                                                         
+168934CLASE IV                                                                        
+168935CLASE IX                                                                        
+168936CLASE VIII                                                                      
+168937CLASE XII                                                                       
+168938CLASE XI                                                                        
+168939CLASE XIII                                                                      
+181002SECRET.TECNICO FISCALIA DE ESTADO                                               
+181003ABOG.ASESOR FISCALIA DE ESTADO-4-                                               
+181004ABOG.ASESOR FISCALIA DE ESTADO-5-                                               
+181005ASESOR CONTABLE FISCALIA DE ESTADO                                              
+190001CLASE 16                                                                        
+190002CLASE 15                                                                        
+190003CLASE 14                                                                        
+190004CLASE 13                                                                        
+190005CLASE 12                                                                        
+190006CLASE 11                                                                        
+190007CLASE 10                                                                        
+190008CLASE 9                                                                         
+190009CLASE 8                                                                         
+190010CLASE 7                                                                         
+190011CLASE 6                                                                         
+190012CLASE 5                                                                         
+190013CLASE 4                                                                         
+200003PILOTO- NIVEL A                                                                 
+200004PILOTO-NIVEL B                                                                  
+200005PILOTO -NIVEL C                                                                 
+211001CATEGORIA 24 GERENTE                                                            
+211002CATEGORIA 24                                                                    
+211003CATEGORIA 23                                                                    
+211004CATEGORIA 22                                                                    
+211005CATEGORIA 21 JEFE DPTO A                                                        
+211006CATEGORIA 21                                                                    
+211007CATEGORIA 20                                                                    
+211008CATEGORIA 19                                                                    
+211009CATEGORIA 18                                                                    
+211010CATEGORIA 17                                                                    
+211011CATEGORIA 16                                                                    
+211012CATEGORIA 15                                                                    
+211013CATEGORIA 14                                                                    
+211014CATEGORIA 13                                                                    
+211015CATEGORIA 12                                                                    
+211016CATEGORIA 11                                                                    
+213019CATEGORIA 24 SUBGERENTE GENERAL                                                 
+213020CATEGORIA 23 SUBGERENTE                                                         
+213021CATEGORIA 23                                                                    
+213022CATEGORIA 23 AUDITOR                                                            
+213023CATEGORIA 22                                                                    
+213024CATEGORIA 21 PROF.UNIV.A                                                        
+213025CATEGORIA 21 MEDICO                                                             
+213026CATEGORIA 21 ODONT.ASESOR                                                       
+213027CATEGORIA 21 FARMACEUTICO                                                       
+213028CATEGORIA 18 BIOQUIMICO                                                         
+213029CATEGORIA 18 MEDICO                                                             
+213030CATEGORIA 18 ODONT.ASESOR                                                       
+213031CATEGORIA 16 ABOG.ASESOR                                                        
+213032CATEGORIA 24                                                                    
+213033CATEGORIA 21                                                                    
+213034CATEGORIA 20                                                                    
+213035CATEGORIA 19                                                                    
+215040CATEGORIA 20                                                                    
+215041CAYTEGORIA 18                                                                   
+215042CATEGORIA 17                                                                    
+215043CATEGORIA 16                                                                    
+215044CATEGORIA 12                                                                    
+215045CATEGORIA 15                                                                    
+215046CATEGORIA 14                                                                    
+215047CATEGORIA 13                                                                    
+217051CATEGORIA 15 ORDENANZA                                                          
+217052CATEGORIA 14 CHOFER                                                             
+217053CATEGORIA 14 ORDENANZA                                                          
+217054CATEGORIA 13 CHOFER                                                             
+217055CATEGORIA 13 ORDENANZA                                                          
+217056CATEGORIA 13 MAYORDOMO                                                          
+217057CATEGORIA 12                                                                    
+217058CATEGORIA 12 CHOFER                                                             
+217059CATEGORIA 12 ORDENANZA                                                          
+217060CATEGORIA 11 ORDENANZA                                                          
+217061CATEGORIA 17                                                                    
+217062CATEGORIA 16                                                                    
+217063CATEGORIA 15 CHOFER                                                             
+219069CATEGORIA 17                                                                    
+219070CATEGORIA 16                                                                    
+219071CATEGORIA 15                                                                    
+219072CATEGORIA 13                                                                    
+219073CATEGORIA 12                                                                    
+219074CATEGORIA 11                                                                    
+219075CATEGORIA 14                                                                    
+230003ASESOR MEDICO LEGAL Y DEL TRABAJO                                               
+230004JEFE DPTO. ADMINISTRATIVO CONTABLE                                              
+230005ASESOR JURIDICO                                                                 
+230006JEFE DE PREVENCION,HIGIENE Y SEGURIDAD                                          
+330010COMISIONADO DE PRIMERA                                                          
+330020COMISIONADO DE SEGUNDA                                                          
+330021COMISIONADO MUNICIPAL CATEGORIA B                                               
+330030CAT.22 SECRETARIO-TESORERO DE PRIMERA                                           
+330040CAT.21 SECRETARIO-TESORERO DE SEGUNDA                                           
+330050CAT.21 CONTADOR-TESORERO DE PRIMERA                                             
+330060CAT.20 CONTADOR-TESORERO DE SEGUNDA                                             
+330100CAT.20 AUXILIAR ADMINISTRATIVO                                                  
+330105CAT.12 AUXILIAR ADMINISTRATIVO DE PRIMERA                                       
+330110CAT.11 AUXILIAR ADMINISTRATIVO DE SEGUNDA                                       
+330115CAT.10 AUXILIAR ADMINISTRATIVO DE SEGUNDA                                       
+330120CAT.10 PEON GENERAL DE PRIMERA                                                  
+330125CAT.9 PEON GENERAL DE SEGUNDA                                                   
+330130CAT.7 AUXILIAR ADMINISTRATIVO                                                   
+330135CAT.7 ENCARGADO RECEPTORIA DE RENTAS                                            
+330140CAT.7 ENCARGADO REGISTRO CIVIL                                                  
+330145CAT.7 PEON GENERAL                                                              
+330146CATEGORIA 7                                                                     
+330150CAT.3 PEON                                                                      
+330151CAT.3 AUXILIAR ADMINISTRATIVO                                                   
+330152CAT.3 S.ASIST.ENFERMERIA                                                        
+990001OFICIAL ESPECIALIZADO                                                           
+990002OFICIAL                                                                         
+990003MEDIO OFICIAL                                                                   
+990004AYUDANTE                                                                        
+990005SEGURIDAD                                                                       

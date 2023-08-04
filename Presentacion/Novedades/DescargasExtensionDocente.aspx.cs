@@ -27,8 +27,9 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                 this.Master.TituloDelFormulario = "Descarga de Archivos Extension Docente";
                 if (this.Session["_Autenticado"] == null) Response.Redirect("PaginasBasicas/Login.aspx", true);
 
-                archivosPorPerfil.Add("1", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden" });
-                archivosPorPerfil.Add("20", new string[] { "Banco", "Orden" });
+                archivosPorPerfil.Add("1", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden", "Rectificativa" }); // administrador
+                archivosPorPerfil.Add("4", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden", "Rectificativa" }); // director
+                archivosPorPerfil.Add("20", new string[] { "Banco", "Orden", "Rectificativa" }); // banco
                 archivosPorPerfil.Add("21", new string[] { "extdoc_cge" });
                 archivosPorPerfil.Add("22", new string[] { "Ministerio", "Orden" });
 
