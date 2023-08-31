@@ -295,6 +295,7 @@ select distinct NroCOntrol from 	#t1
 
 select distinct numeroControl from 	#agentes_filtrados
 
+
 --------------- COPIA EN #agentes_filtrados  --------------- 
 
 INSERT INTO  
@@ -1167,6 +1168,7 @@ SELECT
 	'746', 
 	ISNULL(t3.monto_destino_norem_descontado, 0.00)
 FROM  
+	--#agentes_filtrados t1
 	#agentes_filtrados t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1

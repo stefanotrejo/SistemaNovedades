@@ -352,10 +352,13 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
     {
         int num;
         NuevoAge1 nuevoAge1 = new NuevoAge1();
+        this.ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+
         this.lblFechaHoraInicio.Visible = true;
         this.lblFechaHoraInicio.Text = DateTime.Now.ToString();
+
         StreamReader streamReader = new StreamReader("c:\\test.txt", Encoding.Default, true);
-        this.ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+
         int num1 = 5;
         int num2 = 1;
         int num3 = 2;
@@ -375,18 +378,21 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             }
             str = string.Concat(str1, str2);
         }
+
         string str3 = str.Substring(121 + num3 + num1, 2);
         string str4 = str.Substring(123 + num3 + num1, 2);
         string str5 = string.Concat("01/", str3, "/", str4);
         DateTime dateTime = Convert.ToDateTime(str5);
+
         this.dt = this.ocnMenu.LiquidacionObtenerUno(string.Concat(str3, "/", str4));
         if (this.dt.Rows.Count != 0 && this.validarPeriodo.Checked)
         {
             this.Label1.Visible = true;
             this.Label1.ForeColor = Color.Red;
-            this.Label1.Text = "El periodo de liqudiacion ya fue importado !!";
+            this.Label1.Text = "El periodo de liquidacion ya fue importado !!";
             return;
         }
+
         streamReader.Close();
         StreamReader streamReader1 = new StreamReader("c:\\test.txt", Encoding.Default, true);
         bool flag = false;
@@ -816,16 +822,6 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         Label1.Text = "Importacion realizada correctamente";
         lblFechaHoraFin.Visible = true;
         lblFechaHoraFin.Text = DateTime.Now.ToString();
-    }
-
-    protected void btnExportarAExcel_Click(object sender, EventArgs e)
-    {
-        /* 
-         * dt = new DataTable();
-         dt = ocnParametro.ObtenerTodoBuscarxNombre(Nombre.Text.Trim());
-         string ArchivoNombre = "ParametroConsulta_" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-         FuncionesUtiles.ExportarAExcel(dt, ArchivoNombre, this);
-         */
     }
 
     protected void btnExportarDbf_Click(object sender, EventArgs e)
@@ -1273,13 +1269,13 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
     protected void btn_generar_arch_ext_doc_Click(object sender, EventArgs e)
     {
-        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivosEducacion = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();        
+        LiquidacionSueldos.Negocio.ArchivoExtDocEducacion archivosEducacion = new LiquidacionSueldos.Negocio.ArchivoExtDocEducacion();
         int liqID = Convert.ToInt32(txt_liqID.Text);
         archivosEducacion.Generar(liqID);
     }
 
     protected void btn_importar_pagos_eventuales_Click(object sender, EventArgs e)
-    {     
+    {
         string directoryPath = @"c:\temp\pagos_eventuales";
         //string directoryPath = @"C: \Users\Stefano\Desktop\SistemaNovedades\SistemaNovedades\Pagos Eventuales realizados\Enviado por Mail Maria";
 
@@ -1287,9 +1283,9 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         string[] files = Directory.GetFiles(directoryPath, "*.txt", SearchOption.AllDirectories);
         foreach (string file in files)
         {
-            String linea;                        
+            String linea;
             System.IO.StreamReader archivo = new System.IO.StreamReader(file);
-            
+
             while (archivo.EndOfStream == false)
             {
                 linea = archivo.ReadLine();
@@ -1314,6 +1310,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             }
         }
     }
+
 }
 
 

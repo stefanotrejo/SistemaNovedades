@@ -13,7 +13,6 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
     LiquidacionSueldos.Negocio.Parametro ocnParametro = new LiquidacionSueldos.Negocio.Parametro();
     DataTable dt = new DataTable();
 
-
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -32,6 +31,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                 archivosPorPerfil.Add("20", new string[] { "Banco", "Orden", "Rectificativa" }); // banco
                 archivosPorPerfil.Add("21", new string[] { "extdoc_cge" });
                 archivosPorPerfil.Add("22", new string[] { "Ministerio", "Orden" });
+                archivosPorPerfil.Add("99", new string[] { "Ganancias" });
 
                 liqId = Int32.Parse(Request.QueryString["liqID"].ToString());
                 reparticion = Convert.ToInt32(Session["_esAdministrador"]);
@@ -42,7 +42,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                 string directorio = "~/Novedades/ArchivosExtensionDocente/" + liqId;
 
                 if (Directory.Exists(Server.MapPath(directorio)))
-                {                    
+                {
                     DataTable dt = new DataTable();
                     dt.Columns.Add("Archivo");
                     dt.Columns.Add("Tamaño");

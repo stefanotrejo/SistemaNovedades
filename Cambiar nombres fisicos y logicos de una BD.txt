@@ -1,0 +1,56 @@
+Paso1
+Sacar un respaldo de la BD. (No realizar cambios en la BD de producción sin hacer las pruebas correspondientes)
+
+Paso2
+Ver los nombres de los archivos físicos y su ubicación.
+
+USE AdventureWorks2019_Modificado
+GO
+SELECT file_id, name as [logical_file_name], physical_name
+FROM sys.database_files
+--También se puede utilizar lo siguiente:
+sp_helpdb AdventureWorks2019_Modificado
+Ver archivos ubicación de Archivos MDF y LDF SQL Server
+Imagen: Resultados de la consulta, ubicación de MDF y LDF
+
+Paso3
+Cambiar el estado de la base de datos en modo de usuario único y cerrar todas las conexiones.
+
+ALTER DATABASE AdventureWorks2019_Modificado
+SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+GO
+Paso4
+Cambiar los nombres lógicos
+
+ALTER DATABASE AdventureWorks2019_Modificado MODIFY FILE (NAME = AdventureWorks2017, NEWNAME = AdventureWorks2019_Modificado);
+ALTER DATABASE AdventureWorks2019_Modificado MODIFY FILE (NAME = AdventureWorks2017_log, NEWNAME = AdventureWorks2019_Modificado_log);
+Paso5
+Cambiar los nombres físicos y la ruta de ubicación de los archivos
+
+ALTER DATABASE AdventureWorks2019_Modificado MODIFY FILE (NAME = 'AdventureWorks2019_Modificado', FILENAME = 'F:\Program Files\Microsoft SQL Server\MSSQL15.MSSQL2019\MSSQL\DATA\AdventureWorks2019_Modificado.mdf');
+ALTER DATABASE AdventureWorks2019_Modificado MODIFY FILE (NAME = 'AdventureWorks2019_Modificado_log', FILENAME = 'G:\Program Files\Microsoft SQL Server\MSSQL15.MSSQL2019\MSSQL\Data\AdventureWorks2019_Modificado_log.ldf');
+Paso6
+En el explorador de Windows, ir a la ubicación donde se encuentran los archivos MDF y LDF y cambiar el nombre exactamente como se especificó enel punto anterior.
+
+Cambiar el nombre de archivos MDF y LDF SQL Server 
+Imagen: Cambiar nombre de LDF y MDF
+
+Paso 7
+Poner en línea la BD
+
+ALTER DATABASE AdventureWorks2019_Modificado SET OnLINE
+GO
+Paso8
+Cambiar la BD a multiuser
+
+ALTER DATABASE AdventureWorks2019_Modificado SET MULTI_USER;
+GO
+Verificar
+
+USE AdventureWorks2019_Modificado 
+SELECT file_id, name as [logical_file_name], physical_name
+FROM sys.database_files
+Paso9.
+
+
+https://jsequeiros.com/cambiar-nombre-de-archivos-fisicos-de-una-de-base-de-datos-sql-server
