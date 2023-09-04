@@ -9,7 +9,7 @@ public partial class PerfilRegistracion : System.Web.UI.Page
 {
     LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();
     DataTable dt, dt2 = new DataTable();
-    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();    
+    LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     LiquidacionSueldos.Negocio.LiquidacionNovedades objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionNovedades();
     LiquidacionNovedades objetoLiquidacionAbierta = new LiquidacionNovedades();
 
@@ -229,59 +229,68 @@ public partial class PerfilRegistracion : System.Web.UI.Page
 
     protected void btnAceptar_Click(object sender, EventArgs e)
     {
+        LiquidacionSueldos.Negocio.LiquidacionNovedades objetoLiquidacion = new LiquidacionSueldos.Negocio.LiquidacionNovedades();
+
+        if (base.Request.QueryString["Id"] == null)
+            return;
+
         try
         {
-            if (base.Request.QueryString["Id"] != null)
+            generarDescripcion();
+            objetoLiquidacion.liqId = Convert.ToInt32(base.Request.QueryString["Id"]);
+            objetoLiquidacion.liqMes = this.convertirMesAnumeroMenosUno(this.comboMesLiquidacion.SelectedValue);
+            if (this.txtAnio.Text.Length != 4)
             {
-                this.generarDescripcion();
-                this.objetoLiquidacion.liqId = Convert.ToInt32(base.Request.QueryString["Id"]);
-                this.objetoLiquidacion.liqMes = this.convertirMesAnumeroMenosUno(this.comboMesLiquidacion.SelectedValue);
-                if (this.txtAnio.Text.Length != 4)
-                {
-                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text;
-                }
-                else
-                {
-                    this.objetoLiquidacion.liqAnio = this.txtAnio.Text.Substring(2, 2);
-                }
-                this.objetoLiquidacion.liqEtapa = Convert.ToInt32(this.comboEtapa.SelectedValue);
-                this.objetoLiquidacion.liqDescripcion = this.txtDescripcion.Text;
-                if (this.txtFechaInicio.Text == "")
-                {
-                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
-                }
-                else
-                {
-                    this.objetoLiquidacion.liqFechaInicio = Convert.ToDateTime(this.txtFechaInicio.Text);
-                }
-                if (this.txtFechaCierre.Text == "")
-                {
-                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
-                }
-                else
-                {
-                    this.objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.txtFechaCierre.Text));
-                }
-                this.objetoLiquidacion.liqEstado = this.txtEstado.Text;
-                this.objetoLiquidacion.liqActivo = 1;
-                if (this.objetoLiquidacion.liqId != 0)
-                {
-                    this.objetoLiquidacion.Actualizar(this.objetoLiquidacion.liqId, this.objetoLiquidacion.liqDescripcion, this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa, this.objetoLiquidacion.liqEstado, this.objetoLiquidacion.liqFechaInicio, this.objetoLiquidacion.liqFechaCierre, this.objetoLiquidacion.liqActivo);
-                }
-                else if (this.objetoLiquidacion.ValidarRepetido(this.objetoLiquidacion.liqMes, this.objetoLiquidacion.liqAnio, this.objetoLiquidacion.liqEtapa) != 0)
-                {
-                    this.lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
-                }
-                else
-                {
-                    int num = this.objetoLiquidacion.Insertar();
-                    if (this.objetoLiquidacion.liqEtapa > 1)
-                    {
-                        this.objetoLiquidacion.AbrirEtapa(num);
-                    }
-                    this.lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
-                }
+                objetoLiquidacion.liqAnio = this.txtAnio.Text;
             }
+            else
+            {
+                objetoLiquidacion.liqAnio = this.txtAnio.Text.Substring(2, 2);
+            }
+
+            objetoLiquidacion.liqEtapa = Convert.ToInt32(this.comboEtapa.SelectedValue);
+            objetoLiquidacion.liqDescripcion = this.txtDescripcion.Text;
+
+            if (this.txtFechaInicio.Text == "")
+            {
+                objetoLiquidacion.liqFechaInicio = Convert.ToDateTime("01/01/2001 00:00:00");
+            }
+            else
+            {
+                objetoLiquidacion.liqFechaInicio = Convert.ToDateTime(this.txtFechaInicio.Text);
+            }
+
+            if (this.txtFechaCierre.Text == "")
+            {
+                objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime("01/01/2001 00:00:00"));
+            }
+            else
+            {
+                objetoLiquidacion.liqFechaCierre = new DateTime?(Convert.ToDateTime(this.txtFechaCierre.Text));
+            }
+
+            objetoLiquidacion.liqEstado = this.txtEstado.Text;
+            objetoLiquidacion.liqActivo = 1;
+
+            if (objetoLiquidacion.liqId != 0)
+            {
+                objetoLiquidacion.Actualizar(objetoLiquidacion.liqId, objetoLiquidacion.liqDescripcion, objetoLiquidacion.liqMes, objetoLiquidacion.liqAnio, objetoLiquidacion.liqEtapa, objetoLiquidacion.liqEstado, objetoLiquidacion.liqFechaInicio, objetoLiquidacion.liqFechaCierre, objetoLiquidacion.liqActivo);
+                return;
+            }
+
+            if (objetoLiquidacion.ValidarRepetido(objetoLiquidacion.liqMes, objetoLiquidacion.liqAnio, objetoLiquidacion.liqEtapa) != 0)
+            {
+                this.lblMensajeError.Text = "<div class=\"alert alert-danger alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>                        \r\n                        La etapa seleccionada ya existe en esta Liquidacion <br></div>";
+                return;
+            }
+
+            int id = objetoLiquidacion.Insertar();
+            if (objetoLiquidacion.liqEtapa > 1)
+            {
+                objetoLiquidacion.AbrirEtapa(id);
+            }
+
+            this.lblMensajeError.Text = "<div class=\"alert alert-success alert-dismissable\">\r\n                        <button aria-hidden=\"true\" data-dismiss=\"alert\" class=\"close\" type=\"button\">x</button>\r\n                        <a class=\"alert-link\" href=\"#\">Confirmacion</a><br/>\r\n                        Los cambios se guardaron correctamente<br></div>";
         }
         catch (Exception exception1)
         {

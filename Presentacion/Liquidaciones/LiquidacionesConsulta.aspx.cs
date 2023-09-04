@@ -595,41 +595,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         }
     }
 
-    //    protected void btnListar_Click(object sender, EventArgs e)
-    //    {
-    //        try
-    //        {
-    //            if (Grilla.Rows.Count != 0)
-    //            {
-    //                String NomRep = "InformeAgentesGenerico.rpt";
-    //                DateTime periodoDesde = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);                
-    //                String nombre = "";
-    //                String nrocontrol = "";
-    //                String dni = "";
-
-    //                int tipo = 0;                
-    //            }
-    //            else
-    //            {
-    //                lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-    //    <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-    //    <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-    //    No hay datos para listar<br>" + "</div>";
-
-    //            }
-    //        }
-    //        catch (Exception oError)
-    //        {
-    //            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-    //        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-    //        <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-    //        Se ha producido el siguiente error:<br/>
-    //        MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-    //"</div>";
-    //        }
-
-    //    }
-
     private void GrillaCargar(int PageIndex)
     {
         try
