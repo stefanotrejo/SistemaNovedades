@@ -21,7 +21,7 @@
                                 </label>
                                 <div class="col-md-3">
                                     <asp:TextBox ID="txtCodigoLugarPago" class="form-control" placeholder="Ingrese codigo de lugar de pago"
-                                        required runat="server" type="number" MaxLength="5"></asp:TextBox>                                    
+                                        required runat="server" type="number" MaxLength="5"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -56,6 +56,24 @@
                                     <asp:DropDownList ID="MenuRaizListaMesDesde" runat="server" class="form-control" data-placeholder="[Nuevo...]"
                                         Enabled="true" AutoPostBack="True" Width="80px">
                                     </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%--<label class="control-label col-md-2">
+                                    Clase desde:
+                                </label>--%>
+
+                                <asp:Label ID="lblClaseDesde"  CssClass="control-label col-md-2" runat="server" Text="Clase desde:"></asp:Label>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtClaseDesde" class="form-control" placeholder="Ingrese clase desde ej:25"
+                                         runat="server" type="number" MaxLength="2"></asp:TextBox>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                              <asp:Label ID="lblClaseHasta"  CssClass="control-label col-md-2" runat="server" Text="Clase hasta:"></asp:Label>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtClaseHasta" class="form-control" placeholder="Ingrese clase hasta ej:64"
+                                        runat="server" type="number" MaxLength="2"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">

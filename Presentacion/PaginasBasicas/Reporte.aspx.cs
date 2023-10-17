@@ -34,6 +34,29 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
 
         cr.Load(NomRep);
 
+        try
+        {
+            String claseDesde = Request.QueryString["clase_desde"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
+            Par.Value = claseDesde;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@clase_desde"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //   throw oError;
+        }
+
+        try
+        {
+            String claseHasta = Request.QueryString["clase_hasta"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
+            Par.Value = claseHasta;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario            
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@clase_hasta"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //   throw oError;
+        }
 
         try
         {
@@ -313,10 +336,10 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         crConnectionInfo.Password = Password[1];
 
         // Para el Servidor -- Prueba
-        /*crConnectionInfo.ServerName = "10.10.10.110\\MSSQLSERVER,1433";
-        crConnectionInfo.DatabaseName = "LiquidacionSueldos";
-        crConnectionInfo.UserID = "sa";
-        crConnectionInfo.Password = "Sueldos2018";*/
+        //crConnectionInfo.ServerName = "10.10.10.110\\MSSQLSERVER,1433";
+        //crConnectionInfo.DatabaseName = "LiquidacionSueldos";
+        //crConnectionInfo.UserID = "sa";
+        //crConnectionInfo.Password = "Sueldos2018";
 
 
         //crConnectionInfo.ServerName = "172.16.210.26\\MSSQLSERVER,1433";

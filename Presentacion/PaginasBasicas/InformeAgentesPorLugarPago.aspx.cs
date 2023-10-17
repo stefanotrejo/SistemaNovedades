@@ -12,6 +12,9 @@ public static class Globals
     public static String FILE_NAME = "Output.txt"; // Modifiable
     public static readonly String CODE_PREFIX = "US-"; // Unmodifiable
     public static readonly String TituloDelFormulario = "Informe de Agentes por Lugar de Pago"; // Unmodifiable    
+    public const Int32 perfilPapse = 0;
+    public const string papseReportName = "InformePapseV2.rpt";
+    public const string defaultReportName = "InformeEmpleadosporLugardePagoporMesAnioLiq.rpt";
 }
 public partial class UsuarioRegistracion : System.Web.UI.Page
 {
@@ -191,30 +194,11 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     {
         try
         {
-            #region PERFILES
-            int perfil = Convert.ToInt32(Session["_esAdministrador"]);
-            switch (perfil)
-            {
-                case 1: //ADMINISTRADOR
-                    break;
 
-                case 2: //D.G. PERSONAL - GRUPO 7                       
-                    //btnListar.Visible = false;
-                    break;
-
-                case 3: //UERT            
-                    break;
-
-                case 4: //DIRECTOR                   
-                    break;
-
-                case 5: //PERSONAL EXTENDIDO
-                        //CASO 2 MAS BOTON CONCEPTOS
-                        //btnListar.Visible = false;
-                    break;
-            }
-            #endregion
+            int profileCode = Convert.ToInt32(Session["_esAdministrador"]);
+            habilitarFiltrosDeClase(isPapseProfile(profileCode));
             String Sesion = Session["Resultado"].ToString();
+
             if (Sesion == "")
             {
                 if (!Page.IsPostBack)
@@ -255,6 +239,14 @@ Se ha producido el siguiente error:<br/>
 MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
 "</div>";
         }
+    }
+
+    protected void habilitarFiltrosDeClase(bool condition)
+    {
+        txtClaseDesde.Visible = condition;
+        txtClaseHasta.Visible = condition;
+        lblClaseDesde.Visible = condition;
+        lblClaseHasta.Visible = condition;
     }
 
     protected void btnConsultarLugarPago_Click(object sender, EventArgs e)
@@ -311,24 +303,42 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         try
         {
             lblMensajeError.Text = "";
-
-            if (validarLugarPago(txtCodigoLugarPago.Text))
-            {
-                DateTime fecha1 = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
-                Session["Periodo1"] = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
-
-                String NomRep = "InformeEmpleadosporLugardePagoporMesAnioLiq.rpt";
-                String MesAnioLiq = MenuRaizListaMesDesde.SelectedValue.Substring(3, 2);
-                MesAnioLiq = MesAnioLiq + '/' + MenuRaizListaMesDesde.SelectedValue.Substring(8, 2);
-                String MesAnioLiq2 = MenuRaizListaMesDesde.Text + '/' + MenuRaizListaAnioDesde.Text;
-                FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text
-                                            + "&MesAnioLiq=" + MesAnioLiq
-                                            + "&NomRep=" + NomRep);
-            }
-            else
+            if (!validarLugarPago(txtCodigoLugarPago.Text))
             {
                 btnGenerarListado.Enabled = false;
+                return;
             }
+
+            String NomRep = Globals.defaultReportName;
+            int profileCode = Convert.ToInt32(Session["_esAdministrador"]);
+            if (isPapseProfile(profileCode))
+            {
+                if (!areValidClasses())
+                {
+                    lblMensajeError.Text =  FuncionesUtiles.MensajeError("Verifique los campos clase_desde y clase_hasta");
+                    return;
+                }
+                NomRep = Globals.papseReportName;
+            }
+
+            Session["Periodo1"] = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
+            String MesAnioLiq = MenuRaizListaMesDesde.SelectedValue.Substring(3, 2);
+            MesAnioLiq = MesAnioLiq + '/' + MenuRaizListaMesDesde.SelectedValue.Substring(8, 2);
+
+            if (isPapseProfile(profileCode))
+            {
+                FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text                              
+                               + "&clase_desde=" + txtClaseDesde.Text
+                               + "&clase_hasta=" + txtClaseHasta.Text
+                               + "&MesAnioLiq=" + MesAnioLiq
+                               + "&NomRep=" + NomRep);
+                return;
+            }
+
+            FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text
+                                    + "&MesAnioLiq=" + MesAnioLiq
+                                    + "&NomRep=" + NomRep);
+            return;
         }
         catch (Exception oError)
         {
@@ -367,6 +377,19 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         //MenuRaizListaMesDesde.DataTextField = "MesLiq";
         //MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
         //MenuRaizListaMesDesde.DataBind();
+    }
+
+    protected bool areValidClasses()
+    {
+        return ((txtClaseDesde.Text.Length == 2) && (txtClaseHasta.Text.Length == 2)) 
+            && int.Parse(txtClaseDesde.Text) <= int.Parse(txtClaseHasta.Text)
+            && int.Parse(txtClaseDesde.Text) > 0
+            && int.Parse(txtClaseHasta.Text) > 0;
+    }
+
+    protected bool isPapseProfile(int profileCode)
+    {
+        return profileCode == Globals.perfilPapse;
     }
 
 }

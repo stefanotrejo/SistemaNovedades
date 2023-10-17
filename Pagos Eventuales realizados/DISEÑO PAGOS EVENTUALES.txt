@@ -1,0 +1,56 @@
+1 NOMENCLADOR DE PAGOS EVENTUALES (id de nomenclador en tabla detalle) - PADRE
+- id de tabla
+- descripcion (ej: gratificacion 2023)
+- monto total 	
+- cantidad de cuotas
+- fecha anuncio
+- modalidad de liquidacion (con unico mes de referencia o varios)
+- 
+
+
+1 NOMENCLADOR DE PAGOS EVENTUALES (id de nomenclador en tabla detalle)
+- 	id de tabla
+- 	descripcion
+- 	monto
+- 	mes pagado
+-	anio pagado
+- 	mes referencia
+-	anio referencia
+- 	fecha de pago original
+
+
+1 TABLA LIQUIDACION PAGOS EVENTUALES -
+	- Fecha apertura
+	- fecha cierre
+	- fecha envio
+	- Estado (abierta, cerrada) (1 solo liq abierta a la vez)
+
+* Cada liquidacion puede tener mas de 1 concepto abonado (ej: 
+bono aguinaldo 2022 1ra cuota y 2da cuota / gratificacion 2023, etc)
+
+LIQ 50 - PAGADA EL 25 DE SEPTIEMBRE 
+(BONOS Y GRATIFICACIONES)
+
+1 TABLA DETALLE PAGOS EVENTUALES
+	- Id de tabla
+	- id de liquidacion (cabecera) - EJ : 50
+	- ID de nomenclador (indica si es bonificacion, gratifcacion y de que 
+mes / anio)
+
+
+
+TABLA ACTUAL DE PAGOS EVENTUALES
+- id tabla
+- id detalle pagos eventuales 
+- cuil
+- nro control
+- lugar de pago
+- expediente 
+- fecha carga
+- porcentaje a pagar
+
+
+
+
+
+
