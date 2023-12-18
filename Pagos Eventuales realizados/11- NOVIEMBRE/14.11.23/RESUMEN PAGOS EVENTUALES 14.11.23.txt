@@ -1,0 +1,23 @@
+1ra cuota ----------------------------
+12 pagos del viernes (cargados pero no generados)
+2 pagos de ayer (15.11.2023)
+TOTAL A ENVIAR: 14
+
+2da cuota ----------------------------
+2 pagos de ayer  (15.11.2023) 
++ 12 PAGOS DEL VIERNES (cargados pero no liquidados en primera cuota - 
+corresponde por primera cuota)
++ 3 pagos del viernes (cargados en 2da cuota pero no liquidados) (casos en
+los que la primera cuota se les pagó por contaduria directo)
+TOTAL A ENVIAR: 17
+
+3ra cuota ----------------------------
+2 pagos de ayer
+(el resto de los 12 + 3 de la 1ra y 2da cuota ya fueron liquidados 
+y pagados el viernes pasado)
+TOTAL A ENVIAR: 2
+
+EN BASE DE DATOS QUEDARIAN ----------------------------
+PRIMERA CUOTA : 32
+SEGUNDA CUOTA: 35
+TERCERA CUOTA: 35

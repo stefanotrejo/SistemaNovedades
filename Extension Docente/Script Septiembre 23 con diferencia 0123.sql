@@ -872,7 +872,8 @@ SELECT 	 SUM (convert(decimal (18,2), t1.IMP_746))
 from #agentes_filtrados t1
 
 -- PARA VERIFICAR DIFERENCIAS EN TOTAL HABERES EXCEL
-SELECT 	 SUM (convert(decimal (18,2), t1.monto_destino_norem_descontado))
+SELECT 	 
+	SUM (convert(decimal (18,2), t1.monto_destino_norem_descontado))
 from agentes_extdoc_diferencia_0123 t1
 where id not in (2273) -- ID DE LOS AGENTES DUPLICADOS
 	-- ids de controles pagados 2 veces en liq 22 (ya habian cobrado en liq 3)}
@@ -887,7 +888,7 @@ and anio = 23
 select COUNT(1) from EscuelaExtensionDocente
 
 select * from agentes_extension_docente_historico t1
-where t1.mes = 07
+where t1.mes = 08
 and t1.anio = 23
 and exists (
 	select * from agentes_extension_docente t2
@@ -896,8 +897,13 @@ and exists (
 	and t1.C09 = t2.C09
 )
 
+select * from age
 
-SELECT * from agentes_extension_docente
+
+delete from agentes_extension_docente
+select * from agentes_extension_docente_historico
+where mes = 8 and anio = 23
+
 
 select * from #agentes_filtrados t1
 where exists (
@@ -1052,13 +1058,12 @@ select * from agentes_extension_docente_historico
 where mes = 05
 and anio = 23
 
-exec [ExtensionDocente.Archivo_Ministerio] 
+exec [ExtensionDocente.Archivo_Ministerio] '09', 23 
 
 select * from LiquidacionExtensionDocente
 select * from agentes_extension_docente_historico
 where 
 
-exec [ExtensionDocente.Eliminar_En_Historico] '06', '23', 26
 
 
 select * from agentes_extension_docente_historico
@@ -1091,8 +1096,11 @@ select * from LiquidacionExtensionDocente
 select * from LiquidacionExtensionDocente
 
 
+select * from ConceptoExtensionDocente_historico
+where mes = 09
+and anio = 23
 
-exec [ExtensionDocente.Guardar_En_Historico] '08', '23', 32, 0, 0
+exec [ExtensionDocente.Guardar_En_Historico] '09', '23', 34, 0, 0
 
 
 select * from agentes_extension_docente
@@ -1225,3 +1233,6 @@ and activo = 1
 and t1.NroCOntrol = t2.age_nrocontrol
 
 )
+
+select * from agentes_extension_docente
+where apertura = 713

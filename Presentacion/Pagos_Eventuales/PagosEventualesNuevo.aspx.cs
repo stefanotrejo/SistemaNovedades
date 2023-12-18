@@ -375,7 +375,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             if (!hayErrores)
             {
                 String linea;
-                System.IO.StreamReader archivo2 = new System.IO.StreamReader(@"c:\pagoseventuales.txt");
+                System.IO.StreamReader archivo2 = new System.IO.StreamReader(@"c:\temp\pagoseventuales.txt");
                 while (archivo2.EndOfStream == false)
                 {
                     linea = archivo2.ReadLine();
@@ -407,7 +407,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                     }
                 }
             }
-                     
+
             lblMensajeError.Text = FuncionesUtiles.MensajeExito("Carga realizada correctamente");
             limpiarCampos();
             //Response.Redirect("PagosEventualesConsulta.aspx", true);              
@@ -506,7 +506,29 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         return b;
     }
 
+    protected void btnCuotasPagadas_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            String NomRep = "AgentePagosRealizados.rpt";
+            String numeroControl = "0";
+            String dni = "0";            
 
+            if (RadioNumeroControl.Checked)
+                numeroControl = txtAgeNroControl.Text;
+            else
+                dni = txtAgeNroControl.Text.Substring(2, 8);
 
-
+            FuncionesUtiles.AbreVentana("Reporte.aspx?dni=" + dni + "&numeroControl=" + numeroControl + "&NomRep=" + NomRep);
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+        <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+        Se ha producido el siguiente error:<br/>
+        MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+"</div>";
+        }
+    }
 }

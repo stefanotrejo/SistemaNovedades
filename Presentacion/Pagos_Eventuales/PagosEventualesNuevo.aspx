@@ -20,15 +20,19 @@
                                     &nbsp; &nbsp;
                                     <asp:RadioButton ID="RadioCuil" runat="server" Text="CUIL" AutoPostBack="True" OnCheckedChanged="RadioCuil_CheckedChanged"></asp:RadioButton>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-4 col-md-offset-2" style="left: 0px; top: 0px">
                                     <asp:TextBox ID="txtAgeNroControl" required type="number" step="1" min="0" class="form-control" runat="server"></asp:TextBox>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-4 col-md-offset-2">                                    
-                                    <asp:Button ID="btnConsultar1" class="btn btn-w-m btn-primary" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
+                            </div>           
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <br />
+                                    <div class="col-md-4 col-md-offset-0">
+                                        <asp:Button ID="btnConsultar1" class="btn btn-w-m btn-primary" runat="server" Text="Consultar Agente" OnClick="btnConsultar_Click" />
+                                        <asp:Button ID="btnCuotasPagadas" class="btn btn-w-m btn-primary" runat="server" Text="Cuotas pagadas" OnClick="btnCuotasPagadas_Click" />
+                                    </div>
                                 </div>
                             </div>
                             <asp:UpdateProgress ID="UpdateProgress1" runat="server">
@@ -127,7 +131,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Importe</label>
                                 <div class="col-md-6">
@@ -148,15 +152,15 @@
                                     <div class="col-md-4 col-md-offset-0">
                                         <asp:Button ID="btnAceptar1" class="btn btn-w-m btn-primary" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
                                         <asp:Button ID="btnCancelar1" class="btn btn-w-m btn-danger" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
-                                        
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <br />
-                                    <div class="col-md-4 col-md-offset-0">                                        
+                                    <div class="col-md-4 col-md-offset-0">
                                         <asp:Button ID="btnGenerar" class="btn btn-w-m btn-primary" runat="server" Text="Generar" OnClick="btnGenerar_Click" />
                                     </div>
                                 </div>

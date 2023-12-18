@@ -1,0 +1,150 @@
+USE [LiquidacionSueldos]
+GO
+/****** Object:  StoredProcedure [dbo].[ExtensionDocente.OrdenPago]    Script Date: 24/10/2023 18:12:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[ExtensionDocente.OrdenPago]
+	@liq_id int
+AS
+
+SELECT 
+	-- LIQUIDO GENERAL
+	SUM(
+		(convert(decimal (18,2), t1.I01) + convert(decimal (18,2), t1.I02))
+			-  (convert(decimal (18,2), t1.I03) + (convert(decimal (18,2),t1.I08) + convert(decimal (18,2), t1.I04) 
+				+ convert(decimal (18,2), t1.I05) + convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07))
+				+ ISNULL(convert(decimal (18,2),t1.I09),0) + ISNULL(convert(decimal (18,2),t1.I10),0)
+				) 
+		) AS liquido,
+	-- AP EMPLEADO ANSES GENERAL
+	SUM (convert(decimal (18,2),t1.I03) + convert(decimal (18,2),t1.I08)) AS aporteAnsesEmpleado, 
+	-- AP PATRONAL ANSES GENERAL
+	SUM (t1.AP_ANSES) AS aporteAnsesPatronal, 
+	-- TOTAL APORTE ANSES GENERAL
+	SUM (convert(decimal (18,2),t1.I03) + convert(decimal (18,2),t1.I08) + t1.AP_ANSES) AS ANSES,
+	-- AP EMPLEADO IOSEP GENERAL
+	SUM (convert(decimal (18,2),t1.I04) + convert(decimal (18,2),t1.I05)) AS aporteIosepEmpleado, 
+	-- AP PATRONAL IOSEP GENERAL
+	SUM (t1.AP_IOSEP) AS aporteIosepPatronal, 
+	-- TOTAL APORTE IOSEP GENERAL
+	SUM (convert(decimal (18,2),t1.I04) + convert(decimal (18,2),t1.I05) + t1.AP_IOSEP) AS IOSEP,
+		-- AP EMPLEADO OSPLAD GENERAL
+	SUM (convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07)) AS aporteOspladEmpleado, 
+	-- AP PATRONAL OSPLAD GENERAL
+	SUM (t1.AP_OSPLAD) AS aporteOspladPatronal, 
+	-- TOTAL APORTE OSPLAD GENERAL
+	SUM (convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07) +  t1.AP_OSPLAD) AS OSPLAD,		
+	--------------------------------- PP --------------------------------- 
+	-- LIQUIDO 
+	(SELECT ISNULL(SUM(
+		(convert(decimal (18,2), t1.I01) + convert(decimal (18,2), t1.I02))
+			-  (
+			convert(decimal (18,2), t1.I03) + (convert(decimal (18,2),t1.I08) + convert(decimal (18,2), t1.I04) 
+				+ convert(decimal (18,2), t1.I05) + convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07))
+				+ ISNULL(convert(decimal (18,2),t1.I09),0) + ISNULL(convert(decimal (18,2),t1.I10),0)
+				)
+				),0) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PP') AS liquido_PP,
+	-- TOTAL APORTE ANSES 
+	(SELECT SUM (convert(decimal (18,2),t1.I03) + convert(decimal (18,2),t1.I08) + t1.AP_ANSES)
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PP') AS ANSES_PP,
+	-- TOTAL APORTE IOSEP GENERAL
+	(SELECT SUM (convert(decimal (18,2),t1.I04) + convert(decimal (18,2),t1.I05) + t1.AP_IOSEP) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PP') AS IOSEP_PP,
+	-- TOTAL APORTE OSPLAD 
+	(SELECT SUM (convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07) +  t1.AP_OSPLAD) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PP') AS OSPLAD_PP,
+	--------------------------------- PC --------------------------------- 
+	-- LIQUIDO 
+	(SELECT ISNULL(SUM(
+		(convert(decimal (18,2), t1.I01) + convert(decimal (18,2), t1.I02))
+			-  (
+			convert(decimal (18,2), t1.I03) + (convert(decimal (18,2),t1.I08) + convert(decimal (18,2), t1.I04) 
+				+ convert(decimal (18,2), t1.I05) + convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07))
+				+ ISNULL(convert(decimal (18,2),t1.I09),0) + ISNULL(convert(decimal (18,2),t1.I10),0)
+				)
+				),0) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PC') AS liquido_PC,
+	-- TOTAL APORTE ANSES PP
+	ISNULL((SELECT SUM (convert(decimal (18,2),t1.I03) + convert(decimal (18,2),t1.I08) + t1.AP_ANSES)
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PC'),0) AS ANSES_PC,
+	-- TOTAL APORTE IOSEP 
+	ISNULL((SELECT SUM (convert(decimal (18,2),t1.I04) + convert(decimal (18,2),t1.I05) + t1.AP_IOSEP) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PC'),0) AS IOSEP_PC,
+	-- TOTAL APORTE OSPLAD 
+	ISNULL((SELECT SUM (convert(decimal (18,2),t1.I06) + convert(decimal (18,2),t1.I07) +  t1.AP_OSPLAD) 
+	FROM  
+		agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+	WHERE 
+		t1.liq_id = @liq_id
+	AND	t1.tipo_planta_OP = 'PC'),0) AS OSPLAD_PC,
+	CONCAT(
+		(CASE 
+							WHEN (SELECT mes_referencia from LiquidacionExtensionDocente
+								  WHERE id = @liq_id ) = '12' THEN '01'						
+							ELSE CONVERT(int, (SELECT mes_referencia from LiquidacionExtensionDocente
+												WHERE id = @liq_id )) + 1
+							END),
+		'/',
+
+		(CASE 
+							WHEN (SELECT mes_referencia from LiquidacionExtensionDocente
+								  WHERE id = @liq_id ) = '12' THEN CONVERT(int, 
+																	(SELECT anio_referencia from LiquidacionExtensionDocente
+																	WHERE id = @liq_id )) + 1						
+							ELSE (SELECT anio_referencia from LiquidacionExtensionDocente
+								  WHERE id = @liq_id )
+							END)) AS PERIODO,
+							(SELECT YEAR(GETDATE())) AS ANIO
+FROM  
+	agentes_extension_docente_historico t1
+	INNER JOIN PruebasAge t2	
+	ON t1.age_id = t2.NuevoAgeId1
+WHERE 
+	t1.liq_id = @liq_id

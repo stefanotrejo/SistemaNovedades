@@ -50,9 +50,36 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
 
         try
         {
+            String dni;
+            dni = Request.QueryString["dni"].ToString();
+            Par.Value = dni;
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@dni"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //    throw oError;
+        }
+
+
+        try
+        {
+            String numeroControl;
+            numeroControl = Request.QueryString["numeroControl"].ToString();
+            Par.Value = numeroControl;
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@numero_control"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //    throw oError;
+        }
+
+        try
+        {
             Int32 liqID;
-            liqID = Int32.Parse(Request.QueryString["liq_id"].ToString()); 
-            Par.Value = liqID;  
+            liqID = Int32.Parse(Request.QueryString["liq_id"].ToString());
+            Par.Value = liqID;
             Params.Add(Par);
             cr.DataDefinition.ParameterFields["@liq_id"].ApplyCurrentValues(Params);
         }
@@ -60,7 +87,6 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             //    throw oError;
         }
-
 
         try
         {
@@ -87,7 +113,7 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             //   throw oError;
         }
-            
+
         try
         {
             Int32 escId;
@@ -100,7 +126,7 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             //    throw oError;
         }
-           
+
         try
         {
             Int32 aplicafiltrofecha;
