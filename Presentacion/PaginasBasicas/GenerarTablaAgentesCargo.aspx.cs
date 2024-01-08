@@ -53,6 +53,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
         #region         Verifica si el periodo de liqudiacion ya fue importada
         ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+
         int ajuste = 5; // Ajuste por nuevo campo de 5 caracteres (puntaje miembro junta)
         int ajustePlantaJacky = 1; // Ajuste por nuevo campo de 1 caracter al principio del archivo
 

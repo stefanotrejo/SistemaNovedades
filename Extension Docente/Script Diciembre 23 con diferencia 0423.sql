@@ -124,8 +124,8 @@ CREATE TABLE #agentes_filtrados (
 select * from LiquidacionExtensionDocente
 
 select * from NovedadesExtensionDocente
-where liq_id = 38 -- liqid actual
-and activo = 1 -- 242
+where liq_id = 40 -- liqid actual
+and activo = 1 -- 230
 
 --------------- INICIO COPIA EN #t1 --------------- 
 -- drop table #t1
@@ -282,7 +282,7 @@ WHERE
 
 --------------- FINAL COPIA EN #t1 --------------- 
 -- 6656 PRE
--- XX DEF
+-- 6653 DEF
 
 -- SELECT * FROM #t1 --Tiene todos los agentes a liquidar
 -- drop table #t1
@@ -458,17 +458,17 @@ FROM
 
 --6105 -- encuentra los controles 
 
--- PARCIAL 2760 / XX
+-- PARCIAL 2760 / 2809
 select * from agentes_extdoc_diferencia_0423
 where CONVERT(Numeric (18,2),saldo_norem) != 0
 AND CONVERT(numeric (18,2),monto_origen_norem_descontar) > 0 
 
--- TOTAL 2517 - XX
+-- TOTAL 2517 - 2470
 select * from agentes_extdoc_diferencia_0423
 where CONVERT(Numeric (18,2),saldo_norem) = 0
 AND CONVERT(numeric (18,2),monto_origen_norem_descontar) > 0 
 
--- NO LOS ENCONTRÓ 326 / XX
+-- NO LOS ENCONTRÓ 326 / 324
 select * from agentes_extdoc_diferencia_0423
 where saldo_norem is null
 AND CONVERT(numeric (18,2),monto_origen_norem_descontar) > 0 
@@ -609,7 +609,7 @@ inner join agentes_extdoc_diferencia_0423  t2
 on t1.numeroControl = t2.NroCOntrol
 
 
--- TOTAL DESCUENTOS GENERAL -> $20.125.356.94 / XX
+-- TOTAL DESCUENTOS GENERAL -> $20.125.356.94 / $19.923.529.53
 SELECT  				
 	 SUM (convert(decimal (18,2), t3.monto_destino_norem_descontado))
 	 --count(1)
@@ -754,7 +754,7 @@ FROM
 
 -- VALIDAR QUE SE HAYA SETEADO PP Y PC
 SELECT * from #agentes_filtrados 
-where tipoPlanta is null
+where tipoPlanta not in ('PP', 'PC')
 
 ----------------------->>>>> INICIO - ORDEN DE PAGO <<<<<-----------------------
 SELECT 
@@ -817,8 +817,8 @@ FROM
 	LEFT JOIN agentes_extdoc_diferencia_0423 t3
 	ON t2.NroCOntrol = t3.NroCOntrol	 	
 WHERE 
-	t1.tipoPlanta = 'PC'
-	--t1.tipoPlanta = 'PP'
+	--t1.tipoPlanta = 'PC'
+	t1.tipoPlanta = 'PP'
 
 
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
@@ -875,6 +875,7 @@ where mes = 11
 and anio= 23
 
 delete from agentes_extension_docente
+
 
 
 ----------------------->>>>> INICIO - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
@@ -1004,7 +1005,9 @@ select * from agentes_extension_docente_historico
 where mes = 05
 and anio = 23
 
-exec [ExtensionDocente.Archivo_Ministerio] '11','23'
+exec [ExtensionDocente.Archivo_Ministerio] '12','23'
+
+exec [ExtensionDocente.ArchivoRectificativaV2] 
 
 select * from LiquidacionExtensionDocente
 select * from agentes_extension_docente_historico
@@ -1024,7 +1027,7 @@ and anio = 23
 
 select * from LiquidacionExtensionDocente
 
-exec [ExtensionDocente.Guardar_En_Historico] '11', '23', 38, 0, 0
+exec [ExtensionDocente.Guardar_En_Historico] '12', '23', 40, 0, 0
 
 
 select * from agentes_extension_docente
@@ -1039,7 +1042,9 @@ and liq_id = 38
 exec [ExtensionDocente.Archivo_Ministerio] '08', '23'
 
 
-exec [ExtensionDocente.ArchivoRectificativaV2] 38, 0,0,0
+exec [ExtensionDocente.ArchivoRectificativaV2] 40, 0,0,0
+
+
 
 
 select * From LiquidacionExtensionDocente

@@ -189,7 +189,6 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
     }
     #endregion
 
-
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -391,5 +390,4 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         return profileCode == Globals.perfilPapse;
     }
-
 }

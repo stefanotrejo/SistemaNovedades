@@ -231,13 +231,13 @@ WHERE
 	WHERE 
 	t1.liq_id = t2.id AND 
 	t2.definitiva = 1
-	AND ((CONVERT(int,t2.mes_referencia) = 12 AND (CONVERT(int,t2.anio_referencia) = 22))
-	OR (CONVERT(int,t2.mes_referencia) < 6) AND (CONVERT(int,t2.anio_referencia) = 23))
+	AND ((CONVERT(int,t2.mes_referencia) >= 06 AND (CONVERT(int,t2.anio_referencia) = 23))
+	AND (CONVERT(int,t2.mes_referencia) < 12) AND (CONVERT(int,t2.anio_referencia) = 23))
 	)
 
 	
 	
--- (39687 filas afectadas)
+-- (40071 filas afectadas)
 	
 
 SELECT top 100 * from LiquidacionExtensionDocente
@@ -269,9 +269,9 @@ INSERT INTO
 	#aguinaldo (PlantaTipo, NroCOntrol, agrupamiento, tramo, apertura, cuil)	
 SELECT DISTINCT 
 	PlantaTipo, NroCOntrol, agrupamiento, tramo, apertura, cuil
-FROM #pre_aguinaldo -- 7102
+FROM #pre_aguinaldo -- 7190
 
---(7102 filas afectadas)
+--(7190 filas afectadas)
 
 
 Declare 
@@ -568,6 +568,8 @@ FROM
 WHERE 
 	preaguinaldo_id  = t1.id
 
+
+
 -- ACTUALIZO OSPLAD
 UPDATE
 	#aguinaldo
@@ -857,6 +859,55 @@ FROM
 	ON t1.ageId = t2.NuevoAgeId1
 ----------------  FIN GENERACION TXT PARA EL BANCO V2 ----------------
 
+
+----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO V2.1 <<<<<-----------------------
+SELECT  				
+	  CAST (dbo.RellenarTextoDerecha(t2.Nombre,' ',25) AS VARCHAR(25)) -- NOMBRE + RELLENO
+    + CAST (dbo.RellenarTextoIzquierda(SUBSTRING(t1.cuil,3,8),'0',8) AS VARCHAR(8)) -- RELLENO + DNI
+    + CAST (dbo.RellenarTextoIzquierda(t2.LugarPago,'0',5) AS VARCHAR(5)) -- RELLENO + LUGAR PAGO 	
+    + CAST (dbo.RellenarTextoIzquierda(t2.Escuela,'0',5) AS VARCHAR(5)) -- RELLENO + ESCUELA	
+    + CAST (dbo.RellenarTextoIzquierda(t2.NroCOntrol,'0',8) AS VARCHAR(8)) -- RELLENO + CONTROL		
+    + CAST (dbo.RellenarTextoIzquierda(t2.Agru + t2.tramo + t2.Apertura,' ',6) AS VARCHAR(6)) -- RELLENO + CARGO
+    + CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_522 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. SIN APORTE
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(t1.IMP_521 AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB. CON APORTE
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_521) 
+		+ (convert(decimal (18,2),t1.IMP_522)) AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT. HAB.
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(convert(decimal (18,2), t1.IMP_602)
+			+ (convert(decimal (18,2),t1.imp_615)) + (convert(decimal (18,2),t1.imp_616)) + (convert(decimal (18,2),t1.imp_663)) 
+			+ (convert(decimal (18,2),t1.IMP_664)) + convert(decimal (18,2), t1.IMP_665_1)  			
+			AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOTAL DESCUENTOS	
+	+ CAST(t2.PlantaTipo AS VARCHAR(1))  -- PLANTA
+	+ '000000000' -- SALARIO	
+	+ CAST (dbo.RellenarTextoIzquierda(replace(cast(
+			  (convert(decimal (18,2), t1.IMP_521) + (convert(decimal (18,2),t1.IMP_522))) -- total hab.
+			- (					 
+					+ convert(decimal (18,2), t1.IMP_602) 
+					+ convert(decimal (18,2), t1.IMP_615) 
+					+ convert(decimal (18,2), t1.IMP_616) 					
+					+ convert(decimal (18,2), t1.IMP_663) 
+					+ convert(decimal (18,2), t1.IMP_664)
+					+ convert(decimal (18,2), t1.IMP_665_1) 													
+				) 
+				 -- tot desc. 
+			AS decimal(18,2)),'.',''),'0',9) AS VARCHAR(9)) -- RELLENO + TOT LIQ.		
+	+ CAST (dbo.RellenarTextoIzquierda(t2.FechaIngreso,'0',6) AS VARCHAR(6)) -- RELLENO + FECHA INGRESO			
+	+ CAST (dbo.RellenarTextoIzquierda(t1.cuil ,'0',11) AS VARCHAR(11)) -- RELLENO + CUIL	
+	+ CAST(t2.Sexo AS VARCHAR(1)) -- SEXO
+	--+ '000000000' -- PORCENTAJE DE IMP DESCUENTO - 
+AS Columna 
+FROM  
+	#aguinaldo t1 
+	INNER JOIN PruebasAge t2	
+	ON t1.ageId = t2.NuevoAgeId1	
+ 
+ -- DUPLICADOS --
+ select COUNT(1) from #agentes_filtrados
+ 
+ select  NroCOntrol from agentes_extdoc_diferencia_0423 
+ group by NroCOntrol having COUNT(1) > 1 
+
+----------------------->>>>> FIN GENERACION TXT PARA EL BANCO V2 <<<<<-----------------------
+
 select * from #aguinaldo
 where cuil  ='27319625327'
 
@@ -936,29 +987,31 @@ where NroCOntrol = '38001802'
 
 
 
-
 ----------------------->>>>> INICIO UPDATE TIPO PLANTA <<<<<-----------------------
-
---SELECT * FROM #agentes_filtrados
-
 UPDATE #aguinaldo 
 SET tipoPlanta =  (CASE 
 			
 		WHEN (t2.LugarPago IN (27101, 28104, 28514, 29107) 
 			OR (t2.LugarPago>=38153 AND t2.LugarPago<=38265) 
 			OR t2.LugarPago IN (39102, 57107, 58103, 59106, 62101)) 
+			OR t2.LugarPago IN (56015, 56023, 56031, 56046, 56054, 56062 ,56077, 56085, 56112, 56104, 56127
+			,56313)  
+			-- lugares nuevos EXT DOC 26/10/2023 -- 20/11/2023
 			--THEN 'DOCENT.TITULAR' -- TITUL88
 			THEN 'PP' -- TITUL88
 		
 		WHEN t2.LugarPago IN (27116, 28112, 28522, 29115) 
 			OR t2.LugarPago>=38281 AND t2.LugarPago<=38393 
-			OR t2.LugarPago IN (39117, 57115, 58111, 59114, 62116) 
+			OR t2.LugarPago IN (39117, 57115, 58111, 59114, 62116)
+			OR t2.LugarPago IN (56197, 56201, 56143, 56247, 56166) -- lugar nuevos ext doc 26/10/2023 - 20/11/2023
 			--THEN 'DOCENT.INTERINO' -- INTER88
 			THEN 'PP' -- INTER88
 		
 		WHEN t2.LugarPago IN (27124, 28127, 28537, 29123) 
 			OR t2.LugarPago>=38524 AND t2.LugarPago<=38636 
 			OR t2.LugarPago IN (39125, 57123, 58126, 59122, 62124) 
+			OR t2.LugarPago IN (56375, 56383 ,56391, 56402, 56417, 56425, 
+								56433, 56441 ,56464, 56472, 56487) -- lugares nuevos EXT DOC 26/10/2023
 			--THEN 'DOCEN.SUPLENTE' -- SUPLE88
 			THEN 'PC' -- SUPLE88	
 
@@ -999,7 +1052,6 @@ SET tipoPlanta =  (CASE
 			--THEN 'PERSON.DOCENTE' -- DOCEN88
 			THEN 'PC'
 
-
 		WHEN t2.LugarPago IN (27936, 28932, 28963, 38934, 39937) 
 		--THEN 'DOCEN.SUPLENTE' -- DOCSUP88
 		THEN 'PC'
@@ -1012,21 +1064,20 @@ FROM
 
 ----------------------->>>>> FIN - UPDATE TIPO PLANTA <<<<<-----------------------
 
-SELECT * from #aguinaldo
-where i0
-
+-- VALIDAR QUE SE HAYA SETEADO PP Y PC
+SELECT * from #aguinaldo 
+where tipoPlanta not in ('PP', 'PC')
 
 ----------------------->>>>> INICIO - ORDEN DE PAGO <<<<<-----------------------
 SELECT 
 	-- LIQUIDO
 	SUM(
 		(t1.IMP_521 + t1.IMP_522) 
-			- ( t1.IMP_602 
-				+ t1.IMP_615 + t1.IMP_616
-				 + t1.IMP_663 
-				 +ISNULL(t1.IMP_664,0)
-				 + t1.IMP_665_1 
-				)
+			- ( 				
+				+ t1.IMP_602 + t1.IMP_615 + t1.IMP_616 
+				+ t1.IMP_663 + t1.IMP_664 
+				+ t1.IMP_665_1 								 							 				
+			) 
 		) AS liquido,
 	-- AP EMPLEADO ANSES
 	SUM (
@@ -1072,22 +1123,25 @@ SELECT
 FROM  
 	#aguinaldo t1
 	INNER JOIN PruebasAge t2	
-	ON t1.ageId = t2.NuevoAgeId1
+	ON t1.ageId = t2.NuevoAgeId1		 	
 WHERE 
-	t1.tipoPlanta = 'PC'
-	--t1.tipoPlanta = 'PP'
+	--t1.tipoPlanta = 'PC'
+	t1.tipoPlanta = 'PP'
+
 
 ----------------------->>>>> FIN - ORDEN DE PAGO <<<<<-----------------------
 
+
+
 delete from agentes_extension_docente
 
-select * from agentes_extension_docente_historico
-where mes = 06
+select SUM(total_liquido) from agentes_extension_docente_historico
+where mes = 12
 and anio = 23
 
 select * from agentes_extension_docente
 select * from agentes_extension_docente_historico
-where mes = 06
+where mes = 12
 and anio = 23
 
 
@@ -1182,7 +1236,7 @@ FROM
 	#aguinaldo t1
 	INNER JOIN PruebasAge t2	
 	ON t1.ageId = t2.NuevoAgeId1
------------------------>>>>> FIN - INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
+----------------------->>>>> FIN -	 INSERTA EN AGENTE_EXT_DOC <<<<<-----------------------
 
 
 select total_liquido from agentes_extension_docente
@@ -1216,7 +1270,7 @@ select I01, I02 from #pre_aguinaldo
 where id = 5074
 
 
-EXEC [ExtensionDocente.Archivo_Ministerio]
+EXEC [ExtensionDocente.Archivo_Ministerio] S2, 23
 
 SELECT * FROM agentes_extension_docente_historico
 602, 615, 616, 663, 664, 665
@@ -1232,8 +1286,12 @@ SELECT * FROM agentes_extension_docente_historico
 
 	exec [ExtensionDocente.Archivo_Ministerio]
 
-	select * from LiquidacionExtensionDocente
-	exec [ExtensionDocente.Guardar_En_Historico] '13','23', 27, 0, 0 -- FEBRERO DEFINITVA 
+
+	exec [ExtensionDocente.Guardar_En_Historico] '14', '23', 41, 0, 0
+
+	exec [ExtensionDocente.ArchivoRectificativaV2] 41, 0,0,0
+
+	
 
 	select SUM(CONVERT(NUMERIC (18,2), total_liquido)) 
 	SELECT total_liquido

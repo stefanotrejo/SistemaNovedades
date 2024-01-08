@@ -721,12 +721,7 @@ namespace LiquidacionSueldos.Negocio
                      {
                             "@id",
                             id
-                        }
-                    //,{
-                    //        "@periodo",
-                    //        periodo
-                    //    }
-
+                        }                    
                 });
                 if (Fila.Rows.Count > 0)
                 {
