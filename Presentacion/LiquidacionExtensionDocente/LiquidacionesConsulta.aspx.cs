@@ -195,8 +195,8 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
         try
         {
             //Si se esta cargando por primera vez
-            if (!Page.IsPostBack)
-            {
+            //if (!Page.IsPostBack)
+            //{
                 DeshabilitarBotonesLiquidacion();
 
                 this.Master.TituloDelFormulario = "Consulta de Liquidaciones Extension Docente";
@@ -219,7 +219,7 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
                 MenuRaizListaAnioDesde.DataSource = dt;
                 MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
                 MenuRaizListaAnioDesde.DataBind();
-            }
+            //}
         }
         catch (Exception oError)
         {

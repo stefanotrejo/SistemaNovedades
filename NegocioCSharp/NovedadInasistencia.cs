@@ -56,6 +56,13 @@ namespace LiquidacionSueldos
                 set { _ninFechaDesde = value; }
             }
 
+            private String _ninFechaDesdeString;
+            public String ninFechaDesdeString
+            {
+                get { return _ninFechaDesdeString; }
+                set { _ninFechaDesdeString = value; }
+            }
+
             private int _ninCantidad;
             public int ninCantidad
             {
@@ -121,10 +128,6 @@ namespace LiquidacionSueldos
                 set { _anio = value; }
             }
 
-            // FIN - PARA INFORMES 
-
-
-
             private int _ninActivo;
             public int ninActivo
             {
@@ -132,8 +135,6 @@ namespace LiquidacionSueldos
                 set { _ninActivo = value; }
             }
             #endregion
-
-            #region Metodos
 
             public int Insertar()
             {
@@ -206,14 +207,14 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
-            public DataTable ObtenerTodoPorAgenteEtapa(int ageId, int liqId)
+            public DataTable ObtenerTodoPorAgenteEtapa(int ageId, int liqId, int userId)
             {
                 ocdGestor = new Datos.Gestor();
                 /*Traer liqId basandome en cual esta con estado=abierto en la tabla Liquidacion*/
                 try
                 {
                     Fila = new DataTable();
-                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.ObtenerTodoPorAgenteEtapa]", new object[,] {
+                    Fila = ocdGestor.EjecutarReader("[NovedadInasistencia.ObtenerTodoPorAgenteEtapaV2]", new object[,] {
                      {
                             "@liqEtapa",
                             liqId
@@ -221,6 +222,10 @@ namespace LiquidacionSueldos
                      {
                              "@NuevoAgeId1",
                             ageId
+                        },
+                     {
+                             "@userId",
+                            userId
                         }
                 });
                 }
@@ -256,23 +261,33 @@ namespace LiquidacionSueldos
                 return Fila;
             }
 
-            public DataTable ObtenerUno(int ninId)
+            public NovedadInasistencia ObtenerUno(int ninId)
             {
+                Tabla = new DataTable();
+                NovedadInasistencia novedadInasistencia = new NovedadInasistencia();
+
                 try
                 {
-                    Tabla = new DataTable();
                     Tabla = ocdGestor.EjecutarReader("[NovedadInasistencia.ObtenerUno]", new object[,] {
                      {
                             "@ninId",
                             ninId
-                        }
-                });
+                        }});
+
+                    if (Tabla == null)
+                    {
+                        return null;
+                    }
+
+                    novedadInasistencia.ncoId = Int32.Parse(Convert.ToString(Tabla.Rows[0]["ncoId"]));
+                    novedadInasistencia.ninCantidad = Int32.Parse(Convert.ToString(Tabla.Rows[0]["ninCantidad"]));
+                    novedadInasistencia.ninFechaDesdeString = Tabla.Rows[0]["ninFechaDesde"].ToString();
+                    return novedadInasistencia;
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-                return Tabla;
             }
 
             public DataTable GenerarNoPresentismo(int liqId)
@@ -400,7 +415,7 @@ namespace LiquidacionSueldos
                             liqId
                         }
                     });
-                    ocdGestor.GenerarDbfMultasSuspensiones(Tabla, rutaDestino, etapaLiquidacion);                    
+                    ocdGestor.GenerarDbfMultasSuspensiones(Tabla, rutaDestino, etapaLiquidacion);
                 }
 
                 catch (Exception ex)
@@ -438,9 +453,6 @@ namespace LiquidacionSueldos
             {
                 ocdGestor = new Datos.Gestor();
                 int conceptoRepetido = 0;
-
-                // si el  
-
                 try
                 {
                     Fila = new DataTable();
@@ -550,8 +562,7 @@ namespace LiquidacionSueldos
             }
 
             public int ValidarBajaCargoRetenido(int NuevoAgeId1, int liqId)
-            {
-                int num;
+            {                
                 try
                 {
                     Gestor gestor = this.ocdGestor;
@@ -560,17 +571,13 @@ namespace LiquidacionSueldos
                     nuevoAgeId1[0, 1] = NuevoAgeId1;
                     nuevoAgeId1[1, 0] = "@liqId";
                     nuevoAgeId1[1, 1] = liqId;
-                    num = gestor.EjecutarNonQueryRetornaId("[NovedadInasistencia.ValidarBajaCargoRetenido]", nuevoAgeId1);
+                    return gestor.EjecutarNonQueryRetornaId("[NovedadInasistencia.ValidarBajaCargoRetenido]", nuevoAgeId1);
                 }
                 catch (Exception exception)
                 {
                     throw exception;
-                }
-                return num;
+                }                
             }
-
-            #endregion
-
         }
     }
 }

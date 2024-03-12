@@ -193,6 +193,22 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
+            public DataTable ObtenerListaBajas()
+            {
+                ocdGestor = new Datos.Gestor();
+                Tabla = new DataTable();
+                try
+                {
+                    Tabla = ocdGestor.EjecutarReader("[NovedadConceptos.ObtenerListaBajas]", new object[,] { {
+                    } });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return Tabla;
+            }
+
             public DataTable ObtenerListaConceptosPlantaContratados()
             {
                 ocdGestor = new Datos.Gestor();

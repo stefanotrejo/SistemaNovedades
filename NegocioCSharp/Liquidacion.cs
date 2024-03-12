@@ -86,8 +86,6 @@ namespace LiquidacionSueldos
             }
             #endregion
 
-            #region Metodos       
-
             public int Insertar()
             {
                 /* Verificar que no se haya agregado antes una novedad con ese codigo para ese id y etapa
@@ -179,7 +177,7 @@ namespace LiquidacionSueldos
                             objetoLiquidacion.liqAnio = "";
                         }
 
-                        if (objetoLiquidacion.liqMes!="" & objetoLiquidacion.liqAnio != "")
+                        if (objetoLiquidacion.liqMes != "" & objetoLiquidacion.liqAnio != "")
                         {
                             objetoLiquidacion.mesAnioLiq = objetoLiquidacion.liqMes + '/' + objetoLiquidacion.liqAnio;
                         }
@@ -231,7 +229,7 @@ namespace LiquidacionSueldos
                         }
                     }
                     else
-                        objetoLiquidacion = null;                    
+                        objetoLiquidacion = null;
                 }
                 catch (Exception ex)
                 {
@@ -616,7 +614,7 @@ namespace LiquidacionSueldos
                 return Existe;
             }
 
-            #endregion
+
 
         }
     }

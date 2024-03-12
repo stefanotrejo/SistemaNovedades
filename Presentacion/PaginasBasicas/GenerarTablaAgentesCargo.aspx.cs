@@ -380,12 +380,12 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             str = string.Concat(str1, str2);
         }
 
-        string str3 = str.Substring(121 + num3 + num1, 2);
-        string str4 = str.Substring(123 + num3 + num1, 2);
-        string str5 = string.Concat("01/", str3, "/", str4);
+        string mes = str.Substring(121 + num3 + num1, 2);
+        string anio = str.Substring(123 + num3 + num1, 2);
+        string str5 = string.Concat("01/01/2001");
         DateTime dateTime = Convert.ToDateTime(str5);
 
-        this.dt = this.ocnMenu.LiquidacionObtenerUno(string.Concat(str3, "/", str4));
+        this.dt = this.ocnMenu.LiquidacionObtenerUno(string.Concat(mes, "/", anio));
         if (this.dt.Rows.Count != 0 && this.validarPeriodo.Checked)
         {
             this.Label1.Visible = true;
@@ -462,8 +462,8 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             string str46 = str.Substring(113 + num3, 1);
             string str47 = str.Substring(114 + num3 + num1, 1);
             string str48 = str.Substring(115 + num3 + num1, 6);
-            str3 = str.Substring(121 + num3 + num1, 2);
-            str4 = str.Substring(123 + num3 + num1, 2);
+            mes = str.Substring(121 + num3 + num1, 2);
+            anio = str.Substring(123 + num3 + num1, 2);
             string str49 = str.Substring(125 + num3 + num1, 3);
             string str50 = string.Concat(str.Substring(128 + num3 + num1, 6), '.', str.Substring(134 + num3 + num1, 2).Replace(' ', '0'));
             string str51 = string.Concat(str.Substring(136 + num3 + num1, 6), '.', str.Substring(142 + num3 + num1, 2));
@@ -505,7 +505,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             nuevoAge1.Juris = str20;
             nuevoAge1.Liquido = str56;
             nuevoAge1.LugarPago = str12;
-            nuevoAge1.MesAnioLiq = string.Concat(str3, "/", str4);
+            nuevoAge1.MesAnioLiq = string.Concat(mes, "/", anio);
             nuevoAge1.Meses = str34;
             nuevoAge1.Nombre = str24;
             nuevoAge1.Nopres_RiesgoVida = str47;
@@ -606,7 +606,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
             }
         }
         streamReader1.Close();
-        nuevoAge1.ActivarCargarNovedades(string.Concat(str3, '/', str4));
+        nuevoAge1.ActivarCargarNovedades(string.Concat(mes, '/', anio));
         this.Label1.Visible = true;
         this.Label1.ForeColor = Color.Green;
         this.Label1.Text = "Importacion realizada correctamente";

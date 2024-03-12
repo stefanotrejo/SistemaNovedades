@@ -31,7 +31,7 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         NomRep = "~/PaginasBasicas/Reportes/" + Request.QueryString["NomRep"]; //  System.Web.UI.Page.Request.Item["NomRep"]; 
         string Ruta = MapPath(NomRep);  //System.Web.UI.Page.Server.MapPath(NomRep);
         NomRep = Ruta;
-
+     
         cr.Load(NomRep);
 
         try
@@ -70,7 +70,6 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             //   throw oError;
         }
-
 
         try
         {
@@ -380,7 +379,11 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         crTableLogonInfo.Add(crtablelogoninfo);
         CrystalReportViewer1.ReportSource = cr; // Mostrando el Reporte
         cr.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, NomRep);
-        CrystalReportViewer1.ReportSource = cr; // Mostrando el Reporte
+
+        cr.Dispose();
+        cr.Close();
+        GC.Collect();
+
 
         String Exporta;
         Exporta = Page.Request["Exporta"];
@@ -392,6 +395,8 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         {
             cr.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Page.Response, false, NomRep);
         }
+
+     
     }
 
     static void ReadSetting(string key)

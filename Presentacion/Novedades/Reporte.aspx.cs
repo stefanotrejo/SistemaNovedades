@@ -125,8 +125,11 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         crTableLogonInfo.Add(crtablelogoninfo);
         // Mostrando el Reporte     
         CrystalReportViewer1.ReportSource = cr; 
-        cr.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, NomRep);        
+        cr.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, NomRep);
 
+        cr.Dispose();
+        cr.Close();
+        GC.Collect();
         #region Exportar reporte como excel o como doc
         //String Exporta;
         //Exporta = Page.Request["Exporta"];

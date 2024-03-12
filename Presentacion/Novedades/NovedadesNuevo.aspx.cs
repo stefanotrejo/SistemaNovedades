@@ -170,6 +170,22 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
             }
         }
 
+        private static int _ageId;
+        public static int ageId
+        {
+            get
+            {
+                // Reads are usually simple
+                return _ageId;
+            }
+            set
+            {
+                // You can add logic here for race conditions,
+                // or other measurements
+                _ageId = value;
+            }
+        }
+
         private static string _agrupamiento;
         public static string agrupamiento
         {
@@ -225,6 +241,18 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
             }
         }
 
+        private static LiquidacionSueldos.Negocio.Liquidacion _liquidacion;
+        public static LiquidacionSueldos.Negocio.Liquidacion liquidacion
+        {
+            get
+            {
+                return _liquidacion;
+            }
+            set
+            {
+                _liquidacion = value;
+            }
+        }
 
     }
     #endregion
@@ -234,42 +262,48 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
         try
         {
             this.lblMensajeError.Text = "";
-            string item = base.Request.QueryString["operacion"];
             if (!this.Page.IsPostBack)
             {
-                this.mostrarMensaje();
+                this.mostrarMensajeResultadoOperacion();
                 this.txtDiasMin.Text = "";
                 this.Master.TituloDelFormulario = "Carga de Novedades";
+
                 if (this.Session["_Autenticado"] == null)
                 {
-                    base.Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+                    Response.Redirect("~/PaginasBasicas/Login.aspx", true);
                 }
-                if (base.Request.QueryString["Id"] == null || !(base.Request.QueryString["Id"] != ""))
+
+                if (Request.QueryString["Id"] == null || Request.QueryString["Id"] == "")
                 {
                     this.Session["Resultado"] = "";
-                    base.Response.Redirect("NovedadesConsulta.aspx", true);
+                    Response.Redirect("NovedadesConsulta.aspx", true);
                 }
-                else
+
+                this.Session["idGlobal"] = Convert.ToInt32(Request.QueryString["Id"]);
+                Globales.ageId = Convert.ToInt32(Request.QueryString["Id"]);
+                this.Session["periodo"] = Request.QueryString["periodo"];
+                DateTime fechaLiquidacion  = Convert.ToDateTime(string.Concat("28/", this.Session["periodo"].ToString().Substring(0, 2), "/20", this.Session["periodo"].ToString().Substring(3, 2)));
+                this.Session["fechaLiquidacion"] = Convert.ToDateTime(string.Concat("28/", this.Session["periodo"].ToString().Substring(0, 2), "/20", this.Session["periodo"].ToString().Substring(3, 2)));
+
+                this.Session["textBox"] = Request.QueryString["textBox"];
+                this.Session["pageIndex"] = Convert.ToInt32(Request.QueryString["pageIndex"]);
+                Globales.agrupamiento = Convert.ToString(Request.QueryString["agrupamiento"]);
+                this.Session["agrupamiento"] = Globales.agrupamiento;
+                this.Session["usuId"] = int.Parse(this.Session["_usuId"].ToString());
+                Globales.usuId = int.Parse(this.Session["_usuId"].ToString());
+                this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
+                this.Session["liqId"] = this.objetoLiquidacion.liqId;
+                this.Session["Resultado"] = 0;
+                this.Session["radioSeleccionado"] = Request.QueryString["radioSeleccionado"];
+
+                if (Convert.ToInt32(this.Session["idGlobal"]) != 0)
                 {
-                    this.Session["idGlobal"] = Convert.ToInt32(base.Request.QueryString["Id"]);
-                    this.Session["periodo"] = base.Request.QueryString["periodo"];
-                    this.Session["fechaLiquidacion"] = Convert.ToDateTime(string.Concat("28/", this.Session["periodo"].ToString().Substring(0, 2), "/20", this.Session["periodo"].ToString().Substring(3, 2)));
-                    this.Session["textBox"] = base.Request.QueryString["textBox"];
-                    this.Session["pageIndex"] = Convert.ToInt32(base.Request.QueryString["pageIndex"]);
-                    this.Session["agrupamiento"] = Convert.ToString(base.Request.QueryString["agrupamiento"]);
-                    this.Session["usuId"] = int.Parse(this.Session["_usuId"].ToString());
-                    this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
-                    this.Session["liqId"] = this.objetoLiquidacion.liqId;
-                    this.Session["Resultado"] = 0;
-                    this.Session["radioSeleccionado"] = base.Request.QueryString["radioSeleccionado"];
-                    if (Convert.ToInt32(this.Session["idGlobal"]) != 0)
-                    {
-                        this.CargarDatosAgente(Convert.ToInt32(this.Session["idGlobal"]), Convert.ToInt32(this.Session["liqId"].ToString()));
-                        this.Cargar_ComboConceptos();
-                        this.CargarGrillaNovedades(this.Grilla.PageIndex);
-                        this.txtFecha.Text = DateTime.Today.ToString("yyyy-MM-dd");
-                    }
+                    this.CargarDatosAgente(Convert.ToInt32(this.Session["idGlobal"]), Convert.ToInt32(this.Session["liqId"].ToString()));
+                    this.Cargar_ComboConceptos();
+                    this.CargarGrillaNovedades(this.Grilla.PageIndex);
+                    this.txtFecha.Text = DateTime.Today.ToString("yyyy-MM-dd");
                 }
+
             }
         }
         catch (Exception exception)
@@ -309,9 +343,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                                                               + "&periodo=" + Session["periodo"].ToString() + "&textBox="
                                                               + Session["textBox"].ToString() + "&radioSeleccionado=" + Convert.ToInt32(Session["radioSeleccionado"])
                                                               + "&pageIndex=" + Convert.ToInt32(Session["pageIndex"]), true);*/
-
-            Response.Redirect("NovedadesConsulta.aspx", true);
-
+            Response.Redirect("NovedadesConsultav2.aspx", true);
         }
         catch (Exception oError)
         {
@@ -327,97 +359,107 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     protected void btnAgregarNovedad_Click(object sender, EventArgs e)
     {
         this.lblMensajeError.Text = "";
-        bool flag = false;
-        int num = 1;
         this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
-        if ((this.txtAgeSituRev.Text == "R" || this.txtAgeSituRev.Text == "Cargo retenido") && Convert.ToInt32(this.ComboConceptos.SelectedValue) != 16)
+        int codigoTardanza = 10;
+        int codigoBaja = 13;
+        int codigoBajaCargoRetenido = 16;
+        int inputCodigoConcepto = Convert.ToInt32(this.ComboConceptos.SelectedValue);
+        int inputDiasMinutos = Convert.ToInt32(this.txtDiasMin.Text);
+
+        if (inputCodigoConcepto != codigoBajaCargoRetenido && esCargoRetenido())
         {
-            NovedadInasistencia novedadInasistencium = new NovedadInasistencia();
-            num = novedadInasistencium.ValidarBajaCargoRetenido(Convert.ToInt32(this.Session["idGlobal"]), this.objetoLiquidacion.liqId);
-        }
-        if (num != 1)
-        {
-            this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Primero debe cargar 16- Baja cargo retenido");
-        }
-        else
-        {
-            if (!this.fechaValida())
+            if (validarBajaCargoRetenido() == 0)
             {
-                flag = true;
-                if (this.txtFecha.Text != "")
-                {
-                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("La Fecha ingresada no debe ser mayor al mes de Liquidacion");
-                }
-                else
-                {
-                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar una Fecha Valida");
-                }
-            }
-            else if (Convert.ToInt32(this.ComboConceptos.SelectedValue) > 10 && Convert.ToInt32(this.ComboConceptos.SelectedValue) <= 15)
-            {
-                this.objetoNovedad.ninCantidad = 30;
-            }
-            else if (this.txtDiasMin.Text == null || !(this.txtDiasMin.Text != ""))
-            {
-                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor en el campo Cantidad");
-                flag = true;
-            }
-            else if (Convert.ToInt32(this.ComboConceptos.SelectedValue) == 10)
-            {
-                if (Convert.ToInt32(this.txtDiasMin.Text) < 1 || Convert.ToInt32(this.txtDiasMin.Text) > 60)
-                {
-                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 60");
-                    flag = true;
-                }
-                else
-                {
-                    this.objetoNovedad.ninCantidad = Convert.ToInt32(this.txtDiasMin.Text);
-                }
-            }
-            else if (Convert.ToInt32(this.txtDiasMin.Text) < 1 || Convert.ToInt32(this.txtDiasMin.Text) > 30)
-            {
-                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 30");
-                flag = true;
-            }
-            else
-            {
-                this.objetoNovedad.ninCantidad = Convert.ToInt32(this.txtDiasMin.Text);
-            }
-            if (!flag)
-            {
-                this.objetoNovedad.NuevoAgeId1 = Convert.ToInt32(this.Session["idGlobal"]);
-                this.objetoNovedad.ncoId = Convert.ToInt32(this.ComboConceptos.SelectedValue);
-                this.objetoNovedad.ninFechaRegistro = DateTime.Now;
-                if (Convert.ToInt32(this.ComboConceptos.SelectedValue) != 13)
-                {
-                    this.objetoNovedad.ninFechaDesde = Convert.ToDateTime(this.txtFecha.Text);
-                }
-                else
-                {
-                    this.objetoNovedad.ninFechaDesde = Convert.ToDateTime(this.Session["fechaLiquidacion"].ToString());
-                }
-                this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
-                this.objetoNovedad.liqId = this.objetoLiquidacion.liqId;
-                this.objetoNovedad.usuCreaID = Convert.ToInt32(this.Session["usuId"].ToString());
-                if (Convert.ToInt32(this.Session["_esAdministrador"]) != 5)
-                {
-                    this.objetoNovedad.perEsAdministrador = Convert.ToInt32(this.Session["_esAdministrador"]);
-                }
-                else
-                {
-                    this.objetoNovedad.perEsAdministrador = 2;
-                }
-                this.objetoNovedad.ninActivo = 1;
-                if (this.objetoNovedad.ValidarConceptoRepetido(this.objetoNovedad.ncoId, this.objetoNovedad.NuevoAgeId1, this.objetoNovedad.liqId) != 0)
-                {
-                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("La Novedad ingresada ya existe en el Sistema");
-                    return;
-                }
-                this.objetoNovedad.Insertar();
-                base.Response.Redirect(string.Concat(FuncionesUtiles.eliminarParametroUrl(base.Request.UrlReferrer.ToString(), "operacion"), "&operacion=1"), true);
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Primero debe cargar 16- Baja cargo retenido");
                 return;
             }
         }
+
+        if (!fechaValida())
+        {
+            this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar una Fecha Valida");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(this.txtDiasMin.Text))
+        {
+            this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor en el campo Cantidad");
+            return;
+        }
+
+        if (inputCodigoConcepto > 10 && inputCodigoConcepto < 16)
+        {
+            this.objetoNovedad.ninCantidad = 30;
+        }
+
+        if (inputCodigoConcepto == codigoTardanza)
+        {
+            if (inputDiasMinutos < 1 || inputDiasMinutos > 60)
+            {
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 60");
+                return;
+            }
+            this.objetoNovedad.ninCantidad = inputDiasMinutos;
+        }
+        else
+        {
+            if (inputDiasMinutos < 1 || inputDiasMinutos > 30)
+            {
+                this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 30");
+                return;
+            }
+        }
+
+        this.objetoNovedad.ninCantidad = inputDiasMinutos;
+        this.objetoNovedad.NuevoAgeId1 = Convert.ToInt32(this.Session["idGlobal"]);
+        this.objetoNovedad.ncoId = inputCodigoConcepto;
+        this.objetoNovedad.ninFechaRegistro = DateTime.Now;
+        this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
+        this.objetoNovedad.liqId = this.objetoLiquidacion.liqId;
+        this.objetoNovedad.usuCreaID = Convert.ToInt32(this.Session["usuId"].ToString());
+
+        if (this.objetoNovedad.ValidarConceptoRepetido(this.objetoNovedad.ncoId, this.objetoNovedad.NuevoAgeId1, this.objetoNovedad.liqId) != 0)
+        {
+            this.lblMensajeError.Text = FuncionesUtiles.MensajeError("La Novedad ingresada ya existe en el Sistema");
+            return;
+        }
+
+        if (inputCodigoConcepto == codigoBaja)
+        {
+            this.objetoNovedad.ninFechaDesde = Convert.ToDateTime(this.Session["fechaLiquidacion"].ToString());
+        }
+        else
+        {
+            this.objetoNovedad.ninFechaDesde = Convert.ToDateTime(this.txtFecha.Text);
+        }
+
+        if (Convert.ToInt32(this.Session["_esAdministrador"]) != 5)
+        {
+            this.objetoNovedad.perEsAdministrador = Convert.ToInt32(this.Session["_esAdministrador"]);
+        }
+        else
+        {
+            this.objetoNovedad.perEsAdministrador = 2;
+        }
+
+        this.objetoNovedad.ninActivo = 1;
+        this.objetoNovedad.Insertar();
+        Response.Redirect(string.Concat(FuncionesUtiles.eliminarParametroUrl(Request.UrlReferrer.ToString(), "operacion"), "&operacion=1"), true);
+        return;
+    }
+
+    protected bool esCargoRetenido()
+    {
+        return this.txtAgeSituRev.Text == "R" || this.txtAgeSituRev.Text == "Cargo retenido";
+    }
+
+    protected int validarBajaCargoRetenido()
+    {
+        this.objetoLiquidacion = this.objetoLiquidacion.ObtenerLiquidacionAbierta();
+        int bajaCargoRetenido = 1;
+        NovedadInasistencia novedadInasistencium = new NovedadInasistencia();
+        bajaCargoRetenido = novedadInasistencium.ValidarBajaCargoRetenido(Convert.ToInt32(this.Session["idGlobal"]), this.objetoLiquidacion.liqId);
+        return bajaCargoRetenido;
     }
 
     private void Cargar_ComboConceptos()
@@ -523,6 +565,11 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             case 17:
                 dt = objetoNovedadConcepto.ObtenerListaConceptosDescentralizados();
                 break;
+
+            // PREVISIONAL
+            case 18:
+                dt = objetoNovedadConcepto.ObtenerListaBajas();
+                break;
         }
 
         //dt = objetoNovedadConcepto.ObtenerListaConceptos();
@@ -571,7 +618,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             Session["PerfilConsulta.PageIndex"] = PageIndex;
 
             dt = new DataTable();
-            dt = objetoNovedad.ObtenerTodoPorAgenteEtapa(Convert.ToInt32(Session["idGlobal"]), Convert.ToInt32(Session["liqId"].ToString()));
+            dt = objetoNovedad.ObtenerTodoPorAgenteEtapa(Convert.ToInt32(Session["idGlobal"]), Convert.ToInt32(Session["liqId"].ToString()), Globales.usuId);
             this.Grilla.DataSource = dt;
             this.Grilla.PageIndex = PageIndex;
             this.Grilla.DataBind();
@@ -601,31 +648,30 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            if (e.CommandName != "Sort" && e.CommandName != "Page" && e.CommandName != "")
+            if (e.CommandName == "Modificar")
             {
                 string Id = ((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Controls[1]).Text;
+                int inputCodigoConcepto = Int32.Parse(((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Controls[1]).Text);
+                int actualizable = Int32.Parse(((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[2].Controls[1]).Text);
 
-                if (e.CommandName == "Eliminar")
+                if (actualizable == 0)
                 {
-                    //Id = ((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Controls[1]).Text;
-                    lbuEliminar_Click(sender, e);
-                    //ocnPerfil.Eliminar(Convert.ToInt32(Id));
-                    // this.GrillaCargar(this.Grilla.PageIndex);
+                    this.lblMensajeError.Text = FuncionesUtiles.MensajeError("No puede modificar una novedad cargada por otro usuario");
+                    return;
                 }
 
-                if (e.CommandName == "Copiar")
+                Globales.liquidacion = objetoLiquidacion.ObtenerLiquidacionAbierta();
+                if (inputCodigoConcepto == 16)
                 {
-                    Id = ((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Controls[1]).Text;
-                    //ocnPerfil = new LiquidacionSueldos.Negocio.Perfil(Convert.ToInt32(Id));
-                    //ocnPerfil.Copiar();
-                    //this.GrillaCargar(this.Grilla.PageIndex);
+                    LiquidacionSueldos.Negocio.NovedadInasistencia objetoNovedad = new LiquidacionSueldos.Negocio.NovedadInasistencia();
+                    dt = objetoNovedad.ObtenerTodoPorAgenteEtapa(Globales.ageId, Globales.liquidacion.liqId, Globales.usuId);
+                    if (dt.Rows.Count > 1)
+                    {
+                        this.lblMensajeError.Text = FuncionesUtiles.MensajeError("Primero debe eliminar las novedades cargadas");
+                        return;
+                    }
                 }
-
-                if (e.CommandName == "Ver")
-                {
-                    Id = ((HyperLink)Grilla.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Controls[1]).Text;
-                    //Response.Redirect("PerfilRegistracion.aspx?Id=" + Id + "&Ver=1", false);
-                }
+                Response.Redirect("NovedadesModificar.aspx?Id=" + Id + "&agru=" + Globales.agrupamiento, false);
             }
         }
         catch (Exception oError)
@@ -736,23 +782,14 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected bool fechaValida()
     {
-        bool resultado = false;
-        if (txtFecha.Text != "")
-        {
-            /*  if (Convert.ToDateTime(txtFecha.Text) <= Session["fechaLiquidacion"].ToString() && txtFecha.Text != "")
-                  resultado = true;
-              else
-                  resultado = false;*/
-            resultado = true;
-        }
-        return resultado;
+        return txtFecha.Text != "";
     }
 
-    protected void mostrarMensaje()
+    protected void mostrarMensajeResultadoOperacion()
     {
-        if (base.Request.QueryString["operacion"] != null)
+        if (Request.QueryString["operacion"] != null)
         {
-            string item = base.Request.QueryString["operacion"];
+            string item = Request.QueryString["operacion"];
             string str = item;
             if (item != null)
             {

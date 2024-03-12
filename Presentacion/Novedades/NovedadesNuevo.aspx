@@ -71,7 +71,7 @@
                                 </div>
                                 <%-- SEGUNDO GRUPO --%>
                             </div>
-                            
+
                             <div class="form-group">
                                 <%--3-A--%>
                                 <label class="control-label col-md-1">
@@ -79,8 +79,8 @@
                                 </label>
                                 <div class="col-md-2">
                                     <asp:TextBox ID="txtAgeSituRev" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
-                                </div>                            
-                                 <%--3-C--%>
+                                </div>
+                                <%--3-C--%>
                                 <asp:Label runat="server" ID="Label2" Font-Bold="true" class="control-label col-md-2">Bloqueo</asp:Label>
                                 <div class="col-md-3">
                                     <asp:TextBox ID="txtAgeBloqueo" type="text" class="form-control" runat="server" ReadOnly></asp:TextBox>
@@ -162,11 +162,24 @@
                                         AutoGenerateColumns="False" OnRowDataBound="Grilla_RowDataBound" OnRowCommand="Grilla_RowCommand"
                                         PageSize="12" AllowPaging="True" OnPageIndexChanging="Grilla_PageIndexChanging">
                                         <Columns>
+                                            <asp:TemplateField HeaderText="ID" Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ForeColor="Black" ID="ncoCod" runat="server"
+                                                        Text='<%# Eval("ninId") %>' />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
 
                                             <asp:TemplateField HeaderText="Codigo Novedad">
                                                 <ItemTemplate>
                                                     <asp:HyperLink ForeColor="Black" ID="ncoCod" runat="server"
                                                         Text='<%# Eval("ncoCod") %>' />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+
+                                            <asp:TemplateField HeaderText="Actualizable" Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ForeColor="Black" ID="ncoCod" runat="server"
+                                                        Text='<%# Eval("actualizable") %>' />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
@@ -192,19 +205,19 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                              <asp:TemplateField HeaderText="Cargado por">
+                                            <asp:TemplateField HeaderText="Cargado por">
                                                 <ItemTemplate>
                                                     <asp:HyperLink ForeColor="Black" ID="usuNombre" runat="server"
                                                         Text='<%# Eval("usuNombre") %>' />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                                <asp:TemplateField HeaderText="Actualizado por">
+                                            <asp:TemplateField HeaderText="Actualizado por">
                                                 <ItemTemplate>
                                                     <asp:HyperLink ForeColor="Black" ID="usuActualiza" runat="server"
                                                         Text='<%# Eval("usuActualiza") %>' />
                                                 </ItemTemplate>
-                                            </asp:TemplateField>                                                                                       
+                                            </asp:TemplateField>
                                             <asp:ButtonField CommandName="Modificar" HeaderText="" Text="Modificar" />
                                         </Columns>
                                         <FooterStyle HorizontalAlign="Left" />

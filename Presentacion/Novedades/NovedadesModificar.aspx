@@ -47,7 +47,7 @@
                         <div class="col-md-6">
                             <asp:TextBox ID="txtFecha" type="date" class="form-control m-b" runat="server"
                                 AutoPostBack="false" placeholder="fecha"></asp:TextBox>
-                        </div>
+                        </div>  
                     </div>
 
                     <hr class="hr-line-dashed" />

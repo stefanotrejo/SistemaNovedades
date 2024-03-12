@@ -91,13 +91,6 @@ namespace LiquidacionSueldos
                 set { _usuActivo = value; }
             }
 
-            private int _perId;
-            public int perId
-            {
-                get { return _perId; }
-                set { _perId = value; }
-            }
-
             private int _usuIdCreacion;
             public int usuIdCreacion
             {
@@ -110,6 +103,13 @@ namespace LiquidacionSueldos
             {
                 get { return _usuIdUltimaModificacion; }
                 set { _usuIdUltimaModificacion = value; }
+            }
+
+            private int _perId;
+            public int perId
+            {
+                get { return _perId; }
+                set { _perId = value; }
             }
 
             public Usuario()
@@ -295,7 +295,6 @@ namespace LiquidacionSueldos
                     throw ex;
                 }
             }
-
 
             public DataTable ObtenerAutenticar(string usuNombreIngreso, string usuClave)
             {
@@ -498,10 +497,10 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
-            public DataTable ObtenerUno(int usuId)
+            public Usuario ObtenerUno(int usuId)
             {
-                ocdGestor = new Datos.Gestor();
                 Tabla = new DataTable();
+                Usuario usuario = new Usuario();
 
                 try
                 {
@@ -509,13 +508,24 @@ namespace LiquidacionSueldos
                         "@usuId",
                         usuId
                     } });
+
+                    if (Tabla == null)
+                    {
+                        return null;
+                    }
+
+                    usuario.usuId = Int32.Parse(Convert.ToString(Tabla.Rows[0]["Id"]));
+                    usuario.usuNombre = Tabla.Rows[0]["Nombre"].ToString();
+                    usuario.usuApellido = Tabla.Rows[0]["Apellido"].ToString();
+                    usuario.usuNombreIngreso = Tabla.Rows[0]["NombreIngreso"].ToString();
+                    usuario.perId = Int32.Parse(Convert.ToString(Tabla.Rows[0]["Id"]));
+
+                    return usuario;
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-
-                return Tabla;
             }
 
             public DataTable ObtenerUnoUsuarioEmail(string Usuario, string Email)

@@ -6,75 +6,56 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Text;
+using System.Globalization;
 
 // ABM DE LIQUIDACIONES
 
 public partial class PerfilRegistracion : System.Web.UI.Page
 {
-    LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();
-    DataTable dt, dt2, resultado = new DataTable();
+    LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();    
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
-    //LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-    LiquidacionSueldos.Negocio.NovedadInasistencia objetoNin = new LiquidacionSueldos.Negocio.NovedadInasistencia();
+    LiquidacionSueldos.Negocio.NovedadInasistencia oNovedadInasistencia = new LiquidacionSueldos.Negocio.NovedadInasistencia();
+    DataTable dt, dt2, resultado = new DataTable();
+    string previousPage;
 
-    #region Variables Globales
     public class Globales
     {
-        private static int _ninId;
-        public static int ninId
-        {
-            get
-            {                
-                return _ninId;
-            }
-            set
-            {                
-                _ninId = value;
-            }
-        }
-
-        private static int _tipoOp;
-        public static int tipoOp
+        private static int _novedadInasistenciaID;
+        public static int novedadInasistenciaID
         {
             get
             {
-                // Reads are usually simple
-                return _tipoOp;
+                return _novedadInasistenciaID;
             }
             set
             {
-                // You can add logic here for race conditions,
-                // or other measurements
-                _tipoOp = value;
+                _novedadInasistenciaID = value;
             }
         }
 
-        private static string _Agrupamiento;
+        private static string _agrupamiento;
         public static string agrupamiento
         {
             get
-            {               
-                return _Agrupamiento;
+            {
+                return _agrupamiento;
             }
             set
-            {                
-                _Agrupamiento = value;
+            {
+                _agrupamiento = value;
             }
         }
 
-        private static int _usuId;
-        public static int usuId
+        private static int _usuID;
+        public static int usuID
         {
             get
             {
-                // Reads are usually simple
-                return _usuId;
+                return _usuID;
             }
             set
             {
-                // You can add logic here for race conditions,
-                // or other measurements
-                _usuId = value;
+                _usuID = value;
             }
         }
 
@@ -90,44 +71,47 @@ public partial class PerfilRegistracion : System.Web.UI.Page
                 _fechaLiquidacion = value;
             }
         }
-
-        // Perhaps extend this to have Read-Modify-Write static methods
-        // for data integrity during concurrency? Situational.
     }
-    #endregion
 
     protected void Page_Load(object sender, EventArgs e)
-    {       
+    {
         try
-        {            
-            //Primera vez que se carga - NO ES POSTBACK
+        {
+            string agrupamiento;
+            int esAdministrador;
+            DataTable novedadInasistencia = new DataTable();
+            LiquidacionSueldos.Negocio.Liquidacion oLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+
+            this.Master.TituloDelFormulario = "Actualizar Novedad";
+            if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+            
+            oLiquidacion = oLiquidacion.ObtenerLiquidacionAbierta();
+            if (oLiquidacion == null)
+            {
+                cambiarEstadoBoton(false);
+                cambiarEstadoTextBox(false);
+                lblMensajeError.Text = FuncionesUtiles.MensajeError(CodigosErrores.errorLiquidacionCerrada);
+                return;
+            }
+
             if (!Page.IsPostBack)
             {
-                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
-                this.Master.TituloDelFormulario = "Actualizar Novedad";
-                Session["PreviousPage"] = Request.UrlReferrer.ToString();               
-                Session["ninId"] = Convert.ToInt32(Request.QueryString["Id"]);
-                if (Request.QueryString["Id"] != null)
-                {                                        
-                    Session["agrupamiento"] = Convert.ToString(Request.QueryString["agru"]);                    
-                    Session["fechaLiquidacion"] = Convert.ToDateTime(Request.QueryString["fechaLiquidacion"].Substring(0, 10));
-                    if (int.Parse(Session["ninId"].ToString()) != 0)
-                    {                        
-                        Cargar_ComboConceptos();
-                        resultado = objetoNin.ObtenerUno(int.Parse(Session["ninId"].ToString()));
-                        ComboConceptos.SelectedValue = Convert.ToString(resultado.Rows[0]["ncoId"]);
-                        bloquearCampoCantidadFecha();
-                        txtDiasMin.Text = Convert.ToString(resultado.Rows[0]["ninCantidad"]);
-                        String Fecha = Convert.ToString(resultado.Rows[0]["ninFechaDesde"]).Substring(0, 10).Replace('/', '-');                        
-                        txtFecha.Text = Fecha.Substring(6, 4) + '-' + Fecha.Substring(3, 2) + '-' + Fecha.Substring(0, 2);
-                    }
-                    else                    
-                        Response.Redirect(Session["PreviousPage"].ToString(), true);                    
-                }
-                else
-                {
-                    Response.Redirect(Session["PreviousPage"].ToString(), true);
-                }
+                Globales.novedadInasistenciaID = Convert.ToInt32(Request.QueryString["Id"]);
+                if (Globales.novedadInasistenciaID == 0) Response.Redirect(Session["PreviousPage"].ToString(), true);
+
+                agrupamiento = Request.QueryString["agru"];
+                esAdministrador = Convert.ToInt32(Session["_esAdministrador"]);
+                Session["PreviousPage"] = Request.UrlReferrer.ToString();
+                Session["novedadInasistenciaID"] = Globales.novedadInasistenciaID;
+                Session["agrupamiento"] = agrupamiento;
+
+                cargarConceptos(esAdministrador, agrupamiento);
+
+                oNovedadInasistencia = oNovedadInasistencia.ObtenerUno(Globales.novedadInasistenciaID);
+                ComboConceptos.SelectedValue = Convert.ToString(oNovedadInasistencia.ncoId);
+                txtDiasMin.Text = oNovedadInasistencia.ninCantidad.ToString();
+                txtFecha.Text = FuncionesUtiles.convertirFechaParaTextbox(oNovedadInasistencia.ninFechaDesdeString);
+                bloquearCampoCantidadFecha();
             }
         }
         catch (Exception oError)
@@ -141,41 +125,61 @@ public partial class PerfilRegistracion : System.Web.UI.Page
         }
     }
 
+    protected void cambiarEstadoBoton(bool estado)
+    {
+        btnActualizar.Visible = estado;
+        btnEliminar.Visible = estado;
+    }
+
+    protected void cambiarEstadoTextBox(bool estado)
+    {
+        txtDiasMin.Enabled = estado;
+        txtFecha.Enabled = estado;
+    }
+
     protected void btnActualizar_Click(object sender, EventArgs e)
     {
+        LiquidacionSueldos.Negocio.Liquidacion oLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+        if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+
+        oLiquidacion = oLiquidacion.ObtenerLiquidacionAbierta();
+        if (oLiquidacion == null)
+        {
+            cambiarEstadoBoton(false);
+            cambiarEstadoTextBox(false);
+            lblMensajeError.Text = lblMensajeError.Text = FuncionesUtiles.MensajeError(CodigosErrores.errorLiquidacionCerrada);
+            return;
+        }
+
         try
         {
-            #region Validaciones
-            //Agregar validacion si ya existe o no con Campo Activo y si esta en 0 poner en 1.
-
             lblMensajeError.Text = "";
             bool hayErrores = false;
 
             if (fechaValida())
             {
                 // INICIO Validacion de cantidad ingresada de dias segun el codigo de concepto
-                // Codigo novedad <10 or =10 or >15
+                // Codigo novedad <=10 or >15
                 if (Convert.ToInt32(ComboConceptos.SelectedValue) <= 10
-            || Convert.ToInt32(ComboConceptos.SelectedValue) > 15)                
+                    || Convert.ToInt32(ComboConceptos.SelectedValue) > 15)
+                {
+                    if (txtDiasMin.Text != "")
                     {
-                    if (txtDiasMin.Text != null && txtDiasMin.Text != "")
-                    {
-                        // Codigo = 10
                         if (Convert.ToInt32(ComboConceptos.SelectedValue) == 10)
                         {
                             if (Convert.ToInt32(txtDiasMin.Text) >= 1 && Convert.ToInt32(txtDiasMin.Text) <= 60)
-                                objetoNin.ninCantidad = Convert.ToInt32(txtDiasMin.Text);
+                                oNovedadInasistencia.ninCantidad = Convert.ToInt32(txtDiasMin.Text);
                             else
                             {
                                 lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 60");
-                                hayErrores = true;
+                                return;
                             }
                         }
                         // caso <10 o >15
                         else
                         {
                             if (Convert.ToInt32(txtDiasMin.Text) >= 1 && Convert.ToInt32(txtDiasMin.Text) <= 30)
-                                objetoNin.ninCantidad = Convert.ToInt32(txtDiasMin.Text);
+                                oNovedadInasistencia.ninCantidad = Convert.ToInt32(txtDiasMin.Text);
                             else
                             {
                                 lblMensajeError.Text = FuncionesUtiles.MensajeError("Debe ingresar un valor mayor que 0 y menor o igual a 30");
@@ -190,7 +194,7 @@ public partial class PerfilRegistracion : System.Web.UI.Page
                     }
                 }
                 else
-                    objetoNin.ninCantidad = -1;
+                    oNovedadInasistencia.ninCantidad = -1;
             }
             else
             {
@@ -205,24 +209,11 @@ public partial class PerfilRegistracion : System.Web.UI.Page
 
             if (!hayErrores)
             {
-                //objetoNin.ncoId = Convert.ToInt32(ComboConceptos.SelectedValue);
-                //objetoNin.ninFechaRegistro = DateTime.Now;
-
-                // validacion para codigo 13 - Baja
-               /* if (Convert.ToInt32(ComboConceptos.SelectedValue) == 13)
-                    objetoNin.ninFechaDesde = Globales.fechaLiquidacion;
-                else
-                    objetoNin.ninFechaDesde = Convert.ToDateTime(txtFecha.Text);                                
-                    */
-
-                objetoNin.Actualizar(int.Parse(Session["ninId"].ToString()), Convert.ToInt32(txtDiasMin.Text), Convert.ToDateTime(txtFecha.Text), int.Parse(Session["_usuId"].ToString()));
-                //Session["Actualizado"] = 1;
+                oNovedadInasistencia.Actualizar(Globales.novedadInasistenciaID, Convert.ToInt32(txtDiasMin.Text),
+                                    Convert.ToDateTime(txtFecha.Text), int.Parse(Session["_usuID"].ToString()));
                 string pagina = Session["PreviousPage"].ToString();
-                //Response.Redirect(Session["PreviousPage"].ToString() + "&operacion=2", true);
                 Response.Redirect(FuncionesUtiles.eliminarParametroUrl(Session["PreviousPage"].ToString(), "operacion") + "&operacion=2", true);
             }
-
-            #endregion            
         }
         catch (Exception oError)
         {
@@ -232,19 +223,30 @@ public partial class PerfilRegistracion : System.Web.UI.Page
             Se ha producido el siguiente error:<br/>
             MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
             "</div>";
-        }       
-        //Response.Redirect(Session["PreviousPage"].ToString(), true); esto estaba sin comentar
+        }
     }
 
     protected void btnEliminar_Click(object sender, EventArgs e)
     {
+        LiquidacionSueldos.Negocio.Liquidacion oLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+        if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
+
+        oLiquidacion = oLiquidacion.ObtenerLiquidacionAbierta();
+        if (oLiquidacion == null)
+        {
+            cambiarEstadoBoton(false);
+            cambiarEstadoTextBox(false);
+            lblMensajeError.Text = lblMensajeError.Text = FuncionesUtiles.MensajeError(CodigosErrores.errorLiquidacionCerrada);
+            return;
+        }
+
         try
         {
-            objetoNin.Eliminar(int.Parse(Session["ninId"].ToString()), int.Parse(Session["_usuId"].ToString()));
+            oNovedadInasistencia.Eliminar(int.Parse(Session["novedadInasistenciaID"].ToString()), int.Parse(Session["_usuID"].ToString()));
             //Session["Actualizado"] = 2;
             //Response.Redirect(Session["PreviousPage"].ToString() + "&operacion=3", true);
             Response.Redirect(FuncionesUtiles.eliminarParametroUrl(Session["PreviousPage"].ToString(), "operacion") + "&operacion=3", true);
-            
+
         }
         catch (Exception oError)
         {
@@ -260,8 +262,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     protected void btnCancelar_Click(object sender, EventArgs e)
     {
         try
-        {                        
-                Response.Redirect(FuncionesUtiles.eliminarParametroUrl(Session["PreviousPage"].ToString(),"operacion"), true);
+        {
+            Response.Redirect(FuncionesUtiles.eliminarParametroUrl(Session["PreviousPage"].ToString(), "operacion"), true);
             //Response.Redirect(Session["PreviousPage"].ToString(), true);
         }
 
@@ -279,28 +281,23 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     protected void ComboConceptos_SelectedIndexChanged(object sender, EventArgs e)
     {
         bloquearCampoCantidadFecha();
-      /*  if (Convert.ToInt32(ComboConceptos.SelectedValue) >= 11)
-            txtDiasMin.Enabled = false;
-        else
-            txtDiasMin.Enabled = true;*/
     }
 
-    private void Cargar_ComboConceptos()
+    private void cargarConceptos(int esAdministrador, string agrupamiento)
     {
         // MANDAR AGRUPAMIENTO DESDE NOVEDADNUEVO 
         // CASO DOCENTES BLOQUEAR TODO SOLO DEJAR ELIMINAR
-
         ComboConceptos.DataValueField = "ncoId";
         ComboConceptos.DataTextField = "CodigoDenominacion";
         LiquidacionSueldos.Negocio.NovedadConcepto objetoNovedadConcepto = new LiquidacionSueldos.Negocio.NovedadConcepto();
 
-        switch (Convert.ToInt32(Session["_esAdministrador"]))
+        switch (esAdministrador)
         {
             case 1:
                 break;
 
             case 2:
-                if (Session["agrupamiento"].ToString() == "06")
+                if (agrupamiento == "06")
                 {
                     dt = objetoNovedadConcepto.ObtenerListaConceptosDocentes();
                     txtDiasMin.Enabled = false;
@@ -316,7 +313,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 break;
 
             case 5:
-                if (Session["agrupamiento"].ToString() == "06")
+                if (agrupamiento == "06")
                 {
                     dt = objetoNovedadConcepto.ObtenerListaConceptosDocentes();
                     txtDiasMin.Enabled = false;
@@ -383,8 +380,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 break;
         }
 
-        //dt = objetoNovedadConcepto.ObtenerListaConceptos();
-
         dt.Columns.Add("CodigoDenominacion", typeof(string), "ncoCod + ' - ' + ncoNombre");
         ComboConceptos.DataSource = dt;
         ComboConceptos.DataBind();
@@ -395,10 +390,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         bool resultado = false;
         if (txtFecha.Text != "")
         {
-            /*  if (Convert.ToDateTime(txtFecha.Text) <= Globales.fechaLiquidacion && txtFecha.Text != "")
-                  resultado = true;
-              else
-                  resultado = false;*/
             resultado = true;
         }
         return resultado;
@@ -414,11 +405,11 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         if (Convert.ToInt32(ComboConceptos.SelectedValue) >= 11
             && Convert.ToInt32(ComboConceptos.SelectedValue) <= 15)
             txtDiasMin.Enabled = false;
-/*
-        if (Convert.ToInt32(ComboConceptos.SelectedValue) == 12 ||
-            (Convert.ToInt32(ComboConceptos.SelectedValue) == 13))
-            txtFecha.Enabled = false;
-            */
+        /*
+                if (Convert.ToInt32(ComboConceptos.SelectedValue) == 12 ||
+                    (Convert.ToInt32(ComboConceptos.SelectedValue) == 13))
+                    txtFecha.Enabled = false;
+                    */
     }
 
     public static string eliminarUrlParametro(string url, string key)

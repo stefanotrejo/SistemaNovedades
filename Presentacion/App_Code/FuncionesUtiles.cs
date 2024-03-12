@@ -21,13 +21,13 @@ public static class FuncionesUtiles
 {
     private static string SeparadorDecimal = "";
     private static string NotSeparadorDecimal = "";
-    private static LiquidacionSueldos.Datos.Gestor ocnGestor = new LiquidacionSueldos.Datos.Gestor();
+    //private static LiquidacionSueldos.Datos.Gestor ocnGestor = new LiquidacionSueldos.Datos.Gestor();
     private static DataTable dt;
     private static string mensaje;
 
     static FuncionesUtiles()
     {
-        SeparadorDecimal = System.Configuration.ConfigurationSettings.AppSettings["SeparadorDecimal"].ToString();
+        SeparadorDecimal = ConfigurationManager.AppSettings["SeparadorDecimal"].ToString();
 
         if (SeparadorDecimal == ",")
         {
@@ -87,42 +87,42 @@ public static class FuncionesUtiles
         return DateTime.TryParse(Fecha, out FechaDt);
     }
 
-    public static bool EsFecha(string Dia, string Mes, string Ano)
-    {
-        bool Resultado = false;
+//    public static bool EsFecha(string Dia, string Mes, string Ano)
+//    {
+//        bool Resultado = false;
 
-        #region Sql
-        string Sql = @"
-set dateformat dmy
+//        #region Sql
+//        string Sql = @"
+//set dateformat dmy
 
-declare @Dia int, @Mes int, @Ano int, @FechaString varchar(50)
-select @Dia = " + Dia.ToString() + @"
-select @Mes = " + Mes.ToString() + @"
-select @Ano = " + Ano.ToString() + @"
+//declare @Dia int, @Mes int, @Ano int, @FechaString varchar(50)
+//select @Dia = " + Dia.ToString() + @"
+//select @Mes = " + Mes.ToString() + @"
+//select @Ano = " + Ano.ToString() + @"
 
-select @FechaString = 
-case when @Dia < 10 then '0' else '' end + convert(varchar(50),@Dia) + '/' +
-case when @Mes < 10 then '0' else '' end + convert(varchar(50),@Mes) + '/' +
-convert(varchar(50),@Ano)
+//select @FechaString = 
+//case when @Dia < 10 then '0' else '' end + convert(varchar(50),@Dia) + '/' +
+//case when @Mes < 10 then '0' else '' end + convert(varchar(50),@Mes) + '/' +
+//convert(varchar(50),@Ano)
 
-select ISDATE(@FechaString) as Resultado";
-        #endregion
+//select ISDATE(@FechaString) as Resultado";
+//        #endregion
 
-        dt = ocnGestor.EjecutarReaderSql(Sql);
-        if (dt.Rows.Count != 0)
-        {
-            if (dt.Rows[0]["Resultado"].ToString() == "1")
-            {
-                Resultado = true;
-            }
-            else
-            {
-                Resultado = false;
-            }
-        }
+//        dt = ocnGestor.EjecutarReaderSql(Sql);
+//        if (dt.Rows.Count != 0)
+//        {
+//            if (dt.Rows[0]["Resultado"].ToString() == "1")
+//            {
+//                Resultado = true;
+//            }
+//            else
+//            {
+//                Resultado = false;
+//            }
+//        }
 
-        return Resultado;
-    }
+//        return Resultado;
+//    }
 
     public static void AbreVentana(String url)
     {
@@ -149,6 +149,13 @@ select ISDATE(@FechaString) as Resultado";
                         "<br>" + "</div>";
     }
 
+    public static string convertirFechaParaTextbox(string fecha)
+    {
+        string dia = fecha.Substring(0, 2);
+        string mes = fecha.Substring(3, 2);
+        string anio = fecha.Substring(6, 4);
+        return anio + '-' + mes + '-' + dia;
+    }
     public static string eliminarParametroUrl(string url, string key)
     {
         var uri = new Uri(url);
@@ -201,12 +208,6 @@ select ISDATE(@FechaString) as Resultado";
 
     public static Boolean agregarAnio(int mesActual)
     {
-        switch (mesActual)
-        {           
-            case 12:
-                return true;
-            default:
-                return false;
-        }        
+        return mesActual == 12;
     }
 }
