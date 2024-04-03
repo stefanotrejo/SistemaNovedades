@@ -73,6 +73,8 @@
                                     <asp:Button ID="btnCerrar" class="btn btn-w-m btn-danger" runat="server" Text="Cerrar" OnClick="btnCerrar_Click" />                                </div>
                                 <asp:Button ID="btnGenerarArchivos" class="btn btn-w-m btn-danger" runat="server" Text="Generar Archivos" OnClick="btnGenerarArchivos_Click" />
                                 <asp:Button ID="btnGenerarOrdenPago" class="btn btn-w-m btn-danger" runat="server" Text="Generar OP" OnClick="btnGenerarOrdenPago_Click" />
+                                <asp:Button ID="btnGenerarOrdenPagoPatronal" class="btn btn-w-m btn-danger" runat="server" Text="OP Patronal" OnClick="btnGenerarOrdenPagoPatronal_Click" />
+                                <asp:Button ID="btnGenerarOrdenPagoEmpleado" class="btn btn-w-m btn-danger" runat="server" Text="OP Empleado" OnClick="btnGenerarOrdenPagoEmpleado_Click" />
                             </div>
                         </fieldset>
                     </div>

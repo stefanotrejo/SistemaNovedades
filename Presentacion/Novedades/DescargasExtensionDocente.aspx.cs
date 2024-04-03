@@ -28,6 +28,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
 
                 archivosPorPerfil.Add("1", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden", "Rectificativa" }); // administrador
                 archivosPorPerfil.Add("4", new string[] { "Banco", "Ministerio", "extdoc_cge", "Ganancias", "Orden", "Rectificativa" }); // director
+                archivosPorPerfil.Add("16", new string[] { "extdoc_cge"}); // educacion
                 archivosPorPerfil.Add("20", new string[] { "Banco", "Orden", "Rectificativa" }); // banco
                 archivosPorPerfil.Add("21", new string[] { "extdoc_cge" });
                 archivosPorPerfil.Add("22", new string[] { "Ministerio", "Orden" });

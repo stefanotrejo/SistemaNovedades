@@ -195,8 +195,8 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
         try
         {
             //Si se esta cargando por primera vez
-            //if (!Page.IsPostBack)
-            //{
+            if (!Page.IsPostBack)
+            {
                 DeshabilitarBotonesLiquidacion();
 
                 this.Master.TituloDelFormulario = "Consulta de Liquidaciones Extension Docente";
@@ -219,7 +219,7 @@ public partial class LiquidacionExtensionDocente : System.Web.UI.Page
                 MenuRaizListaAnioDesde.DataSource = dt;
                 MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
                 MenuRaizListaAnioDesde.DataBind();
-            //}
+            }
         }
         catch (Exception oError)
         {
@@ -833,5 +833,47 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
 "</div>";
         }   
+    }
+
+    protected void btnGenerarOrdenPagoPatronal_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            String NomRep = "OrdenPagoExtensionHorariaPatronal.rpt";
+            //NomRep = "OrdenPago.rpt";
+
+            int liqID = Convert.ToInt32(txtLiqId.Text);
+            FuncionesUtiles.AbreVentana("../Pagos_Eventuales/Reporte.aspx?liq_id=" + liqID + "&NomRep=" + NomRep);
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+        <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+        Se ha producido el siguiente error:<br/>
+        MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+"</div>";
+        }
+    }
+
+    protected void btnGenerarOrdenPagoEmpleado_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            String NomRep = "OrdenPagoExtensionHorariaEmpleado.rpt";
+            //NomRep = "OrdenPago.rpt";
+
+            int liqID = Convert.ToInt32(txtLiqId.Text);
+            FuncionesUtiles.AbreVentana("../Pagos_Eventuales/Reporte.aspx?liq_id=" + liqID + "&NomRep=" + NomRep);
+        }
+        catch (Exception oError)
+        {
+            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+        <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+        Se ha producido el siguiente error:<br/>
+        MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
+"</div>";
+        }
     }
 }
