@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <br />
-                            <div class="form-group">
+                            <div class="form-group" style="margin-left: 25px">
                                 <div class="col-md-12">
                                     <asp:Button ID="btnNuevo" class="btn btn-w-m btn-primary" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
                                     <asp:Button ID="btnModificar" class="btn btn-w-m btn-primary" runat="server" Text="Modificar" OnClick="btnModificar_Click" />

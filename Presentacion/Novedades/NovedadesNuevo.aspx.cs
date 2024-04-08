@@ -302,6 +302,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                     this.Cargar_ComboConceptos();
                     this.CargarGrillaNovedades(this.Grilla.PageIndex);
                     this.txtFecha.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                    bloquearCampoCantidadFecha();
                 }
 
             }
@@ -364,7 +365,13 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         int codigoBaja = 13;
         int codigoBajaCargoRetenido = 16;
         int inputCodigoConcepto = Convert.ToInt32(this.ComboConceptos.SelectedValue);
-        int inputDiasMinutos = Convert.ToInt32(this.txtDiasMin.Text);
+        int inputDiasMinutos;
+
+        if (string.IsNullOrEmpty(this.txtDiasMin.Text)) {
+            this.txtDiasMin.Text = "30";            
+        }
+
+        inputDiasMinutos = Convert.ToInt32(this.txtDiasMin.Text);
 
         if (inputCodigoConcepto != codigoBajaCargoRetenido && esCargoRetenido())
         {
