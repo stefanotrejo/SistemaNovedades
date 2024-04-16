@@ -939,8 +939,11 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         else
             reparticion = Convert.ToInt32(Session["_esAdministrador"]);
 
+        objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
+        objetoLiquidacion = objetoLiquidacion.ObtenerLiquidacionAbierta();
+
         String NomRep = "InformeNovedadesCargadas2.rpt";
-        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())
+        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + objetoLiquidacion.liqId
             + "&reparticion=" + reparticion
                 + "&NomRep=" + NomRep);
     }
