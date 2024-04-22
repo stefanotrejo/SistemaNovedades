@@ -957,7 +957,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             reparticion = Convert.ToInt32(Session["_esAdministrador"]);
 
         String NomRep = "InformeNovedadesCargadasPorUsuario.rpt";
-        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + Convert.ToInt32(Session["liqId"].ToString())
+        FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + objetoLiquidacion.liqId
             + "&reparticion=" + reparticion
                 + "&NomRep=" + NomRep);
     }
