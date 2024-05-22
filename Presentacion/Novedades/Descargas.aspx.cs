@@ -19,29 +19,39 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
         {
             if (!Page.IsPostBack)
             {
-                //this.Master.TituloDelFormulario = "Menu Inicio";
                 this.Master.TituloDelFormulario = "Descarga de Archivos";
                 if (this.Session["_Autenticado"] == null) Response.Redirect("PaginasBasicas/Login.aspx", true);
 
+                var archivosPorPerfil = new Dictionary<string, string[]>();
                 Int32 liqId, reparticion;
                 liqId = Int32.Parse(Request.QueryString["liquidacion"].ToString());
                 reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
-                string directorio = "~/Novedades/ArchivosNoPresentismo/" + liqId + "/" + reparticion;
+                string directorio = "~/Novedades/ArchivosNoPresentismo/" + liqId + "/2";
 
-                // Cargo el data table
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Archivo");
-                dt.Columns.Add("Tamaño");
-                dt.Columns.Add("Tipo");
+                archivosPorPerfil.Add("99", new string[] { "NOPRESEN", "PEMULPC", "PEPERSPC" });
 
-                foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
+                if (Directory.Exists(Server.MapPath(directorio)))
                 {
-                    FileInfo fi = new FileInfo(strfile);
-                    dt.Rows.Add(fi.Name, fi.Length.ToString(),
-                        GetFileTypeByExtension(fi.Extension));
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("Archivo");
+                    dt.Columns.Add("Tamaño");                    
+
+                    string[] archivosPermitidos = archivosPorPerfil[reparticion.ToString()];
+                    foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
+                    {
+                        FileInfo fi = new FileInfo(strfile);
+                        string fileName = fi.Name.ToLower();
+                        foreach (string archivo in archivosPermitidos)
+                        {
+                            if (fileName.Contains(archivo.ToLower()))
+                            {
+                                dt.Rows.Add(fi.Name, fi.Length.ToString());
+                            }
+                        }
+                    }
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
                 }
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
             }
         }
         catch (Exception oError)
@@ -91,7 +101,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
     {
         try
         {
-            Response.Redirect("~/Novedades/NovedadesConsulta.aspx", true);            
+            Response.Redirect("~/Novedades/NovedadesConsulta.aspx", true);
         }
 
         catch (Exception oError)

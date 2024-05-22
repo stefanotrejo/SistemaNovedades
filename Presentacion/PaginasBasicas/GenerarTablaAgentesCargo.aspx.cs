@@ -614,6 +614,128 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         this.lblFechaHoraFin.Text = DateTime.Now.ToString();
     }
 
+    protected void btnActualizarHaberConAporte_Click(object sender, EventArgs e)
+    {
+        NuevoAge1 nuevoAge1 = new NuevoAge1();
+        this.ocnMenu = new LiquidacionSueldos.Negocio.Menu();
+
+        this.lblFechaHoraInicio.Visible = true;
+        this.lblFechaHoraInicio.Text = DateTime.Now.ToString();
+
+        StreamReader streamReader = new StreamReader("c:\\test.txt", Encoding.Default, true);
+
+        int num1 = 5;
+        int num2 = 1;
+        int num3 = 2;
+        string str = streamReader.ReadLine();
+        //if (str.IndexOf('Ã') != -1)
+        if (str.IndexOf('¥') != -1)
+        {
+            int length = str.Length;
+            byte[] bytes = Encoding.Default.GetBytes(str);
+            str = Encoding.UTF8.GetString(bytes);
+            //int length1 = str.Length;
+            //string str1 = str.Substring(0, 62);
+            //string str2 = str.Substring(63);
+            //while (length >= length1)
+            //{
+            //    str1 = string.Concat(str1, " ");
+            //    length1++;
+            //}
+            //str = string.Concat(str1, str2);
+        }
+
+        string mes = str.Substring(121 + num3 + num1, 2);
+        string anio = str.Substring(123 + num3 + num1, 2);
+        string mesAnioLiq = string.Concat(mes, "/", anio);
+
+        this.dt = this.ocnMenu.LiquidacionObtenerUno(mesAnioLiq);
+        if (this.dt.Rows.Count != 0 && this.validarPeriodo.Checked)
+        {
+            this.Label1.Visible = true;
+            this.Label1.ForeColor = Color.Red;
+            this.Label1.Text = "El periodo de liquidacion ya fue importado !!";
+            return;
+        }
+
+        streamReader.Close();
+        StreamReader streamReader1 = new StreamReader("c:\\test.txt", Encoding.Default, true);
+        while (!streamReader1.EndOfStream)
+        {
+            str = streamReader1.ReadLine();
+            //if (str.IndexOf('\uFFFD') != -1)
+            //{
+            //    str = str.Replace('\uFFFD', 'Ñ');
+            //}
+            //if (str.IndexOf('Ã') != -1)
+            //{
+            //    int length2 = str.Length;
+            //    byte[] numArray = Encoding.Default.GetBytes(str);
+            //    str = Encoding.UTF8.GetString(numArray);
+            //    int length3 = str.Length;
+
+            //    string str8 = str.Substring(0, 62);
+            //    string str9 = str.Substring(63);
+            //    while (length2 >= length3)
+            //    {
+            //        str8 = string.Concat(str8, " ");
+            //        length3++;
+            //    }
+            //    str = string.Concat(str8, str9);
+            //}
+
+            if (str.IndexOf('¥') != -1)
+            {
+                int length = str.Length;
+                byte[] bytes = Encoding.Default.GetBytes(str);
+                str = Encoding.UTF8.GetString(bytes);
+                //int length1 = str.Length;
+                //string str1 = str.Substring(0, 62);
+                //string str2 = str.Substring(63);
+                //while (length >= length1)
+                //{
+                //    str1 = string.Concat(str1, " ");
+                //    length1++;
+                //}
+                //str = string.Concat(str1, str2);
+            }
+
+            string str25 = str.Substring(63 + num2, 2);
+            string str26 = str.Substring(65 + num2, 8);
+            string str27 = str.Substring(73 + num2, 1);
+            string aportePrevisional = str.Substring(109 + num2, 2);
+            string situRev = str.Substring(111 + num3, 1);
+            string noPres = str.Substring(114 + num3 + num1, 1);
+            string numeroControl = str.Substring(1 + num2, 8);
+            string haberConAporte = string.Concat(str.Substring(153 + num3 + num1, 7), '.', str.Substring(160 + num3 + num1, 2));
+            double haberConAporte2 = double.Parse(string.Concat(str.Substring(153 + num3 + num1, 7), '.', str.Substring(160 + num3 + num1, 2)), CultureInfo.InvariantCulture);
+
+            if (haberConAporte2 < 1)
+            {
+                haberConAporte = "0.00";
+            }
+
+            string cuil = string.Concat(str25, str26, str27);
+            string totalHaberes = string.Concat(str.Substring(162 + num3 + num1, 7), '.', str.Substring(169 + num3 + num1, 2));
+            nuevoAge1.ActualizarHaberConAporte(numeroControl, cuil, haberConAporte, mesAnioLiq, totalHaberes);
+            //nuevoAge1.NroCOntrol = numeroControl;
+            //nuevoAge1.Cuil = cuil;
+            //nuevoAge1.HaberC_aporte = haberConAporte;
+            //nuevoAge1.MesAnioLiq = mesAnioLiq;
+            //nuevoAge1.SituRev = situRev;
+            //nuevoAge1.AportePrevisional = aportePrevisional;
+            //nuevoAge1.Nopres_RiesgoVida = noPres;
+            //int num4 = nuevoAge1.Insertar();
+        }
+
+        streamReader1.Close();
+        this.Label1.Visible = true;
+        this.Label1.ForeColor = Color.Green;
+        this.Label1.Text = "Importacion realizada correctamente";
+        this.lblFechaHoraFin.Visible = true;
+        this.lblFechaHoraFin.Text = DateTime.Now.ToString();
+    }
+
     protected void btnCasoUno_Click(object sender, EventArgs e)
     {
         LiquidacionSueldos.Negocio.NuevoAge1 oAgente1 = new LiquidacionSueldos.Negocio.NuevoAge1();

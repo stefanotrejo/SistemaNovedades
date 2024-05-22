@@ -20,8 +20,7 @@
                         </asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Tamaño" HeaderText="Tamaño en Bytes" />
-                <asp:BoundField DataField="Tipo" HeaderText="Tipo de Archivo" />
+                <asp:BoundField DataField="Tamaño" HeaderText="Tamaño en Bytes" />                
             </Columns>
             <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
             <HeaderStyle BackColor="#990000" Font-Bold="True"

@@ -188,6 +188,8 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                 }
             }
 
+            GlobalesNovedadesConsulta.liqId = objetoLiquidacion.liqId;
+
             if (String.IsNullOrEmpty(Session["textBox"].ToString()))
             {
                 //Cuando se carga la pagina por primera vez y cuando vuelve de otra pagina (NO ES POSTBACK)
@@ -373,7 +375,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void btnDescargarArchivos_Click(object sender, EventArgs e)
     {
-
         int reparticion = Convert.ToInt32(Session["_esAdministrador"]);
         if (reparticion == 5)
             reparticion = 2;

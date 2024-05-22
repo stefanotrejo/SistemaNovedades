@@ -1,0 +1,53 @@
+OFICIO: vacio?
+
+FECHA: vacio?
+
+EXPEDIENTE: expendientes viejos y de gedo 
+
+campo sin nombre: reparticion del gedo
+
+DNI: dni o cuil? 
+
+NOMBBRE: del denunciado? puede venir en un mismo expte 1 o mas denunciantes
+o 1 o mas denunciados?
+
+AUTOS - Pedir aclaracion sobre que ponen en este item
+	ej: "ALTA SEPTIEMBRE/12 SEGUIR SALDO-2020"
+	"CREDILEO S.R.L. CTA.950725/99"
+	"expediente devuelto por error en su confeccion…. No cionciden Numero y letra en monto"
+
+JUZGADO: Se guarda el dato del titular del juzgado o del abogado?
+
+EXPEDIENTE JUDICIAL:
+	cuando lleva XXXX / XX
+	ej: 609.186/17
+	     620.687
+
+TOTAL OFICIO: total de la demanda
+Cant. cuotas: hasta 99 cuotas. viene o se calcula? pedir casos.
+Fecha alta: ejemplos. va el mes desde el que se comienza a descontar? 
+	ejemplos: "nov.-13"
+	"NOVIEMBRE"
+	"SET/12 JUL/13"
+	"repetidos"
+	"DIFERENCIA EN LETRA Y NUMERO DEVUELTO"
+
+año alta: año en que se comienza a descontar?
+
+planta: es la planta actual del agente? 
+	o es la planta de cuando comenzó a descontarse?
+	se actualiza mes a mes?
+
+lugar de pago: lugar de pago del agente del momento en que se
+		comenzó a descontar o se actualiza mes a mes?
+		en caso de adscripcion el lugar de pago cual es?
+
+control: control del agente
+
+Codigo: codigo de descuento segun nomenclador.
+
+cuota: monto de cuota. es el monto enviado o el monto descontado?
+
+cantidad y cantidad de cuotas es lo mismo? 
+
+

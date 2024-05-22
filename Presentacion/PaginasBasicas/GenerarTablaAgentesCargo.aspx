@@ -50,6 +50,12 @@
         <br />
 
         <div>
+            <asp:Button ID="btnActualizarHaberConAporte" runat="server" Text="Actualizar Haber con Aporte" OnClick="btnActualizarHaberConAporte_Click" />
+        </div>
+        <br />
+        <br />
+
+        <div>
             <asp:TextBox ID="txtFechaLiquidacion" runat="server"></asp:TextBox>
         </div>
         <br />

@@ -280,6 +280,8 @@ WHERE
 						)
 	)
 
+	AND NroCOntrol = '38874831'
+
 --------------- FINAL COPIA EN #t1 --------------- 
 
 -- 6622 PRE
@@ -292,7 +294,7 @@ WHERE
 select COUNT(1) from #t1
 select COUNT(1) from #agentes_filtrados
 
-select * from #agentes_filtrados
+
 
 select distinct NroCOntrol from 	#t1
 select distinct numeroControl from 	#agentes_filtrados
@@ -325,6 +327,15 @@ SET
 	NR_1 = (CASE WHEN NOPRES ='1' THEN NR - PRES ELSE NR END) -- CON FILTRO PRESENTISMO
 
 -- SELECT * FROM #agentes_filtrados
+
+--select * from #agentes_filtrados
+
+--select * from ConceptoTemporal
+--where ageId = 17540762
+
+--select * from PruebasAge
+--where NuevoAgeId1 =17540762
+
 
 ----------------------->>>>> CALCULOS <<<<<-----------------------
 
@@ -412,6 +423,7 @@ SET
 					ELSE 0 -- = O MAYOR
 					END)
 
+select * from #agentes_filtrados
 
 
 -- CALCULO APORTE PREVISIONAL 

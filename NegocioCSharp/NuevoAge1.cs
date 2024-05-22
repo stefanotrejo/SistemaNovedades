@@ -258,7 +258,7 @@ namespace LiquidacionSueldos.Negocio
                         },
                               {
                             "@HaberCaporte",
-                            ImponibleANSES
+                            HaberC_aporte
                         },
                                {
                             "@TotalHaberes",
@@ -354,6 +354,35 @@ namespace LiquidacionSueldos.Negocio
                         "@AsistenciaPerfecta",
                         AsistenciaPerfecta
                     } });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ActualizarHaberConAporte(string numeroControl, string cuil, string haberConAporte, string mesAnioLiq,
+            string totalHaberes)
+        {
+            try
+            {
+                ocdGestor.EjecutarNonQuery("[Agentes.ActualizarHaberConAporte]", new object[,] { {
+                        "@nrocontrol",
+                        numeroControl
+                    },
+                    {
+                        "@totalHaberes",
+                        totalHaberes
+                    },
+                    {
+                        "@haberConAporte",
+                        haberConAporte
+                    },
+                    {
+                        "@mesanioliq",
+                        mesAnioLiq
+                    },
+                });
             }
             catch (Exception ex)
             {
@@ -721,7 +750,7 @@ namespace LiquidacionSueldos.Negocio
                      {
                             "@id",
                             id
-                        }                    
+                        }
                 });
                 if (Fila.Rows.Count > 0)
                 {
