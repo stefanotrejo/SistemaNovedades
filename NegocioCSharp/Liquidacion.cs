@@ -613,9 +613,6 @@ namespace LiquidacionSueldos
                 }
                 return Existe;
             }
-
-
-
         }
     }
 }

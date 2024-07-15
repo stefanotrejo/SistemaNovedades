@@ -382,7 +382,8 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
 
         string mes = str.Substring(121 + num3 + num1, 2);
         string anio = str.Substring(123 + num3 + num1, 2);
-        string str5 = string.Concat("01/01/2001");
+        //string str5 = string.Concat("01/01/2001");
+        string str5 = string.Concat("01/",mes+"/","20"+anio);
         DateTime dateTime = Convert.ToDateTime(str5);
 
         this.dt = this.ocnMenu.LiquidacionObtenerUno(string.Concat(mes, "/", anio));
@@ -395,6 +396,7 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         }
 
         streamReader.Close();
+
         StreamReader streamReader1 = new StreamReader("c:\\test.txt", Encoding.Default, true);
         bool flag = false;
         string str6 = "";

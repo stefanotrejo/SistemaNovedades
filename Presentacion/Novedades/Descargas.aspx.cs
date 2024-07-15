@@ -34,7 +34,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                 {
                     DataTable dt = new DataTable();
                     dt.Columns.Add("Archivo");
-                    dt.Columns.Add("Tamaño");                    
+                    dt.Columns.Add("Tamaño");
 
                     string[] archivosPermitidos = archivosPorPerfil[reparticion.ToString()];
                     foreach (string strfile in Directory.GetFiles(Server.MapPath(directorio)))
@@ -86,7 +86,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
         Int32 liqId, reparticion;
         liqId = Int32.Parse(Request.QueryString["liquidacion"].ToString());
         reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
-        string directorio = "~/Novedades/ArchivosNoPresentismo/" + liqId + "/" + reparticion + "/";
+        string directorio = "~/Novedades/ArchivosNoPresentismo/" + liqId + "/2/";
 
         Response.Clear();
         Response.ContentType = "application/octet-stream";

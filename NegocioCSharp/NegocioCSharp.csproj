@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agentes.cs" />
+    <Compile Include="CargaFamilia.cs" />
     <Compile Include="LiquidacionExtensionDocente.cs" />
     <Compile Include="LiquidacionNovedades.cs" />
     <Compile Include="PagosEventualesOrigenReclamo.cs" />

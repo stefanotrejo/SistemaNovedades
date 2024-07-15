@@ -15,7 +15,7 @@ public static class Globals
 }
 public partial class UsuarioRegistracion : System.Web.UI.Page
 {
-    DataTable dt, dt2, tablaLiquidaciones = new DataTable();
+    DataTable aniosResult, mesesResult, liquidacionesResult = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
     LiquidacionSueldos.Negocio.Menu ocnMenu = new LiquidacionSueldos.Negocio.Menu();
     LiquidacionSueldos.Negocio.Liquidacion objetoLiquidacion = new LiquidacionSueldos.Negocio.Liquidacion();
@@ -229,35 +229,9 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                     }
 
                     ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-                    
-                    //traer años donde haya 
-                    dt = ocnMenu.LiquidacionObtenerTodo();
-
-                    //trae meses por el año seleccionado
-                    dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(dt.Rows[0]["AnioLiq"].ToString()));
-
-                    
-
-                    // Combos
-                    MenuRaizListaAnioDesde.DataSource = dt;
-                    MenuRaizListaAnioDesde.DataTextField = "AnioLiq";
-                    MenuRaizListaAnioDesde.DataBind();
-
-                    MenuRaizListaMesDesde.DataSource = dt2;
-                    MenuRaizListaMesDesde.DataTextField = "MesLiq";
-                    MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-                    MenuRaizListaMesDesde.SelectedIndex = dt2.Rows.Count - 1;
-                    MenuRaizListaMesDesde.DataBind();
-
-                    tablaLiquidaciones = objetoLiquidacion.ObtenerTodos(MenuRaizListaMesDesde.Text, MenuRaizListaAnioDesde.Text.Substring(2),0);
-
-                    comboLiquidaciones.DataSource = dt2;
-                    comboLiquidaciones.DataTextField = "liqDescripcion";
-                    comboLiquidaciones.DataValueField = "liqId";
-                    comboLiquidaciones.SelectedIndex = dt2.Rows.Count - 1;
-                    comboLiquidaciones.DataBind();
-
-
+                    actualizarListaAnios();       
+                    actualizarListaMeses();
+                    actualizarListaLiquidaciones();
                 }
             }
         }
@@ -271,44 +245,34 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 "</div>";
         }
     }
- 
-    /*
-    protected void btnConsultarLugarPago_Click(object sender, EventArgs e)
+
+    protected void actualizarListaAnios()
     {
-        try
-        {
-            lblMensajeError.Text = "";
-            LiquidacionSueldos.Negocio.LugarPago objetoLugarPago = new LiquidacionSueldos.Negocio.LugarPago();
-            if (txtCodigoLugarPago.Text.Length == 5)
-            {
-                if (validarLugarPago(txtCodigoLugarPago.Text))
-                {
-                    txtDescripcion.Text = objetoLugarPago.ObtenerPorCodigo(Convert.ToInt32(txtCodigoLugarPago.Text)).lpaNombre;
-                    btnGenerarListado.Enabled = true;
-                }
-                else
-                {
-                    btnGenerarListado.Enabled = false;
-                    lblMensajeError.Text = FuncionesUtiles.MensajeError("El codigo ingresado es incorrecto");
-                }
-            }
-            else
-            {
-                lblMensajeError.Text = FuncionesUtiles.MensajeError("El codigo debe tener 5 digitos");
-                btnGenerarListado.Enabled = false;
-            }
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-            <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-            Se ha producido el siguiente error:<br/>
-            MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-            "</div>";
-        }
+        aniosResult = ocnMenu.LiquidacionObtenerTodo();
+        listaAnios.DataSource = aniosResult;
+        listaAnios.DataTextField = "AnioLiq";
+        listaAnios.DataBind();
     }
-    */
+
+    protected void actualizarListaMeses()
+    {        
+        mesesResult = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(listaAnios.SelectedValue));
+        listaMeses.DataSource = mesesResult;
+        listaMeses.DataTextField = "MesLiq";
+        listaMeses.DataValueField = "Periodo de Liquidacion";        
+        listaMeses.DataBind();        
+    }
+
+    protected void actualizarListaLiquidaciones()
+    {
+        liquidacionesResult = objetoLiquidacion.ObtenerTodos
+                                          (listaMeses.Text.Substring(3,2), listaAnios.Text.Substring(2), 2);        
+        listaLiquidaciones.DataSource = liquidacionesResult;
+        listaLiquidaciones.DataTextField = "liqDescripcion";        
+        listaLiquidaciones.DataValueField = "liqId";        
+        listaLiquidaciones.DataBind();
+    }
+
     protected bool validarLugarPago(string codigo)
     {
         LiquidacionSueldos.Negocio.LugarPago objetoLugarPago = new LiquidacionSueldos.Negocio.LugarPago();
@@ -328,22 +292,17 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         {
             lblMensajeError.Text = "";
 
-            if (validarLugarPago(txtCodigoLugarPago.Text))
+            if (String.IsNullOrEmpty(listaLiquidaciones.SelectedValue))
             {
-                DateTime fecha1 = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
-                Session["Periodo1"] = Convert.ToDateTime(MenuRaizListaMesDesde.SelectedValue);
-
-                String NomRep = "InformeEmpleadosporLugardePagoporMesAnioLiq.rpt";
-                String MesAnioLiq = MenuRaizListaMesDesde.SelectedValue.Substring(3, 2);
-                MesAnioLiq = MesAnioLiq + '/' + MenuRaizListaMesDesde.SelectedValue.Substring(8, 2);
-                String MesAnioLiq2 = MenuRaizListaMesDesde.Text + '/' + MenuRaizListaAnioDesde.Text;
-                FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text
-                                            + "&MesAnioLiq=" + MesAnioLiq
-                                            + "&NomRep=" + NomRep);
+                return;
             }
-            else
+
             {
-                btnGenerarListado.Enabled = false;
+
+                String NomRep = "InformeNovedadesCargadas2.rpt";
+                FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + listaLiquidaciones.SelectedValue
+                    + "&reparticion=" + 2
+                        + "&NomRep=" + NomRep);
             }
         }
         catch (Exception oError)
@@ -359,30 +318,8 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void MenuRaizListaAnioDesde_SelectedIndexChanged(object sender, EventArgs e)
     {
-
-        //CARGO DROPDOWN MESES
-        ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-        //int anio = Convert.ToInt32(MenuRaizListaAnioDesde.SelectedValue.Substring(6));
-
-        //actualizo mes desde
-        //dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(dt.Rows[0]["AnioLiq"].ToString()));
-        dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(MenuRaizListaAnioDesde.SelectedValue));
-        //MENU MES DESDE
-        MenuRaizListaMesDesde.DataSource = dt2;
-        MenuRaizListaMesDesde.DataTextField = "MesLiq";
-        MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-        MenuRaizListaMesDesde.DataBind();
-
-        GlobalesAgenteConsulta.FechaAux1 = MenuRaizListaMesDesde.SelectedValue;
-        //Variables de Indices seleccionados
-        GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
-        GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;
-
-        //dt = ocnMenu.LiquidacionObtenerPorAnio(anio);
-        //MenuRaizListaMesDesde.DataSource = dt;
-        //MenuRaizListaMesDesde.DataTextField = "MesLiq";
-        //MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-        //MenuRaizListaMesDesde.DataBind();
+        actualizarListaMeses();
+        actualizarListaLiquidaciones();
     }
 
     protected void checkMostrarTodos_CheckedChanged(object sender, EventArgs e)
@@ -390,5 +327,15 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         // se activa cuando cambia el check
 
 
+    }
+
+    protected void listaLiquidaciones_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void listaMeses_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        actualizarListaLiquidaciones();
     }
 }
