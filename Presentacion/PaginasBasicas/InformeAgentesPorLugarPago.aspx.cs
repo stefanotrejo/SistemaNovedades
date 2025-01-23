@@ -13,7 +13,7 @@ public static class Globals
     public static readonly String CODE_PREFIX = "US-"; // Unmodifiable
     public static readonly String TituloDelFormulario = "Informe de Agentes por Lugar de Pago"; // Unmodifiable    
     public const Int32 perfilPapse = 0;
-    public const string papseReportName = "InformePapseV2.rpt";
+    public const string papseReportName = "InformePapseV3.rpt";
     public const string defaultReportName = "InformeEmpleadosporLugardePagoporMesAnioLiq.rpt";
 }
 public partial class UsuarioRegistracion : System.Web.UI.Page
@@ -301,7 +301,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     {
         try
         {
-            lblMensajeError.Text = "";
+            lblMensajeError.Text = "";  
             if (!validarLugarPago(txtCodigoLugarPago.Text))
             {
                 btnGenerarListado.Enabled = false;
@@ -314,7 +314,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             {
                 if (!areValidClasses())
                 {
-                    lblMensajeError.Text =  FuncionesUtiles.MensajeError("Verifique los campos clase_desde y clase_hasta");
+                    lblMensajeError.Text = FuncionesUtiles.MensajeError("Verifique los campos clase_desde y clase_hasta");
                     return;
                 }
                 NomRep = Globals.papseReportName;
@@ -326,13 +326,19 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
             if (isPapseProfile(profileCode))
             {
-                FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text                              
+                FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text
                                + "&clase_desde=" + txtClaseDesde.Text
                                + "&clase_hasta=" + txtClaseHasta.Text
                                + "&MesAnioLiq=" + MesAnioLiq
+                               + "&sexo=" + ""
+                               + "&antiguedad_desde=" + 0
+                                + "&antiguedad_hasta=" + 0
                                + "&NomRep=" + NomRep);
                 return;
             }
+
+
+
 
             FuncionesUtiles.AbreVentana("Reporte.aspx?LugarPago=" + txtCodigoLugarPago.Text
                                     + "&MesAnioLiq=" + MesAnioLiq
@@ -352,7 +358,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void MenuRaizListaAnioDesde_SelectedIndexChanged(object sender, EventArgs e)
     {
-
         //CARGO DROPDOWN MESES
         ocnMenu = new LiquidacionSueldos.Negocio.Menu();
         //int anio = Convert.ToInt32(MenuRaizListaAnioDesde.SelectedValue.Substring(6));
@@ -369,18 +374,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         GlobalesAgenteConsulta.FechaAux1 = MenuRaizListaMesDesde.SelectedValue;
         //Variables de Indices seleccionados
         GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
-        GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;
-
-        //dt = ocnMenu.LiquidacionObtenerPorAnio(anio);
-        //MenuRaizListaMesDesde.DataSource = dt;
-        //MenuRaizListaMesDesde.DataTextField = "MesLiq";
-        //MenuRaizListaMesDesde.DataValueField = "Periodo de Liquidacion";
-        //MenuRaizListaMesDesde.DataBind();
+        GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;        
     }
 
     protected bool areValidClasses()
     {
-        return ((txtClaseDesde.Text.Length == 2) && (txtClaseHasta.Text.Length == 2)) 
+        return ((txtClaseDesde.Text.Length == 4) && (txtClaseHasta.Text.Length == 4))
             && int.Parse(txtClaseDesde.Text) <= int.Parse(txtClaseHasta.Text)
             && int.Parse(txtClaseDesde.Text) > 0
             && int.Parse(txtClaseHasta.Text) > 0;

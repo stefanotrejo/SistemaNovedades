@@ -65,14 +65,14 @@
 
                                 <asp:Label ID="lblClaseDesde"  CssClass="control-label col-md-2" runat="server" Text="Clase desde:"></asp:Label>
                                 <div class="col-md-3">
-                                    <asp:TextBox ID="txtClaseDesde" class="form-control" placeholder="Ingrese clase desde ej:25"
+                                    <asp:TextBox ID="txtClaseDesde" class="form-control" placeholder="Ingrese clase desde ej:1925"
                                          runat="server" type="number" MaxLength="2"></asp:TextBox>
                                 </div>
                             </div>                            
                             <div class="form-group">
                               <asp:Label ID="lblClaseHasta"  CssClass="control-label col-md-2" runat="server" Text="Clase hasta:"></asp:Label>
                                 <div class="col-md-3">
-                                    <asp:TextBox ID="txtClaseHasta" class="form-control" placeholder="Ingrese clase hasta ej:64"
+                                    <asp:TextBox ID="txtClaseHasta" class="form-control" placeholder="Ingrese clase hasta ej:1964"
                                         runat="server" type="number" MaxLength="2"></asp:TextBox>
                                 </div>
                             </div>

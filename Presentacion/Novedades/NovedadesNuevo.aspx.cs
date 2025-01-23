@@ -408,7 +408,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             }
             this.objetoNovedad.ninCantidad = inputDiasMinutos;
         }
-        else
+        else // codigos 1 al 9 validar que no exceda los 30
         {
             if (inputDiasMinutos < 1 || inputDiasMinutos > 30)
             {

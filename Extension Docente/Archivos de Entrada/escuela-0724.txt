@@ -1,0 +1,2795 @@
+00015SUPERIOR "ANA MARIA TABOADA"   NRO. 1        
+00023ELEMENTAL "JUAN BAUTISTA ALBERDI" NRO. 2     
+00031INFANTIL "FRAY CAYETANO RODRIGUEZ" NRO. 3    
+00046ELEMENTAL "JUAN MARIA GUTIERREZ" NRO. 4      
+00054ELEMENTAL "PEDRO LEON GALLO"   NRO. 5        
+00062ELEMENTAL "PADRE PAJON DE LA ZARZA" NRO. 6   
+00077ELEMENTAL "REPUBLICA DEL SALVADOR" NRO.7     
+00085ELEMENTAL "DR. PEDRO VELLA"   NRO. 8         
+00093ELEMENTAL "PABLO LASCANO"   NRO. 9           
+00104SUPERIOR "PROVINCIA DE TUCUMAN"   NRO. 10    
+00112SUPERIOR "JOSE MARIA TORRES"   NRO. 11       
+00127SUPERIOR "BENJAMIN LAVAISSE"  NRO. 12        
+00135ELEMENTAL "RAMON CARRILLO"   NRO. 13         
+00143INFANTIL "JOSE DARRAGUEIRA"   NRO. 14        
+00151ELEMENTAL "JUAN D. LAVAISSE"   NRO. 15       
+00166INFANTIL "REPUBLICA DE HAITI"   NRO. 16      
+00174SUPERIOR "FELIX FRIAS"    NRO. 17            
+00182INFANTIL "JUAN AGUSTIN MAZZA"   NRO. 18      
+00197ELEMENTAL "MANUEL DE FRIAS"   NRO. 19        
+00201INFANTIL "MANUEL ACEVEDO"   NRO. 20          
+00216INFANTIL "AGUSTIN MEDINA"   NRO. 21          
+00224SUPERIOR "ABSALON IBARRA"  NRO. 22           
+00232SUPERIOR "MANUEL BELGRANO"   NRO. 23         
+00247ELEMENTAL "GREGORIO SANTILLAN"   NRO. 24     
+00255INFANTIL "DIONICIO MAGUNA"   NRO. 25         
+00263ESCUELA NRO. 26                              
+00271SUPERIOR "BENJAMIN ZORRILLA"   NRO. 27       
+00286SUPERIOR "DOMINGO FAUSTINO SARMIENTO" NRO. 28
+00294ESC. SUP. "NARCISO LAPRIDA"   NRO. 29        
+00305ESC. SUP. "BERNARDINO RIVADAVIA"   NRO. 30   
+00313ESC. SUP. "PEDRO PABLO GOROSTIAGA"  NRO. 31  
+00321ESC.INF. "PEDRO FIRMO UNZAGA"  NRO. 32       
+00336ESC.SUP. "NTRA. SRA. DE LAS MERCEDES" NRO. 33
+00344ESC.INF. "RICARDO GUIRALDES"   NRO.34        
+00367ESC.ELEM. "MANUEL DE IZPIZUA"  NRO. 36       
+00375ESC.ELEM. "COMANDANTE BESARES"  NRO. 37      
+00383ESC.INF. "MAURICIO BOEDO"   NRO. 38          
+00391ESC.INF. "PCIA. DE BUENOS AIRES"  NRO. 39    
+00402ESC.INF. "FRANCISCO OLIVERA"   NRO. 40       
+00417ESC.INF. "REMEDIOS E. DE SAN MARTIN" NRO. 41 
+00425ESC.ELEM."MARCOS SASTRE"   NRO. 42           
+00433ESC.SUP. "BUENAVENTURA SUAREZ"  NRO. 43      
+00441ESC.INF. "REP. DE COLOMBIA"   NRO. 44        
+00456ESC.SUP."LEOPOLDO LUGONES"    NRO. 45        
+00464ESC.ELEM. "MANUEL ALCORTA"    NRO. 46        
+00472ESC.INF. "DOMINGO CARRIZO"    NRO. 47        
+00487ESC.INF. "ESPA#A (VERANO)"    NRO. 48        
+00495ESC.INF. "JOSE IGNACIO GORRITI"   NRO.  49   
+00506ESC.INF. "GOBERNADOR PALACIOS"    NRO. 50    
+00514GUIDO SPANO NRO. 51                          
+00522ESC.INF. "REP. DE SANTO DOMINGO"  NRO. 52    
+00537ESC.INF. "PEDRO BRAVO RUEDA"  NRO. 53        
+00545ESC.ELEM. "JUAN A. NEIROT"    NRO. 54        
+00553ESC.SUP."AMADEO JACQUES"      NRO. 55        
+00561ESC.SUP. "ABSALON ROJAS"      NRO. 56        
+00576ESC.SUP. "AMANCIO ALCORTA"    NRO. 57        
+00592ESC.SUP. "REMIGIO CAROL"      NRO. 59        
+00603ESC.SUP. "ANTONIO SAENZ"      NRO. 60        
+00611ESC.ELEM. "JUAN LAVALLE"      NRO. 61        
+00626ESC. "JOAQUIN V. GONZALES"    NRO. 62        
+00657ESC. "JOSE C. SALVATIERRA"    NRO. 65        
+00665ESC. "MAURO CARRANZA"         NRO. 66        
+00673ESC. "BERNARDO DE O'HIGGINS"  NRO. 67        
+00681ESC. "PEDRO P. OLAECHEA"      NRO. 68        
+00696ESC. "26 DE SEPTIEMBRE"       NRO. 69        
+00707ESC. "JUSTO JOSE DE URQUIZA"  NRO. 70        
+00715ESC. "FRAY JUAN GRANDE"       NRO. 71        
+00723ESC. "JUAN JOSE LAMI"         NRO. 72        
+00731ESC. "SAN FRANCISCO SOLANO"   NRO. 73        
+00746ESC. "REPUBLICA DE CUBA"      NRO. 74        
+00754ESC. "FRANCISCA JACQUEZ"      NRO. 75        
+00762ESC. "FRANCISCO CAROL"        NRO. 76        
+00777ESC. "BELISARIO ROLDAN"       NRO. 77        
+00785ESC. "MARTIN DE PUEYRREDON"   NRO. 78        
+00793ESC. "FERNANDO BRAVO"         NRO. 79        
+00804ESC. "PROVINCIA DE SAN JUAN"  NRO. 80        
+00812ESC. "PRIMERA JUNTA"          NRO. 81        
+00827ESC. "GDOR. MANUEL TABOADA"   NRO. 82        
+00835ESC. "TOMAS GODOY CRUZ"       NRO. 83        
+00843ESC. "BARTOLOME MITRE"        NRO. 84        
+00851ESC. "REPUBLICA DEL PERU"     NRO. 85        
+00866ESC. "GARZILASO DE LA VEGA"   NRO. 86        
+00874ESC. "PCIA. DE ENTRE RIOS"    NRO. 87        
+00882ESC. "CORONEL BORGES"         NRO. 88        
+00897ESC. "MANUEL DEL CASTA#O"     NRO. 89        
+00901ESC. "MANUEL DORREGO"         NRO. 90        
+00916ESC. "JOSE FRENCH"            NRO. 91        
+00924ESC. "JUAN JOSE PASO"         NRO. 92        
+00932ESC. "JULIAN DEL CASTA#O"     NRO. 93        
+00947ESC. "FRAY J.S. MARIA DE ORO" NRO. 94        
+00955ESC. "PEREZ BULNES"           NRO. 95        
+00963ESC. "PEDRO MEDRANO"          NRO. 96        
+00971ESC. "CASTRO BARROS"          NRO. 97        
+00986ESC. "PCIA. DE LA RIOJA"      NRO. 98        
+00994ESC. "LORENZO GONCEBAT"       NRO. 99        
+01003ESC.INF. "PROVINCIA DE NEUQUEN"    NRO. 100  
+01011ESC.ELEM. "PEDRO CUMALAT"          NRO. 101  
+01026ESC.INF. "PROVINCIA DE CORDOBA"    NRO. 102  
+01034ESC.INF. "20 DE JUNIO"             NRO. 103  
+01042ESC.SUP. "GRAL. MARTIN DE GUEMES"  NRO. 104  
+01057ESC.INF. "JOSE M. MALDONADO"       NRO. 105  
+01065ESC.INF. "JOSE ANTONIO CABRERA"    NRO. 106  
+01073ESC.INF. "TEODORO S. DE BUSTAMANTE"NRO. 107  
+01081ESC.INF. "REP. DEL URUGUAY"        NRO. 108  
+01096ESC.INF. "EE.UU. DE BRASIL"        NRO. 109  
+01107ESC.INF. "JUAN LARREA"             NRO. 110  
+01115ESC.INF. "JUANA MANSO"             NRO. 111  
+01123ESC.INF. "JERONIMO L. DE CABRERA"  NRO. 112  
+01131ESC.INF. "CORNELIO SAAVEDRA"       NRO. 113  
+01146ESC.INF. "PROV. DE FORMOSA"        NRO. 114  
+01154ESC.INFANTIL "AMERICA"             NRO. 115  
+01162ESC.SUP. "SARGENTO CABRAL"         NRO. 116  
+01177ESC.ELEM. "PAULA A. DE SARMIENTO"  NRO. 117  
+01185ESC.INF. "PROV. DE MENDOZA"        NRO. 118  
+01193ESC.INFANTIL "LUIS GONZAGA"        NRO. 119  
+01204ESC.INFANTIL "JUANA MADELAINE"     NRO. 120  
+01212ESC.INFANTIL "DANTE ALIGHERI"      NRO. 121  
+01227ESC.INFANTIL "JUAN GUTEMBERG"      NRO. 122  
+01235ESC.INFANTIL "JUAN JOSE CASTELLI"  NRO. 123  
+01243ESC. "GOBERNADOR DE SANTA CRUZ"    NRO. 124  
+01251ESC.INFANTIL                       NRO. 125  
+01266ESC.INFANTIL "LUIS PASTEUR"        NRO. 126  
+01274ESC.SUPERIOR "MARIANO MORENO"      NRO. 127  
+01282ESC.INFANTIL "JOSE I. THAMES"      NRO. 128  
+01297ESC.INFANTIL "SEVERO DE AVILA"     NRO. 129  
+01301ESC.INF. "PEDRO MIGUEL DE ARAOZ"   NRO. 130  
+01316ESC.INFANTIL "HILARIO ASCASUBI"    NRO. 131  
+01324ESC.INFANTIL "ESTEBAN ECHEVERRIA"  NRO. 132  
+01332ESC.INFANTIL "SIMON BOLIVAR"       NRO. 133  
+01347ESC.INFANTIL "LAZARO SORIA"        NRO. 134  
+01355ESC.ELEMENTAL "MANUEL CABALLERO"   NRO. 135  
+01363ESC.INFANTIL "9 DE JULIO"          NRO. 136  
+01371ESC.ELEM. "PASO DE LOS ANDES"      NRO. 137  
+01386ESC.SUP. "PROVINCIA DE CATAMARCA"  NRO. 138  
+01394ESC.INFANTIL "LUIS B. MARTINEZ"    NRO. 139  
+01405ESC.INFANTIL "11 DE SEPTIEMBRE"    NRO. 140  
+01413ESC.ELEM. "NTRA. SE#ORA DE LUJAN"  NRO. 141  
+01421ESC.INF. "REPUBLICA DE CHILE"      NRO. 142  
+01436ESC.SUPERIOR "27 DE ABRIL"         NRO. 143  
+01444ESC.INF. "DAMASO J. BELTRAN"       NRO. 144  
+01452ESC.ELEMENTAL "BAUTISTA LOPEZ"     NRO. 145  
+01467ESC.NRO.146 SRA.ROSA BENITA AVILA DE ROJAS   
+01475ESC.SUPERIOR "ALMAFUERTE"          NRO. 147  
+01491ESC.SUPERIOR "JOSE INGENIEROS"     NRO. 149  
+01502ESC.SUPERIOR "ANDRES FERREYRA"     NRO. 150  
+01517ESC.INANTIL "JOSE DE CALASANZ"     NRO. 151  
+01525ESC.INF. "REPUBLICA DE COSTA RICA" NRO. 152  
+01533ESC.INF. "BARTOLOME DE LAS CASAS"  NRO. 153  
+01541ESC.INF. "MIGUEL DE C. SAAVEDRA"   NRO. 154  
+01556ESC.SUPERIOR "LUISA DE ROMERO"     NRO. 155  
+01564ESC.SUPERIOR "8 DE JULIO"          NRO. 156  
+01572ESC.SUP. "PROVINCIA DE JUJUY"      NRO. 157  
+01587ESC.INFANTIL "TIERRA DEL FUEGO"    NRO. 158  
+01595ESC.ELEM. "MIGUEL DE AZCUENAGA"    NRO. 159  
+01606ESC.SUPERIOR "ERNESTO GEREZ"       NRO. 160  
+01614ESC.INFANTIL "HEROINAS DE AYOHUMA" NRO. 161  
+01622ESC.ELEMENTAL "JOSE MARTI"         NRO. 162  
+01637ESC.INF. "PROVINCIA DE CORRIENTES" NRO. 163  
+01645ESC.INF. "REPUBLICA DE MEXICO"     NRO. 164  
+01653ESC.INFANTIL "FRAY RETAMAR"        NRO. 165  
+01661ESC.INFANTIL "CRISTOBAL COLON"     NRO. 166  
+01676ESC.INFANTIL "PABLO A. PIZURNO"    NRO. 167  
+01684ESC.INFANTIL "DON BOSCO"           NRO. 168  
+01692ESC.SUPERIOR "JULIO A. ROCA"       NRO. 169  
+01703ESC.INF. "PROVINCIA DE SALTA"      NRO. 170  
+01711ESC.INF. "BALTAZAR O. Y ALCORTA"   NRO. 171  
+01726ESC.INFANTIL "GUILLERMO BROWN"     NRO. 172  
+01734ESC.INF. "JUAN BAUTISTA AZOPARDO"  NRO. 173  
+01742ESC.INF. "GENERAL LAS HERAS"       NRO. 174  
+01757ESC.INFANTIL "VICENTE LOPEZ"       NRO. 175  
+01765ESC.INF. "ESTANISLAO DEL CAMPO"    NRO. 176  
+01773ESC.INF. "NU#EZ DEL PRADO"         NRO. 177  
+01781ESC.INFANTIL "ALFONSINA STORNI"    NRO. 178  
+01796ESC.INF. "VICENTE LOPEZ Y PLANES"  NRO. 179  
+01807ESCUELA "JOSE M.PAZ"NRO.180                  
+01815ESC.INF. VIRGEN DE SUMAMPA         NRO. 181  
+01823ESCUELA INFANTIL NRO.182                     
+01831ESC.INFANTIL "25 DE MAYO"          NRO. 183  
+01854ESC.INFANTIL "CORONEL PRINGLES"    NRO. 185  
+01862ESC.INF. "REPUBLICA DE NICARAGUA"  NRO. 186  
+01877ESC.INFANTIL "LA RECONQUISTA"      NRO. 187  
+01885ESC.ELEMENTAL "ANDRES BELLO"       NRO. 188  
+01893ESC.INFANTIL "MARTIN RODRIGUEZ"    NRO. 189  
+01904ESC.INF. "REPUBLICA DE PANAMA"     NRO. 190  
+01927ESC.INF. "SANTA ROSA DE LIMA"      NRO. 192  
+01935ESC.INF. "REPUBLICA DE HONDURAS"   NRO. 193  
+01943ESC.INF. "PROVINCIA DE SANTA FE"   NRO. 194  
+01951ESC.INFANTIL "14 DE MARZO"         NRO. 195  
+01966ESC.INFANTIL "RUBEN DARIO"         NRO. 196  
+01974ESC.INFANTIL "DIEGO DE ROJAS"      NRO. 197  
+01982ESC.SUP. "PROVINCIA DE SAN LUIS"   NRO. 198  
+01997ESC.SUPERIOR "SAN MARTIN"          NRO. 199  
+02006ESC.INF. "RASTREADOR FOURNIER"     NRO. 200  
+02014ESC.SUP. "REPUBLICA DE GUATEMALA"  NRO. 201  
+02022ESC.INF. "ARAOZ DE LAMADRID"       NRO. 202  
+02037ESC.INFANTIL "DOMINGO MATHEU"      NRO. 203  
+02045ESC.SUPERIOR "JOSE BERUTTI"        NRO. 204  
+02053ESC.INF. "PROVINCIA DE MISIONES"   NRO. 205  
+02061ESC.INF. "FRAY MAMERTO ESQUIU"     NRO. 206  
+02076ESC.INFANTIL "ROBERTO LEBILLIER"   NRO. 207  
+02084ESC.ELEMENTAL "NICOLAS JUAREZ"     NRO. 208  
+02092ESC.INFANTIL "ANTENOR FERREYRA"    NRO. 209  
+02103ESC.INFANTIL "CORONEL LUGONEZ"     NRO. 210  
+02111ESC.ELEM. "REPUBLICA DEL PARAGUAY" NRO. 211  
+02126ESC.INFANTIL "FALUCHO"             NRO. 212  
+02134ESC.INF. "MERCEDES S. DE BALCARCE" NRO. 213  
+02142ESC.INF. "INGENIERO EZCURRA"       NRO. 214  
+02157ESC.INF. "TENIENTE PRIMERO IBA#EZ" NRO. 215  
+02165ESC.INF. "PROVINCIA DE RIO NEGRO"  NRO. 216  
+02173ESC.INF. "REPUBLICA DEL ECUADOR"   NRO. 217  
+02181ESC.ELEMENTAL "VICTOR MERCANTE"    NRO. 218  
+02196ESC.INFANTIL "CARLOS CASAFOUSTH"   NRO. 219  
+02207ESC.INFANTIL "EMILIO WAGNER"       NRO. 220  
+02215ESC.INFANTIL "FEDERICO LANNES"     NRO. 221  
+02223ESC.INF. "REPUBLICA DE VENEZUELA"  NRO. 222  
+02231ESC.INFANTIL "17 DE AGOSTO"        NRO. 223  
+02246ESC.INF. "REPUBLICA DE BOLIVIA"    NRO. 224  
+02254ESC.INF. "TAMBOR DE TACUARI"       NRO. 225  
+02262ESC.SUP. "FRANCISCO DE AGUIRRE"    NRO. 226  
+02277ESC.ELEM. "EE.UU. DE NORTEAMERICA" NRO. 227  
+02285ESC.INFANTIL "MAGALLANES"          NRO. 228  
+02304ESC.INF. "ALEJANDRO AGUADO"     NRO. 230     
+02312ESC.SUP. "JOSE HERNANDEZ" "     NRO. 231     
+02327ESC.SUP. "NACIONES UNIDAS"      NRO. 232     
+02335ESC.INF. "MELCHOR ACOSTA"       NRO. 233     
+02343ESC.INF. "BELISARIO SARAVIA"    NRO. 234     
+02351ESC.INF. "FERROCARRILES ARGENTINOS" NRO. 235 
+02374ESC.SUP. "RICARDO ROJAS"            NRO. 237 
+02382ESC.INF. "TRISTAN ARGA#ARAZ"        NRO. 238 
+02424ESC.INF. "ANDRES CHAZARRETA"        NRO. 242 
+02432ESC.SUP. "MANUEL ALBERTI"           NRO. 243 
+02447ESC.INF. "NTRA. SRA. DEL VALLE"     NRO. 244 
+02455ESC.NRO.245                                  
+02463ESC.INF. "MANUEL VICENTE MEMA"      NRO. 246 
+02471ESC.INF. "JUAN GREGORIO DIAZ"       NRO. 247 
+02486ESC.INF. "RAIMUNDO LINARDO"         NRO. 248 
+02494ESC.ELEM. "COSME DEL CAMPO"         NRO. 249 
+02505ESC.NRO.250                                  
+02513ESC.INF. "ANTONIO LUIS BERRUTTI"    NRO. 251 
+02521ESC.ELEM. "JOSE BRAVO DE RUEDA"     NRO. 252 
+02536ESC.INF. "ISOLINA FIGUEROA"         NRO. 253 
+02544ESC.SUP. "JOSE MANUEL ESTRADA"      NRO. 254 
+02552ESC.INF. "PROF. FRANCISCO DAVIOU"   NRO. 255 
+02567ESC.SUP. "GAUCHO RIVERO"            NRO. 256 
+02575ESC.INF. "MIGUEL ANGEL MOSSI"       NRO. 257 
+02583ESC.INF. "JOSE FRIAS"               NRO. 258 
+02591ESC.INF. "DR. JUAN D. CHAZARRETA"   NRO. 259 
+02625ESC.INF. "TNTE. TOMAS ESPERO"       NRO. 262 
+02633ESC.INF. "MANUEL CORDOBA"           NRO. 263 
+02656ESC.ELEM. "JOSE B. LESCANO"         NRO. 265 
+02664ESC.INF. "VICENTE PAZ"              NRO. 266 
+02672ESC.NRO.267                                  
+02687ESC.ELEM. "GDOR. MANUEL CACERES"    NRO. 268 
+02706ESC.NRO.270                                  
+02714ESC.INF. "PEDRO DIAZ GALLO"         NRO. 271 
+02737ESC.ELEM. "DR. ALFREDO GARGARO"     NRO. 273 
+02745ESC.INF. "DO#A LORENZA"             NRO. 274 
+02753ESC.INF. "MONS. JUAN RETAMBAY"      NRO. 275 
+02761ESC.INF. "MARIA DE MOLINARI"        NRO. 276 
+02776ESC.NRO.277                                  
+02784ESC.INF. "DOMINGO CARRIZO"          NRO. 278 
+02792ESC.NRO.279                                  
+02803ESC.NRO.280                                  
+02811ESC.SUP. "HENRY DUNANT"             NRO. 281 
+02826ESC.INF. "COLONIA ESPA#A"           NRO. 282 
+02834ESC.NRO.283                                  
+02842ESC.ELEM. "JUANA BRIONES"           NRO. 284 
+02857ESC.INF. "ANDRES FIGUEROA"          NRO. 285 
+02865ESC.INF. "GREGORIO IRAMAIN"         NRO. 286 
+02873ESC.NRO.287                                  
+02881ESC.NRO.288                                  
+02896ESC.INF. "IRENE CRISANTE URREJOLA"  NRO. 289 
+02907ESC.NRO.290                                  
+02915ESC.NRO.291                                  
+02923ESC.INF. "JUAN MANUEL DE ACHAVAL"   NRO. 292 
+02931ESC.INF. "RAMON GOMEZ CORNET"       NRO. 293 
+02946ESC.INF. "JOSE PEDRONI"             NRO. 294 
+02954ESC.INF. "MONS. PRUDENCIO AREAL"    NRO. 295 
+02962ESC.INF. "CIUDAD DE ROSARIO"        NRO. 296 
+02977ESC.INF. "JOSE MARTIN ZAPIOLA"      NRO. 297 
+02985ESC.INF. "JULIO ARGENTINO GEREZ"    NRO. 298 
+02993ESC.INF. "GASPAR BAVIANO"           NRO. 299 
+03002ESC.INF. "HERMANOS DIAZ"            NRO. 300 
+03017ESC.INF. "FRAY LUIS BELTRAN"        NRO. 301 
+03025ESC.INF. "NACHI GOMEZ"              NRO. 302 
+03033ESC.INF. "HERNAN MEJIA MIRABAL"     NRO. 303 
+03041ESC.INF. "JUAN FIGUEROA"            NRO. 304 
+03056ESC.INF. "PEDRO CONTRERAS"          NRO. 305 
+03064ESC.NRO.306                                  
+03072ESC.INF. "FELIPE IBARRA"            NRO. 307 
+03087ESC.INF. "MARIA C. MIRANDA"         NRO. 308 
+03095ESC.NRO.309                                  
+03106ESC.NRO.310                                  
+03114ESC.NRO.311                                  
+03122ESC.NRO.312                                  
+03137ESC.NRO.313                                  
+03145ESC.NRO.314                                  
+03153ESC.NRO.315                                  
+03161ESC.NRO.316                                  
+03176ESC.NRO.317                                  
+03184ESC.NRO.318                                  
+03192ESC.NRO.319                                  
+03203ESC.NRO.320                                  
+03211ESC.NRO.321                                  
+03226ESC.NRO.322                                  
+03234ESC.NRO.323                                  
+03242ESC.NRO.324                                  
+03257ESC.NRO.325                                  
+03265ESC.NRO.326                                  
+03273ESC.NRO.327                                  
+03281ESC.NRO.328                                  
+03296ESC.NRO.329                                  
+03307ESC.NRO.330                                  
+03315ESC.NRO.331                                  
+03323ESC.NRO.332                                  
+03331ESC.NRO.333                                  
+03346ESC.NRO.334                                  
+03354ESC.NRO.335                                  
+03362ESC.NRO.336                                  
+03377ESC.NRO.337                                  
+03385ESC.NRO.338                                  
+03393ESC.SUP. "JOSE SILVANO FARHAT"      NRO. 339 
+03404ESCUELA INFANTIL NRO. 340                    
+03412ESCUELA INFANTIL NRO. 341                    
+03427ESC. SUP. "JOSE F. CASTIGLIONI"     NRO. 342 
+03435ESCUELA INFANTIL NRO. 343                    
+03443ESCUELA INFANTIL NRO. 344                    
+03451ESCUELA INFANTIL NRO. 345                    
+03466ESCUELA INFANTIL NRO. 346                    
+03474ESCUELA INFANTIL NRO. 347                    
+03482ESCUELA INFANTIL NRO. 348                    
+03497ESCUELA INFANTIL NRO. 349                    
+03501ESCUELA INFANTIL NRO. 350                    
+03516ESCUELA INFANTIL NRO. 351                    
+03524ESCUELA INFANTIL NRO. 352                    
+03532ESCUELA INFANTIL NRO. 353                    
+03547ESCUELA INFANTIL NRO. 354                    
+03555ESCUELA INFANTIL NRO. 355                    
+03563ESCUELA INFANTIL NRO. 356                    
+03571ESCUELA INFANTIL NRO. 357                    
+03586ESCUELA INFANTIL NRO. 358                    
+03594ESCUELA INFANTIL NRO. 359                    
+03605ESCUELA INFANTIL NRO. 360                    
+03613ESCUELA INFANTIL NRO. 361                    
+03621ESCUELA INFANTIL NRO. 362                    
+03636ESCUELA INFANTIL NRO. 363                    
+03644ESCUELA INFANTIL NRO. 364                    
+03652ESCUELA INFANTIL NRO. 365                    
+03667ESCUELA INFANTIL NRO. 366                    
+03675ESCUELA INFANTIL NRO. 367                    
+03683ESCUELA INFANTIL NRO. 368                    
+03691ESCUELA INFANTIL NRO. 369                    
+03702ESCUELA INFANTIL NRO. 370                    
+03717ESCUELA INFANTIL NRO. 371                    
+03725ESCUELA INFANTIL NRO. 372                    
+03733ESCUELA INFANTIL NRO. 373                    
+03741ESCUELA INFANTIL NRO. 374                    
+03756ESC. SUP. "MERCEDES S. DE IRURZUN"  NRO. 375 
+03764ESCUELA INFANTIL NRO. 376                    
+03772ESCUELA INFANTIL NRO. 377                    
+03787ESCUELA INFANTIL NRO. 378                    
+03795ESCUELA INFANTIL NRO. 379                    
+03806ESCUELA INFANTIL NRO. 380                    
+03814ESCUELA INFANTIL NRO. 381                    
+03822ESCUELA INFANTIL NRO. 382                    
+03837ESCUELA INFANTIL NRO. 383                    
+03845ESCUELA INFANTIL NRO. 384                    
+03853ESCUELA INFANTIL NRO. 385                    
+03861ESCUELA INFANTIL NRO. 386                    
+03876ESC.INF. "ISLA SOLEDAD"             NRO. 387 
+03884ESC.SUP. "GUMERCINDO SAYAGO"        NRO. 388 
+03892ESC.SUP. "DR. ANTENOR ALVAREZ"      NRO. 389 
+03903ESCUELA INFANTIL NRO. 390                    
+03911ESCUELA INFANTIL NRO. 391                    
+03926ESCUELA INFANTIL NRO. 392                    
+03934ESCUELA INFANTIL NRO. 393                    
+03942ESCUELA INFANTIL NRO. 394                    
+03957ESCUELA INFANTIL NRO. 395                    
+03965ESCUELA INFANTIL NRO. 396                    
+03973ESCUELA INFANTIL NRO. 397                    
+03981ESCUELA INFANTIL NRO. 398                    
+03996ESCUELA INFANTIL NRO. 399                    
+04005ESCUELA INFANTIL NRO. 400                    
+04013ESCUELA INFANTIL NRO. 401                    
+04021ESCUELA INFANTIL NRO. 402                    
+04036ESCUELA INFANTIL NRO. 403                    
+04044ESCUELA INFANTIL NRO. 404                    
+04052ESCUELA INFANTIL NRO. 405                    
+04067ESCUELA INFANTIL NRO. 406                    
+04075ESCUELA INFANTIL NRO. 407                    
+04083ESCUELA INFANTIL NRO. 408                    
+04091ESCUELA NRO.  409                            
+04102ESCUELA NRO.  410                            
+04117ESCUELA NRO.  411                            
+04125ESCUELA NRO.  412                            
+04133ESCUELA NRO.  413                            
+04141ESCUELA NRO.  414                            
+04156ESCUELA NRO.  415                            
+04164ESCUELA NRO.  416                            
+04172ESC.INF. "CABO MARIO RAMON LUNA"    NRO. 417 
+04187ESCUELA NRO.  418                            
+04195ESCUELA NRO.  419                            
+04206ESCUELA NRO.  420                            
+04214ESCUELA NRO.  421                            
+04222ESCUELA NRO.  422                            
+04237ESCUELA NRO.  423                            
+04245ESCUELA NRO.  424                            
+04253ESCUELA NRO.  425                            
+04261ESCUELA NRO.  426                            
+04276ESCUELA NRO.  427                            
+04284ESCUELA NRO.  428                            
+04292ESCUELA NRO.  429                            
+04303ESCUELA NRO.  430                            
+04311ESCUELA NRO.  431                            
+04326ESCUELA NRO.  432                            
+04334ESCUELA NRO.  433                            
+04342ESCUELA NRO.  434                            
+04357ESCUELA NRO.  435                            
+04365ESCUELA NRO.  436                            
+04373ESCUELA NRO.  437                            
+04381ESCUELA NRO.  438                            
+04396ESCUELA NRO.  439                            
+04407ESCUELA NRO.  440                            
+04415ESCUELA NRO.  441                            
+04423ESCUELA NRO.  442                            
+04431ESCUELA NRO.  443                            
+04446ESCUELA NRO.  444                            
+04454ESCUELA NRO.  445                            
+04462ESCUELA NRO.  446                            
+04477ESCUELA NRO.  447                            
+04485ESCUELA NRO.  448                            
+04493ESCUELA NRO.  449                            
+04504ESCUELA NRO.  450                            
+04512ESCUELA NRO.  451                            
+04527ESCUELA NRO.  452                            
+04535ESCUELA NRO.  453                            
+04543ESCUELA NRO.  454                            
+04551ESCUELA NRO.  455                            
+04566ESCUELA NRO.  456                            
+04574ESCUELA NRO.  457                            
+04582ESCUELA NRO.  458                            
+04597ESCUELA NRO.  459                            
+04601ESCUELA NRO.  460                            
+04616ESCUELA NRO.  461                            
+04624ESCUELA NRO.  462                            
+04632ESCUELA NRO.  463                            
+04647ESCUELA NRO.  464                            
+04655ESCUELA NRO.  465                            
+04663ESCUELA NRO.  466                            
+04671ESCUELA NRO.  467                            
+04686ESCUELA NRO.  468                            
+04694ESCUELA NRO. 469                             
+04705ESCUELA NRO.  470                            
+04713ESCUELA NRO.  471                            
+04721ESCUELA NRO.  472                            
+04736ESCUELA NRO.  473                            
+04744ESCUELA NRO.  474                            
+04752ESCUELA NRO.  475                            
+04767ESCUELA NRO.  476                            
+04775ESCUELA NRO.  477                            
+04783ESCUELA NRO.  478                            
+04791ESCUELA NRO.  479                            
+04802ESCUELA NRO.  480                            
+04817ESCUELA NRO.  481                            
+04825ESCUELA NRO.  482                            
+04833ESCUELA NRO.  483                            
+04841ESCUELA NRO.  484                            
+04856ESCUELA NRO.  485                            
+04864ESCUELA NRO.  486                            
+04872ESCUELA NRO.  487                            
+04887ESCUELA NRO.  488                            
+04895ESCUELA NRO.  489                            
+04906ESCUELA NRO.  490                            
+04914ESCUELA NRO.  491                            
+04922ESCUELA NRO.  492                            
+04937ESCUELA NRO.  493                            
+04945ESCUELA NRO.  494                            
+04953ESCUELA NRO.  495                            
+04961ESCUELA NRO.  496                            
+04976ESCUELA NRO.  497                            
+04984ESCUELA NRO.  498                            
+04992ESCUELA NRO.  499                            
+05001ESCUELA NRO.  500                            
+05016ESCUELA NRO.  501                            
+05024ESCUELA NRO.  502                            
+05032ESCUELA NRO.  503                            
+05047ESCUELA NRO.  504                            
+05055ESCUELA NRO.  505                            
+05063ESCUELA NRO.  506                            
+05071ESCUELA NRO.  507                            
+05086ESCUELA NRO.  508                            
+05094ESCUELA NRO.  509                            
+05105ESCUELA NRO.  510                            
+05113ESCUELA NRO.  511                            
+05121ESCUELA NRO.  512                            
+05136ESCUELA NRO.  513                            
+05144ESCUELA NRO.  514                            
+05152ESCUELA NRO.  515                            
+05167ESCUELA NRO.  516                            
+05175ESCUELA NRO.  517                            
+05183ESCUELA NRO.  518                            
+05191ESCUELA NRO.  519                            
+05202ESCUELA NRO.  520                            
+05217ESCUELA NRO.  521                            
+05225ESCUELA NRO.  522                            
+05233ESCUELA NRO.  523                            
+05241ESCUELA NRO.  524                            
+05256ESCUELA NRO.  525                            
+05264ESCUELA NRO.  526                            
+05272ESCUELA NRO.  527                            
+05287ESCUELA NRO.  528                            
+05295ESCUELA NRO.  529                            
+05306ESCUELA NRO 530 ENRIQUE RUIZ GEREZ           
+05314ESCUELA NRO.  531                            
+05322ESCUELA NRO.  532                            
+05337ESCUELA NRO.  533                            
+05345ESCUELA NRO.  534                            
+05353ESCUELA NRO.  535                            
+05361ESCUELA NRO.  536                            
+05376ESCUELA NRO.  537                            
+05384ESCUELA NRO.  538                            
+05392ESCUELA NRO.  539                            
+05403ESCUELA NRO.  540                            
+05411ESCUELA NRO.  541                            
+05426ESCUELA NRO.  542                            
+05434ESCUELA NRO.  543                            
+05442ESCUELA NRO.  544                            
+05457ESCUELA NRO.  545                            
+05465ESCUELA NRO.  546                            
+05473ESCUELA NRO.  547                            
+05481ESCUELA NRO.  548                            
+05496ESCUELA NRO.  549                            
+05507ESCUELA NRO.  550                            
+05515ESCUELA NRO.  551                            
+05523ESCUELA NRO.  552                            
+05531ESCUELA NRO.  553                            
+05546ESCUELA NRO.  554                            
+05554ESCUELA NRO.  555                            
+05562ESCUELA NRO.  556                            
+05577ESCUELA NRO.  557                            
+05585ESCUELA NRO.  558                            
+05593ESCUELA NRO.  559                            
+05604ESCUELA NRO.  560                            
+05612ESCUELA NRO.  561                            
+05627ESCUELA NRO.  562                            
+05635ESCUELA NRO.  563                            
+05643ESCUELA NRO.  564                            
+05651ESCUELA NRO.  565                            
+05666ESCUELA NRO.  566                            
+05674ESCUELA NRO.  567                            
+05682ESCUELA NRO.  568                            
+05697ESCUELA NRO.  569                            
+05701ESCUELA NRO.  570                            
+05716ESCUELA NRO.  571                            
+05724ESCUELA NRO.  572                            
+05732ESCUELA NRO.  573                            
+05747ESCUELA NRO.  574                            
+05755ESC.INF. "CABO 2DO. O. H. GOROSITO" NRO. 575 
+05763ESCUELA NRO.  576                            
+05771ESCUELA NRO.  577                            
+05786ESCUELA NRO.  578                            
+05794ESCUELA NRO.  579                            
+05805ESCUELA NRO.  580                            
+05813ESCUELA NRO.  581                            
+05821ESCUELA NRO.  582                            
+05836ESCUELA NRO.  583                            
+05844ESCUELA NRO.  584                            
+05852ESCUELA NRO.  585                            
+05867ESCUELA NRO.  586                            
+05875ESCUELA NRO.  587                            
+05883ESCUELA NRO.  588                            
+05891ESCUELA NRO.  589                            
+05902ESCUELA NRO.  590                            
+05917ESCUELA NRO.  591                            
+05925ESC.INF. "CABO HECTOR W. AGUIRRE"   NRO. 592 
+05933ESCUELA NRO.  593                            
+05941ESCUELA NRO.  594                            
+05956ESCUELA NRO.  595                            
+05964ESCUELA NRO.  596                            
+05972ESCUELA NRO.  597                            
+05987ESCUELA NRO.  598                            
+05995ESCUELA NRO.  599                            
+06004ESCUELA NRO.  600                            
+06012ESCUELA NRO.  601                            
+06027ESCUELA NRO.  602                            
+06035ESCUELA NRO.  603                            
+06043ESCUELA NRO.  604                            
+06051ESCUELA NRO.  605                            
+06066ESCUELA NRO.  606                            
+06074ESC.SUP. "CABO 2DO. R. E. ORDO#EZ"  NRO. 607 
+06082ESCUELA NRO.  608                            
+06097ESCUELA NRO.  609                            
+06101ESCUELA NRO.  610                            
+06116ESCUELA NRO.  611                            
+06124ESCUELA NRO.  612                            
+06132ESCUELA NRO.  613                            
+06147ESCUELA NRO.  614                            
+06155ESCUELA NRO.  615                            
+06163ESCUELA NRO.  616                            
+06194ESCUELA NRO.  619                            
+06205ESCUELA NRO.  620                            
+06213ESCUELA NRO.  621                            
+06221ESCUELA NRO.  622                            
+06244ESCUELA NRO.  624                            
+06252ESCUELA NRO.  625                            
+06267ESCUELA NRO.  626                            
+06275ESCUELA NRO.  627                            
+06283ESCUELA NRO.  628                            
+06291ESCUELA NRO.  629                            
+06302ESCUELA NRO.  630                            
+06317ESCUELA NRO.  631                            
+06333ESCUELA NRO.  633                            
+06341ESCUELA NRO.  634                            
+06356ESCUELA NRO.  635                            
+06364ESCUELA NRO.  636                            
+06372ESCUELA NRO.  637                            
+06387ESCUELA NRO.  638                            
+06395ESCUELA NRO.  639                            
+06406ESCUELA NRO.  640                            
+06414ESCUELA NRO.  641                            
+06422ESCUELA NRO.  642                            
+06437ESCUELA NRO.  643                            
+06445ESCUELA NRO.  644                            
+06453ESCUELA NRO.  645                            
+06461ESCUELA NRO.  646                            
+06476ESCUELA NRO.  647                            
+06484ESCUELA NRO.  648                            
+06492ESCUELA NRO.  649                            
+06503ESCUELA NRO.  650                            
+06511ESCUELA NRO.  651                            
+06526ESCUELA NRO.  652                            
+06534ESCUELA NRO.  653                            
+06542ESCUELA NRO.  654                            
+06557ESCUELA NRO.  655                            
+06565ESCUELA NRO.  656                            
+06573ESCUELA NRO.  657                            
+06581ESCUELA NRO.  658                            
+06596ESCUELA NRO.  659                            
+06607ESCUELA NRO.  660                            
+06615ESCUELA NRO.  661                            
+06623ESCUELA NRO.  662                            
+06631ESCUELA NRO.  663                            
+06646ESCUELA NRO.  664                            
+06654ESCUELA NRO.  665                            
+06662ESCUELA NRO.  666                            
+06677ESCUELA NRO.  667                            
+06685ESCUELA NRO.  668                            
+06693ESCUELA NRO.  669                            
+06704ESCUELA NRO.  670                            
+06712ESCUELA NRO.  671                            
+06727ESCUELA NRO.  672                            
+06735ESCUELA NRO.  673                            
+06743ESC.ELEM. "AUTONOMIA PROVINCIAL"    NRO. 674 
+06751ESCUELA NRO.  675                            
+06766ESCUELA NRO.676-LOS JURIES-DPTO.TABOADA      
+06774ESCUELA NRO.  677                            
+06782ESCUELA NRO.  678                            
+06797ESCUELA NRO.  679                            
+06801ESCUELA NRO.  680                            
+06816ESCUELA NRO.  681                            
+06824ESCUELA NRO.  682                            
+06847ESCUELA NRO.  684                            
+06855ESCUELA NRO.  685                            
+06863ESCUELA NRO.686-LOC.VACASNIOJ-DTO.AVELLANEDA 
+06871ESCUELA NRO.  687                            
+06886ESCUELA NRO.  688                            
+06894ESCUELA NRO.  689                            
+06905ESCUELA NRO.  690                            
+06913ESCUELA NRO.  691                            
+06921ESCUELA NRO.  692                            
+06936ESCUELA NRO.  693                            
+06944ESCUELA NRO.  694                            
+06952ESCUELA NRO.  695                            
+06967ESCUELA NRO.  696                            
+06975ESCUELA NRO.697                              
+06983ESCUELA NRO.  698                            
+06991ESCUELA NRO.  699                            
+07007ESCUELA NRO.  700                            
+07015ESCUELA NRO.  701                            
+07023ESCUELA NRO.  702                            
+07031ESCUELA NRO.703 (PERF.DPTO.ALBERDI)          
+07046ESCUELA NRO.  704                            
+07054ESCUELA NRO.  705                            
+07062ESCUELA NRO.  706                            
+07077ESCUELA NRO.  707                            
+07085ESCUELA NRO.  708                            
+07093ESCUELA NRO.  709                            
+07104ESCUELA NRO.  710                            
+07112ESCUELA NRO.  711                            
+07127ESCUELA NRO.  712                            
+07135ESCUELA NRO.  713                            
+07143ESCUELA NRO.  714                            
+07166ESCUELA NRO.  716                            
+07174ESCUELA NRO.  717                            
+07182ESCUELA NRO.  718                            
+07197ESCUELA NRO.  719                            
+07201ESCUELA NRO.  720                            
+07216ESCUELA NRO.  721                            
+07232ESCUELA NRO.  723  "FRANCISCO JESUS LESCANO" 
+07247ESCUELA NRO.  724                            
+07255ESCUELA NRO.  725                            
+07263ESCUELA NRO.  726                            
+07271ESCUELA NRO.  727                            
+07286ESCUELA NRO.  728                            
+07294ESCUELA NRO.  729                            
+07305ESCUELA NRO.  730                            
+07313ESCUELA NRO.  731                            
+07321ESCUELA NRO.  732                            
+07336ESCUELA NRO.  733                            
+07344ESCUELA NRO.  734                            
+07352ESCUELA NRO.  735                            
+07367ESCUELA NRO.  736                            
+07375ESCUELA NRO.  737                            
+07383ESCUELA NRO.  738                            
+07391ESCUELA NRO.  739                            
+07402ESCUELA NRO.  740                            
+07417ESCUELA NRO.  741                            
+07425ESCUELA NRO.  742                            
+07433ESCUELA NRO.  743                            
+07441ESCUELA NRO.  744                            
+07456ESCUELA NRO.  745                            
+07464ESCUELA NRO.  746                            
+07472ESCUELA NRO.  747                            
+07487ESCUELA NRO.  748                            
+07495ESCUELA NRO.  749                            
+07506ESCUELA NRO.  750                            
+07514ESCUELA NRO.  751  "TTE.GRAL.JUAN C. SANCHEZ"
+07522ESCUELA NRO.  752                            
+07537ESCUELA NRO.  753                            
+07545ESCUELA NRO.  754                            
+07553ESCUELA NRO.  755                            
+07561ESCUELA NRO.  756                            
+07576ESCUELA NRO.  757                            
+07584ESCUELA NRO.  758                            
+07592ESCUELA NRO.  759                            
+07603ESC.ELEM. "CABO NESTOR D. CORDOBA"  NRO. 760 
+07611ESCUELA NRO.  761  "RAFAEL OBLIGADO"         
+07626ESCUELA NRO.  762                            
+07634ESCUELA NRO.  763                            
+07642ESC.SUP. "DIEGO DE ROJAS"           NRO. 764 
+07657ESCUELA NRO.  765                            
+07665ESCUELA NRO.  766                            
+07673ESCUELA NRO.  767                            
+07681ESC.INF. "SUBOFIC. E. A. GOMEZ"     NRO. 768 
+07696ESCUELA NRO.  769                            
+07707ESCUELA NRO.  770                            
+07715ESCUELA NRO.  771                            
+07723ESCUELA NRO.  772                            
+07731ESCUELA NRO.  773                            
+07746ESCUELA NRO.  774                            
+07754ESCUELA NRO.  775                            
+07762ESCUELA NRO.  776                            
+07777ESCUELA NRO.  777                            
+07785ESCUELA NRO.  778                            
+07793ESCUELA NRO.  779                            
+07804ESCUELA NRO.  780                            
+07812ESCUELA NRO.  781                            
+07827ESCUELA NRO.  782                            
+07835ESCUELA NRO.  783                            
+07843ESCUELA NRO.  784                            
+07851ESCUELA NRO.  785                            
+07866ESCUELA NRO.  786                            
+07874ESCUELA NRO.  787                            
+07882ESCUELA NRO.  788                            
+07897ESCUELA NRO.  789                            
+07901ESCUELA NRO.  790                            
+07916ESCUELA NRO.  791                            
+07924ESCUELA NRO.  792                            
+07932ESCUELA NRO.  793                            
+07947ESCUELA NRO.  794                            
+07955ESCUELA NRO.  795                            
+07963ESCUELA NRO.  796                            
+07971ESC.ELEM. "PROF. JUAN F. BESARES"   NRO. 797 
+07986ESCUELA NRO.  798                            
+07994ESCUELA NRO.  799                            
+08003ESCUELA NRO.  800                            
+08011ESCUELA NRO.  801                            
+08026ESCUELA NRO.  802                            
+08034ESCUELA NRO.  803                            
+08042ESCUELA NRO.  804                            
+08057ESCUELA NRO.  805                            
+08065ESCUELA NRO.  806                            
+08073ESCUELA NRO.  807                            
+08081ESCUELA NRO.  808                            
+08096ESCUELA NRO.  809                            
+08107ESCUELA NRO.  810                            
+08115ESCUELA NRO.  811                            
+08123ESCUELA NRO.  812                            
+08131ESCUELA NRO.  813                            
+08146ESCUELA NRO.  814                            
+08154ESCUELA NRO.  815                            
+08162ESCUELA NRO.  816                            
+08177ESCUELA NRO.  817                            
+08185ESCUELA NRO.  818                            
+08193ESCUELA NRO.  819                            
+08204ESCUELA NRO.  820                            
+08212ESCUELA NRO.  821                            
+08227ESCUELA NRO.  822                            
+08235ESCUELA NRO.  823                            
+08243ESCUELA NRO.  824                            
+08251ESCUELA NRO.  825                            
+08266ESCUELA NRO.  826                            
+08274ESCUELA NRO.  827                            
+08282ESCUELA NRO.  828                            
+08297ESCUELA NRO.  829                            
+08301ESCUELA NRO.  830                            
+08316ESCUELA NRO.  831                            
+08324ESCUELA NRO.  832                            
+08332ESCUELA NRO.  833                            
+08347ESCUELA NRO.  834                            
+08355ESCUELA NRO.  835                            
+08363ESCUELA NRO.  836                            
+08371ESCUELA NRO.  837                            
+08386ESCUELA NRO.  838                            
+08394ESCUELA NRO.  839                            
+08405ESCUELA NRO.  840                            
+08413ESCUELA NRO.  841                            
+08421ESCUELA NRO.  842                            
+08436ESCUELA NRO.  843                            
+08444ESCUELA NRO.  844                            
+08452ESCUELA NRO.  845                            
+08467ESCUELA NRO.  846                            
+08475ESCUELA NRO.  847                            
+08483ESCUELA NRO.  848                            
+08491ESCUELA NRO.  849                            
+08502ESCUELA NRO.  850                            
+08517ESCUELA NRO.  851                            
+08525ESCUELA NRO.  852                            
+08533ESCUELA NRO.  853                            
+08541ESCUELA NRO.  854                            
+08556ESCUELA NRO.  855                            
+08564ESCUELA NRO.  856                            
+08572ESCUELA NRO.  857                            
+08587ESCUELA NRO.  858                            
+08595ESCUELA NRO.  859                            
+08606ESCUELA NRO.  860                            
+08614ESCUELA NRO.  861                            
+08622ESCUELA NRO.  862                            
+08637ESCUELA NRO.  863                            
+08645ESCUELA NRO.  864                            
+08653ESCUELA NRO.  865                            
+08661ESCUELA NRO.  866                            
+08676ESCUELA NRO.  867                            
+08684ESCUELA NRO.  868                            
+08692ESCUELA NRO.  869                            
+08703ESCUELA NRO.  870                            
+08711ESCUELA NRO.  871                            
+08726ESCUELA NRO.  872                            
+08734ESCUELA NRO.  873                            
+08742ESCUELA NRO.  874                            
+08757ESCUELA NRO.  875                            
+08765ESCUELA NRO.  876                            
+08773ESCUELA NRO.  877                            
+08781ESCUELA NRO.  878                            
+08796ESCUELA NRO.  879                            
+08807ESCUELA NRO.  880                            
+08815ESCUELA NRO.  881                            
+08823ESCUELA NRO.  882                            
+08831ESCUELA NRO.  883                            
+08846ESCUELA NRO.  884                            
+08854ESC.ELEM. "CABO 2DO. J. M. MENDOZA" NRO. 885 
+08862ESCUELA NRO.  886                            
+08877ESCUELA NRO.  887                            
+08885ESCUELA NRO.  888                            
+08893ESCUELA NRO.  889                            
+08904ESCUELA NRO.  890                            
+08912ESCUELA NRO.  891                            
+08927ESCUELA NRO.  892                            
+08935ESC.ELEM. "CRISTOFORO JUAREZ"       NRO. 893 
+08943ESCUELA NRO.  894                            
+08951ESCUELA NRO.  895                            
+08966ESCUELA NRO.  896                            
+08974ESCUELA NRO.  897                            
+08982ESCUELA NRO.  898                            
+08997ESCUELA NRO.  899                            
+09006ESCUELA NRO.  900                            
+09014ESCUELA NRO.  901                            
+09022ESCUELA NRO.  902                            
+09037ESCUELA NRO.  903                            
+09045ESCUELA NRO.  904                            
+09053ESCUELA NRO.  905                            
+09061ESCUELA NRO.  906                            
+09076ESCUELA NRO.  907                            
+09084ESCUELA NRO.  908                            
+09092ESCUELA NRO.  909                            
+09103ESCUELA NRO.  910                            
+09111ESCUELA NRO.  911                            
+09126ESCUELA NRO.  912                            
+09134ESCUELA NRO.  913                            
+09142ESCUELA NRO.  914                            
+09157ESCUELA NRO.  915                            
+09165ESCUELA NRO.  916                            
+09173ESCUELA NRO.  917                            
+09181ESCUELA NRO.  918                            
+09196ESCUELA NRO.  919                            
+09207ESCUELA NRO.  920                            
+09215ESCUELA NRO.  921                            
+09223ESCUELA NRO.  922                            
+09231ESCUELA NRO.  923                            
+09246ESCUELA NRO.  924                            
+09254ESCUELA NRO.  925                            
+09262ESCUELA NRO.  926                            
+09277ESCUELA NRO.  927                            
+09285ESCUELA NRO.  928                            
+09293ESCUELA NRO.  929                            
+09304ESCUELA NRO.  930                            
+09312ESCUELA NRO.  931                            
+09327ESCUELA NRO.  932                            
+09335ESCUELA NRO.  933                            
+09343ESCUELA NRO.  934                            
+09351ESCUELA NRO.  935                            
+09366ESCUELA NRO.  936                            
+09374ESCUELA NRO.  937                            
+09382ESCUELA NRO.  938                            
+09401ESCUELA NRO.  940                            
+09416ESCUELA NRO.  941                            
+09424ESCUELA NRO.  942                            
+09432ESCUELA NRO.  943                            
+09447ESCUELA NRO.  944                            
+09455ESCUELA NRO.  945                            
+09463ESCUELA NRO.  946                            
+09471ESCUELA NRO.  947                            
+09486ESCUELA NRO.  948                            
+09494ESCUELA NRO.  949                            
+09505ESCUELA NRO.  950                            
+09513ESCUELA NRO.  951                            
+09521ESCUELA NRO.  952                            
+09536ESCUELA NRO.  953                            
+09544ESCUELA NRO.  954                            
+09552ESCUELA NRO.  955                            
+09567ESCUELA NRO.  956                            
+09575ESCUELA NRO.  957                            
+09583ESCUELA NRO.  958                            
+09591ESCUELA NRO.  959                            
+09602ESCUELA NRO.  960                            
+09617ESCUELA NRO.  961                            
+09625ESC.INF. "CRUCERO GRAL. BELGRANO"   NRO. 962 
+09633ESCUELA NRO.  963                            
+09641ESCUELA NRO.  964                            
+09656ESCUELA NRO.  965                            
+09664ESCUELA NRO.  966                            
+09672ESCUELA NRO.  967                            
+09687ESCUELA NRO.  968                            
+09695ESCUELA NRO.  969                            
+09706ESCUELA NRO.  970                            
+09714ESCUELA NRO.  971                            
+09722ESCUELA NRO.  972                            
+09737ESCUELA NRO.  973                            
+09745ESCUELA NRO.  974                            
+09753ESCUELA NRO.  975                            
+09761ESCUELA NRO.  976                            
+09776ESCUELA NRO.  977                            
+09784ESCUELA NRO.  978                            
+09792ESCUELA NRO.  979                            
+09803ESCUELA NRO.  980                            
+09811ESCUELA NRO.  981                            
+09826ESCUELA NRO.  982                            
+09834ESCUELA NRO.  983                            
+09842ESCUELA NRO.  984                            
+09857ESCUELA NRO.  985                            
+09865ESCUELA NRO.  986                            
+09873ESCUELA NRO.  987                            
+09881ESCUELA NRO.  988                            
+09896ESCUELA NRO.  989                            
+09907ESCUELA NRO.  990                            
+09915ESCUELA NRO.  991                            
+09923ESCUELA NRO.  992                            
+09931ESCUELA NRO.  993                            
+09946ESCUELA NRO.  994                            
+09954ESCUELA NRO.  995                            
+09962ESCUELA NRO.  996                            
+09977ESCUELA NRO.  997                            
+09985ESCUELA NRO.  998                            
+09993ESCUELA NRO.  999                            
+10002ESCUELA NRO. 1000                            
+10017ESCUELA NRO. 1001                            
+10025ESCUELA NRO. 1002                            
+10033ESCUELA NRO. 1003                            
+10041ESCUELA NRO. 1004                            
+10056ESCUELA NRO. 1005                            
+10064ESCUELA NRO. 1006                            
+10072ESCUELA NRO. 1007                            
+10087ESCUELA NRO. 1008                            
+10095ESCUELA NRO. 1009                            
+10106ESCUELA NRO. 1010                            
+10114ESCUELA NRO. 1011                            
+10122ESCUELA NRO. 1012                            
+10137ESCUELA NRO. 1013                            
+10145ESCUELA NRO. 1014                            
+10153ESCUELA NRO. 1015                            
+10161ESCUELA NRO. 1016                            
+10176ESCUELA NRO. 1017                            
+10184ESCUELA NRO. 1018                            
+10192ESCUELA NRO. 1019                            
+10203ESCUELA NRO. 1020                            
+10211ESCUELA NRO. 1021                            
+10226ESCUELA NRO. 1022                            
+10234ESCUELA NRO. 1023                            
+10242ESCUELA NRO. 1024                            
+10257ESCUELA NRO. 1025                            
+10265ESCUELA NRO. 1026                            
+10273ESC.SUP. "ANGEL M. ALDERETE"        NRO.1027 
+10281ESCUELA NRO. 1028                            
+10296ESCUELA NRO. 1029                            
+10307ESCUELA NRO. 1030                            
+10315ESCUELA NRO. 1031                            
+10323ESCUELA NRO. 1032                            
+10331ESCUELA NRO. 1033                            
+10346ESCUELA NRO. 1034                            
+10354ESCUELA NRO. 1035                            
+10362ESCUELA NRO. 1036                            
+10377ESCUELA NRO. 1037                            
+10385ESCUELA NRO. 1038                            
+10393ESCUELA NRO. 1039                            
+10404ESCUELA NRO. 1040                            
+10412ESCUELA NRO. 1041                            
+10427ESCUELA NRO. 1042                            
+10435ESCUELA NRO. 1043                            
+10443ESCUELA NRO. 1044                            
+10451ESCUELA NRO. 1045                            
+10466ESCUELA NRO. 1046                            
+10474ESCUELA NRO. 1047                            
+10482ESCUELA NRO. 1048                            
+10497ESCUELA NRO. 1049                            
+10501ESCUELA NRO. 1050                            
+10516ESCUELA NRO. 1051                            
+10524ESCUELA NRO. 1052                            
+10532ESCUELA NRO. 1053                            
+10547ESCUELA NRO. 1054                            
+10555ESCUELA NRO. 1055                            
+10563ESCUELA NRO. 1056                            
+10571ESCUELA NRO. 1057                            
+10586ESCUELA NRO. 1058                            
+10594ESCUELA NRO. 1059                            
+10605ESCUELA NRO. 1060                            
+10613ESCUELA NRO. 1061                            
+10621ESCUELA NRO. 1062                            
+10636ESCUELA NRO. 1063                            
+10644ESCUELA NRO. 1064                            
+10652ESCUELA NRO. 1065                            
+10667ESCUELA NRO. 1066                            
+10675ESCUELA NRO. 1067                            
+10683ESCUELA NRO. 1068                            
+10691ESCUELA NRO. 1069                            
+10702ESCUELA NRO. 1070                            
+10717ESCUELA NRO. 1071                            
+10725ESCUELA NRO. 1072                            
+10733ESCUELA NRO. 1073                            
+10741ESCUELA NRO. 1074                            
+10756ESCUELA NRO. 1075                            
+10764ESCUELA NRO. 1076                            
+10772ESCUELA NRO. 1077                            
+10787ESCUELA NRO. 1078                            
+10795ESCUELA NRO. 1079                            
+10806ESCUELA NRO. 1080                            
+10814ESCUELA NRO. 1081                            
+10822ESCUELA NRO. 1082                            
+10837ESCUELA NRO. 1083                            
+10845ESCUELA NRO. 1084                            
+10853ESCUELA NRO. 1085                            
+10861ESCUELA NRO. 1086                            
+10876ESCUELA NRO. 1087                            
+10884ESCUELA NRO. 1088                            
+10892ESCUELA NRO. 1089                            
+10903ESCUELA NRO. 1090                            
+10911ESCUELA NRO. 1091                            
+10926ESCUELA NRO. 1092                            
+10934ESCUELA NRO. 1093                            
+10942ESCUELA NRO. 1094                            
+10957ESCUELA NRO. 1095                            
+10965ESCUELA NRO. 1096                            
+10973ESCUELA NRO. 1097                            
+10981ESCUELA NRO. 1098                            
+10996ESCUELA NRO. 1099                            
+11005ESCUELA NRO. 1100                            
+11013ESCUELA NRO. 1101                            
+11021ESCUELA NRO. 1102                            
+11036ESCUELA NRO. 1103                            
+11044ESCUELA NRO. 1104                            
+11052ESC.INF. "CABO 2DO. V. A. PAZ"      NRO.1105 
+11067ESCUELA NRO. 1106                            
+11075ESCUELA NRO. 1107                            
+11083ESCUELA NRO. 1108                            
+11091ESCUELA NRO. 1109                            
+11102ESCUELA NRO. 1110                            
+11117ESCUELA NRO. 1111                            
+11125ESCUELA NRO. 1112                            
+11133ESCUELA NRO. 1113                            
+11141ESCUELA NRO. 1114                            
+11156ESCUELA NRO. 1115                            
+11164ESCUELA NRO. 1116                            
+11172ESCUELA NRO. 1117                            
+11187ESCUELA NRO. 1118                            
+11195ESCUELA NRO. 1119                            
+11206ESCUELA NRO. 1120                            
+11214ESCUELA NRO. 1121                            
+11222ESCUELA NRO. 1122                            
+11237ESCUELA NRO. 1123                            
+11245ESCUELA NRO. 1124                            
+11253ESCUELA NRO. 1125                            
+11261ESCUELA NRO. 1126                            
+11276ESCUELA NRO. 1127                            
+11284ESC.SUP. "FUERZA AEREA ARGENTINA"   NRO.1128 
+11292ESCUELA NRO. 1129                            
+11303ESCUELA NRO. 1130                            
+11311ESCUELA NRO. 1131                            
+11326ESCUELA NRO. 1132                            
+11334ESCUELA NRO. 1133                            
+11342ESCUELA NRO. 1134                            
+11357ESCUELA NRO. 1135                            
+11365ESCUELA NRO. 1136                            
+11373ESCUELA NRO. 1137                            
+11381ESCUELA NRO. 1138                            
+11396ESCUELA NRO. 1139                            
+11407ESC.SUP. "GENDARMERIA NACIONAL"     NRO.1140 
+11415ESCUELA NRO. 1141                            
+11423ESCUELA NRO. 1142                            
+11431ESCUELA NRO. 1143                            
+11446ESCUELA NRO. 1144                            
+11454ESCUELA NRO. 1145                            
+11462ESCUELA NRO. 1146                            
+11477ESCUELA NRO. 1147                            
+11485ESCUELA NRO. 1148                            
+11493ESCUELA NRO. 1149                            
+11504ESCUELA NRO. 1150                            
+11512ESCUELA NRO. 1151                            
+11527ESCUELA NRO. 1152                            
+11535ESCUELA NRO. 1153                            
+11543ESCUELA NRO. 1154                            
+11551ESC.INF. "LEOPOLDO M. AVILA"        NRO.1155 
+11566ESCUELA NRO. 1156                            
+11574ESCUELA NRO. 1157                            
+11582ESCUELA NRO. 1158                            
+11597ESCUELA NRO. 1159                            
+11601ESCUELA NRO. 1160                            
+11616ESCUELA NRO. 1161                            
+11624ESCUELA NRO. 1162                            
+11632ESCUELA          NRO.1163                    
+11647ESCUELA          NRO.1164                    
+11655ESCUELA          NRO.1165                    
+11663ESCUELA          NRO.1166                    
+11671ESCUELA          NRO.1167                    
+11686ESCUELA NRO 1168                             
+11694ESCUELA NRO 1169                             
+11705ESCUELA NRO 1170                             
+11713ESCUELA NRO 1171                             
+11721ESCUELA NRO 1172                             
+11736ESCUELA N:1173-6                             
+11744ESCUELA N-11744                              
+11752ESCUELA N-11752                              
+11767ESCUELA N-11767                              
+11775ESCUELA N-11775                              
+11783ESCUELA N-11783                              
+11791ESCUELA N-11791                              
+11802ESCUELA N-11802                              
+11817ESCUELA N-11817                              
+11825ESCUELA N- 11825                             
+11833ESCUELA N-11833                              
+11841ESCUELA N-11841                              
+11856ESCUELA N-11856                              
+11864ESCUELA N-11864                              
+11872ESCUELA N- 11872                             
+11887ESCUELA N-11887                              
+11895ESCUELA N- 11895                             
+11906ESCUELA N-11906                              
+11914ESCUELA N-11914                              
+11922ESCUELA N-11922                              
+11937ESCUELA N-11937                              
+11945ESCUELA N-11945                              
+11953ESCUELA N-11953                              
+11961ESCUELA N-11961                              
+11976ESCUELA N-11976                              
+11984ESCUELA N-11984                              
+11992ESCUELA N-11992                              
+12001ESCUELA N-12001                              
+12016ESC.NRO.1201 MARIA DEL ROSARIO DE SAN NICOLAS
+12024ESCUELA N-12024                              
+12032ESCUELA N-12032                              
+12047ESCUELA N-12047                              
+12055ESCUELA N-12055                              
+12063ESCUELA N-12063                              
+12071ESCUELA 12071                                
+12085ESCUELA N-12085                              
+12086ESCUELA NRO.12086                            
+12094ESCUELA N-12094                              
+12105ESCUELA N-12105                              
+12113ESCUELA N-12113                              
+12121ESCUELA N-12121                              
+12136ESCUELA N-12136                              
+12144ESCUELA N-12144                              
+12152ESCUELA N-12152                              
+12167ESCUELA N-12167                              
+12175ESC.NUMERO 12175                             
+12183ESCUELA NRO.12183                            
+12191ESCUELA DEL BICENTENARIO NRO.1240            
+12202ESCUELA NRO.12202                            
+12217ESCUELA NRO.12217                            
+12225ESCUELA 1222-5                               
+12233ESCUELA 1223-3                               
+12241ESCUELA 1224-1                               
+12256ESCUELA 1225-6                               
+12264ESCUELA 1226-4                               
+12272ESCUELA 1227-2                               
+12287ESCUELA 1228-7                               
+12295ESCUELA 1229-5                               
+12306ESCUELA 1230-6                               
+12314ESCUELA 1231-4                               
+12322ESCUELA 1232-2                               
+12337ESCUELA 1233-7                               
+12345ESCUELA 1234-5                               
+12353ESCUELA 1235-3                               
+12361ESCUELA NRO 1236-1                           
+12376ESCUELA NRO 1237-6 B.LA CATOLICA             
+12384ESCUELA NRO.1238                             
+12442ESC.PRIM.N. 1244- LA BANDA                   
+12457ESCUELA PRIMARIA N.1245-TERMAS DE RIO HONDO  
+12465ESCUELA NRO.1246 LOTE 51-DPTO.JUAN F.IBARRA  
+12473ESCUELA NRO.1247 ING.FORRES-DPTO.ROBLES      
+12481ESCUELA PRIMARIA JI SUMAMPA-QUEBRACHOS       
+12496ESCUELA PRIMARIA C/JARDIN ANEXO BARRIO BELEN 
+12917ESCUELA NRO.876-P.EL SIMBOLAR DPTO.ALBERDI   
+12925ESCUELA NRO.939-EL MORADITO DPTO.ALBERDI     
+12933ESCUELA NRO.951-SIETE POZO DPTO.FIGUEROA     
+12941ESCUELA NRO.1088-LAS LOMAS DPTO.J.F.IBARRA   
+12956ESCUELA NRO.1102-EL CARRETEL DTO.J.F.IBARRA  
+12964ESCUELA NRO.1134-EL RINCON DPTO.FIGUEROA     
+12972ESCUELA NRO.1150-BRONCO DPTO. COPO           
+12987ESCUELA NRO.1154-SEIS VARONES DPTO.COPO      
+12995ESCUELA NRO 865-LOTE 52 DPTO.JUAN FE.IBARRA  
+13004ESCUELA NRO 836-EL SALADILLO DPTO.ALBERDI    
+13012ESCUELA NRO 722-GUAYACAN DPTO.COPO           
+13027ESCUELA NRO.715                              
+13035ESC.NRO.1239 PRESIDENTE DR.RAUL R.ALFONSIN   
+13847JARD.INFANTES N.627 ANEX.ESC.N.1174-COPO     
+16602JARDIN NRO 249                               
+16633JARDIN NRO 270                               
+17025JARDIN NRO 136                               
+17613JARDIN NRO 238                               
+17926JARDIN NRO 243                               
+18133JARDIN DE INFANTES NRO 314                   
+18527JARDIN INFANTES NRO.235ANEXO ESC.NRO.1019    
+18543J.INFANTES NRO.374 ANEXO ESC.NRO 403         
+20012ESCUELA NOCTURNA NRO. 1                      
+20027ESCUELA NOCTURNA NRO. 2                      
+20035ESCUELA NOCTURNA NRO. 3                      
+20043ESCUELA NOCTURNA NRO. 4                      
+20051ESCUELA NOCTURNA NRO. 5                      
+20066ESCUELA NOCTURNA NRO. 6                      
+20074ESCUELA NOCTURNA NRO. 7                      
+20082ESCUELA NOCTURNA NRO. 8                      
+20097ESCUELA NOCTURNA NRO. 9                      
+20101CENTROS EDUCATIVOS DE EDUCACION PARA ADULTO  
+20116CTRO.EDUC.P/ADULTOSN.147-LOSPIRPINTOS-COPO   
+20124CTRO.EDUC.P/ADULTOSN.148-POZOHONDO-JIMENEZ   
+20132CTRO.EDUC.P/ADULTOSN.149-LAAURORA-BANDA      
+20147CTRO.EDUC.P/ADULTOSN.150-TINTINA-MORENO      
+20155CTRO.EDUC.P/ADULTOSN.151-SCHO.CORRAL-IBARRA  
+20163CTRO.EDUC.P/ADULTOSN.152-VILELAS-IBARRA      
+20171CTRO.EDUC.P/ADULTOSN.153-LSTELARES-SALAVINA  
+20186CTRO.EDUC.P/ADULTOSN.154-VILLAATAMISQUI      
+20194CTRO.EDUC.P/ADULTOSN.155-FORRES-ROBLES       
+20205CTRO.EDUC.P/ADULTOSN.156-SACHAYOJ-ALBERDI    
+20213CTRO.EDUC.P/ADULTOSN.157-ELBOBADAL-JIMENEZ   
+20221CTRO.EDUC.P/ADULTOSN.158-STO.DOMINGO-PELLEG  
+20236CTRO.EDUC.P/ADULTOSN.159-LOS GOMEZ-BANDA     
+20244CTRO.EDUC.P/ADULTOSN.160-PMPA.GUANACOS-COPO  
+20252CTRO.EDUC.P/ADULTOSN.161-LOSOVEJEROS-RHONDO  
+20267CTRO.EDUC.P/ADULTOSN.162-ELPORVENIR-RHONDO   
+20275CTRO.EDUC.P/ADULTOSN.163-SUMAMPA-QUEBRACHOS  
+20283CTRO.EDUC.P/ADULTOSN.164-LOSLESCANOS-RHONDO  
+20291CTRO.EDUC.P/ADULTOSN.165-CAMPOGALLO-ALBERDI  
+20302CTRO.EDUC.P/ADULTOSN.166-PAMPGUANACOS-COPO   
+20317CTRO.EDUC.P/ADULTOSN.167-VILELAS-IBARRA      
+20325CTRO.EDUC.P/ADULTO-TERMAS R.HONDO-RIO HONDO  
+20333CTRO.EDUC.P/ADULTOS N.168-TIO POZO           
+20341CTRO.EDUC.P/ADULTO N.169-EL OJITO-PELEGRINI  
+20356CTRO.EDUC.P/ADULTO N.170-LA RIVERA-ROBLES    
+20364CTRO.EDUC.P/ADULTOS N.171-REAL SAYANA        
+20372CTRO.EDUC.P/ADULTOS N.172-WEISBURD-MORENO    
+20387CTRO.ED.P/ADULTOS N.173-VLLA LA PUNTA-CHOYA  
+20395CTRO.ED.ADULTOS N.174-NVA.ESPERANZA-PELLEGR  
+20406CTRO.EDUC.ADULTOS N.175-PAMPA POZO-PELLEGRI  
+20414CTRO.EDUC.P/ADULTOS N.176-LOS LAGOS-CAPITAL  
+20422CTRO.EDUC.P/ADULTOS N.177-VINARA-RIO HONDO   
+20437CTRO.EDUCAC.BASICA P/ADULTOS-B.EL COY        
+20445CTRO.EDUCAC.BASICA P/ADULTOS-CHOYA           
+20453CTRO.EDUCAC.BASICA P/ADULTOS-OTUMPA          
+20461CTRO.EDUCAC.BASICA P/ADULTOS-VILLA SILIPICA  
+20476CTRO.EDUC.BASICA P/ADULTOS-SILIPICA/UPIANITA 
+20484CTRO.EDUCAC.BASICA P/ADULTOS-CAPITAL         
+20492CTRO.EDUCAC.BASICA P/ADULTOS-NUEVA ESPERANZA 
+20503CTRO.EDUCAC.BASICA P/ADULTOS-LUGONES         
+20511CTRO.EDUCAC.BASICA P/ADULTOS-LA CANADA       
+20526CTRO.EDUCAC.BASICA P/ADULTOS-SUMAMPA         
+20534CTRO.EDUDAC.P/ADULTOS NRO.200-CAPITAL        
+20542CTRO.EDUCAC.P/ADULTOS NRO.201-CAPITAL        
+20557CTRO.EDUCAC.P/ADULTOS NRO 202-CAPITAL        
+20565CTRO.EDUCAC.P/ADULTOS NRO.203-JUAN F.IBARRA  
+20573CTRO.EDUCAC.P/ADULTOS NRO.204-TABOADA        
+20581CTRO.EDUCAC.P/ADULTOS NRO.205-TABOADA        
+20596CTRO.EDUCAC.P/ADULTOS NRO.,206-LA BANDA      
+20607CTRO.EDUCAC.P/ADULTOS N.207-TERMAS RIO HONDO 
+20615CTRO.EDUCAC.P/ADULTOS NRO.208-PELLEGRINI     
+20623CTRO.EDUCAC.BASIC.ADULTO NRO.209-BANDA       
+20631CTRO.EDUCAC.BASIC.ADULTO NRO.094-AATUYA      
+20646CTRO.EDUCAC.BASIC.ADULTO NRO.211-LA BANDA    
+20654CTRO.EDUCAC.BASIC.ADULTO NRO.212-ROBLES      
+20662CTRO.EDUCAC.BASIC.ADULTO NRO.213-ROBLES      
+20677CTRO.EDUCAC.BASIC.ADULTO NRO.214-ROBLES      
+20685CTRO.EDUCAC.BASIC.ADULTO NRO.215-AGUIRRE     
+20693CTRO.EDUCAC.BASIC.ADULTO NRO.216-RIVADAVIA   
+20704CTRO.EDUCAC.BASIC.ADULTO NRO.217-BELGRANO    
+20712CTRO.EDUCAC.BASIC.ADULTO NRO.218-LORETO      
+20727CTRO.EDUCAC.BASIC.ADULTO NRO.220-SAN MARTIN  
+20735CTRO.EDUCAC.BASIC.ADULTO NRO.221-RIO HONDO   
+20743CENTRO EDUCATIVO P/ADULTOS NRO.108           
+20751CTRO.EDUCAT.P/ADULTOS N.222-CPO.GALLO-ALBERDI
+20766CTR.EDUC.ADULTOS N.223-N.ESPERANZA-PELLEGRINI
+20774CTRO.EDUCAT.P/ADULTOS N.224-BANDERA-BELGRANO 
+22011ESC.FORMAC.PROFES.y CAPACIT.LABORAL Nro.33   
+22026CARCELARIA "EL SALVADOR"                     
+22034CARCELARIA "CORAZON DE MARIA"                
+22042ESC. LISIADO SUP. "ELENA ADAMS KILLERS" N.236
+22057ESC. DIFERENCIAL "DR. RAMON CARRILLO" NRO.240
+22065ESC. HOSPITALARIA "DR. FRANCISCO VIANO"      
+22073ESC.HOSPIT.NINOS C/EXT.DOM.DR.F.VIANO-BANDA  
+22081ESC. HOSPITALARIA C/EXTENS. DOMIC. -QUIMILI- 
+22096ESC.FORMAC.PROFES.Y CAPACIT.LABORAL Nro.34   
+23006ESCUELA NRO 1241                             
+23014ESCUELA NRO.1242 B.AEROPUERTO-DPTO.CAPITAL   
+23022ESCUELA NRO.1243 B.V.DEL CARMEN-DPTO.CAPITAL 
+24033TECNICO                                      
+24056ADSCRIPTOS                                   
+24064ADSCRIPTOS (EX NACION)                       
+24122DIRECCION DE PSICOLOGIA EDUCACIONAL          
+24184ESC. HOGAR NRO.1 EVA PERON                   
+24192CENTRO ESPECIAL TERAPEUTICO LABORAl          
+24203CENTRO DE ATENCION MULTIPLE-FRIAS-           
+24211CENTRO DE ATENCION MULTIPLE-LOS TELARES      
+24226CENTRO DE ATENCION MULTIPLE-TINTINA-         
+24234COLEGIO NIVEL POLIMODAL LA INVERNADA NORTE   
+24242COLEG.SECUND.3CATEG.BUEY MUERTO-ROBLES       
+24257ESCUELA NRO. 1219 NIVEL PRIMARIO-DPTO.COPO   
+24265ESCUELA ESPECIAL-DPTO.SUNCHO CORRAL          
+24273ESCUELA ESPECIAL-DPTO.LOS JURIES             
+24281ESCUELA ESPECIAL-DPTO.LA BANDA               
+24296ESCUELA ESPECIAL-DPTO.BELGRANO               
+24307ESCUELA ESPECIAL-DPTO.VILELAS                
+24323ESCUELA ESPECIAL-OJO DE AGUA                 
+24331COLEGIO DEL BICENTENARIO                     
+24346ESCUELA ESPECIAL DE LORETO                   
+24354ESC.ESPECIAL DE NVA.ESPERANZA-DPTO.PELLEGRINI
+30014JARDIN NRO 1                                 
+30022JARDIN NRO 2                                 
+30037JARDIN NRO 3                                 
+30045JARDIN NRO 4                                 
+30053JARDIN NRO 5                                 
+30061JARDIN NRO 6                                 
+30076JARDIN NRO 7                                 
+30084JARDIN NRO 8                                 
+30092JARDIN NRO 9 COPITO DE ALGODON               
+30103JARDIN NRO 10                                
+30111JARDIN NRO 11                                
+30126JARDIN NRO 12                                
+30134JARDIN NRO 13                                
+30142JARDIN NRO 14                                
+30157JARDIN NRO 15                                
+30165JARDIN NRO 16                                
+30173JARDIN NRO 17                                
+30181JARDIN NRO 18                                
+30196JARDIN NRO 19                                
+30207JARDIN NRO 20 OSITO CARINOSO                 
+30215JARDIN NRO 21                                
+30223JARDIN NRO 22                                
+30231JARDIN NRO 23 SISITA                         
+30246JARDIN NRO 24                                
+30254JARDIN NRO 25 LOS PASTORCITOS                
+30262JARDIN NRO 26 NUBECITAS                      
+30277JARDIN NRO 27 MARTA SALOTI                   
+30285JARDIN NRO 28                                
+30293JARDIN NRO 29 CAJITA DE SORPRESAS            
+30304JARDIN NRO 30 INFANTA MENDOCINA              
+30312JARDIN NRO 31 LOS PITUFOS                    
+30327JARDIN NRO 32                                
+30335JARDIN NRO.33 CAMINITOS DE LA COSTA          
+30343JARDIN NRO 34 PATITO COLETON                 
+30351JARD.INFANTES NRO.35-ICANO-DPTO.AVELLANEDA   
+30366JARDIN NRO 36                                
+30374JARDIN NRO 37 GOTITAS DE LLUVIA              
+30382JARDIN NRO 38                                
+30397JARDIN NRO 39                                
+30401JARD.INF N.40"RINCON DE SUENOS"FIGUEROA      
+30416JARDIN NRO.41 "ABEJITAS"                     
+30424JARDIN NRO 42                                
+30432JARDIN NRO 43                                
+30447JARDIN NRO 44 PAULA A DE SARMIENTO           
+30455JARDIN NRO 45                                
+30463JARDIN NRO 46 REMEDIO DE E.DE SAN MARTIN     
+30471JARDIN NRO 47                                
+30486JARDIN N-48 NUESTRA SRA.DE GUADALUPE-ROBLES  
+30494JARDIN NRO 49                                
+30505JARDIN NRO 50                                
+30513JARDIN INFANTES NRO.51-ANATUYA-DPTO.TABOADA  
+30521JARDIN NRO 52                                
+30536JARDIN NRO 53                                
+30544JARDIN NRO 54                                
+30552JARDIN NRO 55                                
+30567JARDIN NRO 56                                
+30575JARDIN NRO.57 PEQUENOS SABIOS                
+30583JARDIN NRO 58 FRUTILLITA                     
+30591JARDIN NRO 59                                
+30602JARDIN NRO 60 LUCERITO                       
+30617JARDIN NRO 61                                
+30625JARDIN NRO 62                                
+30633JARDIN NRO 63                                
+30641JARDIN NRO 64 WALT DISNEY                    
+30656JARDIN NRO 65                                
+30664JARDIN NRO 66                                
+30672JARDIN NRO 67 SANTA RITA                     
+30687JARDIN NRO 68 PINOCHO                        
+30695JARDIN NRO 69                                
+30706JARDIN NRO 70                                
+30714JARDIN NRO 71                                
+30722JARDIN NRO 72 BAMBI                          
+30737JARDIN NRO 73                                
+30745JARDIN NRO 74                                
+30753JARDIN NRO 75                                
+30761JARDIN NRO 76                                
+30776JARDIN NRO 77                                
+30784JARDIN NRO 78                                
+30792JARDIN NRO 79 TRENCITO ALEGRE                
+30803JARDIN NRO 80                                
+30811JARDIN NRO 81                                
+30826JARDIN NRO 82                                
+30834JARDIN NRO 83                                
+30842JARDIN NRO 84                                
+30857JARDIN NRO 85                                
+30865JARDIN NRO 86                                
+30873JARDIN NRO 87                                
+30881JARDIN NRO 88                                
+30896JARDIN NRO 89                                
+30907JARDIN NRO 90                                
+30915JARDIN NRO 91                                
+30923JARDIN NRO 92                                
+30931JARDIN NRO 93 GRILLITO                       
+30946JARDIN NRO 94                                
+30954JARDIN NRO 95                                
+30962JARDIN INF. N.96"SONKITOS PUKA"ATAMISQUI     
+30977JARDIN NRO 97                                
+30985JARDIN NRO 98                                
+30993JARDIN NRO.99"SAGRADO CORAZON DE JESUS"      
+31002JARDIN NRO 100                               
+31017JARDIN NRO 101 BURBUJITA                     
+31025JARDIN NRO 102                               
+31033JARDIN NRO 103 SANTIAGUITO                   
+31041JARDIN NRO 104                               
+31056JARDIN NRO 105                               
+31064JARDIN NRO 106                               
+31072JARDIN NRO 107 "SAYANERITOS"                 
+31087JARDIN NRO 108                               
+31095JARDIN NRO 109                               
+31106JARDIN NRO 110                               
+31114JARDIN NRO 111                               
+31122JARDIN NRO 112 NINO DIOS                     
+31137JARDIN NRO 113                               
+31145JARDIN NRO 114 DESPERTAR                     
+31153JARDIN NRO 115 BICHITO DE LUZ                
+31161JARDIN NRO 116                               
+31176JARD.INF.N.117"MARGARITA ALEGRE"SARMIENTO    
+31184JARDIN NRO 118                               
+31192JARDIN NRO 119                               
+31203JARDIN NRO 120                               
+31211JARDIN NRO 121                               
+31226JARDIN NRO 122 LAS ARDILLITAS                
+31234JARDIN NRO 123                               
+31242JARDIN NRO 124                               
+31257JARDIN NRO 125                               
+31265JARDIN NRO 126                               
+31273JARDIN NRO 127                               
+31281JARDIN INFANTES N-128 TRENCITO DE ILUSIONES  
+31296JARDIN NRO 129                               
+31307JARDIN NRO 130                               
+31315JARDIN NRO 131                               
+31323JARDIN DE INFANTES N-132 anexo ESCUE.N-588   
+31331JARDIN NRO 133                               
+31346JARDIN NRO 134                               
+31354JARDIN NRO 135                               
+31362JARDIN INFANT.N.136 ANEX.ESC.N.612-AGUIRRE   
+31377JARDIN NRO 137                               
+31385JARDIN NRO 138                               
+31393JARDIN NRO 139                               
+31404JARDIN NRO 140                               
+31412JARDIN NRO 141                               
+31427JARDIN NRO 142                               
+31435JARDIN NRO 143                               
+31443JARDIN NRO 144                               
+31451JARDIN NRO 145                               
+31466JARDIN NRO 146 LOS CHANGUITOS                
+31474JARDIN NRO 147 CAROCITO                      
+31482JARDIN NRO 148                               
+31497JARDIN NRO 149 CARROUSSEL                    
+31501JARDIN NRO 150                               
+31516JARDIN NRO 151 JOSE DE SAN MARTIN            
+31524JARDIN NRO 152                               
+31532JARDIN NRO 153                               
+31547JARDIN NRO 154                               
+31555JARDIN NRO 155                               
+31563JARDIN INFANTES NRO.156 ANEXO ESC.NRO.930    
+31571JARDIN NRO 157                               
+31586JARDIN NRO 158                               
+31594JARDIN NRO 159                               
+31605JARDIN NRO.160 LOS PATITOS                   
+31613JARD.INFANTES NRO.161-EST.CHOYA-DPTO.CHOYA   
+31621JARDIN INFANTES NRO.162 ANEXO.ESC.NRO.1020   
+31636JARDIN INFANTES NRO.163 ANEXO ESC.NRO.937    
+31644JARDIN INFANTES NRO.164 ANEXO ESC.NRO.648    
+31652JARDIN N-165 EL MISTOLCITO-AVELLANEDA        
+31667JARDIN NRO 166"ALGARROBITAS"                 
+31675JARDIN INFANTES NRO.167 ANEXO ESC.NRO.915    
+31683JARDIN INFANTES NRO.168 ANEXOESC.NRO.833     
+31691JARDIN INFANTES NRO.169ANEXO ESC.NRO.1167    
+31702JARDIN INFANTES NRO.170 ANEXO ESC.NRO.529    
+31717JARDIN INFANTES NRO.171 ANEXO ESC.NRO.371    
+31725JARDIN NRO 172                               
+31733JARDIN INFANTES NRO.173 ANEXO ESC.NRO.955    
+31741JARDIN NRO 174                               
+31756JARDIN NRO 175                               
+31764JARDIN NRO 176                               
+31772JARDIN INFANTES NRO.177 ANEXO ESC.NRO.1220   
+31787JARDIN NRO 178                               
+31795JARDIN NRO 179                               
+31806JARDIN NRO 180                               
+31814JARDIN INFANTES NRO.181 ANEXO ESC.NRO.838    
+31822JARDIN NRO 182                               
+31837JARDIN NRO 183                               
+31845JARDIN 184                                   
+31853JARDIN NRO 185 NINO FELIZ                    
+31861JARDIN NRO 186                               
+31876JARDIN NRO 187                               
+31884JARDIN NRO 188"CAMINITO DE COLORES"          
+31892JARDIN INFANTES NRO.189 ANEXO ESC.NRO.319    
+31903JARD.INFANTES N.190-EL QUEMADO-D.PELLEGRINI  
+31911JARDIN INFANTES NRO.191ANEXO ESC.NRO.427     
+31926JARDIN INFANTES NRO.192 ANEXO ESC.NRO.1215   
+31934JARDIN INFANTES NRO.193 ANEXO ESC.NRO.1218   
+31942JARDIN NRO 194 ANEXO ESC.NRO.723             
+31957JARDIN INF.NRO.195"SANTA ROSA"/AGUIRRE       
+31965JARDIN INF.NRO.196"SAN FRANCISCO"/ALBERDI    
+31973JARDIN NRO 197                               
+31981JARDIN NRO 198 MI PEQUENO ANGELITO           
+31996JARDIN 199 ANEXO ESC 703 CAMPO GALLO ALBERD  
+32005JARDIN INF NRO.200"EL BOQUERON"/ATAMISQUI    
+32013JARDIN NRO 201                               
+32021JARDIN NRO 202                               
+32036JARDIN NRO 203 MANUELITA                     
+32044JARDIN NRO 204                               
+32052JARDIN NRO 205                               
+32067JARDIN NRO 206                               
+32075JARDIN NRO 207                               
+32083JARDIN NRO 208                               
+32091JARDIN NRO 209                               
+32102JARDIN NRO 210 SAN CAYETANO                  
+32117JARDIN INF.NRO.211"HOYON"/ATAMISQUI          
+32125JARDIN INF. NRO.212"JUANILLO"/ATAMISQUI      
+32133JARDIN NRO 213                               
+32141JARDIN NRO 214                               
+32156JARDIN NRO 215                               
+32164JARDIN NRO 216                               
+32172JARDIN INF NRO.217"LA BAJADA"/BANDA          
+32187JARDIN NRO 218                               
+32195JARDIN NRO 219                               
+32206JARDIN NRO 220                               
+32214JARDIN INF.NRO.221"EL BARRIAL"/BANDA         
+32222JARDIN NRO 222                               
+32237JARDIN NRO 223                               
+32245JARDIN NRO 224                               
+32253JARDIN NRO 225                               
+32261JARDIN NRO 226                               
+32276JARDIN 227 ANEXO ESC.725 PALOS QUEM.-BANDA   
+32284JARDIN NRO 228                               
+32292JARDIN NRO 229                               
+32303JARDIN NRO 230                               
+32311JARDIN 231 ANEXO ESC 885 SAN LORENZO BANDA   
+32326JARDIN 232 ANEXO ESC 974 BAJO GRANDE BANDA   
+32334JARDIN 233 ANEXO ESC 1116 S JOSE BANDA       
+32342JARDIN NRO 234                               
+32357JARDIN NRO 235                               
+32365JARDIN NRO 236                               
+32373JARDIN NRO 237                               
+32381JARDIN NRO 238                               
+32396JARDIN INF.NRO.239"LOS POCITOS"CAPITAL       
+32407JARDIN NRO 240                               
+32415JARDIN NRO 241                               
+32423JARDIN NRO 242                               
+32431JARDIN N-243 REINA MORA-ICANO                
+32446JARDIN INF.NRO.244"LOS TIGRES"/COPO          
+32454JARDIN NRO 245                               
+32462JARDIN NRO 246                               
+32477JARDIN NRO 247                               
+32485JARDIN INF.NRO.248 MONTE QUEMADO/COPO        
+32493JARDIN NRO 249                               
+32504JARDIN 250 ANEXO ESC 806 EL CEIBAL COPO      
+32512JARDIN NRO 251                               
+32527JARDIN NRO 252                               
+32535JARDIN NRO 253                               
+32543JARDIN NRO 254                               
+32551JARDIN NRO 255                               
+32566JARDIN NRO 256                               
+32574JARDIN NRO 257                               
+32582JARDIN 258 ANEX ESC 1187 MTE QUEMADO COPO    
+32597JARDIN INF.NRO.259"MANGA BAJADA"/COPO        
+32601JARDIN NRO 260                               
+32616JARDIN 261 ANEXO ESC.450 EL RODEO-CHOYA      
+32624JARDIN 262 ANEXO ESC.1115 LA REPRESA-CHOYA   
+32632JARDIN 263 ANEXO ESC.257 DESVAST.-FIG.       
+32647JARDIN 264 ANEXO ESC.393 CHANAR POZO-FIG.    
+32655JARDIN NRO 265                               
+32663JARDIN 266 ANEX.ESC.417 POZO CASTANO-FIGUER  
+32671JARDIN NRO 267                               
+32686JARD.INFANTES NRO.268-QUIMILI-DPTO.MORENO    
+32694JARDIN NRO 269                               
+32705JARDIN 270 AN.ESC.1195 LOTE LA CANADA-FIG    
+32713JARDIN NRO 271-ESC.862 MADRE DE LA MERCED    
+32721JARDIN NRO 272                               
+32736JARDIN NRO 273                               
+32744JARDIN NRO 274                               
+32752JARDIN 275 ANEXO ESC.520 SAN ROQUE-FIG.      
+32767JARDIN NRO 276                               
+32775JARDIN 277 ANEXO ESC.138 PAMPA POZO-GUASAYA  
+32783JARDIN NRO 278                               
+32791JARDIN NRO 279                               
+32802JARDIN NRO.280 CAPULLITO DE LUJAN            
+32817JARDIN NRO 281 CIUDAD DEL NINO               
+32825JARDIN 282 ANEXO ESC.602 LA CAND.-COPO       
+32833JARDIN 283 ANEXO ESC.625 PARAJE K477-J.IBAR  
+32841JARDIN NRO 284                               
+32856JARDIN NRO 285                               
+32864JARDIN NRO 286                               
+32872JARDIN NRO 287                               
+32887JARD.INF.288"TIGRECITOS CARINOSOS"R.HONDO    
+32895JARDIN NRO 289                               
+32906JARDIN 290ANEXO ESC.694 LOTE 59 J.F.IBARRA   
+32914JARDIN NRO 291                               
+32922JARDIN NRO 292 PETER PAN                     
+32937JARDIN 293 ANEXO ESC.969 AYUNCHA-LORETO      
+32945JARDIN NRO 294 FLORCITA DEL NORTE            
+32953JARDIN 295 ANEXO ESC.996 POZO CIEGO-LORETO   
+32961JARDIN 296 AN.ESC.482 PUESTO DE BELTRAN-LOR  
+32976JARDIN 297 ANEXO ESC.462 LOTE 24-MITRE       
+32984JARDIN 298 ANEXO ESC.210 LILO VIEJO-MORENO   
+32992JARDIN DE INFANTES NRO 299                   
+33001JARDIN DE INFANTES NRO 300                   
+33016JARDIN 301 AN.ESC.668 OBRAJE M.A.MORENO      
+33024JARDIN 302ANEXO ESC.687 STA.ROSA-MORENO      
+33032JARDIN NRO 303                               
+33047JARDIN DE INFANTES NRO 304                   
+33055J.INFANT.305"BURBUJITAS DE COLORES"FRIAS     
+33063JARDIN DE INFANTES N-306                     
+33071JARDIN DE INFANTES NRO 307                   
+33086JARDIN DE INFANTES N-308                     
+33094JARDIN DE INFANTES NRO 309                   
+33105JARDIN DE INFANTES NRO 310                   
+33113JARDIN DE INFANTES NRO 311                   
+33121JARDIN DE INFANTES NRO 312                   
+33136JARDIN DE INFANTES NRO 313                   
+33144JARDIN INFANT.N.314 ANEX.ESC.N.874-ALBERDI   
+33152JARDIN DE INFANTES NRO 315                   
+33167JARD.INFANTES NRO.316-RAPELLI-D.PELLEGRINI   
+33175JARDIN DE INFANTES NRO 317                   
+33183JARDIN DE INFANTES NRO 318                   
+33191JARDIN DE INFANTES NRO 319                   
+33202JARDIN DE INFANTES NRO 320                   
+33217JARDIN DE INFANTES NRO 321                   
+33225JARDIN DE INFANTES NRO 322                   
+33233JARDIN DE INFANTES NRO 323                   
+33241JARDIN DE INFANTES NRO 324                   
+33256JARDIN DE INFANTES N 325 CAMPO GALLO         
+33264JARDIN DE INFANTES NRO 326                   
+33272JARDIN DEE INFANTES NRO 327                  
+33287JARDIN DE INFANTES NRO 328                   
+33295JARDIN DE INFANTES NRO 329                   
+33306JARDIN DE INFANTES NRO 330                   
+33314JARDIN DE INFANTES NRO 331                   
+33322JARDIN DE INFANTES NRO 332                   
+33337JARDIN 333 ANEX ESC 1067 OTUMPA MORENO       
+33345JARDIN DE INFANTES NRO 334                   
+33353JARDIN DE  INFANTES NRO.335                  
+33361JARDIN DE INFANTES NRO 336                   
+33376JARDIN DE INFANTES Nro.337                   
+33384JARDIN DE INFANTES NRO.338                   
+33392JARDIN DE INFANTES NRO 339                   
+33403JARDIN DE INFANTES NRO 340                   
+33411JARDIN DE INFANTES NRO 341                   
+33426JARDIN DE INFANTES NRO.342 YOLO HUASI        
+33434JARDIN DE INFANTES NRO. 343                  
+33442JARDIN DE INFANTES NRO. 344                  
+33457JARDIN DE INFANTES NRO. 345                  
+33465JARDIN DE INFANTES NRO. 346                  
+33473JARDIN DE INFANTES NRO.347                   
+33481JARDIN DE INFANTES NRO. 348                  
+33496JARDIN DE INFANTES NRO 349                   
+33507JARDIN 350 A ESC 773 PIEDRA BLANCA OJO D AG  
+33515JARDIN 351 AN.ESC.1006 AHI VEREMOS-PELLEGRI  
+33523JARDININF.N.352"BOQUITA DE DAMA"ANX.ESC.477  
+33531JARDIN 353 ANEX.ESC.1191 EL SAUCE-PELLEGRIN  
+33546JARDIN 354 A.ESC.1190 ELCORRALITO-PELLEGRIN  
+33554JARDIN 355 AN.ESC.986 PTO. NUEVO-PELLEGRINI  
+33562JARDIN 356 A.ESC.767 ALGARROBAL VIEJO-PELLE  
+33577JARDIN 357 ANEX.ESC.895 SAN RAMON-PELLEGRIN  
+33585JARDIN 358 ANEX.ESC.944 TACO POZO-QUEBRACHO  
+33593JARDIN 359 ANEX.ESC.728 AGUADA-R.HONDO       
+33604JARDIN 360 ANEX.ESC.216 SOTELOS-RIO HONDO    
+33612JARDIN 361 ANEX.ESC.90 CHARCO VIEJO-R.HONDO  
+33627JARDIN 362 A ESC 1002 CHAAR POZO A R HONDO   
+33635JARDIN 363 A ESC 486 L DEL MEDIO R HONDO     
+33643JARDIN N-364 S.TERESITA DEL N.JESUS-ROBLES   
+33651JARDIN N-365 SEMILITAS DE PAZ-ROBLES         
+33666JARCIN 366 ANEX ESC 916 MILI ROBLES          
+33674JARDIN 367 ANEX ESC 966 MORCILLO ROBLES      
+33682JARDIN 368 ANEX ESC 1029 PALO NEGRO RIVADAV  
+33697JAR 369 ANEX ESC 137 M POZO SALAVINA         
+33701JARDIN 370 ANEX ESC 637 C PAZO SALAVINA      
+33716JARDIN 371 A ESC 1189 CAMPO DE CEJAS SALAVI  
+33724JARDIN 372 ANEX ESC 62 COLONIA PINTO S MART  
+33732JARDIN 373 ANEX ESC 139 V NUEVA S MARTIN     
+33747JARDIN N-374 GORRIONES ENCANTADOS-S.MARTIN   
+33755JARDIN 375 AN ES 447 BARRIAL ALTO SAN MARTI  
+33763JARDIN 376 ANEX ESC 747 ATOJ POZO SAN MARTI  
+33771JARDIN 377 ANEX ESC 410 EL EMPACHAO SARMIEN  
+33786JARDIN 378 ANEX.ESC.992 SAN PEDRO-SARMIENTO  
+33794JARDIN NRO.379 CASITA DE MIEL ANEXO ESC.810  
+33805JARDIN NRO.380 INTI SUMAJ                    
+33813JARDIN 381 ANEX ESC 783 LA SIMONA TABOADA    
+33821JARDIN NRO.382 TAQUITOS                      
+33836JARDIN N-383 HUAHUITA JISHU-TABOADA          
+33844JARDIN 384 ANEX ESC 613 LOTE 42 TABOADA      
+33852JARDIN 385 ANEX ESC 994 P GRANDE OJO DE AGU  
+33867JARDIN NRO.386 HUAHUITAS HUASICITUN          
+33875JARDIN 387 ANEX ESC 804 BARRANCAS SALAVINA   
+33883JARDIN N-388 HOJITAS VERDES-AGUIRRE          
+33891JARDIN 389 ANEX ESC 292 GRAMILLA AVELLANEDA  
+33902JARDIN 390 ANEX ESC 854 LOS TOLOZA ATAMISQU  
+33917JARDIN 391 ANEX ESC 856 LOS PERALTA ATAMISQ  
+33925JARDIN 392 ANEX ESC 599 EL CHURQUI JIMENEZ   
+33933JARDIN 393 ANEX ESC 693 SAN FELIX JIMENEZ    
+33941JARDIN 394 ANEX ESC 455 TALA POZO RIO HONDO  
+33956JARDIN 395 A ESC 553 COL MACKINLAY RIVADAVI  
+33964JARDIN INFANTES NRO.396 ANEXO ESC.NRO.397    
+33972JARDIN 397 ANEX.ESC.1051 CHILCA-ROBLES       
+33987JARDIN 398 ANEX.ESC.1171 EL SALADILLO-IBARR  
+33995JARDIN 399 ANEXO ESC.689 LOTE CHICO-J-F-IBA  
+34004JARDIN 400 ANEXO ESC.384 SANTA LUCIA-MORENO  
+34012JARDIN INFANTES NRO.401 ANEXO ESC.NRO.717    
+34027JARDIN INFANTES NRO.402 ANEXO ESC.NRO.1066   
+34035JARDIN INFANTES NRO.403 ANEXO ESC.NRO.380    
+34043JARDIN INFANTES NRO.404 ANEXO ESC.NRO.968    
+34051JARDIN INFANTES NRO.405 ANEXO ESC.NRO.329    
+34066JARDIN INFANTES NRO 406 ANEXO ESC.NRO.352    
+34074JARDIN INFANTES NRO.407 ANEXO ESC.NRO.758    
+34082JARDIN INFANTES NRO.408 ANEXO ESC.NRO.680    
+34097JARDIN INFANTES NRO.409 ANEXO ESC.NRO.456    
+34101JARDIN INFANTES NRO 410 ANEXO ESC.NRO.357    
+34116JARDIN INFANTES NRO.411 ANEXO ESC.NRO.776    
+34124JARDIN INFANTES NRO.412 ANEXO ESC.NRO.1050   
+34132JARDIN INFANTES NRO.413 ANEXO ESC.NRO.1165   
+34147JARDIN NRO.414 ANEXO ESC.N.849-DPTO.MORENO   
+34155JARDIN INFANTES NRO.415 ANEXO ESC.NRO.44     
+34163JARDIN INFANTES NRO.416 ANEXO ESC.NRO.47     
+34171JARDIN INFANTES NRO.417 ANEXO ESC.NRO.49     
+34186JARDIN INFANTES NRO.418 ANEXO ESC.NRO.87     
+34194JARDIN INFANTES NRO.419 ANEXO ESC.NRO.93     
+34205JARDIN INFANTES NRO.420 ANEXO ESC.NRO.196    
+34213JARDIN INFANTES NRO.421 ANEXO ESC.NRO.218    
+34221JARDIN INFANTES NRO.422 ANEXO ESC.NRO.448    
+34236JARDIN INFANTES NRO.423 ANEXO ESC.NRO.534    
+34244JARDIN INFANTES NRO.424 ANEXO ESC.NRO.605    
+34252JARDIN INFANTES NRO.425 ANEXO ESC.NRO.696    
+34267JARDIN INFANTES NRO.426 ANEXO ESC.NRO. 769   
+34275JARDIN INFANTES NRO.427 ANEXO ESC.NRO.1092   
+34283JARDIN INFANTES NRO.428 ANEXO ESC.NRO 565    
+34291JARDIN INFANTES NRO.429 ANEXO ESC.NRO.706    
+34302JARDIN INFANTES NRO.430 ANEXO ESC.NRO.265    
+34317JARDIN INFANTES NRO.431 ANEXO ESC.NRO.242    
+34325JARDIN INFANTES NRO.432 ANEXO ESC.NRO.999    
+34333JARDIN INFANTES NRO.433 ANEXO ESC.NRO.1047   
+34341JARDIN INFANTES NRO.434 ANEXO ESC.NRO.634    
+34356JARDIN INFANTES NRO.435 ANEXO ESC.NRO.408    
+34364JARDIN INFANTES NRO.436 ANEXO ESC.NRO.163    
+34372JARDIN DE INFANTES NRO.437 ANEXO ESC.NR.129  
+34387JARDIN INFANTES NRO.438 ANEXO ESC.NRO.620    
+34395JARDIN INFANTES NRO.439 ANEXO ESC.NRO.1069   
+34406JARDIN INFANTES NRO.440 ANEXO ESC.NRO.53     
+34414JARDIN INFANTES NRO.441 ANEXO ESC. NRO.251   
+34422JARDIN INFANTES NRO. 442 ANEXO ESC. NRO.280  
+34437JARDIN INFANTES NRO.443 ANEXO ESC.NRO.238    
+34445JARDIN INFANTE NRO.444 ANEXO ESC. NRO.931    
+34453JARDIN INFANTES NRO.445 ANEXO ESC. NRO.665   
+34461JARDIN INFANTE NRO.446 ANEXO ESC.NRO.524     
+34476JARDIN INFANTES NRO.447ANEXO ESC.NRO.146     
+34484JARDIN INFANTES NRO.448 ANEXO ESC. NRO.128   
+34492JARDIN INFANTES NRO.449 ANEXO ESC. NRO.787   
+34503JARDIN INFANTES NRO.450 ANEXO ESC.NRO.1093   
+34511JARDIN INFANTES NRO.451 ANEXO ESC.NRO.130    
+34526JARDIN INFANTES NRO.452ANEXO ESC. NRO.1079   
+34534JARDIN INFANTES NRO.453 ANEXO ESC. NRO.95    
+34542JARDIN INFANTES NRO.454 ANEXO ESC. NRO.997   
+34557JARDIN INFANTES NRO.455 ANEXO ESC.NRO.270    
+34565JARDIN INFANTES NRO.456 ANEXO ESC.NRO.1061   
+34573JARDIN INFANTES NRO.457 ANEXO ESC.NRO.690    
+34581JARDIN INFANTES NRO.458 ANEXO ESC. NRO.538   
+34596JARDIN INFANTES NRO.459 ANEXO ESC.NRO.606    
+34607JARDIN INFANTES NRO.460 ANEXO ESC. NRO.707   
+34615JARDIN INFANTES NRO.461 ANEXO ESC.NRO.1217   
+34623JARDIN INFANTES NRO.462 ANEXO ESC.NRO.1136   
+34631JARDIN INFANTES NRO.463 ANEXO ESC. NRO.117   
+34646JARDIN INFANTE NRO.464 ANEXO ESC.NRO.1056    
+34654JARDIN INFANTES NRO.465 ANEXO ESC. NRO.957   
+34662JARDIN INFANTES NRO.466 ANEXO ESC.NRO.327    
+34677JARDIN INFANTES NRO.467 ANEXO ESC.NRO.122    
+34685JARDIN INFANTES NRO.468 ANEXO ESC. NRO.419   
+34693JARDIN INFANTES NRO.469 ANEXO ESC. NRO.413   
+34704JARDIN INFANTES NRO.470 ANEXO ESC.NRO.503    
+34712JARDIN INFANTES NRO.471 ANEXO ESC. NRO.255   
+34727JARDIN INFANTES NRO.472 ANEXO ESC.NRO.991    
+34735JARDIN INFANTES NRO.473 ANEXO ESC.NRO.108    
+34743JARDIN INFANTES NRO.474 ANEXO ESC.NRO.656    
+34751JARDIN INFANTES NRO.475 ANEXO ESC. NRO.961   
+34766JARDIN INFANTES NRO.476 ANEXO ESC.NRO.1087   
+34774JARDIN INFANTES NRO.477 ANEXO ESC.NRO.1176   
+34782JARDIN INFANTES NRO. 478 ANEXO ESC. NRO.938  
+34797JARDIN INFANTES NRO. 479 ANEXO ESC.NRO 192   
+34801JARDIN INFANTES NRO.480 ANEXO ESC.NRO.821    
+34816JARDIN INFANTES NRO.481 ANEXO ESC.NRO.513    
+34824JARDIN INFANTES NRO.482 ANEXO ESC.NRO.165    
+34832JARDIN INFANTES NRO.483 ANEXO ESC.NRO.879    
+34847JARDIN INFANTES NRO.484 ANEXO ESC.NRO.672    
+34855JARDIN INFANTES NRO.485 ANEXO ESC.NRO.41     
+34863JARDIN INFANTES NRO.486 ANEXO ESC.NRO.1059   
+34871JARDIN INFANTES NRO.487 ANEXO ESC.NRO.416    
+34886JARDIN INFANTES NRO.488 ANEXO ESC.NRO.1063   
+34894JARDIN INFANTES NRO.489 ANEXO ESC.NRO.247    
+34905JARDIN INFANTES NRO.490 ANEXO ESC.NRO.3      
+34913JARDIN INFANTES NRO.491 ANEXO ESC.NRO.46     
+34921JARDIN INFANTES NRO.492 ANEXO ESC.NRO.51     
+34936JARDIN INFANTES NRO.493 ANEXO ESC.NRO.52     
+34944JARDIN INFANTES NRO.494 ANEXO ESC.NRO.76     
+34952JARDIN INFANTES NRO.495 ANEXO ESC.NRO.118    
+34967JARDIN INFANTES NRO.496 ANEXO ESC.NRO.162    
+34975JARDIN INFANTES NRO.497 ANEXO ESC.NRO.171    
+34983JARDIN INFANTES NRO.498 ANEXO ESC.NRO.176    
+34991JARDIN INFANTES NRO.499 ANEXO ESC.NRO.209    
+35007JARDIN INFANTES NRO.500 ANEXO ESC.NRO.296    
+35015JARDIN INFANTES NRO.501 ANEXO ESC.NRO.333    
+35023JARDIN INFANTES NRO.502 ANEXO ESC.NRO.368    
+35031JARDIN INFANTES NRO.503 ANEXO ESC.NRO.383    
+35046JARDIN INFANTES NRO.504 ANEXO ESC.NRO.396    
+35054JARDIN INFANTES NRO.505 ANEXO ESC.NRO.428    
+35062JARDIN INFANTES NRO.506 ANEXO ESC.NRO.431    
+35077JARDIN INFANTES NRO.507 ANEXO ESC.NRO.459    
+35085JARDIN INFANTES NRO.508 ANEXO ESC.NRO.463    
+35093JARDIN INFANTES NRO.509 ANEXO ESC.NRO.465    
+35104JARDIN INFANTES NRO.510 ANEXO ESC.NRO.490    
+35112JARDIN INFANTES NRO.511 ANEXO ESC.NRO.593    
+35127JARDIN INFANTES NRO.512 ANEXO ESC.NRO.594    
+35135JARDIN INFANTES NRO.513 ANEXO ESC.NRO.614    
+35143JARDIN INFANTES NRO.514 ANEXO ESC.NRO.627    
+35151JARDIN INFANTES NRO.515 ANEXO ESC.NRO.651    
+35166JARDIN INFANTES NRO.516 ANEXO ESC.NRO.667    
+35174JARDIN INFANTES NRO.517 ANEXO ESC.NRO.729    
+35182JARDIN INFANTES NRO.518 ANEXO ESC.NRO.749    
+35197JARDIN INFANTES NRO.519 ANEXO ESC.NRO.795    
+35201JARDIN INFANTES NRO.520 ANEXO ESC.NRO.805    
+35216JARDIN INFANTES NRO.521 ANEXO ESC.NRO.809    
+35224JARDIN INFANTES NRO.522 ANEXO ESC.NRO.812    
+35232JARDIN INFANTES NRO.523 ANEXO ESC.NRO.816    
+35247JARDIN INFANTES NRO.524 ANEXO ESC.NRO.877    
+35255JARDIN INFANTES NRO.525 ANEXO ESC.NRO.818    
+35263JARDIN INFANTES NRO.526 ANEXO ESC.NRO.834    
+35271JARDIN INFANTES NRO.527 ANEXO ESC.NRO.919    
+35286JARDIN INFANTES NRO.528 ANEXO ESC.NRO.927    
+35294JARDIN INFANTES NRO.529 ANEXO ESC.NRO.963    
+35305JARDIN INFANTES NRO.530 ANEXO ESC.NRO.990    
+35313JARDIN INFANTES NRO.531 ANEXO ESC.NRO.993    
+35321JARDIN INFANTES NRO.532 ANEXO ESC.NRO.995    
+35336JARDIN INFANTES NRO.533ANEXO ESC.NRO.998     
+35344JARDIN INFANTES NRO.534 ANEXO ESC.NRO.1008   
+35352JARDIN INFANTES NRO.535 ANEXO ESC.NRO.1074   
+35367JARDIN INFANTES NRO.536 ANEXO ESC.NRO.1104   
+35375JARDIN INFANTES NRO.537 ANEXO ESC.NRO.1107   
+35383JARDIN INFANTES NRO.538 ANEXO ESC.NRO.1110   
+35391JARDIN INFANTES NRO.539 ANEXO ESC.NRO.1197   
+35402JARDIN INFANTES NRO.540 ANEXO ESC.NRO.1202   
+35417JARDIN INFANTES NRO.541 ANEXO ESC.NRO.1212   
+35425JARDIN INF N.542-B.CPO.CONTRERAS-CAPITAL     
+35433JARDININFANT.N.543ANX.ESC.1237-B.L.CATOLICA  
+35441JARDIN INFANTES NRO.544ANEXO ESCUELA N.1145  
+35456JARDIN INFANTES NRO.545ANEXO ESCUELA N.898   
+35464JARDIN INFANTES NRO.546ANEXO ESCUELA N.334   
+35472JARDIN INFANTES NRO.547ANEXO ESCUELA N.1230  
+35487JARDIN INFANTES NRO.548ANEXO ESCUELA N.545   
+35495JARDIN INFANTES NRO.549ANEXO ESCUELA N.1048  
+35506JARDIN INFANTES NRO.550ANEXO ESCUELA N.1091  
+35514JARDIN INFANTES NRO.551 ANEXO ESCUELA N.883  
+35522JARDIN INFANTES NRO.552 ANEXO ESCUELA N.509  
+35537JARDIN INFANTES NRO.553ANEXO ESCUELA N.1082  
+35545JARDIN INFANTES NRO.554ANEXO ESCUELA N.1146  
+35553JARDIN INFANTES NRO.555ANEXO ESCUELA N.1113  
+35561JARDIN INFANTES NRO.556 ANEXO ESCUELA N.691  
+35576JARDIN INFANTES NRO.557 ANEXO ESCUELA N.799  
+35584JARDIN INFANTES NRO.558 ANEXO ESCUELA N.980  
+35592JARDIN INFANTES NRO.559 ANEXO ESCUELA N.38   
+35603JARDIN INFANTES NRO.560 ANEXO ESCUELA N.832  
+35611JARDIN INFANTES NRO.561ANEXO ESCUELA N.1075  
+35626JARDIN INFANTES NRO.562 ANEXO ESCUELA N.952  
+35634JARDIN INFANTES NRO.563ANEXO ESCUELA N.1030  
+35642JARDIN INFANTES NRO.564 ANEXO ESCUELA N.964  
+35657JARDIN INFANTES NRO.565ANEXO ESCUELA N.1201  
+35665JARDIN INFANTES NRO.566 ANEXO ESCUELA N.636  
+35673JARDIN INFANTES NRO.567 ANEXO ESCUELA N,303  
+35681JARDIN INFANTES NRO.568 ANEXO ESCUELA N.979  
+35696JARDIN INFANTES NRO.569 ANEXO ESCUELA N.698  
+35707JARDIN INFANTES NRO.570 ANEXO ESCUELA N.80   
+35715JARDIN INFANTES NRO.571ANEXO ESCUELA N.1207  
+35723JARDIN INFANTES NRO.572 ANEXO ESCUELA N.616  
+35731JARDIN INFANTES NRO.573 ANEXO ESCUELA N.415  
+35746JARDIN INFANTES NRO.574 ANEXO ESCUELA N.570  
+35754JARDIN INFANTES NRO.575 ANEXO ESCUELA N.848  
+35762JARDIN INFANTES NRO.576ANEXO ESCUELA N.1227  
+35777JARDIN INFANTES NRO.577 ANEXO ESCUELA N.16   
+35785JARDIN INFANTES NRO.578ANEXO ESCUELA N.1034  
+35793JARDIN INFANTES NRO.579 ANEXO ESCUELA N.935  
+35804JARDIN INFANTES NRO.580 ANEXO ESCUELA N.322  
+35812JARDIN INFANTES NRO.581ANEXO ESCUELA N.1081  
+35827JARDIN INFANTES NRO.582 ANEXO ESCUELA N.497  
+35835JARDIN INFANTES NRO.583ANEXO ESCUELA N.1046  
+35843JARDIN INFANTES NRO.584 ANEXO ESCUELA N.943  
+35851JARDIN INFANTES NRO.585 ANEXO ESCUELA N.306  
+35866JARDIN INFANTES NRO.586 ANEXO ESCUELA N.598  
+35874JARDIN INFANTES NRO.587 ANEXO ESCUELA N.641  
+35882JARD.INFANTES M.588 ANEX.ESC.N.826-ALBERDI   
+35897JARD.INFANTES N.589 ANEX.ESC.N.875-ALBERDI   
+35901JARD.INFANTES N.590 ANEX.ESC.N.179-ALBERDI   
+35916JARD.INFANTES N.591 ANEX.ESC.N.708-GUASAYAN  
+35924JARD.INFANTES N.592 ANEX.ESC.N.663-ALBERDI   
+35932JARD.INFANTES N.593 ANEX.ESC.N.376-ALBERDI   
+35947JARD.INFDANTES N.594 ANEX.ESC.N.1053-LORETO  
+35955JARD.INFANTES N.595 ANEX.ESC.N.275-FIGUEROA  
+35963JARD.INFANTES N.596 ANEX.ESC.N.1065-FIGUERO  
+35971JARD.INFANTES N.597 ANEX.ESC.N.603-FIGUEROA  
+35986JARD.INFANTES N.598 ANEX.ESC.N.846-FIGUEROA  
+35994JARD.INFANTES N.599 ANEX.ESC.N.124-RIO HOND  
+36003JARD.INFANTES N.600 ANEX.ESC.N.780-BANDA     
+36011JARD.INFANTES N.601 ANEX.ESC.N.1003-BANDA    
+36026JARD.INFANTES N.602 ANEX.ESC.N.1043-BANDA    
+36034JARD.INFANTES N.603 ANEX.ESC.N.1141-TABOADA  
+36042JARD.INFANTES N.604 ANEX.ESC.N.454-TABOADA   
+36057JARD.INFANTES N.605 ANEX.ESC.N.249-TABOADA   
+36065JARD.INFANTES N.606 ANEX.ESC.N.458-ROBLES    
+36073JARD. INFANTES N.607 ANEX.ESC.N.111-O.DE AGUA
+36081JARD.INFANTES N.608 ANEX.ESC.N.1033-O.DEAGUA 
+36096JARD.INFANTES N.609ANEX.ESC.N.655-O.DE AGUA  
+36107JARD.INFANTES N.610 ANEX.ESC.N.20-GUASAYAN   
+36115JARD.INFANTES N.611 ANEX. ESC.N.792-O.DEAGUA 
+36123JARD.INFANTES N.612 ANEX.ESC.N.512-BANDA     
+36131JARD.INFANTES N.613 ANEX.ESC.N.452-RIO HONDO 
+36146JARD.INFANTES N.614 ANEX.ESC.N.857-AVELLANEDA
+36154JARD.INFANTES N.615 ANEX. ESC.N.1122-BANDA   
+36162JARD.INFANTES N.616 ANEX.ESC.N.89-CHOYA      
+36177JARD.INFANTES N.617 ANEX.ESC.N.373-LORETO    
+36185JARD.INFANTES N.618 ANEX.ESC.N.460-ATAMISQUI 
+36193JARD.INFANTES N.619 ANEX.ESC.N.947-AVELLANEDA
+36204JARD.INFANTES N.620 ANEX.ESC.N.893-SALAVINA  
+36212JARD.INFANTES N.621 ANEX.ESC.N.638-ALBERDI   
+36227JARD.INFANTES N.622 ANEX.ESC.N.353-COPO      
+36235JARD.INFANTES N.623 ANEX.ESC.N.886-PELLEGRINI
+36243JARD.INFANTES N.624 ANEX.ESC.N.405-PELLEGRINI
+36251JARD.INFANTES N.625 ANEX.ESC.N.361-PELLEGRINI
+36266JARD.INFANTES N.626 ANEX.ESC.N.989-PELLEGRINI
+36274JARDIN INFANT.N.627 ANEX.ESC.N.1147- COPO    
+36282JARD.INFANTES N.628 ANEX.ESC.N.1100-JIMENEZ  
+36297JARD.INFANTES N.629 ANEX.ESC.N.541-JIMENEZ   
+36301JARD.INFANTES N.630 ANEX.ESC.N.151-RIO HONDO 
+36316JARD.INFANTES N.631 ANEX.ESC.N.285-QUEBRACHOS
+36324JARD.INFANTES N.632 ANEX.ESC.N.643-SALAVINA  
+36332JARD.INFANTES N.633 ANEX.ESC.N.610-RIVADAVIA 
+36347JARDIN INFANT.N.634 ANEX.ESC.N.701-ALBERDI   
+36355JARDIN INFANT.N.635 ANEX.ESC.N.433-ALBERDI   
+36363JARDIN INFANT.N.636 ANEX.ESC.N.595-ATAMISQUI 
+36371JARDIN INFAN.N.637 ANEX.ESC.N.1023-AVELLANEDA
+36386JARDIN INFANT.N.638 ANEX.ESC.N.449-AVELLANEDA
+36394JARDIN INFANT.N.639 ANEX.ESC.N.587-AVELLANEDA
+36405JARDIN INFANT.N.640 ANEX.ESC.N.437-AVELLANEDA
+36413JARDIN INFANT.N.641 ANEX.ESC.N.1024-BANDA    
+36421JARDIN INFANT.N.642 ANEXESC.N.527-BANDA      
+36436JARDIN INFANT.N.643 ANEX.ESC.N.363-BANDA     
+36444JARDIN INFANT.N.644 ANEX.ESC.N.230-BANDA     
+36452JARDIN INFANT.N.645 ANEX.ESC.N.1094-BELGRANO 
+36467JARDIN INFANT.N.646 ANEX.ESC.N.387-CAPITAL   
+36475JARDIN INFANT.N.647 ANEX.ESC.N.525-CAPITAL   
+36483JARDIN INFANT.N.648 ANEX.ESC.N.168-CAPITAL   
+36491JARDIN INFANT.N.649 ANEX.ESC.N.537-CAPITAL   
+36502JARDIN INFANT.N.650 ANEX.ESC.N.253-CHOYA     
+36517J.INFANTES N.651 A/ESC.N.96-TASIAL-CHOYA     
+36525JARDIN INFANT.N.652 ANEX.ESC.N.577-CHOYA     
+36533JARDIN INFANT.N.653ANEX.ESC.N.933-CHOYA      
+36541JARDIN INFANT.N.654 ANEX.ESC.N.152-CHOYA     
+36556JARDIN INFANT.N.655 ANEX.ESC.N.1149-COPO     
+36564JARDIN INFANT.N.656 ANEX.ESC.N.560-COPO      
+36572JARDIN INFANT.657 ANEX.ESC.N.807- COPO       
+36587JARDIN INFANT.N.658 ANEX.ESC.N.309- COPO     
+36595JARDIN INFANT.N.659 ANEX.ESC.N.344-COPO      
+36606JARDIN INFANT.N.660 ANEX.ESC.N.1174- COPO    
+36614JARDIN INFANT.N.661 ANEX.ESC.N.568-FIGUEROA  
+36622JARDIN INFANT.N.662 ANEX.ESC.N.583-FIGUEROA  
+36637JARDIN INFANT.N.663.ANEX.ESC.N.684-FIGUEROA  
+36645JARDIN INFANT.N.664 ANEX.ESC.N.847-FIGUEROA  
+36653JARDIN INFANT.N.665 ANEX.ESC.N.246-FIGUEROA  
+36661JARDIN INFANT.N.666 ANEX ESC.N.552-FIGUEROA  
+36676JARDIN INFANT.N.667 ANEX.ESC.N.889-FIGUEROA  
+36684JARDIN INFANT.N.668 ANEX.ESC.N.965-FIGUEROA  
+36692JARDIN INFANT.N.669 ANEX.ESC.N.951-FIGUEROA  
+36703JARDIN INFANT N.670 ANEX.ESC.N.714-FIGUEROA  
+36711JARDIN INF.N.671 ANEX.ESC.N.732-GRAL TABOADA 
+36726JARDIN INFANT.N.672 ANEX.ESC.N.469-GUASAYAN  
+36734JARDIN INFANT N.673ANEX.ESC.N.823-GUASAYAN   
+36742JARDIN INFANT.N.674 ANEX.ESC.N.786-GUASAYAN  
+36757JARDIN INFANT.N.675 ANEX.ESC.N.621-JIMENEZ   
+36765JARDIN INFANT.N.676ANEX.ESC.N.1235-J.F.IBARRA
+36773JARDIN INFANT.N.677ANEX.ESC.N.936-J.F.IBARRA 
+36781JARDIN INFANT.N.678ANEX.ESC.N.282-J.F.IBARRA 
+36796JARDIN INFANT.N.679 ANEX.ESC.N.245-J.F.IBARRA
+36807JARDIN INFANT.N.680 ANEX.ESC.N.547-LORETO    
+36815JARDIN INFANT.N.681 ANEX.ESC.N.540-LORETO    
+36823JARDIN INFANT.N.682 ANEX.ESC.N.395-LORETO    
+36831JARDIN INFANT.N.683 ANEX.ESC.N.443-LORETO    
+36846JARDIN INFANT.N.684 ANEX.ESC.N.425-LORETO    
+36854JARDIN INFANT.N.685 ANEX.ESC.N.890-LORETO    
+36862JARDIN INFANT.N.686 ANEX.ESC.N.494-MITRE     
+36877JARDIN INFANT.N.687 ANEX.ESC.N.880-MITRE     
+36885JARDIN INFANT.N.688 ANEX.ESC.N.276-MORENO    
+36893JARDIN INFANT.N.689 ANEX.ESC.N.172-MORENO    
+36904JARDIN INFANT.N.690 ANEX.ESC.N.590-MORENO    
+36912JARDIN INFANT.N.691 ANEX.ESC.N.1156-MORENO   
+36927JARDIN INFAN.N.692 ANEX.ESC.N.945-OJO DE AGUA
+36935JARDIN INFAN.N.693 ANEX.ESC.N.742-OJO DE AGUA
+36943JARDIN INFAN.N.694 ANEX.ESC.N.791-OJO DE AGUA
+36951JARDIN INFAN.N695 ANEX.ESC.277-OJO DE AGUA   
+36966JARDIN.INFANT.N.696 ANEX.ESC.N.422-PELLEGRINI
+36974JARDIN INFANT.N.697 ANEX.ESC.N.652-PELLEGRINI
+36982JARDIN INFANT.N.698 ANEX.ESC.N.906-PELLEGRINI
+36997JARDIN INFANT.N.699ANEX.ESC.N.1126-PELLEGRINI
+37006JARDIN INFANT.N.700 ANEX.ESC.N.348-PELLEGRINI
+37014JARDIN INFANT.N.701 ANEX.ESC.N.626-PELLEGRINI
+37022JARDIN INFANT.N.702 ANEX.ESC.N.366-QUEBRACHOS
+37037JARDIN INFAN.N.703 ANEX.ESC.N.1001-QUEBRACHOS
+37045JARDIN INFANT.N.704 ANEX.ESC.N.958-QUEBRACHOS
+37053JARDIN INFANT.N.705 ANEX.ESC.N.978-QUEBRACHOS
+37061JARDIN INFANT.N.706 ANEX.ESC.N.950-RIO HONDO 
+37076JARDIN INFANT.N.707 ANEX.ESC.N.546-RIO HONDO 
+37084JARDIN INFANT.N.708 ANEX.ESC.N.543-RIO HONDO 
+37092JARDIN INFANT.N.709 ANEX.ESC.N.1226-ROBLES   
+37103JARDIN INFANT.N.710 ANEX.ESC.N.1155-ROBLES   
+37111JARDIN INFANT.N.711 ANEX.ESC.N.488-ROBLES    
+37126JARDIN.INFANT.N.712 ANEX.ESC.N.735-SALAVINA  
+37134JARDIN INFANT.N.713 ANEX.ESC.N.1037-SALAVINA 
+37142JARDIN INFANT.N.714 ANEX.ESC.N.639-SALAVIN   
+37157JARDIN INFANT.N.715 ANEX.ESC.N.119-SAN MARTIN
+37165JARDIN INFANT.N.716 ANEX.ESC.N.141-SAN MARTIN
+37173JARDIN INFANT.N.717 ANEX.ESC.N.536-SAN MARTIN
+37181JARDIN INFANT.N.718ANEX.ESC.N.1119-SAN MARTIN
+37196JARDIN INFANT.N.719ANEX.ESC.N.91-SAN MARTIN  
+37207JARDIN INFANT.N.720ANEX.ESC.N.873-SAN MARTIN 
+37215JARDIN INFANT.N.721 ANEX.ESC.N.404-SARMIENTO 
+37223JARDIN INFANT.N.722ANEX.ESC.N.1058-SARMIENTO 
+37231JARDIN INFANT.N.723 ANEX.ESC.N.730-SARMIENTO 
+37246JARDIN INFANT.N.724 ANEX.ESC.N.888-SARMIENTO 
+37254JARDIN INFANT.N.725 ANEX.ESC.N.72-SILIPICA   
+37262JARDIN INFANTES N.726 ANEX.ESC.N.681-AGUIRRE 
+37277JARDIN INFANTES N.727 ANEX.ESC.N.351-ALBERDI 
+37285JARDIN INFANTES N.728 ANEX.ESC.N.432-ALBERDI 
+37293JARDIN INFANTES N.729 ANEX.ESC.N.1097-ALBERDI
+37304JARDIN INFANTES N.730 ANEX.ESC.N.640-ALBERDI 
+37312JARDIN INFANTES N.731 ANEX.ESC.N.904-LORETO  
+37327JARDIN INFANTES N.732 ANEX.ESC.N.692-ALBERDI 
+37335JARDIN INFANTES N.733 ANEX.ESC.N.1193-ALBERDI
+37343JARDIN INFANTES N.734 ANEX.ESC.N.960-ALBERDI 
+37351JARDIN INFANTES N.735 ANEX ESC.N.326-ALBERDI 
+37366JARDIN INFANTES N.736 ANEX.ESC.N.315-ALBERDI 
+37374JARDIN INFANTES N.737 ANEX.ESC.N.291-ALBERDI 
+37382JARDIN INFANT.N.738 ANEX,ESC.N.970-ATAMISQUI 
+37397JARDIN INFANT.N.739 ANEX.ESC.N.1012-ATAMISQUI
+37401JARDIN INFANT.N.740 ANEX.ESC.N.400-ATAMISQUI 
+37416JARDIN INFANT.N.741 ANEX.ESC.N.1103-ATAMISQUI
+37424JARDIN INFANTES N.742 ANEX.ESC.N.1044-BANDA  
+37432JARDIN INFANTES N.743 ANEX.ESC.N.434-BANDA   
+37447JARDIN INFANTES N.744 ANEX.ESC.N.335-BANDA   
+37455JARDIN INFANTES N.745 ANEX.ESC.N.193-CHOYA   
+37463JARDIN INFANTES N.746 ANEX.ESC.N.580-COPO    
+37471JARDIN INFANTES N.747 ANEX.ESC.N.929-FIGUEROA
+37486JARDIN INFANTES N.748 ANEX.ESC.N.903-FIGUEROA
+37494JARDIN INFANTES N.749 ANEX.ESC.N.526-FIGUEROA
+37505JARDIN INFANT.N.750 ANEX.ESC.N.1080-FIGUEROA 
+37513JARDIN INFANTES N.751 ANEX.ESC.N.711-FIGUEROA
+37521JARDIN INFANTES N.752 ANEX.ESC.N.589-COPO    
+37536JARDIN INFANT.N.753 ANEX.ESC.N.215-G.TABOADA 
+37544JARDIN INFANTES N.754 ANEX.ESC.N.110-LORETO  
+37552JARDIN INFANTES N.755 ANEX.ESC.N.258-LORETO  
+37567JARDIN INFANTES N.756 ANEX.ESC.N.429-LORETO  
+37575JARDIN INFANT.N.757 ANEX.ESC.N.471-ATAMISQUI 
+37583JARDIN INFANTES N.758 ANEX.ESC.N.558-LORETO  
+37591JARDIN INFANTES N.759 ANEX.ESC.N.657-LORETO  
+37602JARDIN INFANTES N.760 ANEX.ESC.N.909-LORETO  
+37617JARDIN INFANTES N.761 ANEX.ESC.N.967-LORETO  
+37625JARDIN INFANTES N.762 ANEX.ESC.N.975-LORETO  
+37633JARDIN INFANTES N.763 ANEX.ESC.N.1064-LORETO 
+37641JARDIN INFANTES N.764 ANEX.ESC.N.1101-LORETO 
+37656JARDIN INFANTES N.765 ANEX.ESC.N.426-MITRE   
+37664JARDIN INFANT.N.766 ANEX.ESC.N.102-OJO D.AGUA
+37672JARD.INFANT.N.767 ANEX.ESC.N.1224-PELLEGRINI 
+37687JARDIN INFANT.N.768 ANEX.ESC.N.21-PELLEGRINI 
+37695JARDIN INFANT.N.769 ANEX.ESC.N.349-PELLEGRINI
+37706JARDIN INFANT.N.770 ANEX.ESC.N.489-PELLEGRINI
+37714JARDIN INFANT.N.771 ANEX.ESC.N.768-PELLEGRINI
+37722JARDIN INFANT.N.772 ANEX.ESC.N.988-PELLEGRINI
+37737JARD.INFANT.N.773 ANEX.ESC.N.1203-PELLEGRINI 
+37745JARDIN INFANT.N.774 ANEX.ESC.N.220-PELLEGRINI
+37753JARDIN INFANT.N.775 ANEX.ESC.N.721-PELLEGRINI
+37761JARDIN INFANT.N.776 ANEX.ESC.N.420-PELLEGRINI
+37776JARDIN INFANT. N.777 ANEX. ESC. N.561        
+37784JARDIN INFANT.N.778 ANEX.ESC.N.744-QUEBRACHOS
+37792JARDIN INFANT.N.779 ANEX.ESC.N.820-QUEBRACHOS
+37803JARD.INFANT.N.780 ANEX.ESC.N.1089-QUEBRACHOS 
+37811JARDIN INFANT.N.781 ANEX.ESC.N.828-QUEBRACHOS
+37826JARDIN INFANT.N.782 ANEX.ESC.N.642-QUEBRACHOS
+37834JARDIN INFANT.N.783 ANEX.ESC.N.852-QUEBRACHOS
+37842JARDIN INFANT.N.784 ANEX.ESC.N.522-QUEBRACHOS
+37857JARDIN INFANT.N.785 ANEX.ESC.N.575-QUEBRACHOS
+37865JARDIN INFANT.N.786 ANEX.ESC.N.480-RIVADAVIA 
+37873JARDIN INFANT.N.787 ANEX.ESC.N.649-RIVADAVIA 
+37881JARDIN INFANT.N.788 ANEX.ESC.N.308-RIVADAVIA 
+37896JARDIN INFANT.N.789 ANEX.ESC.N.1014-SALAVINA 
+37907JARDIN INFANTES N.790 ANEX.ESC.N.860-SALAVINA
+37915JARDIN INFANTES N.791 ANEX.ESC.N.781-SALAVINA
+37923JARDIN INFANTES N.792 ANEX.ESC.N.887-SALAVINA
+37931JARDIN INFANTES N.793 ANEX.ESC.N.581-SALAVINA
+37946JARDIN INFANT.N.794 ANEX.ESC.N.414-SAN MARTIN
+37954JARDIN INFANT.N.795 ANEX.ESC.N.136-SAN MARTIN
+37962JARDIN INFANT.N.796 ANEX.ESC.N.183-SAN MARTIN
+37977JARDIN INFANT.N.797 ANEX.ESC.N.822-SAN MARTIN
+37985JARDIN INFANT.N.798 ANEX.ESC.N.115-SAN MARTIN
+37993JARDIN INFANT.N.799 ANEX.ESC.N.1118-SARMIENTO
+38002JARDIN INFANT.N.800 ANEX.ESC.N.753-SAN MARTIN
+38017JARDIN INFANTES N.801 ANEX.ESC.N.902-SILIPICA
+38025JARDIN INFANT.N.802 B.VILLA D.CARMEN-CAPITAL 
+38033JARD.INFANT.N.803 B.VIRGEN GUADALUPE-CAPITAL 
+38041JARDIN INFANT.N.804 B.MARIANO MORENO-CAPITAL 
+38056JARDIN INFANTES N.805 B.SANTA LUCIA-CAPITAL  
+38064JARDIN INFANTES N.806 B.SIGLO XXI-CAPITAL    
+38072JARDIN INFANT.N.807 B.CENTRAL ARGENTINO-BANDA
+38087JARDIN INFANT.N.808 B.EL PARAISO AMPL.-BANDA 
+38095JARDIN INFANTES N.809 B.25 DE MAYO-BANDA     
+38106J.INFANT.N.810 A/ESC.180-STOS.LUGARES-MORENO 
+38114J.INFANT.N.811 A/ESC.1031-ARGENTINA-AGUIRRE  
+38122J.INFANT.N.812 A/ESC.564-LA PROMESA-AGUIRRE  
+38137J.INFANT.N.813 A/ESC.713-TASIGASTA-ATAMISQUI 
+38145J.INFANT.814 A/ESC.517-NOVILLO POZO-AVELLANED
+38153JARD.INFANT.N.815 A/ESC.298-MISTOLITO-BANDA  
+38161JARD.INFANT.N.816 A/ESC.983-LOS HERRERA-BANDA
+38176JARD.INFANT.N.817 A/ESC.1052-TRAMO 26-BANDA  
+38184J.INFANT.N.818 A/ESC.1158-VACA MUERTA-BANDA  
+38192J.INFANT.819 A/ESC.154-LA CANDELARIA-CAPITAL 
+38203J.INFANT.N.820 A/ESC.217-S.LORENZO SAYAGO-CAP
+38211J.INFANT.N.821 A/ESC.39-SOL DE MAYO-CAPITAL  
+38226JARD.INFANT.N.822 A/ESC.604-CERRO RICO-CHOYA 
+38234JARD.INFANT.N.823 A/ESC.1188-LAS LOMITAS-COPO
+38242J.INFANT.N.824 A/ESC.N.302-LA SALVACION-COPO 
+38257J.INFANT.825 A/ESC.N.932-PAMPA MUYOJ-FIGUEROA
+38265J.INFANT.N.826 A/ESC.N.544-LA ROSILLA-TABOADA
+38273J.INFANT.827 A/ESC.N.228-MIEL DE PALO-TABOADA
+38281JARD.INFANT.N.828 A/ESC.N.1200-LOTE 8-TABOADA
+38296JARD.INFANT.N.829 A/ESC.N.865-LOTE 51-IBARRA 
+38307J.INFANT.N.830 A/ESC.N.370-BAJO HONDO-JIMENEZ
+38315JARD.INFANT.N.831 A/ESC.N.532-SAUCE-LORETO   
+38323JARD.INFANT.N.832 A/ESC.N.891-TIO POZO-LORETO
+38331JARD.INFANT.N.833 A/ESC.N.1159-LIMACHE-MITRE 
+38346J.INFANT.N.834 A/ESC.N.578-EL ALBARDON-MITRE 
+38354J.INFANT.835 A/ESC.N.946-CHACRAS SUR-O.AGUA  
+38362J.INFANT.N.836 A/ESC.740-EL CAJON-OJO DE AGUA
+38377J.INFANT.837 A/ESC.362-LA CHIQUITA-OJO D.AGUA
+38385J.INFANT.N.838 A/ESC.98-EL JUME-OJO DE AGUA  
+38393J.INFANT.N.839 A/ESC.819-ANIMAN-OJO DE AGUA  
+38404J.INFANT.840 A/ESC.922-LA TOTORILLA-O.DE AGUA
+38412J.INFANT.N.841 A/ESC.378-EL GUAPO-PELLEGRINI 
+38427J.INFANT.842 A/ESC973-EL CAMBIADO-PELLEGRINI 
+38435J.INFANT.N.843 A/ESC.794-ORATORIO-QUEBRACHOS 
+38443J.INFANT.844 A/ESC.851-GAUCHO GUEMES-QUEBRACH
+38451J.INFANT.845 A/ESC.100-ISLA ARAGONES-RIO HOND
+38466J.INFANT.846 A/ESC.244-PUESTO NUEVO-RIO HONDO
+38474J.INFANT.847 A/ESC.158-SANTA FELISA-RIO HONDO
+38482J.INFANT.848 A/ESC.478-NUEVA CERES-RIVADAVIA 
+38497J.INFANT.849 A/ESC.1084-NVA.INDUSTRIA-ROBLES 
+38501JARD.INFANT.N.850 A/ESC.864-MIRELLA-ROBLES   
+38516J.INFANT.851 A/ESC.523-EL CANDELARIO-SALAVINA
+38524J.INFANT.N.852 A/ESC.956-QUIMILIOJ-SAN MARTIN
+38532J.INFANT.N.853 A/ESC.505-TIO POZO-SAN MARTIN 
+38547JARD.INFANT.N.854 A/ESC.556-PERCAS-SAN MARTIN
+38555J.INFANT.N.855 A/ESC.726-LA RAMADITA-SILIPICA
+38563J.INFANT.N.856 A/ESC.596-C.ERMELINDA-AGUIRRE 
+38571J.INFANT.N.857 A/ESC.836-EL SALADILLO-ALBERDI
+38586J.INFANT.N.858 A/ESC.976-LA COSTOSA-JIMENEZ  
+38594J.INFANT.N.859 A/ESC.464-LA PALOMA-ATAMISQUI 
+38605J.INFANT.N.860 A/ESC.1143-TRES VARONES-COPO  
+38613J.INFANT.N.861 A/ESC.1153-25 DE MAYO-CHOYA   
+38621J.INFANT.N.862 A/ESC.320-BAJO GRANDE-JIMENEZ 
+38636J.INFANT.863 A/ESC.741-POZO GRANDE-OJOdeAGUA 
+38644J.INFANT.N.864 A/ESC.838-SAN FRANCISCO-MORENO
+38652J.INF.865 A/ESC.1221-L.5 CH.LOS JURIES-TABOAD
+38667J.INFANT.N.866 A/ESC.267-SAN FELIX-FIGUEROA  
+38675J.INFANT.867 A/ESC.86-SUNCHO POZO-SAN MARTIN 
+38683J.INFANT.N.868 A/ESC.332-RIO MUERTO-ALBERDI  
+38691J.INFANT.869 A/ESC.1129-ESTANCIA EL 21-MORENO
+38702J.INFANT.N.870 A/ESC.1238-LORETO-LORETO      
+38717J.INFANT.871 A/ESC.1233-VillaNUEVA-PELLEGRINI
+38725J.INFANT.N.872 A/ESC.716-STA.CATALINA-FIGUERO
+38733J.INFANT.N.873 A/ESC.1229-MANIJNIOJ-ALBERDI  
+38741J.INF.874 A/ESC.894-S.ANTONIO CACERES-CAPITAL
+38756J.INFANT.N.875 A/ESC.358-EL ROSADO-PELLEGRINI
+38764J.INFANT.N.876 A/ESC.516-PALMA POZO-CAPITAL  
+38772J.INFANT.N.877 A/EXC.896-RUBIA PASO-SALAVINA 
+38787J.INFANTES N.878 A/ESC.1032-FRIAS-CHOYA      
+38795J.INFANTES N.879 A/ESC.1228-TAPSO-CHOYA      
+38806J.INFANT.N.880 A/ESC.498-SAN RAMON-GUASAYAN  
+38814J.INFAN.N.881 A/ESC.48-LOS OVEJEROS-RIO HONDO
+38822J.INFANT.N.882 A/ESC.301-C.ROBLES-RIO HONDO  
+38837J.INF.N.883 A/ESC.1038-P.GARABATO-OJO DE AGUA
+38845J.INFANT.N.884 A/ESC.569-C.LA SELVA-RIVADAVIA
+38853J.INFANT.N.885 A/ESC.94-LOS TUNALES-JIMENEZ  
+38861J.INFAN.N.886 A/ESC.391-LA FORTUNA(N)-JIMEMEZ
+38876J.INFANTES N.887 A/ESC.859-ANGA-SALAVINA     
+38884J.INFANT.N.888 A/ESC.573-BORDO PAMPA-SALAVINA
+38892J.INFANTES N.889 A/ESC.312-SURI POZO-MORENO  
+38903JARDIN INFANTES N.890-B JUAN DIAZ DE SOLIS   
+38911JARDIN INFANTES N.891-B CPO.CONTRERAS A.750 V
+38926JARDIN DE INFANTES NRO.892-B AEROPUERTO      
+38934JARDIN INFANTES NRO.893-TERMAS DE RIO HONDO  
+38942J.INFANT.894 A/ESC.1163-SAN CRISTOBAL-GIMENEZ
+38957J.INFANTES 895 A/ESC.323-SAN ROQUE-PELLEGRINI
+38965J.INFANTES N.896 A/ESC.1005-LA FIRMEZA-COPO  
+38973J.INFANTES N.897 A/ESC.202-QUILUMPA-MORENO   
+38981J.INFANTES N.898 A/ESC.288-CATAMARCA-MORENO  
+38996J.INFANTES N.899 A/ESC.293-SAN MARTIN-MORENO 
+39005J.INFANT.900 A/ESC.670-SOL MAYO NORTE-ALBERDI
+39013J.INFANTES N.901 A/ESC.559-VILLA VIEJA-LORETO
+39021J.INFANTES.902 A/ESC.686-VACASNIOJ-AVELLANEDA
+39036J.INFANT.903 A/ESC.850-V.QUEBRACHO-QUEBRACHO 
+39044J.INFANT.904 A/E.531-LOS CHANARES-OJO DE AGUA
+39052J.INFANTES N.905 A/ESC.34-EL CHURQUI-CAPITAL 
+39067JARDIN DE INFANTES 906 ANEXO ESCUELA 374     
+39075J.INFANTES 907 A/ESC.783-LA SIMONA-G.TABOADA 
+39083J.INFANTES N.908 A/ESC.1111-KM.13-AVELLANEDA 
+39091J.INFANTES N.909 A/ESC.475-SAN ENRIQUE-MORENO
+39102J.INFANTES N.910 A/ESC.470-LA GUANACA-JIMENEZ
+39117J.INFANT.911 A/ESC.813-EL BARRIALITO-R.HONDO 
+39125J.INFANTES N.912 A/ESC.682-LA VUELTA-CHOYA   
+39133JARDIN INFANTES N.913 ANEX.ESC.PRIMAR.SUMAMPA
+39141JARDIN INFANTE NRO.915 -LOS RALOS-RIO HONDO  
+39156JARDIN Nro.914 ANEXO DE LA ESC.PRIMARIA 1249 
+39164JARDIN INFANT. Nro.916 ANEXO ESCUELA 817     
+39172JARDIN DE INFANTES BARRIO MAMA ANTULA        
+50011JARDIN DE INFANTES CENTENARIO                
+50026JARDIN DE INFANTES N. AVELLANEDA             
+50034CENTRO EXP. CENTENARIO                       
+50042CENTRO EXP. NICOLAS AVELLANEDA               
+50057CENTRO EXP. ANTONINO TABOADA                 
+50065CENTRO EXP. MAXIMIO S. VICTORIA              
+50073CENTRO EXP. PEDRO F. DE URIARTE              
+50081CENTRO EXP. SESQUICENTENARIO                 
+50096CENTRO EXP. TREJO Y SANABRIA                 
+50107CENTRO EXP. FLORENTINO AMEGHINO              
+50115COLEGIO CENTENARIO                           
+50123COLEGIO NICOLAS AVELLANEDA                   
+50131ESC. P. NRO. 1 MAXIMIO S. VICTORIA           
+50146COLEGIO SESQUICENTENARIO                     
+50154COLEGIO PEDRO F. DE URIARTE                  
+50162COLEGIO FLORENTINO AMEGHINO                  
+50177COLEGIO TREJO Y SANABRIA                     
+50185COLEGIO JUAN XXIII                           
+50193INSTITUTO SOL DE JULIO                       
+50204COLEGIO ELISEO FRINGES                       
+50212COLEGIO LEOPOLDO LUGONES                     
+50227COLEGIO JORGE W. ABALOS                      
+50235ESC. DE MAESTRAS DE ACT. PRACT. F. JACQUES   
+50243COLEGIO AGROTECNICO NRO. 1 JOSE M. ESTRADA   
+50251COLEGIO AGROTECNICO NRO. 2 MARIA AUXILIADORA 
+50266COLEGIO AGROTEC. NRO. 3 REP. DE VENEZUELA    
+50274COLEGIO AGROTEC. NRO. 4                      
+50282COLEGIO AGROTEC. NRO. 5 FRAY F. DE VICTORIA  
+50297COLEGIO AGROTEC. NRO. 6 NTRA. SRA. DEL VALLE 
+50301COLEGIO AGROTEC. NRO. 7                      
+50316COLEGIO AGROTEC. NRO. 8                      
+50324ESC. DE COMERCIO NRO. 1 MANUEL BELGRANO      
+50332ESC. SUP. DE EDUC. ART. NRO. 1 N.S.GENERO    
+50347ESC. SUP. DE E. ART. NRO. 2 R. GOMEZ CARRILLO
+50355ANEXO ESC. SUP. DE EDUC. ART. NRO. 1         
+50363MANUFAC. ESC.DE CERAM. Y ARTES. DR. R. ROJAS 
+50371COLEGIO GRAL. JOSE DE SAN MARTIN             
+50386COLEGIO DOMINGO F. SARMIENTO                 
+50394COLEGIO ING. JORGE NEWBERY                   
+50405COLEGIO 2 DE ABRIL                           
+50413ESCUELA - LA GRANJA                          
+50421INST. FORMACION DOCENTE N-1                  
+50436INST.FORM.DOC.CONTINUA N-1 DR.JORGE GOTTAU   
+50444INST. FORMACION DOCENTE N-3                  
+50467INST.FORMACION DOCENTE N-5                   
+50475INST. DE FORMACION DOCENTE NRO. 6            
+50483INST. FORMACION DOCENTE N-7                  
+50491INST.FORMACION DOCENTE N-8                   
+50502INST. FORMACION DOCENTE N-9                  
+50517INST. FORMACION DOCENTE N-10                 
+50525INST. FORMACION DOCENTE N-11                 
+50533INST. FORMACION DOCENTE N-12                 
+50541INST. DE FORMACION DOCENTE NRO. 13           
+50556INST.SUP.PROFESORADO.PROV.N-1                
+50564INST.SUP.PROFESORADO.PROV.N-2                
+50572INST.FORMACION DOCENTE CONTINUA N-2          
+50587INS.SUP.FORM.DOC.C.NRO.1-MSR.JORGE GOTTAU    
+50595ESCUELA NOCTURA NRO 10                       
+50622ESC.SECUN.SORMARIA ANTONIADE PAZ Y FIGUEROA  
+50637ESC. DE ESPEC. NRO. 7 PAUL GROUSSAC          
+50645ESC. DE ESPEC. HOMERO MANZI                  
+50653ESC. DE ESPEC. CARMEN C. DE M. CASARIEGO     
+50661ESC. DE CAPAC. ELEM. NRO. 1 DR. A. ALVAREZ   
+50676ESC. DE CAPAC. ELEM. NRO. 2 JOHN KENNEDY     
+50684ESC. DE CAPAC. ELEM. NRO. 3                  
+50692ESC. DE CAPAC. ELEM. NRO. 4 MARIA A. PALUMBO 
+50703ESC. DE CAPAC. ELEM. NRO. 5 EMAUS            
+50711ESC. DE CAPAC. ELEM. NRO. 6                  
+50726ESC. DE CAPAC. ELEM. NRO. 7 G. DE S. MARTIN  
+50734ESC. DE CAPAC. ELEM. NRO. 8                  
+50742ESC. DE CAPAC. ELEM. NRO. 9                  
+50757ESC. DE CAPAC. ELEM. NRO. 10                 
+50765ESC. DE CAPAC. ELEM. NRO. 11 T. MALBRAN      
+50773ESC. DE CAPAC. ELEM. NRO. 12                 
+50781ESC. DE CAPAC. ELEM. NRO. 13                 
+50796ESC. DE CAPAC. ELEM. NRO. 14                 
+50807ESC. DE CAPAC. ELEM. NRO. 15                 
+50815ESC. DE CAPAC. ELEM. NRO. 16 REINALDO SCHORH 
+50823ESC. DE CAPAC. ELEM. NRO. 17 EJERCITO ARGENT.
+50831ESC. DE CAPAC. ELEM. NRO. 18                 
+50846ESC. DE CAPAC. ELEM. NRO. 19 J. HERNANDEZ    
+50854ESC. DE CAPAC. ELEM. NRO. 20                 
+50862ESC. DE CAPAC. ELEM. NRO. 21                 
+50877ESC. DE CAPAC. ELEM. NRO. 22                 
+50885ESC.DE ESPECIAL EVA PERON                    
+50904COLEGIO HUAICO HONDO                         
+50927COLEGIO EL MOJON                             
+50935COLEGIO LA ASUNCION                          
+50943COLEGIO NTRA SRA DE FATIMA                   
+50951COLEGIO LA BANDA                             
+50966ESC.DE CAPACIT.ELEM.N-23                     
+50974COLEGIO SUMAMPA                              
+51006COLEGIO FORRES                               
+51014COLEGIO BREA POZO                            
+51022COLEGIO EL BOBADAL                           
+51061COL.AGROTECNICO DE BANDERA N-9               
+51076COL.AGROTECNICO DE SANTOS LUGARES            
+51084INST. FORMACION DOCENTE N-15                 
+51092INST.FORMACION DOCENTE N-16                  
+51103ESC.DE CAPACITACION N-23(OJO DE AGUA)        
+51111GRUPO PRE-COOPERATIVO ~CAMINEMOS JUNTOS~     
+51134CENTRO ESP.DE CAPACIT.LABORAL EN CERAMICA    
+51142GABINETE PSICOPEDAGOGICO ~NIVEL CENTRAL~     
+51157AYUDANTES TECNICOS (ADSCRIPTOS)              
+51165CENTROS EDUCATIVOS (ADSCRIPTOS)              
+51173CENTRO ESP.-HNA.EDITH BROGGI-                
+51181ESC.DE CAPACITACION NRO.38                   
+51196COLEGIO AGROTECNICO FORRES                   
+51207CTRO.ESTIM.PERS.ESPEC"SOR ANGELA DE LA CRUZ  
+51215COL.SECUNDARIO EL COLORADO-DPTO.J.F.IBARRA   
+51223COL.SECUND.PAMPA DE LOS GUANACOS-DPTO.COPO   
+51231COL.SECUNDARIO LAS DELICIAS-DPTO.PELLEGRINI  
+51246COL.SECUNDARIO COLONIA GAMARA-DPTO.BANDA     
+51254COL.SECUNDARIO FORTIN INCA-DPTO.BELGRANO     
+51262COL.SECUNDARIO TINTINA-DPTO.M.MORENO         
+51277COL.SECUNDARIO MEDELLIN-DPTO.ATAMISQUI       
+51285COL.SECUNDARIO VILLA FIGUEROA-DPTO.FIGUEROA  
+51293COL.SECUNDARIO BREA POZO-DPTO.SAN MARTIN     
+51304COL.SECUND.PUESTO DEL RETIRO-DPTO.RIO HONDO  
+51312COL.SECUNDARIO YUCHAN-DPTO.J.F.IBARRA        
+51327COL.SECUNDARIO QUIMILI-DPTO.M.MORENO         
+51335COL.SECUND.COLONIA SAN JUAN-DPTO.FIGUEROA    
+51343COL.SEC.BARRANCAS COLORADAS-DTO.SAN MARTIN   
+51351COL.SECUNDARIO EL DEAN-DPTO.CAPITAL          
+51366COL.SECUNDARIO LOTE 5-DPTO.GRAL.TABOADA      
+51374COL.SECUNDARIO SAN GREGORIO-DPTO.LORETO      
+51382ESCUELA NIVEL SECUNDARIO CIUDAD DEL BARCO    
+51397COL.SECUND.CHAAR POZO ARRIBA-DPTO.RIO HONDO  
+51401COL.SECUNDARIO SURI POZO-DPTO.BANDA          
+51416AGRUP.N.86037-LOC.CHAUCHILLAS-DPTO.RIO HONDO 
+51424ESCUELA AGRUPAM.112-SEDE KM 0-DPTO.FIGUEROA  
+51432AGRUP.N.86043-PUESTO DEL RETIRO-DTO.RIO HONDO
+51447AGRUP.N.86138-LOC.BUEY MUERTO-DTO.ROBLES     
+51455COLEGIO SECUNDARIO "CAMPO CONTRERAS"         
+51463ESC.AGRUPAM.86080 ORIENTAC.RURAL DPTO.ALBERDI
+51471ESC.AGRUP.86150 ORIENTAC.RURAL DPTO.ATAMISQUI
+51486ESC.AGRUPAM.86121 ORIENTAC.RURAL DPTO.CAPITAL
+51494ESC.AGRUPAM.86122 ORIENTAC.RURAL             
+51505ESC.AGRUPAM.86063 ORIENTAC.RURAL DPTO. COPO  
+51513ESC.AGRUPAM.86053 ORIENTAC.RURAL DPTO.CHOYA  
+51521ESC.AGRUP.86077 ORIENT.RURAL D.MORENO-ALBERDI
+51536ESC.AGRUP.86022 ORIENTAC.RURAL DTO.PELLEGRINI
+51544ESC.AGRUP.86166 ORIENTAC.RURAL DPTO.SALAVINA 
+51552ESC.AGRUP.86001 ORIENTAC.RURAL D. OJO DE AGUA
+51567ESC.AGRUP.86019 ORIENTAC.RURAL DTO.PELLEGRINI
+51575ESC.AGRUP.86125 ORIENTAC.RURAL DPTO.CAPITAL  
+51583ESC.AGRUP.86097-LOC.LA ROMELIA-DTO.RIVADAVIA 
+51591ESC.AGRUP.86159-LOC.ICANO-DPTO.AVELLANEDA    
+51602ESC.AGRUP.86160-COLONIA DORA-DTO.AVELLANEDA  
+51617ESC.AGRUP.N.86010-RAMIREZ VELAZCO-D.QUEBRACHO
+51625ESC.AGRUP.N.86024-EL QUEMADO-DPTO. PELLEGRINI
+51633ESC.AGRUP.86025-VILLA NUEVA-DPTO. PELLEGRINI 
+51641ESC.AGRUP.N.86036-EL ARENAL-DPTO.JIMENEZ     
+51656ESC.AGRUP.N.86047-LUJAN-DPTO.GUASAYAN        
+51664ESC.AGRUP.86057-LA CANDELARIA-DPTO.COPO      
+51672ESC.AGRUP.N.86120-MUYOJ-DPTO.CAPITAL         
+51687ESC.AGRUP.N.86127-NUEVA FRANCIA-DPTO.SILIPICA
+51695ESC.AGRUP.N.86133-EST.ROBLES-DPTO.SAN MARTIN 
+51706ESC.AGRUP.N.86135-VILLA NUEVA-DPTO.SAN MARTIN
+51714ESC.AGRUP.N.86144-SAN JUAN-DPTO. LORETO      
+51722ESC.AGRUP.N.86145-CAMPO AMOR-DPTO.LORETO     
+51737ESC.AGRUP.N.86157-VILLA MAILIN-DTO.AVELLANEDA
+51745AGRUP.N.86014-LOS JURIES-DPTO.GRAL.TABOADA   
+51753AGRUP.N.86016-LOTE5-DPTO.TABOADA             
+51761AGRUP.N.86027-LAS DELICIAS-DPTO.PELLEGRINI   
+51776AGRUP.N.86028-EL MOJON-DPTO.PELLEGRINI       
+51784AGRUP.N.86029(I)RAPELLI-DPTO.PELLEGRINI      
+51792AGRUP.N.86030-NVA.ESPERANZA-DPTO.PELLEGRINI  
+51803AGRUP.N.86033-EL CHARCO-DPTO.JIMENEZ         
+51811AGRUP.N.86044-SAN PEDRO-DPTO.GUASAYAN        
+51826AGRUP.N.86051(I)-LAPRIDA-DPTO.CHOYA          
+51834AGRUP.N.86051(II)-CHOYA-DPTO.CHOYA           
+51842AGRUP.N.86084-VILELAS-DPTO.JUAN F. IBARRA    
+51857AGRUP.N.86089-YUCHAN.DPTO. CAPITAL           
+51865AGRUP.N.86100-GUARDIA ESCOLTA-DPTO.BELGRANO  
+51873AGRUP.N.86104-COL.GAMARA-DPTO.BANDA          
+51881AGRUP.N.86107-CHAUPI POZO-DPTO.BANDA         
+51896AGRUP.N.86108(I)-LA GRANJA-DPTO.BANDA        
+51907AGRUP.N.86108(II)-SAN RAMON-DPTO.BANDA       
+51915AGRUP.N.86108(III)-LA AURORA-DPTO.BANDA      
+51923AGRUP.N.86132-TABOADA-DPTO.SAN MARTIN        
+51931AGRUP.N.86140-BELTRAN-DPTO.ROBLES            
+51946AGRUP.N.86143-SAN GREGORIO-DPTO.LORETO       
+51954AGRUP.N.86156-HERRERA-DPTO.AVELLANEDA        
+51962AGRUP.N.86129-MATARA-DPTO.JUAN F. IBARRA     
+51977AGRUP.86123-LOC.SANTA MARIA-DTO.CAPITAL      
+51985AGRUP.86034-LOC.LA PUERTA-DPTO.CAPITAL       
+51993AGRUP.86042-LOC.LA RESERVA-DTO.RIO HONDO     
+52002AGRUP.86035-LOC.LA PUERTA-DPTO.CAPITAL       
+52017AGRUP.86092-LOC.MALBRAN-DTO.AGUIRRE          
+52025AGRUP.86103-COL.SEC.SURI POZO-DPTO BANDA     
+52033AGRUP.86124-ESC.NIV.SEC.EL DEAN-DPTO.CAPITAL 
+52041AGR.86110/119-C.S.LA INVERNADA NORTE-FIGUEROA
+52056AGRUP.86164-ESC.533 CHILCA JULIANA-D.SALAVINA
+52064AGRUP.86013-COL.SEC.CANADA ESCOBAR-DPTO.BANDA
+52072ESC.AGRUP.N.86068-QUIMILI-DTO.MORENO         
+52087ESC.AGRUP.N.86084-VILLA UNION-DTO.MITRE      
+52095AGRUP.52095-ESC.736-VILLA UNION-DPTO.MITRE   
+52106AGRUP.86083-ESC.333-CUATRO ESQUINAS-D.ALBERDI
+52114AGRUP.86114/073-ESC.327-LUJAN-DPTO.FIGUEROA  
+52122AGRUP.86106-ESC.N.25-ARDILES-DPTO.BANDA      
+52137AGRUP.86059-ESC.N.1005-LA FIRMEZA-DPTO.COPO  
+52145AGRUP.86162-ESC.N.776-VACA HUMAN-D.SALAVINA  
+52153AGRUP.86015/017-C.S.CARROLL-LOS JURIES-D.BELG
+52161AGRUP.86117/118-C.S.VILLA FIGUEROA-D.FIGUEROA
+52176AGR.86163-C.S.J.W.ABALOS-LOS TELARES-SALAVINA
+52184AGR.86040-C.S.N.S.PILAR-V.R.HONDO-D.RIO HONDO
+52192AGR.86031-AGROT.1 ESTRADA-POZO HONDO-JIMENEZ 
+52203AGRUP.86048/049-ESC.N.450-EL RODEO-DPTO.CHOYA
+52211AGR.86008-ESC.825-CAMPO DEL CISNE-QUEBRACHOS 
+52226AGR.86146/142-ESC.848-PUESTO DE JUANES-LORETO
+52234AGRUP.86126-ESC.N.1013-SIMBOL-DPTO.SILIPICA  
+52242AGRUP.86055-ESC.N.1115-LA REPRESA-DPTO.CHOYA 
+60013SERV. TEC. EDUCACIONALES                     
+60021COLEGIO "ANTONINO TABOADA"                   
+60036COLEGIO SECUNDARIO "SAN ISIDRO LABRADOR"     
+60044COLEGIO SECUNDARIO "LA BANDA"                
+60052COLEGIO SECUNDARIO "B. HUAICO HONDO"         
+60067COLEGIO SECUNDARIO "B. INDEPENDENCIA"        
+60083COLEGIO JUAN NUNEZ DEL PRADO                 
+60102COLEGIO SECUNDARIO "LOS PIRPINTOS"           
+60117COLEGIO AGROTECNICO DE QUIMILI               
+60125ESCUELA TECNICA NRO. 9                       
+60133COLEGIO SECUNDARIO "EL CHARCO"               
+60141COLEGIO SECUNDARIO "EL MOJON"                
+60156COLEGIO SECUNDARIO "VILLA LA PUNTA"          
+60164COLEGIO SECUNDARIO "EL BOBADAL"              
+60172COLEGIO SECUNDARIO "VILELAS"                 
+60187COLEGIO SECUNDARIO "SACHAYOJ"                
+60195COLEG FRY JOSE GENESIO BALDAN MTE.QDO/COPO   
+60222COLEGIO SECUNDARIO "REAL SAYANA"             
+60237COLEGIO SECUNDARIO "CHOYA"                   
+60245COLEGIO SECUNDARIO "GUARDIA ESCOLTA"         
+60253COLEGIO SECUNDARIO "VILLA SALAVINA"          
+60261COLEGIO SECUNDARIO "LUGONES"                 
+60276COLEGIO SECUNDARIO "VILLA RIO HONDO"         
+60284COLEGIO SECUNDARIO "TABOADA"                 
+60292COLEGIO SECUNDARIO "GARZA"                   
+60303COLEGIO SECUNDARIO "LOS QUIROGA"             
+60311COLEGIO SECUNDARIO "LA CA#ADA"               
+60326COLEGIO SECUNDARIO "CAMPO GALLO"             
+60334COLEGIO SECUNDARIO B. PRIMERA JUNTA          
+60342COLEGIO SECUNDARIO "ARRAGA"                  
+60357COLEGIO SECUNDARIO "BANDERA"                 
+60373ESCUELA DE APICULTURA "FIDELA SMITH"         
+60396CENTROS EDUCATIVOS DE NIVEL PRIMARIO         
+60407CENTROS EDUCATIVOS DE CAPACITACION LABORAL.  
+60415LICEO POLICIAL J.F.BORGES                    
+60423ESC. DE CAP.ELEMENTAL N"24                   
+60431ESC. CAP.ELEMENTAL N"25                      
+60446ESC.CAP.ELEMENTAL N"26                       
+60454ESC. CAP. ELEMENTAL N"27                     
+60462ESC.DE CAP.ELEMENTAL"28                      
+60477ESC.CAP. ELEMENTAL N"29                      
+60485ESC.CAP. ELEMENTAL N"30                      
+60493ESC.CAP. ELEMENTAL N"31                      
+60504ESC.ESPECIAL MUNDO FELIZ                     
+60512ESC.ESPECIAL SANTA MARGARITA                 
+60527ESC.SAN JOSE OBRERO                          
+60535ESC.PARA ADULTOS N"11 AGUA Y ENERGIA         
+60543ESC. PARA ADULTOS N"13 PRIMERA JUNTA         
+60551ESC.PARA ADULTOS N"12 TABLA REDONDA          
+60566COLEGIO SECUNDARIO LAPRIDA                   
+60574COLEGIO VILLA UNION                          
+60582COLEGIO PRESBITERO LANCELOT CARROLL          
+60597COLEGIO RAPELLI                              
+60601ESC.FLIA. AGRICOLA                           
+60616COLEGIO SECUNDARIO VILLA DEL CARMEN          
+60624COLEGIO SECUNDARIO VILMER -ROBLES            
+60632COLEGIO SECUNDARIO EN PARQUE INDUSTRIAL      
+60783COLEGIO SECUND.27 DE ABRIL                   
+60791COLEGIO MATARA                               
+60802COLEGIO WEISBURD                             
+60833COLEGIO LOS PINOS                            
+60841COLEGIO "DR.RENE FAVALORO                    
+60856COLEGIO CHAUPI POZO                          
+60864COLEGIO SAN RAMON                            
+60872ESCUELA TECNICA Nro.10 MARIA SANTISIMA       
+60887COLEGIO MALBRAN                              
+60895COLEGIO PROF.J. OLIVERA (EL SIMBOLAR)        
+60906COLEGIO LA AURORA                            
+60914INST.FORMACION DOCENTE N-14                  
+60922INST.FORMACION DOCENTE N-17                  
+60937INST.FORMACION DOCENTE N-18                  
+60945INST.FORMACION DOCENTE N-19                  
+60953INST.FORMACION DOCENTE N-20                  
+60961INST.FORMACION DOCENTE N-22                  
+60976INST.FORMACION DOCENTE N-23                  
+60984INST.SUP.PROFESORADO.PROV.N-5                
+60992INST.SUP.PROFESORADO.PROV.N-6                
+61001INST.SUP.PROFESORADO.PROV.N-7                
+61016DIR. GRAL.DE NIVEL                           
+61024INST.FORMACION DOCENTE N-21                  
+61032COL.AUTUNOMO FILS PIERRE                     
+61047INST.FORM.PROFESORADO EDUC.PRIMAR.MTE.QDO    
+61055C.E.B.A.-NUEVA ESPERANZA DPTO. PELLEGRINI    
+61063ESC.CAPACIT.LABORAL-POZO HONDO DPTO.JIMENEZ  
+61071ESC.CAPACITACION NRO.41 REPUBLICA DEL ECUADOR
+61086ESC.CAPACIT.LABORAL-TIU POZO DPTO.LORETO     
+61094ESC.CAPACIT.LABORAL-MONTE QUEMADO DPTO.COPO  
+61105INST.FORMAC.DOCENTE-CANPO GALLO DPTO.ALBERDI 
+61113CENTRO EDUCATIVO CAPACITACION LABORAL NRO.6  
+61121CENTRO EDUCATIVO CAPACITACION LABORAL NRO. 7 
+61136CENTRO EDUCATIVO CAPACITACION LABORAL NRO. 8 
+61144CENTRO EDUCATIVO CAPACITACION LABORAL NRO. 9 
+61152CENTRO EDUCATIVO CAPACITACION LABORAL NRO.12 
+61167CENTRO EDUCATIVO CAPACITACION LABORAL NRO.15 
+61175CENTRO EDUCATIVO CAPACITACION LABORAL NRO.19 
+61183CENTRO EDUCATIVO CAPACITACION LABORAL NRO.20 
+61191CENTRO EDUCATIVO CAPACITACION LABORAL NRO.23 
+61202CENTRO EDUCATIVO CAPACITACION LABORAL NRO.24 
+61217CENTRO EDUCATIVO CAPACITACION LABORAL NRO.30 
+61225CENTRO EDUCATIVO CAPACITACION LABORAL NRO.31 
+61233CENTRO EDUCATIVO CAPACITACION LABORAL NRO.36 
+61241CENTRO EDUCATIVO CAPACITACION LABORAL NRO.37 
+61256CENTRO EDUCATIVO CAPACITACION LABORAL NRO.44 
+61264CENTRO EDUCATIVO CAPACITACION LABORAL NRO.46 
+61272CENTRO EDUCATIVO CAPACITACION LABORAL NRO.48 
+61287CENTRO EDUCATIVO CAPACITACION LABORAL NRO.52 
+61295CENTRO EDUCATIVO CAPACITACION LABORAL NRO.55 
+61306CENTRO EDUCATIVO CAPACITACION LABORAL NRO.56 
+61314CENTRO EDUCATIVO CAPACITACION LABORAL NRO.58 
+61322CENTRO EDUCATIVO CAPACITACION LABORAL NRO.63 
+70007BACHILLERATO PERITO MORENO                   
+70015ESC.PERFECCIONAM.AERONAUTICO FCO.DE AGUIRRE  
+70031ESCUELA N-1215                               
+70045ESCUELA N-1213                               
+70054ESC.P/ADULTOS C/SAL.LAB.N-13 D.G.ALVAREZ     
+70062ESC.DE CAP.NRO 32 POZUELOS                   
+70077ESC.DE CAP. NRO 33 STA.TER.DE JESUS          
+70085ESC.DE CAP. NRO 34 AMTENA                    
+70093ESC.DE CAP. NRO 35 EL FAVORITO               
+70104ESC. DE CAP. NRO 36 SAGRADA FAMILIA          
+70112ESC.DE CAP. NRO 37 SAN BENITO                
+70127CENTRO ESPECIAL DE SELVA                     
+70135ESC.NOCT.N-13 PRIMERA JUNTA                  
+70143COL.SEC.EL SIMBOLAR                          
+70151ESC.N-1206                                   
+70166ESC.N-1203 LA MAGNA                          
+70174ESC.N-1204                                   
+70182ESC.N-18 MEDALLA MILAGROSA                   
+70197ESC.N-1183                                   
+70201ESC.N-1217                                   
+70216ESC.N-1200                                   
+70224COLEGIO MARIA DE NAZARETH N-1219             
+70232ESC.N-1205                                   
+70247ES.N-1185                                    
+70263ESC.N-1190 EL CORRALITO                      
+70271ESC.ESP.DRA.TELMA RECA                       
+70305E.S.P.E.A.N-1 NICOLAS SEGUNDO GENNERO        
+70313ESCUELA DE MUSICA N-3                        
+70321E.S.P.E.A.NRO.2 MANUEL GOMEZ CARRILLO        
+70336D.G.N.TERCIARIO(P.ADSCRIPTO)                 
+80017ESCUELA TECNICA NRO. 1                       
+80025ESC.TECNICA N. 3 ING. SGO. MARADONA          
+80033ESCUELA TECNICA NRO. 8                       
+80041ESC. DE COMERCIO DR. ANTENOR FERREYRA        
+80056COLEGIO ABSALON ROJAS                        
+80064COLEGIO FUNDACION CULTURAL LA BRASA          
+80087C. EDUCATIVO DE NIVEL SECUNDARIO N. 1        
+80095C. EDUCATIVO DE NIVEL SECUNDARIO N. 2        
+80106ESC. TECNICA N. 2 ING. SGO. BARABINO         
+80114ESC. TECNICA N. 6 CDTE. M. BESARES           
+80122ESC. DE COMERCIO - LA BANDA                  
+80137C. EDUCATIVO DE NIVEL SECUNDARIO N. 4        
+80145ESCUELA TECNICA N. 7                         
+80153ESCUELA DE COMERCIO - TERMAS                 
+80161C. EDUCATIVO DE NIVEL SECUNDARIO N. 3        
+80176ESC. TECNICA N. 5  DR. R. CARRILLO           
+80184ESC. AGROTECNICA - FRIAS                     
+80192C. EDUCATIVO DE NIVEL SECUNDARIO N. 5        
+80203C. EDUCATIVO DE NIVEL SECUNDARIO N. 6        
+80211COLEGIO HIPOLITO IRIGOYEN                    
+80226ESCUELA TECNICA N. 4                         
+80234ESCUELA DE COMERCIO - SUMAMPA                
+80242ESC.DE EDUC.ESPECIAL N-50 CAPITAL            
+80257ESC. DE EDUC. ESPECIAL N-45 CAPITAL          
+80265ESC. DE EDUC.ESPECIAL N- 42 FERNANDEZ        
+80273MIS.MONOTEC.Y EXT.CULT.N 1 FORRES ROBLES     
+80281MIS.MONOTEC.Y EXT.CULT.N 3 HERRERA AVELLANE  
+80296MIS.MONOTEC.Y EXT.CULT.N 2 BELTRAN-ROBLES    
+80307MIS.MONOTEC.Y EXT.CULT.N 4 BREA POZO SMARTI  
+80315MIS.MONOTEC.Y EXT.CULT.N-5 VILMER ROBLES     
+80323MIS.DE CULT.RURAL Y DOMEST.N 6 V.ATAMISQUI   
+80331CENTRO DE FORM.PROF.N-2 FERNANDEZ ROBLES     
+80346CENTRO DE EDUC. AGRICOLA QUIMILI-MORENO      
+80354ESC.FORMAC.PROFES.Y CAPACITAC.LABORAL N.36   
+80362ESC. ANEXAS FUERZAS ARMADAS SGO. DEL ESTERO  
+80377CENTRO DE ALFABETI.PROG.FEDERAL DE ALFABET.  
+80385INST.SUP.BELLAS ARTES JUAN YAPARI            
+80393CTRO.EDUCACION FISICA N-1                    
+80404C.E.N.T.N-57                                 
+80412CTRO.EDUCAC.NIV.TERCIARIO N-2                
+80427CTRO.EDUCAC.NIV.TERCIARIO N-1                
+80435ESC.NORMAL SUP. REPUBLICA DEL ECUADOR        
+80443ESCUELA NORMAL SUPERIOR MANUEL BELGRANO      
+80451ESC.NORMAL SUP.DR.JOSE BENJAMIN GOROSTIAGA   
+80466INST.ENS.SUP.N-8 ANGELA CAPOVILA DE RETO     
+80474INST.NAC.DE EDUC.ESP.NRO 9 ARTURO ILLIA      
+80482ESC.AGROTECNICA- PROGRAMA E.M.E.T.A.         
+80497ESC.EDUC.ESPECIAL-POZO HONDO-DPTO.JIMENEZ    
+80501ESC.EDUCACION ESPECIAL-WEISBURD-DTO.MORENO   
+80516ESCUELA TECNICA NRO.12-FERNANDEZ DPTO.ROBLES 
+80532ESCUELA TECNICA NRO.14-LORETO                
+83317CTRO.EDUCACION FISICA N-1 (ANEXO)            
+90012C.E.B.A (EX-ALFAB)NRO.001-DPTO.CAPITAL       
+90027C.E.B.A (EX ALFAB)NRO.002- DPTO.CAPITAL      
+90043C.E.B.A (EX ALFAB)NRO.004 - DPTO.CAPITAL     
+90051C.E.B.A (EX ALFAB)NRO.005-DPTO.CAPITAL       
+90074C.E.B.A (EX ALFAB)NRO.007 - DPTO. CAPITAL    
+90082C.E.B.A (EX ALFAB)NRO.008 -DPTO. CAPITAL     
+90101C.E.B.A (EX ALFAB)NRO.010 - DPTO.CAPITAL     
+90116C.E.B.A (EX ALFAB)NRO.011-DPTO. CAPITAL      
+90124C.E.B.A (EX ALFAB)NRO.012- DPTO.CAPITAL      
+90132C.E.B.A (EX ALFAB)NRO.013-DPTO. CAPITAL      
+90147C.E.B.A (EX ALFAB)NRO.014 - DPTO.CAPITAL     
+90155C.E.B.A (EX ALFAB)NRO.015-DPTO.CAPITAL       
+90171C.E.B.A (EX ALFAB)NRO. 017-DPTO.CAPITAL      
+90186C.E.B.A (EX ALFAB)NRO.018 - DPTO.CAPITAL     
+90194C.E.B.A (EX ALFAB)NRO.019 -DPTO.CAPITAL      
+90213C.E.B.A (EX ALFAB)NRO.021 - DPTO.CAPITAL     
+90221C.E.B.A. Nro.22-B.EJ.ARGENTINO-DPTO.CAPITAL  
+90236C.E.B.A (EX ALFAB)NRO.023 - DPTO.CAPITAL     
+90244C.E.B.A (EX ALFAB)NRO.024 - DPTO.CAPITAL     
+90252C.E.B.A (EX ALFAB)NRO.025 - DPTO.CAPITAL     
+90267C.E.B.A.(EX ALFAB)NRO.026 - DPTO.CAPITAL     
+90333C.E.B.A (EX ALFAB)NRO.033 -DPTO.BANDA        
+90341C.E.B.A (EX ALFAB)NRO.034 - DPTO.BANDA       
+90356C.E.B.A (EX ALFAB)NRO.035 - DPTO.BANDA       
+90387C.E.B.A (EX ALFAB)NRO.038 - DPTO.BANDA       
+90395C.E.B.A (EX ALFAB)NRO.039 -DPTO.BANDA        
+90406C.E.B.A (EX ALFAN)NRO.040 - DPTO.ROBLES      
+90414C.E.B.A (EX ALFAB)NRO.041 - DPTO.BANDA       
+90422C.E.B.A (EX ALFAB)NRO.042 - DPTO.BANDA       
+90437C.E.B.A (EX ALFAB)NRO.043-BELTRAN-DPTO.ROBLES
+90445C.E.B.A(EX ALFAB)NRO.044 - DPTO.BANDA        
+90453C.E.B.A (EX ALFAB)NRO.045 -DPTO.BANDA        
+90476CEBA(EX ALFAB)N.047-INVERNADA NORTE-FIGUEROA 
+90492C.E.B.A (EX ALFAB)NRO.049 - DPTO.BANDA       
+90511C.E.B.A (EX ALFAB)NRO.051-LA BAJADA-D.BANDA  
+90526C.E.B.A (EX ALFAB)NRO.052 - DPTO.BANDA       
+90534C.E.B.A (EX ALFAB)NRO.053 - DPTO.BANDA       
+90557C.E.B.A(EX ALFAB)NRO.055 - DPTO.BANDA        
+90573C.E.B.A (EX ALFAB)NRO.057 - DPTO.BANDA       
+90581C.E.B.A (EX ALFAB)NRO.058-CLODOMIRA-D.BANDA  
+90607C.E.B.A (EX ALFAB)NRO.060-CLODOMIRA-D.BANDA  
+90631C.E.B.A(EX ALFAB)NRO.063 -DPTO.CHOYA         
+90646C.E.B.A (EX ALFAB)NRO.064-FRIAS-DPTO.CHOYA   
+90654C.E.B.A (EX ALFAB)NRO.065-FRIAS-DPTO.CHOYA   
+90662C.E.B.A(EX ALFAB)NRO.066-FRIAS-DPTO.CHOYA    
+90677C.E.B.A(EX ALFAB)NRO.067-FRIAS-DPTO.CHOYA    
+90685C.E.B.A(EX ALFAB)NRO.068-FRIAS.DPTO.CHOYA    
+90693C.E.B.A (EX ALFAB)NRO.069-FRIAS-DPTO.CHOYA   
+90704C.E.B.A (EX ALFAB)NRO.070-FRIAS-DPTO.CHOYA   
+90712C.E.B.A (EX ALFAB)NRO.071- DPTO.CHOYA        
+90735C.E.B.A(EX ALFAB)NRO.073-LAPRIDA-DTO.CHOYA   
+90743C.E.B.A(EX ALFAB)NRO.074-FRIAS-DPTO.CHOYA    
+90766C.E.B.A(EX ALFAB)NRO.076 - DPTO.CAPITAL      
+90774C.E.B.A(EX ALFAB)NRO.077-FRIAS-DPTO.CHOYA    
+90782C.E.B.A(EX ALFAB)NRO.078-MANSUPA-RIO HONDO   
+90797C.E.B.A(EX ALFAB)NRO.079-DPTO. RIO HONDO     
+90801C.E.B.A(EX ALFAB)NRO.080 - DPTO. RIO HONDO   
+90816C.E.B.A (EX ALFAB)NRO.081 - DPTO. RIO HONDO  
+90824C.E.B.A(EX ALFAB)NRO.082 -DPTO.RIO HONDO     
+90832C.E.B.A(EX ALFAB)NRO.083 - DPTO.RIO HONDO    
+90847C.E.B.A(EX ALFAB)NRO.084 -DPTO.RIO HONDO     
+90855C.E.B.A(EX ALFAB)NRO.085-DPTO.RIO HONDO      
+90886C.E.B.A(EX ALFAB)NRO.088-ANATUYA-D.TABOADA   
+90894CEBA(EX ALFAB)NRO.089-KM13LOTE39-TABOADA     
+90921CEBA(EX ALFAB)NRO.092-COLONIA DORA-AVELLANEDA
+90936C.E.B.A(EX ALFAB)NRO.093-ICANO-AVELLANEDA    
+90944C.E.B.A(EX ALFAB)NRO.094-ANATUYA-D.TABOADA   
+90952C.E.B.A(EX ALFAB)NRO.095-LOS JURIES-TABOADA  
+90967C.E.B.A.(EX ALFAB)NRO.096-LOS JURIES-TABOADA 
+90975C.E.B.A(EX ALFAB)NRO.097-DPTO.LORETO         
+90983C.E.B.A(EX ALFAB)NRO.098-DPTO.LORETO         
+90991C.E.B.A(EX ALFAB)NRO.099-DPTO.LORETO         
+91007C.E.B.A(EX ALFAB)NRO.100-DPTO.LORETO         
+91015C.E.B.A(EX ALFAB)NRO.101-DPTO.LORETO         
+91023C.E.B.A(EX ALFAB)NRO.102-DPTO.LORETO         
+91031C.E.B.A(EX ALFAB)NRO.103-MTE.QUEMADO-COPO    
+91046C.E.B.A(EX ALFAB)NRO.104-MTE.QUEMADO-COPO    
+91054C.E.B.A(EX ALFAB)NRO.105-MTE.QUEMADO-COPO    
+91062C.E.B.A(EX ALFAB)NRO.106-MTE.QUEMADO-COPO    
+91077C.E.B.A(EX ALFAB)NRO.107-QUIMILI-D.MORENO    
+91093C.E.B.A(EX ALFAB)NRO.109-QUIMILI-D.MORENO    
+91104C.E.B.A(EX ALFAB)NRO.110-QUIMILI-D.MORENO    
+91112C.E.B.A(EX ALFAB)NRO.111-QUIMILI-D.MORENO    
+91127C.E.B.A(EX ALFAB)NRO.112-QUIMILI-D.MORENO    
+91135C.E.B.A(EX ALFAB)NRO.113-QUIMILI-D.MORENO    
+91151C.E.B.A(EX ALFAB)NRO.115-TINTINA-D.MORENO    
+91174CEBA(EX ALFAB)N.117-V.OJO DE AGUA-OJO DE AGUA
+91182CEBA(EX ALFAB)N.118-SOL DE JULIO-OJO DE AGUA 
+91216C.E.B.A(EX ALFAB)NRO.121-DPTO.OJO DE AGUA    
+91224C.E.B.A(EX ALFAB)NRO.122-FERNANDEZ-D.ROBLES  
+91263C.E.B.A(EX ALFAB)NRO.126-GARZA-D.SARMIENTO   
+91271C.E.B.A(EX ALFAB)NRO.127-SELVA-D.RIVADAVIA   
+91294CEBA(EX ALFAB)NRO.129-LOS PORONGOS-RIVADAVIA 
+91305C.E.B.A(EX ALFAB)NRO.130-SAN PEDRO-GUASAYAN  
+91321C.E.B.A(EX ALFAB)NRO.132-DPTO.GUASAYAN       
+91402CEBA(EX ALFAB)NRO.140-BANDERA BAJADA-FIGUEROA
+91417C.E.B.A(EX ALFAB)NRO.141-DPTO. FIGUEROA      
+91425CEBA(EX ALFAB)NRO.142-INVERNADA SUR-FIGUEROA 
+91433CEBA(EX ALFAB)NRO.143-CARDON ESQUINA-FIGUEROA
+91441C.E.B.A(EX ALFAB)NRO.144-QUIMILIOJ-FIGUEROA  
+91456C.E.B.A(EX ALFAB)NRO.145-LA BREA-D.FIGUEROA  
+91464CEBA(EX ALFAB)NRO.146-VACA HUANUNA-FIGUEROA  
+91472C.E.B.A(EX ALFAB)NRO.147-LOS PIRPINTOS-COPO  
+91785C.E.B.A(EX ALFAB)NRO.178-DPTO. CAPITAL       
+91793C.E.B.A(EX ALFAB)NRO.179-DPTO. CAPITAL       
+91804C.E.B.A(EX ALFAB)NRO.180-DPTO.CAPITAL        
+91812C.E.B.A(EX ALFAB)NRO.181-DPTO.CAPITAL        
+91827C.E.B.A(EX ALFAB)NRO.182-DPTO.BELGRANO       
+91835C.E.B.A(EX ALFAB)NRO.183-ANATUYA-D.TABOADA   
+91843C.E.B.A(EX ALFAB)NRO.184-FRIAS-DPTO.CHOYA    
+91851C.E.B.A(EX ALFAB)NRO.185-FORRES-DPTO.ROBLES  
+91866CEBA(EX ALFAB)NRO.186-BREA POZO-SAN MARTIN   
+91874C.E.B.A(EX ALFAB)NRO.187-DPTO.CAPITAL        
+91882C.E.B.A(EX ALFAB)NRO.188-MTE.QUEMADO-COPO    
+91897C.E.B.A(EX ALFAB)NRO.189-FRIAS-DPTO.CHOYA    
+99943...                                          
+99951...                                          
+99966...                                          
+99974...                                          
+99982...                                          
+99997....                                         

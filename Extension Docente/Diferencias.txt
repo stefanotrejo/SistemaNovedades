@@ -1,0 +1,35 @@
+codigos liqudiados hasta abril 23
+002
+020
+069
+070
+071
+073
+074
+077
+111
+112
+113
+114
+115
+117
+118
+137
+166
+199
+215
+216
+503
+523
+550
+559
+591
+595
+597
+
+
+los codigos que no habia que incluir son:
+
+ ('550', '552', '553', '559', '595', '597')
+
+y por eso se hicieron los descuentos no remunerativos con codigo 746

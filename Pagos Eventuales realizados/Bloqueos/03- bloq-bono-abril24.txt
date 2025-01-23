@@ -1,0 +1,43 @@
+CUILES
+27247188865
+27273420768
+20418390426 
+20164047475 
+20276688791 
+20276688791 
+20248082373
+23355043789 
+24317479723 
+20397937977  
+27399000330                            
+20343134755
+
+INSERT INTO [dbo].[pagos_eventuales_bloqueos]
+           (CUIL           
+           ,[fecha_bloqueo_desde]           
+           ,[nombre_archivo])
+     values
+           ('27247188865','2024-04-01','04- bloq-bono-abril24'),
+			('27273420768','2024-04-01','03- bloq-bono-abril24'),		   
+		   ('20418390426','2024-04-01','03- bloq-bono-abril24'),
+		   ('20164047475','2024-04-01','03- bloq-bono-abril24'),
+		   ('20276688791','2024-04-01','03- bloq-bono-abril24'),		   		   		 
+		   ('20248082373','2024-04-01','03- bloq-bono-abril24'),		   		   		
+		   ('23355043789','2024-04-01','03- bloq-bono-abril24'),
+		   ('24317479723','2024-04-01','03- bloq-bono-abril24'),
+		   ('20397937977','2024-04-01','03- bloq-bono-abril24'),
+		   ('27399000330','2024-04-01','03- bloq-bono-abril24'),
+		   ('20343134755','2024-04-01','03- bloq-bono-abril24')
+		   
+
+CONTROL
+23068875
+
+
+
+INSERT INTO [dbo].[pagos_eventuales_bloqueos]
+           (control           
+           ,[fecha_bloqueo_desde]           
+           ,[nombre_archivo])
+     values
+           ('23068875','2024-04-01','03- bloq-bono-abril24')

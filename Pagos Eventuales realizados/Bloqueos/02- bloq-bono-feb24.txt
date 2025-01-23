@@ -1,0 +1,10 @@
+CUIL 
+20366413309
+
+
+INSERT INTO [dbo].[pagos_eventuales_bloqueos]
+           (CUIL           
+           ,[fecha_bloqueo_desde]           
+           ,[nombre_archivo])
+     values
+           ('20366413309','2024-02-01','02- bloq-bono-feb24')		  

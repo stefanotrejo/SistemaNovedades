@@ -229,7 +229,7 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                     }
 
                     ocnMenu = new LiquidacionSueldos.Negocio.Menu();
-                    actualizarListaAnios();       
+                    actualizarListaAnios();
                     actualizarListaMeses();
                     actualizarListaLiquidaciones();
                 }
@@ -255,21 +255,21 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
     }
 
     protected void actualizarListaMeses()
-    {        
+    {
         mesesResult = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(listaAnios.SelectedValue));
         listaMeses.DataSource = mesesResult;
         listaMeses.DataTextField = "MesLiq";
-        listaMeses.DataValueField = "Periodo de Liquidacion";        
-        listaMeses.DataBind();        
+        listaMeses.DataValueField = "Periodo de Liquidacion";
+        listaMeses.DataBind();
     }
 
     protected void actualizarListaLiquidaciones()
     {
         liquidacionesResult = objetoLiquidacion.ObtenerTodos
-                                          (listaMeses.Text.Substring(3,2), listaAnios.Text.Substring(2), 2);        
+                                          (listaMeses.Text.Substring(3, 2), listaAnios.Text.Substring(2), 2);
         listaLiquidaciones.DataSource = liquidacionesResult;
-        listaLiquidaciones.DataTextField = "liqDescripcion";        
-        listaLiquidaciones.DataValueField = "liqId";        
+        listaLiquidaciones.DataTextField = "liqDescripcion";
+        listaLiquidaciones.DataValueField = "liqId";
         listaLiquidaciones.DataBind();
     }
 
@@ -297,14 +297,14 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 return;
             }
 
-            {
-
-                String NomRep = "InformeNovedadesCargadas2.rpt";
-                FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + listaLiquidaciones.SelectedValue
-                    + "&reparticion=" + 2
-                        + "&NomRep=" + NomRep);
-            }
+            //String NomRep = "InformeNovedadesCargadas2.rpt";
+            String NomRep = "InformeNovedadesCargadasPorUsuario.rpt";
+            
+            FuncionesUtiles.AbreVentana("Reporte.aspx?liqId=" + listaLiquidaciones.SelectedValue
+                + "&reparticion=" + 2
+                    + "&NomRep=" + NomRep);     
         }
+
         catch (Exception oError)
         {
             lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">

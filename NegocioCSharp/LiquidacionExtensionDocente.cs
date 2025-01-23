@@ -133,7 +133,7 @@ namespace LiquidacionSueldos
                 LiquidacionExtensionDocente objetoLiquidacion = new LiquidacionExtensionDocente();
                 try
                 {
-                    Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.LiquidacionAbierta]", new object[,] { });                    
+                    Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocente.LiquidacionAbierta]", new object[,] { });
                     if (Tabla.Rows.Count > 0)
                     {
                         if (Tabla.Rows[0]["id"].ToString().Trim().Length > 0)
@@ -453,6 +453,30 @@ namespace LiquidacionSueldos
                 }
                 return Tabla;
             }
+
+            public DataTable ObtenerTodosDniAnio(string dni, int anio)
+            {
+                try
+                {
+                    Tabla = new DataTable();
+                    Tabla = ocdGestor.EjecutarReader("[LiquidacionExtensionDocentes.ObtenerPorDniAnio]", new object[,] {
+                   {
+                            "@dni",
+                            dni
+                        },
+                      {
+                            "@anio",
+                            anio
+                        }
+                });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return Tabla;
+            }
+
             #endregion
         }
     }

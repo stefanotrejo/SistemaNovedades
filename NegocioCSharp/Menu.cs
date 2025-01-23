@@ -370,7 +370,7 @@ namespace LiquidacionSueldos
 
                 try
                 {
-                    Tabla = ocdGestor.EjecutarReader("[Menu.ObtenerTodo]", new object[,]{});
+                    Tabla = ocdGestor.EjecutarReader("[Menu.ObtenerTodo]", new object[,] { });
                 }
                 catch (Exception ex)
                 {
@@ -869,7 +869,7 @@ namespace LiquidacionSueldos
                 }
                 return IdMax;
             }
-            
+
             public DataTable ObtenerListaFechas()
             {
                 ocdGestor = new Datos.Gestor();
@@ -918,6 +918,24 @@ namespace LiquidacionSueldos
                 return Tabla;
             }
 
+            public DataTable LiquidacionDocenteObtenerAnios(string dni)
+            {
+                ocdGestor = new Datos.Gestor();
+                Tabla = new DataTable();
+                try
+                {
+                    Tabla = ocdGestor.EjecutarReader("[Agentes.ObtenerLiquidacionesDocenteAnio]", new object[,] { {
+                              "@dni",
+                                dni
+                    } });
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return Tabla;
+            }
+
             public DataTable LiquidacionObtenerPorAnio(int anio)
             {
                 ocdGestor = new Datos.Gestor();
@@ -942,7 +960,7 @@ namespace LiquidacionSueldos
                 Tabla = new DataTable();
                 try
                 {
-                    Tabla = ocdGestor.EjecutarReader("[Liquidacion.ObtenerUno]", new object[,] 
+                    Tabla = ocdGestor.EjecutarReader("[Liquidacion.ObtenerUno]", new object[,]
                     {
                          {
                                 "@periodo",

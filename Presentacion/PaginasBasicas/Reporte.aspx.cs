@@ -36,6 +36,42 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
 
         try
         {
+            String claseDesde = Request.QueryString["antiguedad_desde"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
+            Par.Value = claseDesde;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@antiguedad_desde"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //   throw oError;
+        }
+
+        try
+        {
+            String claseDesde = Request.QueryString["antiguedad_hasta"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
+            Par.Value = claseDesde;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@antiguedad_hasta"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //   throw oError;
+        }
+
+        try
+        {
+            String claseDesde = Request.QueryString["sexo"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
+            Par.Value = claseDesde;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
+            Params.Add(Par);
+            cr.DataDefinition.ParameterFields["@sexo"].ApplyCurrentValues(Params);
+        }
+        catch (Exception oError)
+        {
+            //   throw oError;
+        }
+
+        try
+        {
             String claseDesde = Request.QueryString["clase_desde"].ToString(); // System.Web.UI.Page.Request.Item["anio"];
             Par.Value = claseDesde;  // Asignando un Valor Discreto a nuestra variable jalando el valor de una caja de texto de tu formulario
             Params.Add(Par);
@@ -373,7 +409,6 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
             //CrTable.Name corresponde al nombre que le pone el asistente de Crystal report 
             //no permite . solo guion bajo.
             //CrTable.Location = CrTable.Name;
-
         }
 
         crTableLogonInfo.Add(crtablelogoninfo);

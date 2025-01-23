@@ -7,7 +7,7 @@ using System.Data;
 using System.IO;
 using System.Text;
 
-//  CONSULTA DE PAGOS EVENTALES
+//  CONSULTA DE PAGOS EVENTALES 
 
 public partial class UsuarioRegistracion : System.Web.UI.Page
 {
@@ -280,6 +280,14 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             ocnAgente.pevPagoAcumulado = 0;
                             //INSERTA PAGO EN PAGOS EVENTUALES
                             id = ocnAgente.Insertar();
+                            if (id == 0)
+                            {
+                                lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
+                            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
+                           <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
+                            Agente bloqueado<br>" + "</div>";
+                                return;
+                            }
                             //DAR DE ALTA EL/LOS MESES PAGADOS EN DetallePagoEventual
                             ocnAgente.pevId = id;
                             ocnAgente.dpeMes = DropDownListMesDesde.SelectedIndex;

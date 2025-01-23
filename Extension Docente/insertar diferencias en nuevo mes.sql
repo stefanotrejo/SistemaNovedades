@@ -1,7 +1,7 @@
 USE [LiquidacionSueldos]
 GO
 
-INSERT INTO [dbo].[agentes_extdoc_diferencia_saldo_junio]
+INSERT INTO [dbo].[agentes_extdoc_diferencia_saldo_24agosto]
            ([age_id]
            ,[NroCOntrol]
            ,[PlantaTipo]
@@ -102,18 +102,21 @@ INSERT INTO [dbo].[agentes_extdoc_diferencia_saldo_junio]
            ,[I09]
            ,[C10]
            ,[I10]
-           , '06' -- mes actual
+           , '08' -- mes actual
            , '24' -- año actual
-           ,56 -- liq actual
+           ,61 -- liq actual
            ,GETDATE()
-           ,53 -- liq origen
-           ,56	-- liq actual	                          
+           ,56 -- liq origen
+           ,61	-- liq actual	                          
            ,saldo_norem           
             ,GETDATE()
            ,[saldo_rem]           
            ,[activoRem]
            ,[activoNoRem]
 FROM 
-	agentes_extdoc_diferencia_saldo_mayo
+	agentes_extdoc_diferencia_saldo_julio
 WHERE 
 	CONVERT(numeric (18,2), saldo_norem) > 0
+
+
+select * from LiquidacionExtensionDocente
