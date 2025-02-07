@@ -587,6 +587,47 @@ FROM
 
 ----------------------->>>>> FIN GENERACION TXT PARA EL BANCO V2 <<<<<-----------------------
 
+----------------------->>>>> INICIO GENERACION TXT PARA EL BANCO V3 <<<<<-----------------------
+SELECT 
+    CAST(dbo.RellenarTextoDerecha(t2.Nombre, ' ', 25) AS VARCHAR(25)) -- NOMBRE + RELLENO
+    + CAST(dbo.RellenarTextoIzquierda(SUBSTRING(t1.cuil, 3, 8), '0', 8) AS VARCHAR(8)) -- RELLENO + DNI
+    + CAST(dbo.RellenarTextoIzquierda(t2.LugarPago, '0', 5) AS VARCHAR(5)) -- RELLENO + LUGAR PAGO
+    + CAST(dbo.RellenarTextoIzquierda(t2.Escuela, '0', 5) AS VARCHAR(5)) -- RELLENO + ESCUELA
+    + CAST(dbo.RellenarTextoIzquierda(t2.NroCOntrol, '0', 8) AS VARCHAR(8)) -- RELLENO + CONTROL
+    + CAST(dbo.RellenarTextoIzquierda(t2.Agru + t2.tramo + t2.Apertura, ' ', 6) AS VARCHAR(6)) -- RELLENO + CARGO
+    + CAST(dbo.RellenarTextoIzquierda(REPLACE(CAST(t1.IMP_522 AS DECIMAL(18,2)), '.', ''), '0', 14) AS VARCHAR(14)) -- TOT. HAB. SIN APORTE
+    + CAST(dbo.RellenarTextoIzquierda(REPLACE(CAST(t1.IMP_521 AS DECIMAL(18,2)), '.', ''), '0', 14) AS VARCHAR(14)) -- TOT. HAB. CON APORTE
+    + CAST(dbo.RellenarTextoIzquierda(REPLACE(CAST(CONVERT(DECIMAL(18,2), t1.IMP_521) +
+	  CONVERT(DECIMAL(18,2), t1.IMP_522) AS DECIMAL(18,2)), '.', ''), '0', 14) AS VARCHAR(14)) -- TOT. HAB.
+    + CAST(dbo.RellenarTextoIzquierda(REPLACE(CAST(
+        CONVERT(DECIMAL(18,2), t1.IMP_602) + 
+        CONVERT(DECIMAL(18,2), t1.IMP_615) + 
+        CONVERT(DECIMAL(18,2), t1.IMP_616) + 
+        CONVERT(DECIMAL(18,2), t1.IMP_663) + 
+        CONVERT(DECIMAL(18,2), t1.IMP_664) + 
+        CONVERT(DECIMAL(18,2), t1.IMP_665_1) 
+        AS DECIMAL(18,2)), '.', ''), '0', 14) AS VARCHAR(14)) -- TOTAL DESCUENTOS
+    + CAST(t2.PlantaTipo AS VARCHAR(1)) -- PLANTA
+    + REPLICATE('0', 14) + -- SALARIO
+    + CAST(dbo.RellenarTextoIzquierda(REPLACE(CAST(
+        (CONVERT(DECIMAL(18,2), t1.IMP_521) + CONVERT(DECIMAL(18,2), t1.IMP_522)) -- Total haberes
+        - (
+            CONVERT(DECIMAL(18,2), t1.IMP_602) +
+            CONVERT(DECIMAL(18,2), t1.IMP_615) +
+            CONVERT(DECIMAL(18,2), t1.IMP_616) +
+            CONVERT(DECIMAL(18,2), t1.IMP_663) +
+            CONVERT(DECIMAL(18,2), t1.IMP_664) +
+            CONVERT(DECIMAL(18,2), t1.IMP_665_1)
+        ) AS DECIMAL(18,2)), '.', ''), '0', 14) AS VARCHAR(14)) -- TOT. LIQ.
+    + CAST(dbo.RellenarTextoIzquierda(t2.FechaIngreso, '0', 6) AS VARCHAR(6)) -- RELLENO + FECHA INGRESO
+    + CAST(dbo.RellenarTextoIzquierda(t1.cuil, '0', 11) AS VARCHAR(11)) -- RELLENO + CUIL
+    + CAST(t2.Sexo AS VARCHAR(1)) -- SEXO
+	+ REPLICATE('0', 14) -- INCENTIVO
+AS Columna
+FROM #agentes_filtrados t1
+INNER JOIN PruebasAge t2 ON t1.ageId = t2.NuevoAgeId1
+
+----------------------->>>>> FIN GENERACION TXT PARA EL BANCO V3 <<<<<-----------------------
 
 ----------------------->>>>> INICIO UPDATE TIPO PLANTA <<<<<-----------------------
 UPDATE #agentes_filtrados 
