@@ -28,7 +28,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                 reparticion = Int32.Parse(Request.QueryString["reparticion"].ToString());
                 string directorio = "~/Novedades/ArchivosNoPresentismo/" + liqId + "/2";
 
-                archivosPorPerfil.Add("99", new string[] { "NOPRESEN", "PEMULPC", "PEPERSPC" });
+                archivosPorPerfil.Add("99", new string[] { "NOPRESEN", "PEMULPC", "PEPERSPC", "RESUMEN" });
 
                 if (Directory.Exists(Server.MapPath(directorio)))
                 {

@@ -1,0 +1,14 @@
+INSERT INTO [dbo].[pagos_eventuales_bloqueos]
+           (control,
+			cuil,
+            [fecha_bloqueo_desde],
+			[nombre_archivo])
+
+		   VALUES 
+('77321375', '23377262069', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('77337601', '27346943101', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('01025555', '27263754285', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('73012772', '27370610830', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('37008883', '20277333189', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('76241591', '27284758299', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA'),
+('51016242', '20322056142', '2024-11-01', 'Bloqueo  BONO NOV DIC ENE 2DA NOTA')

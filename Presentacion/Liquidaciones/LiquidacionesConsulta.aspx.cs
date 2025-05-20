@@ -6,6 +6,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Text;
+using System.Data.OleDb;
+using System.Linq;
 
 //  CONSULTA DE LIQUIDACIONES
 
@@ -574,7 +576,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 {
                     generarArchivosNoPresentismo(liqId, Convert.ToInt32(row["perEsAdministrador"].ToString()));
                 }
-                              
+
                 Response.Redirect("~/Liquidaciones/LiquidacionesConsulta.aspx", true);
             }
             else
@@ -826,7 +828,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
         GlobalesAgenteConsulta.IndiceDropDownList1 = MenuRaizListaAnioDesde.SelectedIndex;
         GlobalesAgenteConsulta.IndiceMenuListaMesDesde = MenuRaizListaMesDesde.SelectedIndex;
     }
-    
+
     protected void btnGenerarArchivos_Click(object sender, EventArgs e)
     {
         try
@@ -842,12 +844,15 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 generarArchivosNoPresentismo(liqId, Convert.ToInt32(row["perEsAdministrador"].ToString()));
             }
 
-            //  GENERACION DBF MULTAS/SUSPENSIONES Y BAJAS                        
-            //string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString());
-            string rutaDestino = System.IO.Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString(), "2");            
+            // GENERACION DBF MULTAS/SUSPENSIONES Y BAJAS
+            string rutaDestino = System.IO.Path.Combine(Server.MapPath("~/Novedades/ArchivosNoPresentismo"), liqId.ToString(), "2");
             oNovedadInasistencia.GenerarDbfMultasSuspensiones(liqId, rutaDestino, etapaLiquidacion);
-            oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);            
-            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Exito");
+            oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);
+
+            // === GENERACIÓN DEL ARCHIVO DE RESUMEN DE FILAS ===
+            GenerarResumenDeArchivos(rutaDestino);
+
+            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Éxito");
         }
         catch (Exception oError)
         {
@@ -856,12 +861,214 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
 Se ha producido el siguiente error:<br/>
 MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-"</div>";
+    "</div>";
         }
     }
 
+    private void GenerarResumenDeArchivos(string ruta)
+    {
+        try
+        {
+            string[] nombresPermitidos = { "NOPRESEN.txt", "PEMULPC.1", "PEMULPC.2", "PEPERSPC.1", "PEPERSPC.2" };
+            string rutaResumen = Path.Combine(ruta, "Resumen.txt");
+            StringBuilder resumen = new StringBuilder();
+
+            // Acumuladores separados por tipo
+            Dictionary<string, int> resumenPlantaMultas = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+            Dictionary<string, int> resumenPlantaPersonal = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (string archivo in Directory.GetFiles(ruta))
+            {
+                string nombreArchivo = Path.GetFileName(archivo).ToUpper();
+
+                if (Array.Exists(nombresPermitidos, n => n.ToUpper() == nombreArchivo))
+                {
+                    int filas = 0;
+                    try
+                    {
+                        string extension = Path.GetExtension(archivo).ToLower();
+                        if (extension == ".1" || extension == ".2")
+                        {
+                            filas = ContarFilasDbf(archivo);
+                            resumen.AppendLine(nombreArchivo + ": " + filas + " filas");
+
+                            var conteoPorPlanta = ContarPorPlanta(archivo);
+
+                            if (nombreArchivo.StartsWith("PEMULPC"))
+                            {
+                                foreach (var kvp in conteoPorPlanta)
+                                {
+                                    if (resumenPlantaMultas.ContainsKey(kvp.Key))
+                                        resumenPlantaMultas[kvp.Key] += kvp.Value;
+                                    else
+                                        resumenPlantaMultas[kvp.Key] = kvp.Value;
+                                }
+                            }
+                            else if (nombreArchivo.StartsWith("PEPERSPC"))
+                            {
+                                foreach (var kvp in conteoPorPlanta)
+                                {
+                                    if (resumenPlantaPersonal.ContainsKey(kvp.Key))
+                                        resumenPlantaPersonal[kvp.Key] += kvp.Value;
+                                    else
+                                        resumenPlantaPersonal[kvp.Key] = kvp.Value;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            filas = ContarFilasTexto(archivo);
+                            resumen.AppendLine(nombreArchivo + ": " + filas + " filas");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        resumen.AppendLine(nombreArchivo + ": ERROR - " + ex.Message);
+                    }
+                }
+            }
+
+            // Bloque de Suspensiones y Multas
+            if (resumenPlantaMultas.Count > 0)
+            {
+                resumen.AppendLine();
+                resumen.AppendLine("Suspensión y multa:");
+                foreach (var kvp in resumenPlantaMultas.OrderBy(k => k.Key))
+                {
+                    resumen.AppendLine(TraducirPlanta(kvp.Key) + ": " + kvp.Value + " registros");
+                }
+            }
+
+            // Bloque de Novedades de personal
+            if (resumenPlantaPersonal.Count > 0)
+            {
+                resumen.AppendLine();
+                resumen.AppendLine("Novedades de personal:");
+                foreach (var kvp in resumenPlantaPersonal.OrderBy(k => k.Key))
+                {
+                    resumen.AppendLine(TraducirPlanta(kvp.Key) + ": " + kvp.Value + " registros");
+                }
+            }
+
+            File.WriteAllText(rutaResumen, resumen.ToString());
+        }
+        catch
+        {
+            // Omitido intencionalmente para evitar que un error menor rompa el flujo general
+        }
+    }
+
+    private string TraducirPlanta(string codigo)
+    {
+        switch (codigo)
+        {
+            case "C": return "Contratado";
+            case "D": return "Doc";
+            case "P": return "Permanente";
+            default: return "Otro (" + codigo + ")";
+        }
+    }
+
+    private int ContarFilasTexto(string rutaArchivo)
+    {
+        int count = 0;
+        using (var reader = new StreamReader(rutaArchivo))
+        {
+            while (reader.ReadLine() != null)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int ContarFilasDbf(string rutaArchivoOriginal)
+    {
+        string directorio = Path.GetDirectoryName(rutaArchivoOriginal);
+        string nombreOriginal = Path.GetFileNameWithoutExtension(rutaArchivoOriginal);
+        string nombreTemporal = nombreOriginal.Substring(0, Math.Min(3, nombreOriginal.Length)).ToUpper() + ".dbf";
+        string rutaTemporal = Path.Combine(directorio, nombreTemporal);
+
+        try
+        {
+            // Copia temporal como nombre.dbf válido
+            File.Copy(rutaArchivoOriginal, rutaTemporal, true);
+
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +
+                                      "Data Source=" + directorio + ";" +
+                                      "Extended Properties=dBASE III;";
+
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM [" + nombreTemporal + "]";
+                using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                {
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    return tabla.Rows.Count;
+                }
+            }
+        }
+        finally
+        {
+            // Borrar archivo temporal
+            if (File.Exists(rutaTemporal))
+            {
+                try { File.Delete(rutaTemporal); } catch { }
+            }
+        }
+    }
+
+    private Dictionary<string, int> ContarPorPlanta(string rutaArchivoOriginal)
+    {
+        Dictionary<string, int> conteo = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        string directorio = Path.GetDirectoryName(rutaArchivoOriginal);
+        string nombreOriginal = Path.GetFileNameWithoutExtension(rutaArchivoOriginal);
+        string nombreTemporal = nombreOriginal.Substring(0, Math.Min(3, nombreOriginal.Length)).ToUpper() + ".dbf";
+        string rutaTemporal = Path.Combine(directorio, nombreTemporal);
+
+        try
+        {
+            File.Copy(rutaArchivoOriginal, rutaTemporal, true);
+
+            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +
+                                      "Data Source=" + directorio + ";" +
+                                      "Extended Properties=dBASE III;";
+
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT PLANTA FROM [" + nombreTemporal + "]";
+                using (OleDbCommand cmd = new OleDbCommand(query, connection))
+                {
+                    using (OleDbDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string planta = reader["PLANTA"].ToString().Trim().ToUpper();
+                            if (conteo.ContainsKey(planta))
+                                conteo[planta]++;
+                            else
+                                conteo[planta] = 1;
+                        }
+                    }
+                }
+            }
+        }
+        finally
+        {
+            if (File.Exists(rutaTemporal))
+            {
+                try { File.Delete(rutaTemporal); } catch { }
+            }
+        }
+
+        return conteo;
+    }
+
     protected void generarArchivosNoPresentismo(int paramLiqId, int paramReparticion)
-    {        
+    {
         DataTable dt = new DataTable();
         string nombreArchivo, path, pathConNombreArchivo;
 

@@ -191,7 +191,7 @@ public partial class PaginasGenerales_Reporte : System.Web.UI.Page
         //01 password
         //02 persist security info
         //03 userID
-        //04 catalogo = nombre de base de datos
+        //04 catalogo = nombre de   base de datos
         //05 datasource = servidor
 
         //Obtiene los datos de conexion desde el apartado de AppSettings dentro de "Webconfig" 

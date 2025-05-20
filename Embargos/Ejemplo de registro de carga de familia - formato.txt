@@ -1,0 +1,13 @@
+C -> PLANTA
+9516174 -> LEGAJO
+55005623 -> control
+00 -> numero de orden
+170921 -> fecha novedad
+2 -> estado civil
+1 -> salario familiar 
+MARIA BELEN JUAREZ QUIROG -> APELLIDO Y NOMBRE
+5 -> TIPO DOCUMENTO
+37410951 -> DNI
+2 -> SEXO
+0 -> ESCOLARIDAD
+0 -> INVALIDÉZ

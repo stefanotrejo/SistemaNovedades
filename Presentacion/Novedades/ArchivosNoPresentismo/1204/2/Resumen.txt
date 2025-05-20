@@ -1,0 +1,12 @@
+NOPRESEN.TXT: 1016 filas
+PEMULPC.2: 666 filas
+PEPERSPC.2: 150 filas
+
+Suspensión y multa:
+Contratado: 191 registros
+Permanente: 475 registros
+
+Novedades de personal:
+Contratado: 7 registros
+Doc: 90 registros
+Permanente: 53 registros

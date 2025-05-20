@@ -1,0 +1,30 @@
+INSERT INTO [dbo].[pagos_eventuales_bloqueos]
+           (
+			cuil,
+           [fecha_bloqueo_desde],           
+           [nombre_archivo])
+		   
+		   
+		   
+-- ***  bloqueos 2da.cuota bono diciembre 2024 ***
+VALUES 
+ ('23377262069','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27346943101','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27263754285','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27370610830','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20287333189','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27284758299','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20322056142','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20137565146','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27179900713','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27289009634','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20349945097','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27186901482','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27161153260','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27349070117','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20357379653','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27263685720','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27338875377','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20363664319','2024-12-01', 'bloq-grt24dic.txt'),
+ ('27146374668','2024-12-01', 'bloq-grt24dic.txt'),
+ ('20361223722','2024-12-01', 'bloq-grt24dic.txt')

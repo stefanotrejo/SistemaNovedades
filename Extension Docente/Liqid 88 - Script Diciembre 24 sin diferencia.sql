@@ -622,7 +622,7 @@ SELECT
     + CAST(dbo.RellenarTextoIzquierda(t2.FechaIngreso, '0', 6) AS VARCHAR(6)) -- RELLENO + FECHA INGRESO
     + CAST(dbo.RellenarTextoIzquierda(t1.cuil, '0', 11) AS VARCHAR(11)) -- RELLENO + CUIL
     + CAST(t2.Sexo AS VARCHAR(1)) -- SEXO
-	+ REPLICATE('0', 14) -- INCENTIVO
+	+ REPLICATE('0', 14) -- INCENTIVO	
 AS Columna
 FROM #agentes_filtrados t1
 INNER JOIN PruebasAge t2 ON t1.ageId = t2.NuevoAgeId1
