@@ -52,7 +52,6 @@ INSERT INTO [dbo].[agentes_extension_docente_junio24_unificado]
            ,[anio]
            ,[liq_id]
            ,[fecha_creacion])
-
 SELECT
 			[age_id]
            ,[NroCOntrol]
@@ -193,12 +192,8 @@ SET
 
 
 
-
-	select top 5 * from agentes_extension_docente_mayo24_unificado	
-	where NroCOntrol = 38222893
-
-	2335773800
-	23357738.00
+select top 5 * from agentes_extension_docente_mayo24_unificado	
+where NroCOntrol = 38222893
 
 
 select * from agentes_extension_docente_historico
@@ -208,8 +203,6 @@ and NroCOntrol = 38222893
 select * from agentes_extension_docente_historico
 where liq_id = 57
 and NroCOntrol = 38222893
-
-
 
 
 select top 5 * from agentes_extension_docente_historico 
@@ -226,3 +219,6 @@ where liq_id = 57
 and NroCOntrol = '38002735'	
 
 COmmit tran t1
+
+
+

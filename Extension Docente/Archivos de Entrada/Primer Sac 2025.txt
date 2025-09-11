@@ -1,0 +1,10 @@
+enero, mayo y junio -> directo del historico
+
+febrero, marzo y abril -> unificar en tabla
+
+enero - 91
+febrero - 106 y 107
+marzo - 108, 111 y 112
+abril - 113 y 114
+mayo - 116
+junio - 118

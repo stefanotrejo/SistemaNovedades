@@ -1436,6 +1436,336 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         }
     }
 
+
+    protected void btnImportarNomencladores_Click(object sender, EventArgs e)
+    {
+        ImportarTodosLosNomencladores();
+    }   
+
+    private void ImportarTodosLosNomencladores()
+    {
+        try
+        {
+            lblFechaHoraInicio.Visible = true;
+            lblFechaHoraInicio.Text = DateTime.Now.ToString();
+
+            string mensajeResultado = "";
+            bool hayErrores = false;
+
+            // Importar Cgosden
+            try
+            {
+                mensajeResultado += "=== IMPORTACIÓN CGOSDEN ===\n";
+                ImportarCgosdenInterno();
+                mensajeResultado += "Cgosden: Importación completada exitosamente\n\n";
+            }
+            catch (Exception ex)
+            {
+                mensajeResultado += string.Format("Cgosden: Error - {0}\n\n", ex.Message);
+                hayErrores = true;
+            }
+
+            // Importar Escuelas
+            try
+            {
+                mensajeResultado += "=== IMPORTACIÓN ESCUELAS ===\n";
+                ImportarEscuelasInterno();
+                mensajeResultado += "Escuelas: Importación completada exitosamente\n\n";
+            }
+            catch (Exception ex)
+            {
+                mensajeResultado += string.Format("Escuelas: Error - {0}\n\n", ex.Message);
+                hayErrores = true;
+            }
+
+            // Mostrar resultado final
+            Label1.Visible = true;
+            if (hayErrores)
+            {
+                Label1.ForeColor = System.Drawing.Color.Orange;
+                Label1.Text = "Importación completada con algunos errores:\n" + mensajeResultado;
+            }
+            else
+            {
+                Label1.ForeColor = System.Drawing.Color.Green;
+                Label1.Text = "Todas las importaciones completadas exitosamente:\n" + mensajeResultado;
+            }
+
+            lblFechaHoraFin.Visible = true;
+            lblFechaHoraFin.Text = DateTime.Now.ToString();
+        }
+        catch (Exception ex)
+        {
+            Label1.Visible = true;
+            Label1.ForeColor = System.Drawing.Color.Red;
+            Label1.Text = string.Format("Error general durante la importación: {0}", ex.Message);
+        }
+    }
+
+
+    private void ImportarCgosdenInterno()
+    {
+        string rutaArchivo = @"C:\temp\Nomencladores\cgosden.txt";
+        
+        if (!File.Exists(rutaArchivo))
+        {
+            throw new Exception("El archivo cgosden.txt no existe en C:\\temp\\Nomencladores\\");
+        }
+
+        int registrosProcesados = 0;
+        int registrosInsertados = 0;
+        int registrosDuplicados = 0;
+
+            using (StreamReader archivo = new StreamReader(rutaArchivo, Encoding.Default))
+            {
+                string linea;
+                while ((linea = archivo.ReadLine()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(linea))
+                        continue;
+
+                    registrosProcesados++;
+
+                    // Extraer campos según especificación:
+                    // 2 caracteres -> agrupamiento
+                    // 1 caracter -> tramo 
+                    // 3 caracteres -> apertura
+                    // resto de caracteres -> nombre (excluir espacios a la derecha)
+
+                    if (linea.Length < 6) // Mínimo necesario: 2+1+3 = 6 caracteres
+                    {
+                        continue; // Saltar líneas que no tengan el formato mínimo
+                    }
+
+                    string agrupamiento = linea.Substring(0, 2);
+                    string tramo = linea.Substring(2, 1);
+                    string apertura = linea.Substring(3, 3);
+                    string nombre = linea.Substring(6).TrimEnd(); // Excluir espacios a la derecha
+
+                    // Debug: Mostrar los datos extraídos
+                    System.Diagnostics.Debug.WriteLine(string.Format("Procesando: Agrupamiento='{0}', Tramo='{1}', Apertura='{2}', Nombre='{3}'", 
+                        agrupamiento, tramo, apertura, nombre));
+
+                    // Verificar si ya existe el registro
+                    bool existe = ExisteRegistroCgosden(agrupamiento, tramo, apertura);
+                    System.Diagnostics.Debug.WriteLine(string.Format("¿Existe el registro? {0}", existe));
+
+                    if (existe)
+                    {
+                        registrosDuplicados++;
+                        System.Diagnostics.Debug.WriteLine("Registro duplicado - descartado");
+                        continue; // Descartar si ya existe
+                    }
+
+                    // Insertar en la base de datos
+                    if (InsertarCgosden(agrupamiento, tramo, apertura, nombre))
+                    {
+                        registrosInsertados++;
+                        System.Diagnostics.Debug.WriteLine("Registro insertado exitosamente");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error al insertar registro");
+                    }
+                }
+            }
+    }
+
+    private bool ExisteRegistroCgosden(string agrupamiento, string tramo, string apertura)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM cgosden WHERE Agrupamiento = ? AND Tramo = ? AND apertura = ?";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    // Para OleDb, los parámetros se agregan en orden y se usan ? sin nombres
+                    command.Parameters.Add(new OleDbParameter("@agrupamiento", OleDbType.VarChar, 2) { Value = agrupamiento });
+                    command.Parameters.Add(new OleDbParameter("@tramo", OleDbType.VarChar, 1) { Value = tramo });
+                    command.Parameters.Add(new OleDbParameter("@apertura", OleDbType.VarChar, 3) { Value = apertura });
+                    
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // En caso de error, asumir que no existe para permitir la inserción
+            return false;
+        }
+    }
+
+    private bool InsertarCgosden(string agrupamiento, string tramo, string apertura, string nombre)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "INSERT INTO cgosden (Agrupamiento, Tramo, apertura, nombre) VALUES (?, ?, ?, ?)";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    // Para OleDb, los parámetros se agregan en orden
+                    command.Parameters.Add(new OleDbParameter("@agrupamiento", OleDbType.VarChar, 2) { Value = agrupamiento });
+                    command.Parameters.Add(new OleDbParameter("@tramo", OleDbType.VarChar, 1) { Value = tramo });
+                    command.Parameters.Add(new OleDbParameter("@apertura", OleDbType.VarChar, 3) { Value = apertura });
+                    command.Parameters.Add(new OleDbParameter("@nombre", OleDbType.VarChar, 50) { Value = nombre });
+                    
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log del error si es necesario
+            return false;
+        }
+    }
+
+    private string GetConnectionString()
+    {
+        // Obtener la cadena de conexión desde AppSettings como se hace en el resto del proyecto
+        var appSettings = System.Configuration.ConfigurationManager.AppSettings;
+        string result = appSettings["ConexionCadena"] ?? "Not Found";
+        
+        if (result == "Not Found")
+        {
+            throw new Exception("No se encontró la configuración de conexión 'ConexionCadena' en AppSettings");
+        }
+        
+        return result;
+    }
+
+
+    private void ImportarEscuelasInterno()
+    {
+        string rutaArchivo = @"C:\temp\Nomencladores\escuela.txt";
+        
+        if (!File.Exists(rutaArchivo))
+        {
+            throw new Exception("El archivo escuela.txt no existe en C:\\temp\\Nomencladores\\");
+        }
+
+            int registrosProcesados = 0;
+            int registrosInsertados = 0;
+            int registrosDuplicados = 0;
+
+            using (StreamReader archivo = new StreamReader(rutaArchivo, Encoding.Default))
+            {
+                string linea;
+                while ((linea = archivo.ReadLine()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(linea))
+                        continue;
+
+                    registrosProcesados++;
+
+                    // Extraer campos según especificación:
+                    // 5 caracteres -> esuCodigo
+                    // resto de caracteres -> esuNombre (excluir espacios a la derecha)
+
+                    if (linea.Length < 5) // Mínimo necesario: 5 caracteres para el código
+                    {
+                        continue; // Saltar líneas que no tengan el formato mínimo
+                    }
+
+                    string esuCodigo = linea.Substring(0, 5);
+                    string esuNombre = linea.Substring(5).TrimEnd(); // Excluir espacios a la derecha
+
+                    // Debug: Mostrar los datos extraídos
+                    System.Diagnostics.Debug.WriteLine(string.Format("Procesando Escuela: Codigo='{0}', Nombre='{1}'", 
+                        esuCodigo, esuNombre));
+
+                    // Verificar si ya existe el registro
+                    bool existe = ExisteEscuela(esuCodigo);
+                    System.Diagnostics.Debug.WriteLine(string.Format("¿Existe la escuela? {0}", existe));
+
+                    if (existe)
+                    {
+                        registrosDuplicados++;
+                        System.Diagnostics.Debug.WriteLine("Escuela duplicada - descartada");
+                        continue; // Descartar si ya existe
+                    }
+
+                    // Insertar en la base de datos
+                    if (InsertarEscuela(esuCodigo, esuNombre))
+                    {
+                        registrosInsertados++;
+                        System.Diagnostics.Debug.WriteLine("Escuela insertada exitosamente");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error al insertar escuela");
+                    }
+                }
+            }
+
+    }
+
+    private bool ExisteEscuela(string esuCodigo)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Escuela WHERE esuCodigo = ?";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    command.Parameters.Add(new OleDbParameter("@esuCodigo", OleDbType.VarChar, 5) { Value = esuCodigo });
+                    
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // En caso de error, asumir que no existe para permitir la inserción
+            return false;
+        }
+    }
+
+    private bool InsertarEscuela(string esuCodigo, string esuNombre)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = @"INSERT INTO Escuela (esuCodigo, esuNombre, esuZona, esuActivo, usuIdCreacion, usuIdUltimaModificacion, esuFechaHoraCreacion, esuFechaHoraUltimaModificacion) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    DateTime fechaActual = DateTime.Now;
+                    
+                    // Parámetros en orden
+                    command.Parameters.Add(new OleDbParameter("@esuCodigo", OleDbType.VarChar, 5) { Value = esuCodigo });
+                    command.Parameters.Add(new OleDbParameter("@esuNombre", OleDbType.VarChar, 50) { Value = esuNombre });
+                    command.Parameters.Add(new OleDbParameter("@esuZona", OleDbType.VarChar, 50) { Value = "" }); // Vacío por defecto
+                    command.Parameters.Add(new OleDbParameter("@esuActivo", OleDbType.TinyInt) { Value = 1 }); // Activo por defecto
+                    command.Parameters.Add(new OleDbParameter("@usuIdCreacion", OleDbType.Integer) { Value = 1 }); // Usuario por defecto
+                    command.Parameters.Add(new OleDbParameter("@usuIdUltimaModificacion", OleDbType.Integer) { Value = 1 }); // Usuario por defecto
+                    command.Parameters.Add(new OleDbParameter("@esuFechaHoraCreacion", OleDbType.Date) { Value = fechaActual });
+                    command.Parameters.Add(new OleDbParameter("@esuFechaHoraUltimaModificacion", OleDbType.Date) { Value = fechaActual });
+                    
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log del error si es necesario
+            return false;
+        }
+    }
 }
-
-

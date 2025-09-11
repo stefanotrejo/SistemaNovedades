@@ -50,6 +50,12 @@
         <br />
 
         <div>
+            <asp:Button ID="btnImportarNomencladores" runat="server" Text="Importar Nomencladores" OnClick="btnImportarNomencladores_Click" />
+        </div>
+        <br />
+        <br />
+
+        <div>
             <asp:Button ID="btnActualizarHaberConAporte" runat="server" Text="Actualizar Haber con Aporte" OnClick="btnActualizarHaberConAporte_Click" />
         </div>
         <br />
