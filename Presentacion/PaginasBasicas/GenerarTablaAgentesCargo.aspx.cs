@@ -1478,6 +1478,19 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
                 hayErrores = true;
             }
 
+            // Importar Jurisdicción
+            try
+            {
+                mensajeResultado += "=== IMPORTACIÓN JURISDICCIÓN ===\n";
+                ImportarJurisdiccionInterno();
+                mensajeResultado += "Jurisdicción: Importación completada exitosamente\n\n";
+            }
+            catch (Exception ex)
+            {
+                mensajeResultado += string.Format("Jurisdicción: Error - {0}\n\n", ex.Message);
+                hayErrores = true;
+            }
+
             // Mostrar resultado final
             Label1.Visible = true;
             if (hayErrores)
@@ -1765,6 +1778,189 @@ public partial class PaginasPrueba_GenerarTablaAgentesCargo : System.Web.UI.Page
         catch (Exception ex)
         {
             // Log del error si es necesario
+            return false;
+        }
+    }
+
+    private void ImportarJurisdiccionInterno()
+    {
+        string rutaArchivo = @"C:\temp\Nomencladores\jurisdi.txt";
+        
+        if (!File.Exists(rutaArchivo))
+        {
+            throw new Exception("El archivo jurisdiccion.txt no existe en C:\\temp\\Nomencladores\\");
+        }
+
+        int registrosProcesados = 0;
+        int registrosInsertados = 0;
+        int registrosDuplicados = 0;
+        int registrosConErrorFti = 0;
+
+        using (StreamReader archivo = new StreamReader(rutaArchivo, Encoding.Default))
+        {
+            string linea;
+            while ((linea = archivo.ReadLine()) != null)
+            {
+                if (string.IsNullOrWhiteSpace(linea))
+                    continue;
+
+                registrosProcesados++;
+
+                // Extraer campos según especificación:
+                // 2 caracteres -> jurCodigo
+                // Los últimos 2 o 3 caracteres (después de espacios) -> código de FinanciamientoTipo
+                // El resto -> jurNombre
+
+                if (linea.Length < 4) // Mínimo necesario: 2 (código) + 2 (fti código)
+                {
+                    continue;
+                }
+
+                string jurCodigo = linea.Substring(0, 2);
+                
+                // Extraer el código de financiamiento al final (OC, OD, EA)
+                // Buscar desde el final eliminando espacios
+                string lineaTrimmed = linea.TrimEnd();
+                if (lineaTrimmed.Length < 4)
+                {
+                    continue;
+                }
+
+                // Los últimos 2 caracteres son el código de financiamiento
+                string ftiCodigo = lineaTrimmed.Substring(lineaTrimmed.Length - 2).Trim();
+                
+                // El nombre va desde la posición 2 hasta antes del código de financiamiento
+                string jurNombre = lineaTrimmed.Substring(2, lineaTrimmed.Length - 4).Trim();
+
+                // Debug
+                System.Diagnostics.Debug.WriteLine(string.Format("Procesando Jurisdicción: Codigo='{0}', Nombre='{1}', FtiCodigo='{2}'", 
+                    jurCodigo, jurNombre, ftiCodigo));
+
+                // Obtener el ftiId correspondiente al código
+                int? ftiId = ObtenerFtiIdPorCodigo(ftiCodigo);
+                
+                if (!ftiId.HasValue)
+                {
+                    registrosConErrorFti++;
+                    System.Diagnostics.Debug.WriteLine(string.Format("No se encontró FinanciamientoTipo con código '{0}'", ftiCodigo));
+                    continue;
+                }
+
+                // Verificar si ya existe el registro
+                bool existe = ExisteJurisdiccion(jurCodigo);
+                System.Diagnostics.Debug.WriteLine(string.Format("¿Existe la jurisdicción? {0}", existe));
+
+                if (existe)
+                {
+                    registrosDuplicados++;
+                    System.Diagnostics.Debug.WriteLine("Jurisdicción duplicada - descartada");
+                    continue;
+                }
+
+                // Insertar en la base de datos
+                if (InsertarJurisdiccion(jurCodigo, jurNombre, ftiId.Value))
+                {
+                    registrosInsertados++;
+                    System.Diagnostics.Debug.WriteLine("Jurisdicción insertada exitosamente");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Error al insertar jurisdicción");
+                }
+            }
+        }
+
+        System.Diagnostics.Debug.WriteLine(string.Format("Jurisdicciones procesadas: {0}, insertadas: {1}, duplicadas: {2}, con error FTI: {3}", 
+            registrosProcesados, registrosInsertados, registrosDuplicados, registrosConErrorFti));
+    }
+
+    private int? ObtenerFtiIdPorCodigo(string ftiCodigo)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "SELECT ftiId FROM FinanciamientoTipo WHERE ftiCodigo = ?";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    command.Parameters.Add(new OleDbParameter("@ftiCodigo", OleDbType.VarChar, 50) { Value = ftiCodigo });
+                    
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                    return null;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine(string.Format("Error al obtener ftiId: {0}", ex.Message));
+            return null;
+        }
+    }
+
+    private bool ExisteJurisdiccion(string jurCodigo)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Jurisdiccion WHERE jurCodigo = ?";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    command.Parameters.Add(new OleDbParameter("@jurCodigo", OleDbType.VarChar, 50) { Value = jurCodigo });
+                    
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // En caso de error, asumir que no existe para permitir la inserción
+            return false;
+        }
+    }
+
+    private bool InsertarJurisdiccion(string jurCodigo, string jurNombre, int ftiId)
+    {
+        try
+        {
+            using (OleDbConnection connection = new OleDbConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = @"INSERT INTO Jurisdiccion (jurCodigo, jurNombre, ftiId, jurActivo, usuIdCreacion, usuIdUltimaModificacion, jurFechaHoraCreacion, jurFechaHoraUltimaModificacion) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    DateTime fechaActual = DateTime.Now;
+                    
+                    // Parámetros en orden
+                    command.Parameters.Add(new OleDbParameter("@jurCodigo", OleDbType.VarChar, 50) { Value = jurCodigo });
+                    command.Parameters.Add(new OleDbParameter("@jurNombre", OleDbType.VarChar, 50) { Value = jurNombre });
+                    command.Parameters.Add(new OleDbParameter("@ftiId", OleDbType.Integer) { Value = ftiId });
+                    command.Parameters.Add(new OleDbParameter("@jurActivo", OleDbType.TinyInt) { Value = 1 }); // Activo por defecto
+                    command.Parameters.Add(new OleDbParameter("@usuIdCreacion", OleDbType.Integer) { Value = 1 }); // Usuario por defecto
+                    command.Parameters.Add(new OleDbParameter("@usuIdUltimaModificacion", OleDbType.Integer) { Value = 1 }); // Usuario por defecto
+                    command.Parameters.Add(new OleDbParameter("@jurFechaHoraCreacion", OleDbType.Date) { Value = fechaActual });
+                    command.Parameters.Add(new OleDbParameter("@jurFechaHoraUltimaModificacion", OleDbType.Date) { Value = fechaActual });
+                    
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log del error si es necesario
+            System.Diagnostics.Debug.WriteLine(string.Format("Error al insertar jurisdicción: {0}", ex.Message));
             return false;
         }
     }

@@ -211,8 +211,8 @@ SELECT
 			FROM ConceptoTemporal b2
 			WHERE t1.NuevoAgeId1 = b2.ageId
 			AND cteCodigoConcepto = '665'),0) AS IMP_665		
-INTO 
-	#t1
+--INTO 
+--	#t1
 FROM 
 	PruebasAge t1
 WHERE 
@@ -230,6 +230,7 @@ WHERE
 		AND t1.tramo = t3.tramo
 		AND t1.Apertura = t3.apertura
 	)
+
 	AND t1.SituRev != 'A' -- FILTRO ADSCRIPTOS
 	AND t1.SituRev != 'V' -- FILTRO VACANTES (ES LO MISMO QUE LEGAJO '9999999’)
 	AND t1.Legajo != '9999999'
@@ -238,12 +239,17 @@ WHERE
 	AND t1.Liquido != 0 -- FILTRO LIQUIDO
 	AND t1.TotalHaberes != 0 -- FILTRO tot.hab.rem
 	AND t1.TotalSinCargosAlHaber != 0 -- FILTRO tot.hab.no rem
+
+
 	-- FILTRO que tengan codigo 002
+
 	AND exists ( 	 
 		SELECT * FROM ConceptoTemporal b2
 		WHERE t1.NuevoAgeId1 = b2.ageId
 		AND cteCodigoConcepto = '002'
 	)
+
+
 	AND not exists ( -- FILTRO 1 solo item
 		SELECT * FROM PruebasAge b1
 		WHERE b1.CantItemsOcupados = 1
@@ -254,6 +260,7 @@ WHERE
 		WHERE b1.NuevoAgeId1 = b2.ageId
 		AND cteCodigoConcepto = '595')
 	)
+
 	-- FILTRO Registros con cero en días trab y líquido, e (importe cod.601 = tot.desctos)
 	AND not exists (
 		SELECT * FROM PruebasAge b1
@@ -268,7 +275,8 @@ WHERE
 						AND cteCodigoConcepto = '601'
 						)
 	)
-	-- FILTRO ARCHIVO NOVEDADES PARA DESCONTAR (FILTRO POR NRO CONTROL Y DIAS)
+
+	---- FILTRO ARCHIVO NOVEDADES PARA DESCONTAR (FILTRO POR NRO CONTROL Y DIAS)
 	AND not exists (
 		SELECT * FROM NovedadesExtensionDocente p2
 		WHERE t1.NroCOntrol = p2.age_nrocontrol
@@ -292,7 +300,17 @@ WHERE
 	 SELECT * FROM bloqueos_extension_docente b2
 		WHERE t1.Cuil = b2.cuil
 		AND b2.activo = 1	 
+
+		select * from bloqueos_extension_docente t1
+		inner join Escuela t2 
+
+
+
+		where cuil = 27206860818
 	 )
+
+
+	 and NroCOntrol = '38209971'
 
 	--AND NOT EXISTS (	
 	--	SELECT * FROM agentes_extension_docente_historico t5
