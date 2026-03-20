@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="LiquidacionImportar.aspx.cs" Inherits="PerfilRegistracion" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="LiquidacionImportar.aspx.cs" Inherits="LiquidacionImportar" %>
 
 <%@ Register Src="../Controles/Particulares/cuFecha.ascx" TagName="cuFecha" TagPrefix="tpDatePicker" %>
 <%@ MasterType TypeName="PaginasBasicas_Principal" %>

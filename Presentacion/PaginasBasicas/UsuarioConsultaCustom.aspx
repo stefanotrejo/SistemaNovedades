@@ -58,7 +58,7 @@
                 <div class="table-responsive">
                     <asp:GridView ID="Grilla" CssClass="table table-striped" runat="server" GridLines="None"
                         AutoGenerateColumns="False" OnRowDataBound="Grilla_RowDataBound" OnRowCommand="Grilla_RowCommand"
-                        PageSize="12" AllowPaging="True" OnPageIndexChanging="Grilla_PageIndexChanging">
+                        PageSize="12" AllowPaging="True" OnPageIndexChanging="Grilla_PageIndexChanging" >
                         <Columns>
                             <asp:TemplateField HeaderText="Id">
                                 <ItemTemplate>

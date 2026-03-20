@@ -71,7 +71,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                 LiquidacionSueldos.Negocio.UsuarioConectado ocnUsuarioConectado = new LiquidacionSueldos.Negocio.UsuarioConectado();
                 ocnUsuarioConectado.DesconectarOtros(this.Master.usuId, Session["_Guid"].ToString(), FuncionesUtiles.ObtenerIpPublica());
 
-                Response.Redirect("CerrarSesion.aspx", false);
+                Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", false);
                 //Response.Redirect("http://localhost:52989/PaginasBasicas/Login.aspx", true); 
             }
             else

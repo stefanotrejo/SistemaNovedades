@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="LiquidacionesConsulta.aspx.cs" Inherits="UsuarioRegistracion" %>
+ï»¿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginasBasicas/Principal.master" AutoEventWireup="true" CodeFile="LiquidacionesConsulta.aspx.cs" Inherits="LiquidacionesConsulta" %>
 
 <%@ Register Src="../Controles/Particulares/cuFecha.ascx" TagName="cuFecha" TagPrefix="tpDatePicker" %>
 <%@ MasterType TypeName="PaginasBasicas_Principal" %>
@@ -43,7 +43,7 @@
                                         ReadOnly></asp:TextBox>
                                 </div>
 
-                                <label class="control-label col-md-1">Año:</label>
+                                <label class="control-label col-md-1">A&#241;o:</label>
                                 <div class="col-md-1">
                                     <asp:TextBox ID="txtAnio" type="text" class="form-control" runat="server" Width="100px" ReadOnly></asp:TextBox>
                                 </div>
@@ -78,7 +78,6 @@
                                 <div class="col-md-12">
                                     <asp:Button ID="btnNuevo" class="btn btn-w-m btn-primary" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
                                     <asp:Button ID="btnModificar" class="btn btn-w-m btn-primary" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
-                                    <asp:Button ID="btnEliminar" class="btn btn-w-m btn-primary" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                                     <asp:Button ID="btnAbrir" class="btn btn-w-m btn-danger" runat="server" Text="Abrir" OnClick="btnAbrirr_Click" />
                                     <asp:Button ID="btnCerrarPersonal" class="btn btn-w-m btn-danger" runat="server" Text="Cerrar para Personal " OnClick="btnCerrarPersonal_Click" />
                                     <asp:Button ID="btnCerrar" class="btn btn-w-m btn-danger" runat="server" Text="Cerrar" OnClick="btnCerrar_Click" />                                </div>
@@ -96,7 +95,7 @@
                             <h3>Filtros</h3>
                             <hr class="hr-line-dashed" />
                             <div class="form-group">
-                                <label class="control-label col-md-3">Año:</label>
+                                <label class="control-label col-md-3">A&#241;o:</label>
                                 <label class="control-label col-md-1">Mes:</label>
                                 <label class="control-label col-md-1">Etapa:</label>
                             </div>
@@ -176,7 +175,7 @@
                                         <asp:BoundField DataField="liqId" HeaderText="Id" />
                                         <asp:BoundField DataField="liqDescripcion" HeaderText="Descripcion" />
                                         <asp:BoundField DataField="liqMes" HeaderText="Mes" />
-                                        <asp:BoundField DataField="liqAnio" HeaderText="Año" />
+                                        <asp:BoundField DataField="liqAnio" HeaderText="A&#241;o" />
                                         <asp:BoundField DataField="liqEtapa" HeaderText="Etapa" />
                                         <asp:BoundField DataField="liqFechaInicio" HeaderText="Fecha inicio" />
                                         <asp:BoundField DataField="liqFechaCierre" HeaderText="Fecha cierre" />

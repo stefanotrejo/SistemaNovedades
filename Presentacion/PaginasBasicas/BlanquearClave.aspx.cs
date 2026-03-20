@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -55,17 +55,17 @@ public partial class PaginasBasicas_BlanquearClave : System.Web.UI.Page
                 Session.Add("_empId", dtUsuario.Rows[0]["empId"].ToString());
                 Session.Add("_CambiarClave", "1");
 
-                Response.Redirect("UsuarioCambiarClave.aspx", false);
+                Response.Redirect("~/PaginasBasicas/UsuarioCambiarClave.aspx", false);
             }
             else
             {
-                Response.Redirect("Login.aspx", true);
+                Response.Redirect("~/PaginasBasicas/Login.aspx", true);
             }
             #endregion
         }
         else
         {
-            Response.Redirect("Login.aspx", true);
+            Response.Redirect("~/PaginasBasicas/Login.aspx", true);
         }        
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +20,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
             {
                 //this.Master.TituloDelFormulario = "Menu Inicio";
                 this.Master.TituloDelFormulario = "Menu Inicio";
-                if (this.Session["_Autenticado"] == null) Response.Redirect("PaginasBasicas/Login.aspx", true);
+                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
 
                 if (!Page.IsPostBack)
                 {
@@ -32,7 +32,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
                         }
                         else
                         {
-                            Response.Redirect("UsuarioCambiarClave.aspx", false);
+                            Response.Redirect("~/PaginasBasicas/UsuarioCambiarClave.aspx", false);
                         }
                     }
                 }
@@ -48,7 +48,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
     {
         if (this.Session["_Autenticado"] == null)
         {
-            Response.Redirect("Login.aspx", true);
+            Response.Redirect("~/PaginasBasicas/Login.aspx", true);
         }
         else
         {
@@ -58,7 +58,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
             }
             else
             {
-                Response.Redirect("Login.aspx", true);
+                Response.Redirect("~/PaginasBasicas/Login.aspx", true);
             }
         }
     }

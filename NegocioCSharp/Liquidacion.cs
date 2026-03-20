@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -580,6 +580,17 @@ namespace LiquidacionSueldos
                 {
                     throw ex;
                 }
+            }
+
+            /// <summary>
+            /// Eliminación lógica: marca la liquidación como inactiva (liqActivo = 0).
+            /// No borra datos; la liquidación deja de mostrarse en listados que filtren por activo.
+            /// </summary>
+            public void MarcarComoInactiva(int liqId)
+            {
+                Liquidacion liq = ObtenerUno(liqId);
+                if (liq == null || liq.liqId == 0) return;
+                Actualizar(liq.liqId, liq.liqDescripcion, liq.liqMes, liq.liqAnio, liq.liqEtapa, liq.liqEstado, liq.liqFechaInicio, liq.liqFechaCierre, 0);
             }
 
             public int ValidarRepetido(string liqMes, string liqAnio, int liqEtapa)

@@ -11,13 +11,7 @@ using System.Linq;
 
 //  CONSULTA DE LIQUIDACIONES
 
-public static class Globals
-{
-    public const Int32 BUFFER_SIZE = 10; // Unmodifiable
-    public static String FILE_NAME = "Output.txt"; // Modifiable
-    public static readonly String CODE_PREFIX = "US-"; // Unmodifiable
-}
-public partial class UsuarioRegistracion : System.Web.UI.Page
+public partial class LiquidacionesConsulta : System.Web.UI.Page
 {
     DataTable dt, dt2 = new DataTable();
     LiquidacionSueldos.Negocio.NuevoAge1 ocnAgente = new LiquidacionSueldos.Negocio.NuevoAge1();
@@ -225,8 +219,8 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
                  ESTADOS LIQUIDACION:
                  1- Nueva liquidacion
                  2- Se modifico la liquidacion
-                 3- Se eliminó la liquidacion
-                 4- Se abrió la liquidacion
+                 3- Se eliminï¿½ la liquidacion
+                 4- Se abriï¿½ la liquidacion
                  5- Se cerro para personal
                  6- Se cerro para todos                 
                  */
@@ -296,10 +290,10 @@ public partial class UsuarioRegistracion : System.Web.UI.Page
 
                     ocnMenu = new LiquidacionSueldos.Negocio.Menu();
 
-                    //Trae solo años
+                    //Trae solo aï¿½os
                     dt = ocnMenu.LiquidacionObtenerTodo();
 
-                    //Trae meses por año seleccionado
+                    //Trae meses por aï¿½o seleccionado
                     dt2 = ocnMenu.LiquidacionObtenerPorAnio(Convert.ToInt32(dt.Rows[0]["AnioLiq"].ToString()));
 
                     //Combo Anio Desde
@@ -453,32 +447,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                         Debe seleccionar una liquidacion<br>" + "</div>";
             }
 
-        }
-        catch (Exception oError)
-        {
-            lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-            <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>
-            <a class=""alert-link"" href=""#"">Error de Sistema</a><br/>
-            Se ha producido el siguiente error:<br/>
-            MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerException + "<br><br>TRACE:<br>" + oError.StackTrace + "<br><br>TARGET:<br>" + oError.TargetSite +
-            "</div>";
-        }
-    }
-
-    protected void btnEliminar_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            if (txtLiqId.Text != "")
-            {
-                lblMensajeError.Text = "";
-            }
-            else
-            {
-                lblMensajeError.Text = @"<div class=""alert alert-danger alert-dismissable"">
-                        <button aria-hidden=""true"" data-dismiss=""alert"" class=""close"" type=""button"">x</button>                        
-                        Debe seleccionar una liquidacion<br>" + "</div>";
-            }
         }
         catch (Exception oError)
         {
@@ -683,7 +651,6 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
                             break;
 
                         default:
-                            btnEliminar.Enabled = true;
                             btnAbrir.Enabled = true;
                             btnCerrarPersonal.Enabled = false;
                             btnCerrar.Enabled = false;
@@ -708,15 +675,12 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void HabilitarBotonesLiquidacion()
     {
-        btnEliminar.Enabled = true;
         btnAbrir.Enabled = true;
         btnModificar.Enabled = true;
     }
 
     protected void DeshabilitarBotonesLiquidacion()
     {
-
-        btnEliminar.Enabled = false;
         btnAbrir.Enabled = false;
         btnCerrarPersonal.Enabled = false;
         btnCerrar.Enabled = false;
@@ -849,10 +813,10 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             oNovedadInasistencia.GenerarDbfMultasSuspensiones(liqId, rutaDestino, etapaLiquidacion);
             oNovedadInasistencia.GenerarDbfBajas(liqId, rutaDestino, etapaLiquidacion);
 
-            // === GENERACIÓN DEL ARCHIVO DE RESUMEN DE FILAS ===
+            // === GENERACIï¿½N DEL ARCHIVO DE RESUMEN DE FILAS ===
             GenerarResumenDeArchivos(rutaDestino);
 
-            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con Éxito");
+            lblMensajeError.Text = FuncionesUtiles.MensajeExito("Archivos generados con ï¿½xito");
         }
         catch (Exception oError)
         {
@@ -932,7 +896,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
             if (resumenPlantaMultas.Count > 0)
             {
                 resumen.AppendLine();
-                resumen.AppendLine("Suspensión y multa:");
+                resumen.AppendLine("Suspensiï¿½n y multa:");
                 foreach (var kvp in resumenPlantaMultas.OrderBy(k => k.Key))
                 {
                     resumen.AppendLine(TraducirPlanta(kvp.Key) + ": " + kvp.Value + " registros");
@@ -991,7 +955,7 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
         try
         {
-            // Copia temporal como nombre.dbf válido
+            // Copia temporal como nombre.dbf vï¿½lido
             File.Copy(rutaArchivoOriginal, rutaTemporal, true);
 
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +

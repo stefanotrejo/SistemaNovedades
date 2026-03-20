@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +13,6 @@ public partial class PaginasGenerales_CerrarSesion : System.Web.UI.Page
         Session.Clear();
         Session.Abandon();
 
-        Response.Redirect("../PaginasBasicas/Login.aspx", false);
+        Response.Redirect("~/PaginasBasicas/Login.aspx", false);
     }
 }

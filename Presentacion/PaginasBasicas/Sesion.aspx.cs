@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -210,7 +210,7 @@ public partial class PaginasBasicas_Sesion : System.Web.UI.Page
         {
             Page.Title = System.Configuration.ConfigurationSettings.AppSettings["ClienteNombre"].ToString();
 
-            if (this.Session["_Autenticado"] == null) Response.Redirect("Login.aspx", true);
+            if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
 
             Session["Resultado"] = "";
             Session["Tipo"] = "";
@@ -250,7 +250,7 @@ public partial class PaginasBasicas_Sesion : System.Web.UI.Page
                 }
                 else
                 {
-                    Response.Redirect("Login.aspx", true);
+                    Response.Redirect("~/PaginasBasicas/Login.aspx", true);
                 }
 
                 #region Alto y Ancho de Logo
@@ -289,7 +289,7 @@ public partial class PaginasBasicas_Sesion : System.Web.UI.Page
                 Session.Add("_PaginasPermitidas", this.PaginasPermitidas);
                 Session.Add("_CambioPreviamenteUsuario", this.CambioPreviamenteUsuario);
 
-                Response.Redirect("Login.aspx", true);
+                Response.Redirect("~/PaginasBasicas/Login.aspx", true);
             }
 
             #region Seguridad para conectar y desconectar usuarios cuando cambia de clave
@@ -300,7 +300,7 @@ public partial class PaginasBasicas_Sesion : System.Web.UI.Page
                 {
                     if (dt.Rows[0]["Desconectar"].ToString() == "1")
                     {
-                        Response.Redirect("CerrarSesion.aspx", true);
+                        Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", true);
                     }
                 }
             }

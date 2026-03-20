@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -258,10 +258,10 @@ public partial class PaginasBasicas_Principal : System.Web.UI.MasterPage
                 lblClienteNombre.Text = System.Configuration.ConfigurationSettings.AppSettings["ClienteNombre"].ToString();
                 lblClienteNombre1.Text = System.Configuration.ConfigurationSettings.AppSettings["ClienteNombre"].ToString();
 
-                if (Session["_Autenticado"] == null) Response.Redirect("CerrarSesion.aspx", true);
-                if (Session["_Autenticado"].ToString() == "0") Response.Redirect("CerrarSesion.aspx", true);
-                if (Session["_perId"] == null) Response.Redirect("CerrarSesion.aspx", true);
-                if (Session["_usuId"] == null || Session["_usuId"].ToString() == "0") Response.Redirect("CerrarSesion.aspx", true);
+                if (Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", true);
+                if (Session["_Autenticado"].ToString() == "0") Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", true);
+                if (Session["_perId"] == null) Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", true);
+                if (Session["_usuId"] == null || Session["_usuId"].ToString() == "0") Response.Redirect("~/PaginasBasicas/CerrarSesion.aspx", true);
 
                 this.lblUsuario.Text = this.usuNombre + " " + this.usuApellido;
                 this.lblPerfil.Text = this.perNombre;

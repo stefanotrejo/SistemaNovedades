@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -97,12 +97,12 @@ public partial class PaginasBasicas_Login : System.Web.UI.Page
                         if (ocnUsuario.usuClave == "hJsvP2MyI0P93Fo8jajwfkA07k1eshClrZ254ztq7BjeqBg2qH+SJqRjbGx3iTsL00CPbR/iJbsJB8VWqBETVQ==")
                         {
                             Session.Add("_CambiarClave", "1");
-                            Response.Redirect("UsuarioCambiarClave.aspx", false);
+                            Response.Redirect("~/PaginasBasicas/UsuarioCambiarClave.aspx", false);
                         }
                         else
                         {
                             Session.Add("_CambiarClave", "0");
-                            Response.Redirect("Sesion.aspx", false);
+                            Response.Redirect("~/PaginasBasicas/Sesion.aspx", false);
                         }
                         #endregion
                     }

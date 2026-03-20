@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +20,7 @@ public partial class PaginasBasicas_Inicio : System.Web.UI.Page
             if (!Page.IsPostBack)
             {
                 this.Master.TituloDelFormulario = "Descarga de Archivos";
-                if (this.Session["_Autenticado"] == null) Response.Redirect("PaginasBasicas/Login.aspx", true);
+                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
 
                 var archivosPorPerfil = new Dictionary<string, string[]>();
                 Int32 liqId, reparticion;

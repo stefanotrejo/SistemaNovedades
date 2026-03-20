@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -22,7 +22,7 @@ public partial class MenuRegistracionCustom : System.Web.UI.Page
             {
                 this.Master.TituloDelFormulario = "Menu";
 
-                if (this.Session["_Autenticado"] == null) Response.Redirect("Login.aspx", true);
+                if (this.Session["_Autenticado"] == null) Response.Redirect("~/PaginasBasicas/Login.aspx", true);
 
                 /*INCIALIZADORES*/
                 MenuRaizLista.DataValueField = "Valor"; MenuRaizLista.DataTextField = "Texto"; MenuRaizLista.DataSource = (new LiquidacionSueldos.Negocio.Menu()).ObtenerListaRaiz("[Nuevo...]"); MenuRaizLista.DataBind();

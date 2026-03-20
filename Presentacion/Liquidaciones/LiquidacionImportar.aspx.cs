@@ -6,7 +6,7 @@ using System.IO;
 
 // ABM DE LIQUIDACIONES
 
-public partial class PerfilRegistracion : System.Web.UI.Page
+public partial class LiquidacionImportar : System.Web.UI.Page
 {
     LiquidacionSueldos.Negocio.Perfil ocnPerfil = new LiquidacionSueldos.Negocio.Perfil();
     DataTable dt, dt2 = new DataTable();
