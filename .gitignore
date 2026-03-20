@@ -2,3 +2,23 @@
 Extension Docente/Backups/COMPLEMENTARIA ENERO 23 V3/Tablas historicas.sql
 Extension Docente/Backups/08- AGOSTO/agente_extension_docente_historico.sql
 Presentacion/Web.config
+
+# --- Visual Studio / IDE ---
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# --- Compilación .NET ---
+[Bb]in/
+[Oo]bj/
+[Dd]eploy/
+*.cache
+*.ilk
+*.log
+
+# Paquetes locales (si se usan)
+packages/
+!packages/build/

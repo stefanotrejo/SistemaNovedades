@@ -1,9 +1,0 @@
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.dll
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.pdb
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\bin\Debug\LiquidacionSueldos.Datos.xml
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Resources.resources
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.dll
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.xml
-C:\Users\Usuario\Downloads\Proyectos\SistemaNovedades\LiquidacionSueldos.Datos\obj\Debug\LiquidacionSueldos.Datos.pdb
