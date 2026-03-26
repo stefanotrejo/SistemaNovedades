@@ -325,27 +325,51 @@ MESSAGE:<br>" + oError.Message + "<br><br>EXCEPTION:<br>" + oError.InnerExceptio
 
     protected void generarDescripcion()
     {
-        string str = "";
-        string text = this.comboEtapa.Text;
-        string str1 = text;
-        if (text != null)
+        // Mapea la etapa seleccionada a texto legible.
+        string etapa = "";
+        string etapaSeleccionada = this.comboEtapa.Text;
+        if (etapaSeleccionada != null)
         {
-            if (str1 == "1")
+            if (etapaSeleccionada == "1")
+                etapa = "Primera";
+            else if (etapaSeleccionada == "2")
+                etapa = "Segunda";
+            else if (etapaSeleccionada == "3")
+                etapa = "Tercera";
+        }
+
+        string mesDescripcion = (this.comboMesLiquidacion.Text ?? "").Trim();
+        string anioDescripcion = this.txtAnio.Text;
+
+        // Regla: si el mes de la descripción es "Enero", sumar +1 al año.
+        if (string.Equals(mesDescripcion, "Enero", StringComparison.OrdinalIgnoreCase))
+        {
+            // Parse del año robusto: el TextBox puede traer espacios u otros caracteres.
+            string anioBruto = (this.txtAnio.Text ?? "").Trim();
+            System.Text.StringBuilder soloDigitosBuilder = new System.Text.StringBuilder();
+            for (int i = 0; i < anioBruto.Length; i++)
             {
-                str = "Primera";
+                if (char.IsDigit(anioBruto[i]))
+                    soloDigitosBuilder.Append(anioBruto[i]);
             }
-            else if (str1 == "2")
+
+            string soloDigitos = soloDigitosBuilder.ToString();
+            int anio;
+            if (!string.IsNullOrEmpty(soloDigitos) && int.TryParse(soloDigitos, out anio))
             {
-                str = "Segunda";
-            }
-            else if (str1 == "3")
-            {
-                str = "Tercera";
+                int anioSiguiente = anio + 1;
+
+                // Mantener el formato del año ingresado (2 o 4 dígitos).
+                if (soloDigitos.Length == 4)
+                    anioDescripcion = anioSiguiente.ToString();
+                else if (soloDigitos.Length == 2)
+                    anioDescripcion = anioSiguiente.ToString("00");
+                else
+                    anioDescripcion = anioSiguiente.ToString();
             }
         }
-        TextBox textBox = this.txtDescripcion;
-        string[] strArrays = new string[] { str, " Etapa del mes de ", this.comboMesLiquidacion.Text, " del ", this.txtAnio.Text };
-        textBox.Text = string.Concat(strArrays);
+
+        this.txtDescripcion.Text = string.Concat(etapa, " Etapa del mes de ", mesDescripcion, " del ", anioDescripcion);
     }
 
     protected void txtAnio_TextChanged(object sender, EventArgs e)
